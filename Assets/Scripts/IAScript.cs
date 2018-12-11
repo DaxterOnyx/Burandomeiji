@@ -16,7 +16,8 @@ public class IAScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_agent = GetComponent<NavMeshAgent>();
-		m_target = GameObject.Find("VRTK");
+		m_target = GameObject.Find("Platform");
+
     }
 	
 	// Update is called once per frame
@@ -25,7 +26,8 @@ public class IAScript : MonoBehaviour {
 		//TODO hit if to close of target
 
 		//follow target
-		m_agent.SetDestination(m_target.transform.position);
+		if(m_target != null)
+			m_agent.SetDestination(m_target.transform.position);
     }
 
 }

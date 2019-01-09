@@ -68,7 +68,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void PerformRotation()
     {
-        localRotation = new Vector3(Mathf.Clamp(localRotation.x + speed_angle_up * control.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * control.MouseX, 0f);
+        localRotation = new Vector3(Mathf.Clamp(localRotation.x - speed_angle_up * control.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * control.MouseX, 0f);
         this.transform.localRotation = Quaternion.Euler(localRotation);
     }
 }

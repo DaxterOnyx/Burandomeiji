@@ -16,15 +16,12 @@ public class IAScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_agent = GetComponent<NavMeshAgent>();
-		m_target = GameObject.Find("Platform");
-
+		m_target = GameObject.FindGameObjectWithTag("Player");
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		//TODO hit if to close of target
-
 		//follow target
 		if(m_target != null)
 			m_agent.SetDestination(m_target.transform.position);

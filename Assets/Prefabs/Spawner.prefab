@@ -272,3 +272,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1545489681706988, guid: 4f652e239109243479dcc8f08ff6027a, type: 2}
+  - {fileID: 1545489681706988, guid: 4f652e239109243479dcc8f08ff6027a, type: 2}

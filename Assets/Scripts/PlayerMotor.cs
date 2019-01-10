@@ -6,32 +6,29 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour {
 
     [SerializeField]
-    Rigidbody rb;
+    private Rigidbody rb;
 
     /*Spawner prefab*/
-    public GameObject spawner;
-
-    /*Controller
-	 * */
-    public PlayerController control;
-
-    /*Movement
-	 * */
-    public float speed_angle_up;
-    public float speed_angle_turn;
-    public float speed;
-    public float cameraRotationLimit = 90f;
-
     [SerializeField]
-    private Vector3 localRotation;
+    private GameObject spawner;
 
-    private Camera cam;
+    /*Controller * */
+    [SerializeField]
+    private PlayerController control;
+
+    /*Movement * */
+    [SerializeField] private float speed_angle_up;
+    [SerializeField] private float speed_angle_turn;
+    [SerializeField] private float speed;
+    [SerializeField] private float cameraRotationLimit = 90f;
+
+    [SerializeField] private Vector3 localRotation;
 
     private void Start()
     {
-        cam = GetComponentInChildren<Camera>();
         rb = GetComponent<Rigidbody>();
-        control = GetComponent<PlayerController>();}
+        control = GetComponent<PlayerController>();
+    }
 
     // Utilisation de FixedUpdate pour toutes les updates liées à la physique
     void FixedUpdate()

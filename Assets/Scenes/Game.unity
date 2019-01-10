@@ -119,6 +119,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1192862646262678, guid: e47db903777574043bc120bac8d01c0c,
     type: 2}
   m_PrefabInternal: {fileID: 500615319}
+--- !u!114 &46365762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46365761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed_angle_up: 10
+  speed_angle_turn: 5
+  speed: 10
+  cameraRotationLimit: 90
 --- !u!114 &46365763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,22 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 46365761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4b27ffe6ab85446b272882c699d5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_angle_up: 10
-  speed_angle_turn: 10
-  speed: 20
-  cameraRotationLimit: 90
---- !u!114 &46365764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46365761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8888c2868a66f847ab009462d86cb1f, type: 3}
+  m_Script: {fileID: 11500000, guid: f14ec06b46544934eb8ac924fdbed9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &81444991

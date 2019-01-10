@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114707502108153376}
   - component: {fileID: 114687927097806008}
   - component: {fileID: 114401180596391590}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 33703280120724790}
   - component: {fileID: 23027851787381978}
   - component: {fileID: 135923825673633632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4773387958583854}
   - component: {fileID: 20468994572915638}
   - component: {fileID: 81736207549131318}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,15 +71,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192862646262678}
-  m_LocalRotation: {x: 0.37865826, y: 0.39463666, z: -0.18291287, w: 0.8169594}
-  m_LocalPosition: {x: -25.2, y: 30.6, z: -13.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.19, z: -31.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4773387958583854}
   - {fileID: 4713565739934100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 49.735, y: 51.566, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4713565739934100
 Transform:
   m_ObjectHideFlags: 1
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728221111435072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0.532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4197187211452448}
@@ -138,7 +138,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -235,10 +235,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 54014875544311954}
+  spawner: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047, type: 2}
+  control: {fileID: 114707502108153376}
   speed_angle_up: 10
   speed_angle_turn: 10
-  speed: 30
+  speed: 20
   cameraRotationLimit: 90
+  localRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

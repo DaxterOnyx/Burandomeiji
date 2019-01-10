@@ -284,8 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotButton: 4
   projectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a, type: 2}
-  projectileSpawnPoint: {fileID: 4236411411663234, guid: 9f3e880283a88b141b7afac504b4721a,
-    type: 2}
+  projectileSpawnPoint: {fileID: 4361763040338726}
   projectileSpeed: 1000
   projectileLife: 5
 --- !u!114 &114475721955545206

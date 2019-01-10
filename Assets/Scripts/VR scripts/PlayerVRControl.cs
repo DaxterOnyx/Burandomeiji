@@ -5,44 +5,39 @@ using UnityEngine;
 
 public class PlayerVRControl : MonoBehaviour {
 
-	List<GameObject> Weapons;
-	public GameObject ActiveWeapon	{ get;  private set;}
+	List<WeaponScript> Weapons;
+	public WeaponScript ActiveWeapon	{ get;  private set;}
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 	}
 
 	private void Awake()
 	{
-		Weapons = new List<GameObject>();
+		Weapons = new List<WeaponScript>();
 		foreach (var item in gameObject.GetComponentsInChildren<WeaponScript>(true))
 		{
-			Weapons.Add(item.gameObject);
+			Weapons.Add(item);
 			item.gameObject.SetActive(false);
 		}
 
 		ChangeActiveWeapon(Weapons[0]);
 	}
 
-	private void ChangeActiveWeapon(GameObject p_weapon)
+	private void ChangeActiveWeapon(WeaponScript p_weapon)
 	{
-		if(gameObject == null)
+		if(p_weapon == null)
 		{
 			UnityEngine.Debug.Log("new weapon is null");
 			return;
 		}
-		ActiveWeapon.SetActive(false);
-		ActiveWeapon.GetComponent<WeaponScript>().Grab(true);
+		if(ActiveWeapon != null)
+		{
+			ActiveWeapon.gameObject.SetActive(false);
+		}
 		ActiveWeapon = p_weapon;
-		ActiveWeapon.SetActive(true);
-		ActiveWeapon.GetComponent<WeaponScript>().Grab(false);
+		ActiveWeapon.gameObject.SetActive(true);
+
 	}
-
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	
 }

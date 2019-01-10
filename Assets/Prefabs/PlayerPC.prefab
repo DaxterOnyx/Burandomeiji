@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54014875544311954}
   - component: {fileID: 114707502108153376}
   - component: {fileID: 114687927097806008}
+  - component: {fileID: 114401180596391590}
   m_Layer: 0
   m_Name: PlayerPC
   m_TagString: Untagged
@@ -209,6 +210,20 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728221111435072}
   m_Enabled: 1
+--- !u!114 &114401180596391590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192862646262678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54be9c9cc8d5544daa50f7e33939490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
+    type: 2}
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,14 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  spawner: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047, type: 2}
-  control: {fileID: 0}
   speed_angle_up: 10
   speed_angle_turn: 10
   speed: 30
   cameraRotationLimit: 90
-  localRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

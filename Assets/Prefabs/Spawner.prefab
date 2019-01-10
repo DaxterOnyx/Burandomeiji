@@ -36,7 +36,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4111606554278346}
-  - component: {fileID: 114710686823374974}
+  - component: {fileID: 114152363561077988}
+  - component: {fileID: 114103245470891066}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -259,7 +260,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810202424241792}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114710686823374974
+--- !u!114 &114103245470891066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,6 +271,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b280725ee991bc24e9661bba4ec51675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 1545489681706988, guid: 4f652e239109243479dcc8f08ff6027a, type: 2}
-  - {fileID: 1545489681706988, guid: 4f652e239109243479dcc8f08ff6027a, type: 2}
+  playerPCSpawner: {fileID: 114401180596391590, guid: e47db903777574043bc120bac8d01c0c,
+    type: 2}
+  timeBtwTwoSpawn: 2
+--- !u!114 &114152363561077988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790243174383396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b280725ee991bc24e9661bba4ec51675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPCSpawner: {fileID: 0}
+  timeBtwTwoSpawn: 2

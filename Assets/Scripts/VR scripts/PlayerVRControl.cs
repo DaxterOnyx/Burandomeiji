@@ -2,42 +2,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class PlayerVRControl : MonoBehaviour {
 
-	List<WeaponScript> Weapons;
-	public WeaponScript ActiveWeapon	{ get;  private set;}
+	public HandVRControl LeftHand;
+	public HandVRControl RightHand;
+	public VRTK_ControllerEvents.ButtonAlias SwitchButton;
+
 
 	// Use this for initialization
-	void Start ()
-	{
+	void Awake () {
+		if (LeftHand == null)
+		{
+			Debug.LogError("LeftHand is null");
+			gameObject.SetActive(false);
+		}
+		if (RightHand == null)
+		{
+			Debug.LogError("RightHand is null");
+			gameObject.SetActive(false);
+		}
+
+		LeftHand.GetComponent<VRTK.VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(SwitchButton, true, Switch);
 	}
 
-	private void Awake()
+	private void Switch(object sender, ControllerInteractionEventArgs e)
 	{
-		Weapons = new List<WeaponScript>();
-		foreach (var item in gameObject.GetComponentsInChildren<WeaponScript>(true))
-		{
-			Weapons.Add(item);
-			item.gameObject.SetActive(false);
-		}
-
-		ChangeActiveWeapon(Weapons[0]);
+		LeftHand.SwitchWeapon();
+		RightHand.SwitchWeapon();
 	}
 
-	private void ChangeActiveWeapon(WeaponScript p_weapon)
-	{
-		if(p_weapon == null)
-		{
-			UnityEngine.Debug.Log("new weapon is null");
-			return;
-		}
-		if(ActiveWeapon != null)
-		{
-			ActiveWeapon.gameObject.SetActive(false);
-		}
-		ActiveWeapon = p_weapon;
-		ActiveWeapon.gameObject.SetActive(true);
-
+	// Update is called once per frame
+	void Update () {
+		
 	}
 }

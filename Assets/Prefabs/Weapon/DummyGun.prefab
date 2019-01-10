@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4125304143327888}
-  - component: {fileID: 114946636880011604}
+  - component: {fileID: 114318214036044086}
   m_Layer: 0
   m_Name: DummyGun
   m_TagString: Untagged
@@ -271,6 +271,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114318214036044086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659554349375438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa5e007af50d8a4e9b746ce84b7b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotButton: 4
+  projectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a, type: 2}
+  projectileSpawnPoint: {fileID: 4236411411663234, guid: 9f3e880283a88b141b7afac504b4721a,
+    type: 2}
+  projectileSpeed: 1000
+  projectileLife: 5
 --- !u!114 &114475721955545206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,19 +337,3 @@ MonoBehaviour:
     position: {x: 0, y: 0.0376, z: 0.0389}
     rotation: {x: -60, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
---- !u!114 &114946636880011604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659554349375438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ca93fede098044cadf3914aa7e5325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotButton: 0
-  projectile: {fileID: 1170158472373774, guid: 6a5c4c25463e64b45ad1386aa84cd321, type: 2}
-  projectileSpawnPoint: {fileID: 4361763040338726}
-  projectileSpeed: 1000
-  projectileLife: 5

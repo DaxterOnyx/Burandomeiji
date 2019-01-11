@@ -14,8 +14,8 @@ public class PlayerPCMotor : MonoBehaviour {
     /* Movement */
     [SerializeField] private float speed_angle_up = 10;
     [SerializeField] private float speed_angle_turn = 5;
-    [SerializeField] private float speed = 90;
-    [SerializeField] private float cameraRotationLimit = 90;
+    [SerializeField] private float speed = 90f;
+    [SerializeField] private float cameraRotationLimit = 90f;
 
     private Vector3 localRotation;
 

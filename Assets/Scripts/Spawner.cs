@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerPCSpawner playerPCSpawner;
+    
+    [SerializeField] private PlayerPCSpawner playerPCSpawner;
 
     private List<GameObject> enemyPrefabsList;
     [SerializeField] [Range(1f, 5f)] private float timeBtwTwoSpawn = 2f;
@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         enemyPrefabsList = new List<GameObject>();
+        AddEnemyInList(playerPCSpawner.enemyList);
     }
 
     public void AddEnemyInList(List<GameObject> enemyList_)
@@ -22,7 +23,8 @@ public class Spawner : MonoBehaviour
         {
             enemyPrefabsList.Add(enemy);
         }
-        SpawnEnemy();
+        
+        StartCoroutine(SpawnEnemy());
     }
 
     private IEnumerator SpawnEnemy()

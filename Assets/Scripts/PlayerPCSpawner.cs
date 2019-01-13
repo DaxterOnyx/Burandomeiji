@@ -8,8 +8,10 @@ public class PlayerPCSpawner : MonoBehaviour
 {
     private PlayerPCController playerPCController;
     private Spawner spawnerScript;
+    [SerializeField] private GameObject enemy;
 
-    public List<GameObject> enemyList;
+    
+    [HideInInspector] public List<GameObject> enemyList;
     private List<GameObject> spawnerList;
 
     [SerializeField] private GameObject spawnerPrefabs;
@@ -19,6 +21,7 @@ public class PlayerPCSpawner : MonoBehaviour
         playerPCController = GetComponent<PlayerPCController>();
         enemyList = new List<GameObject>();
         spawnerList = new List<GameObject>();
+        enemyList.Add(enemy);
     }
 
     private void Update()
@@ -47,8 +50,6 @@ public class PlayerPCSpawner : MonoBehaviour
     {
         GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point, Quaternion.identity);
         spawnerList.Add(spawnerIns_);
-        spawnerScript = spawnerIns_.GetComponent<Spawner>();
-        spawnerScript.AddEnemyInList(enemyList);
     }
 
     public void DestroySpawner(GameObject _spawner)

@@ -7,20 +7,21 @@ using UnityEngine;
 public class PlayerPCSpawner : MonoBehaviour
 {
     private PlayerPCController playerPCController;
-    private Spawner spawnerScript;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject spawnerPrefabs;
+
+    // Liste des ennemies qui seront spawn au prochain spawner
+    [HideInInspector] public List<GameObject> enemyList = new List<GameObject>();
+    // Liste des spawner sur la map
+    private List<GameObject> spawnerList = new List<GameObject>();
+    // Tableau contenant tout les ennemies
+    [SerializeField] private GameObject[] allEnemyTab;
 
     
-    [HideInInspector] public List<GameObject> enemyList;
-    private List<GameObject> spawnerList;
-
-    [SerializeField] private GameObject spawnerPrefabs;
 
     private void Start()
     {
         playerPCController = GetComponent<PlayerPCController>();
-        enemyList = new List<GameObject>();
-        spawnerList = new List<GameObject>();
         enemyList.Add(enemy);
     }
 
@@ -36,7 +37,6 @@ public class PlayerPCSpawner : MonoBehaviour
                 Debug.DrawRay(hit.point, hit.normal * 10, Color.green);
                 if (playerPCController.ClickDown)
                 {
-                    Debug.Log("Click");
                     if (enemyList.Count > 0)
                     {
                         SpawnSpawner(hit);

@@ -8,10 +8,10 @@ public class IAScript : MonoBehaviour {
     public Collider AreaOfHit;
     public float hitCooldown;
     public float speed;
-    public int health;
+    public float health;
     public float mana;
     public float hitDamage;
-    public string enemyName = "default";
+    public string enemyName;
 
     private GameObject m_target;
     private NavMeshAgent m_agent;
@@ -25,9 +25,12 @@ public class IAScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		//follow target
-		if(m_target != null)
-			m_agent.SetDestination(m_target.transform.position);
+        //follow target
+        if (m_target != null)
+        {
+            m_agent.speed = speed;
+            m_agent.SetDestination(m_target.transform.position);
+        }
     }
 
 }

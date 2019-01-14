@@ -10,7 +10,6 @@ public class PopupEnemy : MonoBehaviour {
     private List<GameObject> popList = new List<GameObject>();
 
     [SerializeField] private GameObject popup;
-    [SerializeField] private GameObject enemy;
 
     private int count = 0;
 
@@ -25,15 +24,23 @@ public class PopupEnemy : MonoBehaviour {
                     foreach(GameObject pop in popList)
                     {
                         Destroy(pop);
+                        count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
                     }
                 }
 
-                count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
                 GameObject popIns_ = (GameObject)Instantiate(popup, this.transform);
                 string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<IAScript>().enemyName;
-                popIns_.GetComponent<PopupEnemyItem>().Setup(enemyName);
+                popIns_.GetComponent<PopupEnemyItem>().Setup("count " + count);
                 popList.Add(popIns_);
+                StartCoroutine(DeletePopup(popIns_));
             }
         }
 	}
+
+    IEnumerator DeletePopup(GameObject _popIns)
+    {
+        yield return new WaitForSeconds(3f);
+        popList.Remove(_popIns);
+        Destroy(_popIns);
+    }
 }

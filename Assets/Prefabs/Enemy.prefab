@@ -186,8 +186,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaOfHit: {fileID: 64081444997657068}
-  HitCouldown: 1
-  HitDamage: 1
+  hitCooldown: 1
+  speed: 4
+  health: 100
+  mana: 10
+  hitDamage: 3
+  enemyName: default
 --- !u!136 &136125488782312406
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -8,20 +8,24 @@ public class Spawner : MonoBehaviour
     [SerializeField] private PlayerPCSpawner playerPCSpawner;
 
     // Liste des ennemies que le spawner va faire spawn
-    private List<GameObject> enemySpawnList = new List<GameObject>();
+    private List<GameObject> enemySpawnList;
     // Temps en seconde entre le spawn de deux ennemies
     [SerializeField] [Range(1f, 5f)] private float timeBtwTwoSpawn = 2f;
 
-    private void Start()
+    private void Awake()
     {
-        foreach (GameObject enemy in playerPCSpawner.enemyList)
+        enemySpawnList = new List<GameObject>();
+    }
+
+    public void AddEnemyToList(List<GameObject> _enemyList)
+    {
+        foreach (GameObject enemy in _enemyList)
         {
             enemySpawnList.Add(enemy);
         }
-        StartCoroutine(SpawnEnemy());
     }
 
-    private IEnumerator SpawnEnemy()
+    public IEnumerator SpawnEnemy()
     {
         foreach (GameObject enemy in enemySpawnList)
         {

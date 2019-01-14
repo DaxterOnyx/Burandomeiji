@@ -114,37 +114,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: f4abcaa0707eb7048a4912e569340672, type: 2}
---- !u!1 &46365761 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1192862646262678, guid: e47db903777574043bc120bac8d01c0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 500615319}
---- !u!114 &46365762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46365761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_angle_up: 10
-  speed_angle_turn: 5
-  speed: 10
-  cameraRotationLimit: 90
---- !u!114 &46365763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46365761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ec06b46544934eb8ac924fdbed9eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &81444991
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,9 +841,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114707502108153376, guid: e47db903777574043bc120bac8d01c0c, type: 2}
-    - {fileID: 114687927097806008, guid: e47db903777574043bc120bac8d01c0c, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47db903777574043bc120bac8d01c0c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &594825812 stripped
@@ -1058,11 +1025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09985ebb78165ef47a3b529c020f056a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPCController: {fileID: 46365763}
+  playerPCController: {fileID: 114707502108153376, guid: e47db903777574043bc120bac8d01c0c,
+    type: 2}
   playerPCSpawner: {fileID: 114401180596391590, guid: e47db903777574043bc120bac8d01c0c,
     type: 2}
   popup: {fileID: 1011890504261112, guid: ad3fc5d1c1286d14b833ed6677494a1b, type: 2}
-  enemy: {fileID: 1545489681706988, guid: 65588a5b62ef2384684bb18dfcc2401e, type: 2}
 --- !u!114 &615706192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,9 +1075,9 @@ Canvas:
   m_GameObject: {fileID: 615706190}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1723822542}
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3740,6 +3707,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717670101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &1723822542 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20468994572915638, guid: e47db903777574043bc120bac8d01c0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500615319}
 --- !u!1 &1734587045
 GameObject:
   m_ObjectHideFlags: 0

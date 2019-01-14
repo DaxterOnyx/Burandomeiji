@@ -5,14 +5,6 @@ using UnityEngine.AI;
 
 public class IAScript : MonoBehaviour {
 
-    public Collider AreaOfHit;
-    public float hitCooldown;
-    public float speed;
-    public float health;
-    public float mana;
-    public float hitDamage;
-    public string enemyName;
-
     private GameObject m_target;
     private NavMeshAgent m_agent;
 
@@ -22,12 +14,15 @@ public class IAScript : MonoBehaviour {
 		m_target = GameObject.FindGameObjectWithTag("Player");
     }
 	
+    
+
 	// Update is called once per frame
 	void Update ()
     {
         //follow target
         if (m_target != null)
         {
+            float speed = GetComponent<EnemyStats>().speed;
             m_agent.speed = speed;
             m_agent.SetDestination(m_target.transform.position);
         }

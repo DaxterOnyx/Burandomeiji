@@ -29,7 +29,7 @@ public class PopupEnemy : MonoBehaviour {
                 }
 
                 GameObject popIns_ = (GameObject)Instantiate(popup, this.transform);
-                string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<IAScript>().enemyName;
+                string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<EnemyStats>().enemyName;
                 popIns_.GetComponent<PopupEnemyItem>().Setup("count " + count);
                 popList.Add(popIns_);
                 StartCoroutine(DeletePopup(popIns_));

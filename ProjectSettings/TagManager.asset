@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ExcludeTeleport
   - Terrain
+  - Enemy
   layers:
   - Default
   - TransparentFX

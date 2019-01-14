@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 136125488782312406}
   - component: {fileID: 195153495866013762}
   - component: {fileID: 114981126235935946}
+  - component: {fileID: 114831387247775298}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,6 +175,24 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114831387247775298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545489681706988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_areaOfHit: {fileID: 64081444997657068}
+  m_hitCooldown: 0
+  m_speed: 0
+  m_health: 0
+  m_mana: 0
+  m_hitDamage: 0
+  m_enemyName: 
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,13 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebee537a86ddb54aae895ee75f47c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AreaOfHit: {fileID: 64081444997657068}
-  hitCooldown: 1
-  speed: 4
-  health: 100
-  mana: 10
-  hitDamage: 3
-  enemyName: default
 --- !u!136 &136125488782312406
 CapsuleCollider:
   m_ObjectHideFlags: 1

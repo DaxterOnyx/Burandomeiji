@@ -35,4 +35,9 @@ public class PlayerPCController : MonoBehaviour {
     {
         get { return Input.GetAxis("Vertical"); }
     }
+
+    public bool SwitchEnemy
+    {
+        get { return Input.GetButtonDown("SwitchEnemy"); }
+    }
 }

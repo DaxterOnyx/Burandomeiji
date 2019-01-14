@@ -222,10 +222,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1545489681706988, guid: 65588a5b62ef2384684bb18dfcc2401e, type: 2}
-  enemyList:
-  - {fileID: 1545489681706988, guid: 65588a5b62ef2384684bb18dfcc2401e, type: 2}
   spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
     type: 2}
+  enemyList:
+  - {fileID: 1545489681706988, guid: 65588a5b62ef2384684bb18dfcc2401e, type: 2}
+  allEnemyTab:
+  - {fileID: 1545489681706988, guid: 65588a5b62ef2384684bb18dfcc2401e, type: 2}
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1

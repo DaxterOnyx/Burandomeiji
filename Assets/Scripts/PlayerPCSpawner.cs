@@ -15,7 +15,7 @@ public class PlayerPCSpawner : MonoBehaviour
     // Liste des spawner sur la map
     private List<GameObject> spawnerList = new List<GameObject>();
     // Tableau contenant tout les ennemies
-    [SerializeField] private GameObject[] allEnemyTab;
+    public GameObject[] allEnemyTab;
 
     
 

@@ -5,10 +5,13 @@ using UnityEngine.AI;
 
 public class IAScript : MonoBehaviour {
 
-    [Header("Attack")]
     public Collider AreaOfHit;
-    public float HitCouldown;
-    public float HitDamage;
+    public float hitCooldown;
+    public float speed;
+    public int health;
+    public float mana;
+    public float hitDamage;
+    public string enemyName = "default";
 
     private GameObject m_target;
     private NavMeshAgent m_agent;

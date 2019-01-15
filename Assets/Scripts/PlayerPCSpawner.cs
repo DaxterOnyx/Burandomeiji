@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerPCMotor))]
 public class PlayerPCSpawner : MonoBehaviour
 {
-    private PlayerPCController playerPCController;
+    #region Avec plusieurs monstres
+    /*private PlayerPCController playerPCController;
     [SerializeField] private GameObject spawnerPrefabs;
 
     // Liste des ennemies qui seront spawn au prochain spawner
@@ -61,5 +62,68 @@ public class PlayerPCSpawner : MonoBehaviour
     {
         spawnerList.Remove(_spawner);
         Destroy(_spawner, 2f);
+    }*/
+    #endregion
+
+    #region Avec un seul monstre
+
+    private PlayerPCController playerPCController;
+    [SerializeField] private GameObject spawnerPrefabs;
+
+    private GameObject enemyForSpawn;
+    
+    // Tableau contenant tout les ennemies
+    public GameObject[] allEnemyTab;
+
+    private void Start()
+    {
+        playerPCController = GetComponent<PlayerPCController>();
+        enemyForSpawn = allEnemyTab[0];
     }
+
+    private void Update()
+    {
+        ///Click spawn
+        Debug.Log("enemy in Update : " + enemyForSpawn.name);
+        Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if (hit.collider.gameObject.tag == "Terrain")
+            {
+                Debug.DrawRay(hit.point, hit.normal * 10, Color.green);
+                if (playerPCController.ClickDown) 
+                {
+                    if (enemyForSpawn != null)
+                    {
+                        StartCoroutine(Spawn(hit));
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator Spawn(RaycastHit _hit)
+    {
+        // Instanciation du spawner
+        GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point, Quaternion.identity);
+        yield return new WaitForSeconds(0.6f);
+
+        // Instanciation du monstre "enemyDistance" OU "enemyCaC"
+        // ICI LA VARIABLE enemySpawn PREND TOUJOURS LA MEME VALEUR
+        GameObject enemyIns_ = Instantiate(enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
+
+        Destroy(spawnerIns_, 1.5f);
+    }
+
+    public void ChangeEnemy(int count_)
+    {
+        // Si count_ = 1 alors c'est un enemy au Cac
+        // Si count_ = 0 alors c'est un enemy distance
+        enemyForSpawn = allEnemyTab[count_];
+        // ICI LA VARIABLE enemySpawn EST BIEN MODIFIE 
+        Debug.Log("enemy in Change : " + enemyForSpawn.name);
+    }
+
+    #endregion
 }

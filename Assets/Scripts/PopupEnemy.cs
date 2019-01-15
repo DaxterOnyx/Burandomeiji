@@ -21,16 +21,17 @@ public class PopupEnemy : MonoBehaviour {
             {
                 if(popList.Count > 0)
                 {
-                    foreach(GameObject pop in popList)
-                    {
-                        Destroy(pop);
-                        count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
-                    }
+                    GameObject pop = popList[0];
+                    popList.Remove(pop);
+                    Destroy(pop);
+                    count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
                 }
-
+                playerPCSpawner.ChangeEnemy(count);
                 GameObject popIns_ = (GameObject)Instantiate(popup, this.transform);
                 string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<EnemyStats>().enemyName;
-                popIns_.GetComponent<PopupEnemyItem>().Setup("count " + count);
+                popIns_.GetComponent<PopupEnemyItem>().Setup(enemyName);
+                Debug.Log(enemyName);
+               
                 popList.Add(popIns_);
                 StartCoroutine(DeletePopup(popIns_));
             }

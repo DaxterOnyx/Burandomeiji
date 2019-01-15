@@ -19,7 +19,7 @@ public class EnemyStats : MonoBehaviour {
         private set { m_hitCooldown = value; }
     }
 
-    [SerializeField] private float m_speed;
+    [SerializeField] private float m_speed = 2;
     public float speed
     {
         get { return m_speed; }

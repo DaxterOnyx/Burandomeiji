@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PopupEnemyItem : MonoBehaviour {
 
-    [SerializeField] Text popupText;
+    [SerializeField] private Text popupText;
 
     public void Setup(string name)
     {

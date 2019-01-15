@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114981126235935946}
   - component: {fileID: 114831387247775298}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyCaC
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,11 +188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_areaOfHit: {fileID: 64081444997657068}
   m_hitCooldown: 0
-  m_speed: 0
+  m_speed: 4
   m_health: 0
   m_mana: 0
   m_hitDamage: 0
-  m_enemyName: 
+  m_enemyName: CaC
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -16,6 +16,8 @@ public class PlayerPCMotor : MonoBehaviour {
     [SerializeField] private float speed_angle_turn = 5f;
     [SerializeField] private float speed = 90f;
     [SerializeField] private float cameraRotationLimit = 90f;
+    [SerializeField] private float speed_Up = 0.75f;
+    [SerializeField] private float speed_Down = 0.75f;
 
     private Vector3 localRotation;
 
@@ -30,6 +32,14 @@ public class PlayerPCMotor : MonoBehaviour {
     {
         PerformMovement();
         PerformRotation();
+        if(playerPCController.Up)
+        {
+            PerformUp();
+        }
+        if(playerPCController.Down)
+        {
+            PerformDown();
+        }
     }
 
     private void PerformMovement()
@@ -43,5 +53,24 @@ public class PlayerPCMotor : MonoBehaviour {
     {
         localRotation = new Vector3(Mathf.Clamp(localRotation.x - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * playerPCController.MouseX, 0f);
         this.transform.localRotation = Quaternion.Euler(localRotation);
+    }
+
+    private void PerformUp()
+    {
+        rb.velocity = Vector3.zero;
+        Vector3 velocity = new Vector3(0f, speed_Up, 0f);
+        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
+    }
+    private void PerformDown()
+    {
+        Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.down));
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(ray, out hit, 3f))
+        {
+            return;
+        }
+        rb.velocity = Vector3.zero;
+        Vector3 velocity = new Vector3(0f, -speed_Down, 0f);
+        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
     }
 }

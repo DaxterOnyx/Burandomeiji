@@ -17,12 +17,12 @@ public class PlayerPCController : MonoBehaviour {
     //Axis View
     public float MouseX
     {
-        get { return Input.GetAxisRaw("Mouse X"); }
+        get { return Input.GetAxis("Mouse X"); }
     }
 
     public float MouseY
     {
-        get { return Input.GetAxisRaw("Mouse Y"); }
+        get { return Input.GetAxis("Mouse Y"); }
     }
 
     //Axis Mouvement
@@ -39,5 +39,15 @@ public class PlayerPCController : MonoBehaviour {
     public bool SwitchEnemy
     {
         get { return Input.GetButtonDown("SwitchEnemy"); }
+    }
+
+    public bool Up
+    {
+        get { return Input.GetButton("Up"); }
+    }
+
+    public bool Down
+    {
+        get { return Input.GetButton("Down"); }
     }
 }

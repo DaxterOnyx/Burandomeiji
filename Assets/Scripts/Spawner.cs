@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     
-    [SerializeField] private PlayerPCSpawner playerPCSpawner;
+    /*[SerializeField] private PlayerPCSpawner playerPCSpawner;
 
     // Liste des ennemies que le spawner va faire spawn
     private List<GameObject> enemySpawnList;
@@ -33,5 +33,5 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(timeBtwTwoSpawn);
         }
         playerPCSpawner.DestroySpawner(this.gameObject);
-    }
+    }*/
 }

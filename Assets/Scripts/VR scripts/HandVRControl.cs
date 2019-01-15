@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class HandVRControl : MonoBehaviour {
@@ -29,7 +27,7 @@ public class HandVRControl : MonoBehaviour {
 	{
 		if(p_weapon == null)
 		{
-			UnityEngine.Debug.LogError("new weapon is null");
+			Debug.LogError("new weapon is null");
 			return;
 		}
 		if(ActiveWeapon != null)
@@ -44,5 +42,10 @@ public class HandVRControl : MonoBehaviour {
 	internal void SwitchWeapon()
 	{
 		ChangeActiveWeapon(Weapons[Weapons.IndexOf(ActiveWeapon)+1%Weapons.Count]);
+	}
+
+	internal void Use()
+	{
+		ActiveWeapon.Use();
 	}
 }

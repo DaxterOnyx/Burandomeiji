@@ -8,8 +8,9 @@ public class WandShoot : WeaponScript
 	public float projectileSpeed = 1000f;
 	public float projectileLife = 5f;
 
-	public override void Use()
+	public override void EndUse()
 	{
+		base.Use();
 		if (projectile != null && projectileSpawnPoint != null)
 		{
 			GameObject clonedProjectile = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
@@ -22,5 +23,10 @@ public class WandShoot : WeaponScript
 			}
 			Destroy(clonedProjectile, destroyTime);
 		}
+	}
+
+	private void FixedUpdate()
+	{
+		//TODO charge
 	}
 }

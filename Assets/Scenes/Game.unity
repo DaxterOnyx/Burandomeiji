@@ -841,6 +841,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114401180596391590, guid: e47db903777574043bc120bac8d01c0c,
+        type: 2}
+      propertyPath: popupEnemy
+      value: 
+      objectReference: {fileID: 615706191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47db903777574043bc120bac8d01c0c, type: 2}
   m_IsPrefabAsset: 0
@@ -1025,11 +1030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09985ebb78165ef47a3b529c020f056a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPCController: {fileID: 114707502108153376, guid: e47db903777574043bc120bac8d01c0c,
-    type: 2}
-  playerPCSpawner: {fileID: 114401180596391590, guid: e47db903777574043bc120bac8d01c0c,
-    type: 2}
+  playerPC: {fileID: 2047442658}
   popup: {fileID: 1011890504261112, guid: ad3fc5d1c1286d14b833ed6677494a1b, type: 2}
+  count: 0
 --- !u!114 &615706192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4821,6 +4824,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+--- !u!1 &2047442658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1192862646262678, guid: e47db903777574043bc120bac8d01c0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500615319}
 --- !u!1 &2051829045
 GameObject:
   m_ObjectHideFlags: 0

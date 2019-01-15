@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PopupEnemy : MonoBehaviour {
 
-    [SerializeField] private PlayerPCController playerPCController;
-    [SerializeField] private PlayerPCSpawner playerPCSpawner;
+
+    [SerializeField] private GameObject playerPC;
+    private PlayerPCController playerPCController;
+    private PlayerPCSpawner playerPCSpawner;
 
     private List<GameObject> popList = new List<GameObject>();
 
@@ -13,7 +15,13 @@ public class PopupEnemy : MonoBehaviour {
 
     private int count = 0;
 
-	void Update ()
+    private void Start()
+    {
+        playerPCController = playerPC.GetComponent<PlayerPCController>();
+        playerPCSpawner = playerPC.GetComponent<PlayerPCSpawner>();
+    }
+
+	private void Update ()
     {
 		if(playerPCController.SwitchEnemy)
         {
@@ -26,11 +34,13 @@ public class PopupEnemy : MonoBehaviour {
                     Destroy(pop);
                     count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
                 }
+
                 playerPCSpawner.ChangeEnemy(count);
+
                 GameObject popIns_ = (GameObject)Instantiate(popup, this.transform);
+
                 string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<EnemyStats>().enemyName;
                 popIns_.GetComponent<PopupEnemyItem>().Setup(enemyName);
-                Debug.Log(enemyName);
                
                 popList.Add(popIns_);
                 StartCoroutine(DeletePopup(popIns_));

@@ -73,7 +73,11 @@ public class PlayerPCSpawner : MonoBehaviour
     private GameObject enemyForSpawn;
     
     // Tableau contenant tout les ennemies
-    public GameObject[] allEnemyTab;
+    public GameObject[] allEnemyTab
+    {
+        get { return allEnemyTab; }
+        private set { allEnemyTab = value; }
+    }
 
     private void Start()
     {
@@ -105,12 +109,10 @@ public class PlayerPCSpawner : MonoBehaviour
 
     private IEnumerator Spawn(RaycastHit _hit)
     {
-        // Instanciation du spawner
         GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point, Quaternion.identity);
+
         yield return new WaitForSeconds(0.6f);
 
-        // Instanciation du monstre "enemyDistance" OU "enemyCaC"
-        // ICI LA VARIABLE enemySpawn PREND TOUJOURS LA MEME VALEUR
         GameObject enemyIns_ = Instantiate(enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
 
         Destroy(spawnerIns_, 1.5f);
@@ -118,11 +120,7 @@ public class PlayerPCSpawner : MonoBehaviour
 
     public void ChangeEnemy(int count_)
     {
-        // Si count_ = 1 alors c'est un enemy au Cac
-        // Si count_ = 0 alors c'est un enemy distance
         enemyForSpawn = allEnemyTab[count_];
-        // ICI LA VARIABLE enemySpawn EST BIEN MODIFIE 
-        Debug.Log("enemy in Change : " + enemyForSpawn.name);
     }
 
     #endregion

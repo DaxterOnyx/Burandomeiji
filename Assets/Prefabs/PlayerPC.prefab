@@ -223,7 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
     type: 2}
-  popupEnemy: {fileID: 0}
   allEnemyTab:
   - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
   - {fileID: 1545489681706988, guid: 751b87220f5c84e4b90839de8d35ce4c, type: 2}
@@ -242,8 +241,7 @@ MonoBehaviour:
   speed_angle_turn: 5
   speed: 30
   cameraRotationLimit: 90
-  speed_Up: 0.75
-  speed_Down: 0.75
+  speed_Up_Down: 0.75
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

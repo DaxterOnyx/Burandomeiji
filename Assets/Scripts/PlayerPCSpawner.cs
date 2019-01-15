@@ -71,24 +71,22 @@ public class PlayerPCSpawner : MonoBehaviour
     [SerializeField] private GameObject spawnerPrefabs;
 
     private GameObject enemyForSpawn;
-    
+
     // Tableau contenant tout les ennemies
-    public GameObject[] allEnemyTab
-    {
-        get { return allEnemyTab; }
-        private set { allEnemyTab = value; }
-    }
+    public GameObject[] allEnemyTab;
 
     private void Start()
     {
         playerPCController = GetComponent<PlayerPCController>();
-        enemyForSpawn = allEnemyTab[0];
+        if (allEnemyTab.Length > 0)
+        {
+            enemyForSpawn = allEnemyTab[0];
+        }
     }
 
     private void Update()
     {
         ///Click spawn
-        Debug.Log("enemy in Update : " + enemyForSpawn.name);
         Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
@@ -110,17 +108,17 @@ public class PlayerPCSpawner : MonoBehaviour
     private IEnumerator Spawn(RaycastHit _hit)
     {
         GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point, Quaternion.identity);
-
         yield return new WaitForSeconds(0.6f);
-
         GameObject enemyIns_ = Instantiate(enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
-
         Destroy(spawnerIns_, 1.5f);
     }
 
     public void ChangeEnemy(int count_)
     {
-        enemyForSpawn = allEnemyTab[count_];
+        if (allEnemyTab.Length > 0)
+        {
+            enemyForSpawn = allEnemyTab[count_];
+        }
     }
 
     #endregion

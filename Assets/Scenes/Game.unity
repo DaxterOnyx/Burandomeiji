@@ -841,11 +841,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114401180596391590, guid: e47db903777574043bc120bac8d01c0c,
-        type: 2}
-      propertyPath: popupEnemy
-      value: 
-      objectReference: {fileID: 615706191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47db903777574043bc120bac8d01c0c, type: 2}
   m_IsPrefabAsset: 0
@@ -1032,7 +1027,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPC: {fileID: 2047442658}
   popup: {fileID: 1011890504261112, guid: ad3fc5d1c1286d14b833ed6677494a1b, type: 2}
-  count: 0
 --- !u!114 &615706192
 MonoBehaviour:
   m_ObjectHideFlags: 0

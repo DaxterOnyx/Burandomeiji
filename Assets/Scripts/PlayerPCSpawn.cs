@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPCSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject spawnerPrefabs;
-    private GameObject enemyForSpawn;
+    [HideInInspector] public GameObject enemyForSpawn;
     public GameObject[] allEnemyTab; 
 
     private void Start()

@@ -9,16 +9,20 @@ public class PlayerPC : MonoBehaviour {
     /* Différents scripts */
     private PlayerPCController playerPCController;
     private PlayerPCSpawn playerPCSpawn;
-    private UIPlayerPC UI;
+    private BonusMenu bonusMenuScript;
+    private ManaBarScript manaBarScript;
+    private EnemyMenu enemyMenuScript;
 
     /* Prefabs et instance */
     [SerializeField] private GameObject UIPlayerPCPrefabs;
     private GameObject UIPlayerPCInstance;
+    private GameObject[] bonusMenuGo;
 
     /* Attributs */
     private bool canSpawn = true;
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
+    [SerializeField] private float manaRegen = 50f;
 
 	private void Awake ()
     {
@@ -27,15 +31,26 @@ public class PlayerPC : MonoBehaviour {
 
         UIPlayerPCInstance = Instantiate(UIPlayerPCPrefabs);
         UIPlayerPCInstance.name = UIPlayerPCPrefabs.name;
-        UI = UIPlayerPCInstance.GetComponent<UIPlayerPC>();
+        bonusMenuScript = UIPlayerPCInstance.GetComponent<BonusMenu>();
+        enemyMenuScript = UIPlayerPCInstance.GetComponent<EnemyMenu>();
+        manaBarScript = UIPlayerPCInstance.GetComponent<ManaBarScript>();
 
         currentMana = maxMana;
-        UI.SetMana(maxMana, currentMana);
-        UI.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
-	}
+        manaBarScript.SetMana(maxMana, currentMana);
+        manaBarScript.SetManaRegen(manaRegen);
+        enemyMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
+        bonusMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
+        bonusMenuGo = GameObject.FindGameObjectsWithTag("BonusMenu");
+        bonusMenuGo[0].SetActive(false);
+    }
 	
 	private void Update ()
     {
+        if (currentMana < maxMana)
+        {
+            RegenMana();
+        }
+
         if(canSpawn)
         {
             Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
@@ -45,27 +60,68 @@ public class PlayerPC : MonoBehaviour {
                 if (hit.collider.gameObject.tag == "Terrain")
                 {
                     //Debug.DrawRay(hit.point, hit.normal * 10, Color.green);
-                    if (playerPCController.ClickDown)
+                    if (playerPCController.ClickDown0)
                     {
-                        StartCoroutine(playerPCSpawn.Spawn(hit));
+                        if(currentMana >= playerPCSpawn.enemyForSpawn.GetComponent<EnemyStats>().mana)
+                        {
+                            StartCoroutine(playerPCSpawn.Spawn(hit));
+                            currentMana -= playerPCSpawn.enemyForSpawn.GetComponent<EnemyStats>().mana;
+                        }
+                        
                     }
                 }
             }
+            if (playerPCController.ScrollWheel < 0f)
+            {
+                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
+            }
+            else if(playerPCController.ScrollWheel > 0f)
+            {
+                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
+            }
+        }
+        else
+        {
+            if (playerPCController.ScrollWheel < 0f)
+            {
+                // Tourner la roue des bonus vers le haut
+            }
+            else if (playerPCController.ScrollWheel > 0f)
+            {
+                // Tourner la roue des bonus vers le bas
+            }
+
+            if(playerPCController.ClickDown0)
+            {
+                // Augmenter le bonus
+            }
+
+            if (playerPCController.ClickDown1)
+            {
+                // Diminuer le bonus
+            }
         }
         
-        if(playerPCController.ScrollWheel < 0f)
+        if(playerPCController.BonusMenu)
         {
-            playerPCSpawn.ChangeEnemy(UI.IconLeft());
+            canSpawn = !canSpawn;
+
+            bonusMenuGo[0].SetActive(!canSpawn);
+            bonusMenuGo[1].SetActive(canSpawn);
         }
-        else if(playerPCController.ScrollWheel > 0f)
-        {
-            playerPCSpawn.ChangeEnemy(UI.IconRight());
-        }
+       
+
+
     }
 
-    IEnumerator RegenMana()
+    private void RegenMana()
     {
-        yield return new WaitForSeconds(1f);
+        currentMana = currentMana + manaRegen * Time.deltaTime;
 
+        if (currentMana > maxMana)
+        {
+            currentMana = maxMana;
+        }
+        manaBarScript.SetMana(maxMana, currentMana);
     }
 }

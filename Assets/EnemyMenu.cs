@@ -1,21 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class UIPlayerPC : MonoBehaviour {
+public class EnemyMenu : MonoBehaviour {
 
-    [SerializeField] protected RectTransform manaBarFill;
-    [SerializeField] protected RectTransform enemyBar;
+    [SerializeField] private RectTransform enemyBar;
+    [SerializeField] private TextMeshProUGUI manaCost;
 
-    protected List<GameObject> enemyIconList = new List<GameObject>();
+    private List<GameObject> enemyIconList = new List<GameObject>();
     [HideInInspector] public GameObject[] allEnemyTab;
 
     [HideInInspector] public int currentEnemyIcon;
-
-    public void SetMana(float _manaMax, float _amount)
-    {
-        manaBarFill.localScale = new Vector3(_amount/_manaMax, 1f, 1f);
-    }
 
     public void SetAllEnemyTab(GameObject[] tab_)
     {
@@ -27,12 +23,13 @@ public class UIPlayerPC : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
-            InsIcon(i % allEnemyTab.Length, true);
-            currentEnemyIcon = 1;
+            InsIcon(i % allEnemyTab.Length, true);   
         }
+        currentEnemyIcon = 1;
+        SetManaCost(currentEnemyIcon);
     }
 
-    protected void InsIcon(int number_, bool active_)
+    private void InsIcon(int number_, bool active_)
     {
         if (number_ >= 0 && number_ < allEnemyTab.Length)
         {
@@ -62,6 +59,9 @@ public class UIPlayerPC : MonoBehaviour {
 
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
+
+        SetManaCost(currentEnemyIcon);
+
         return currentEnemyIcon;
     }
 
@@ -92,6 +92,14 @@ public class UIPlayerPC : MonoBehaviour {
 
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
+
+        SetManaCost(currentEnemyIcon);
+
         return currentEnemyIcon;
+    }
+
+    private void SetManaCost(int i)
+    {
+        manaCost.text = "-" + allEnemyTab[i].GetComponent<EnemyStats>().mana + " mana";
     }
 }

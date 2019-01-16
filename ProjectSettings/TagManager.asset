@@ -7,6 +7,7 @@ TagManager:
   - ExcludeTeleport
   - Terrain
   - Enemy
+  - BonusMenu
   layers:
   - Default
   - TransparentFX

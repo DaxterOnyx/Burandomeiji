@@ -459,7 +459,7 @@ Light:
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 24.9
 --- !u!4 &170076735
 Transform:
   m_ObjectHideFlags: 0
@@ -467,7 +467,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 24.01, z: -19.7}
+  m_LocalPosition: {x: 0, y: 88.7, z: -19.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2557,7 +2557,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2565,7 +2565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.27
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
       propertyPath: m_LocalRotation.x

@@ -194,7 +194,12 @@ MonoBehaviour:
   m_health: 1
   m_hitDamage: 1
   m_critical: 1
-  m_enemyType: 0
+  m_mana: 75
+  m_multSpeed: 0
+  m_multHealth: 0
+  m_multHitDamage: 0
+  m_multCritical: 0
+  m_multHitCooldown: 0
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1

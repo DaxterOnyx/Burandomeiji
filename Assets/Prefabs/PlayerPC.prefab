@@ -224,6 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
     type: 2}
+  enemyForSpawn: {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650,
+    type: 2}
   allEnemyTab:
   - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
   - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
@@ -244,6 +246,7 @@ MonoBehaviour:
   UIPlayerPCPrefabs: {fileID: 1816583332996702, guid: 5cae347fc8c6d9245bea4a7c513ad9f9,
     type: 2}
   maxMana: 1000
+  manaRegen: 50
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1

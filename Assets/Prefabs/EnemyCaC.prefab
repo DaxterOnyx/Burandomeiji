@@ -186,13 +186,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_areaOfHit: {fileID: 64081444997657068}
-  m_hitCooldown: 0
-  m_speed: 4
-  m_health: 0
-  m_mana: 0
-  m_hitDamage: 0
+  areaOfHit: {fileID: 64081444997657068}
   m_enemyName: CaC
+  m_hitCooldown: 1
+  m_speed: 4
+  m_health: 1
+  m_hitDamage: 1
+  m_critical: 1
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1

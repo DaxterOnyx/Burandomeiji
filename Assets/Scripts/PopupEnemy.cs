@@ -7,7 +7,7 @@ public class PopupEnemy : MonoBehaviour {
 
     [SerializeField] private GameObject playerPC;
     private PlayerPCController playerPCController;
-    private PlayerPCSpawner playerPCSpawner;
+    private PlayerPCSpawn playerPCSpawn;
 
     private List<GameObject> popList = new List<GameObject>();
 
@@ -18,28 +18,28 @@ public class PopupEnemy : MonoBehaviour {
     private void Start()
     {
         playerPCController = playerPC.GetComponent<PlayerPCController>();
-        playerPCSpawner = playerPC.GetComponent<PlayerPCSpawner>();
+        playerPCSpawn = playerPC.GetComponent<PlayerPCSpawn>();
     }
 
 	private void Update ()
     {
 		if(playerPCController.SwitchEnemy)
         {
-            if (playerPCSpawner.allEnemyTab.Length > 0)
+            if (playerPCSpawn.allEnemyTab.Length > 0)
             {
                 if(popList.Count > 0)
                 {
                     GameObject pop = popList[0];
                     popList.Remove(pop);
                     Destroy(pop);
-                    count = (count + 1) % playerPCSpawner.allEnemyTab.Length;
+                    count = (count + 1) % playerPCSpawn.allEnemyTab.Length;
                 }
 
-                playerPCSpawner.ChangeEnemy(count);
+                playerPCSpawn.ChangeEnemy(count);
 
                 GameObject popIns_ = (GameObject)Instantiate(popup, this.transform);
 
-                string enemyName = playerPCSpawner.allEnemyTab[count].GetComponent<EnemyStats>().enemyName;
+                string enemyName = playerPCSpawn.allEnemyTab[count].GetComponent<EnemyStats>().enemyName;
                 popIns_.GetComponent<PopupEnemyItem>().Setup(enemyName);
                
                 popList.Add(popIns_);

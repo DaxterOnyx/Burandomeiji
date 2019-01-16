@@ -4,53 +4,27 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
 
-    
-    [SerializeField] private Collider m_areaOfHit;
-    public Collider areaOfHit
-    {
-        get { return m_areaOfHit; }
-        private set { m_areaOfHit = value; }
-    }
 
-    [SerializeField] private float m_hitCooldown;
-    public float hitCooldown
-    {
-        get { return m_hitCooldown; }
-        private set { m_hitCooldown = value; }
-    }
-
-    [SerializeField] private float m_speed = 2;
-    public float speed
-    {
-        get { return m_speed; }
-        private set { m_speed = value; }
-    }
-
-    [SerializeField] private float m_health;
-    public float health
-    {
-        get { return m_health; }
-        private set { m_health = value; }
-    }
-
-    [SerializeField] private float m_mana;
-    public float mana
-    {
-        get { return m_mana; }
-        private set { m_health = value; }
-    }
-
-    [SerializeField] private float m_hitDamage;
-    public float hitDamage
-    {
-        get { return m_hitDamage;  }
-        private set { m_hitDamage = value; }
-    }
+    [SerializeField] public Collider areaOfHit;
 
     [SerializeField] private string m_enemyName;
-    public string enemyName
-    {
-        get { return m_enemyName; }
-        private set { m_enemyName = value; }
-    }
+    [SerializeField] private float m_hitCooldown;
+    [SerializeField] private float m_speed;
+    [SerializeField] private float m_health;
+    [SerializeField] private float m_hitDamage;
+    [SerializeField] private float m_critical;
+
+    /*[SerializeField] private float m_multSpeed;
+    [SerializeField] private float m_multHealth;
+    [SerializeField] private float m_multHitDamage;
+    [SerializeField] private float m_multCritical;
+    [SerializeField] private float m_multHitCooldown;*/
+
+    public string enemyName { get { return m_enemyName; } private set { m_enemyName = value; } }
+    public float hitCooldown { get { return m_hitCooldown;  } private set { m_hitCooldown = value; } }
+    public float speed { get { return m_speed; } private set { m_speed = value; } }
+    public float health { get { return m_health; } private set { m_health = value; } }
+    public float hitDamage { get { return m_hitDamage; } private set { m_hitDamage = value; } }
+    public float critical { get { return m_critical; } private set { m_critical = value; } }
+
 }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114707502108153376}
   - component: {fileID: 114687927097806008}
   - component: {fileID: 114401180596391590}
+  - component: {fileID: 114444346156029134}
   m_Layer: 2
   m_Name: PlayerPC
   m_TagString: Untagged
@@ -226,6 +227,20 @@ MonoBehaviour:
   allEnemyTab:
   - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
   - {fileID: 1545489681706988, guid: 751b87220f5c84e4b90839de8d35ce4c, type: 2}
+--- !u!114 &114444346156029134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192862646262678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b383e9966cf223b4daece0c1f4f01a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIPlayerPCPrefabs: {fileID: 1041230587447736, guid: 5cae347fc8c6d9245bea4a7c513ad9f9,
+    type: 2}
+  maxMana: 1000
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class HandVRControl : MonoBehaviour {
 
@@ -39,13 +41,18 @@ public class HandVRControl : MonoBehaviour {
 		Debug.Log("Active Weapon is " + ActiveWeapon.gameObject);
 	}
 
+	internal void Use(object sender, ControllerInteractionEventArgs e)
+	{
+		ActiveWeapon.Use();
+	}
+
+	internal void EndUse(object sender, ControllerInteractionEventArgs e)
+	{
+		ActiveWeapon.EndUse();
+	}
+
 	internal void SwitchWeapon()
 	{
 		ChangeActiveWeapon(Weapons[Weapons.IndexOf(ActiveWeapon)+1%Weapons.Count]);
-	}
-
-	internal void Use()
-	{
-		ActiveWeapon.Use();
 	}
 }

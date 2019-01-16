@@ -1,13 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-public class SpellBook : WeaponScript
+public class SpellBook : Tool
 {
 	public VRTK.VRTK_RadialMenu RadialMenu;
 
 	private void Awake()
 	{
-		RadialMenu = GetComponentInChildren<VRTK.VRTK_RadialMenu>();
+		if(RadialMenu == null)
+			RadialMenu = GetComponentInChildren<VRTK.VRTK_RadialMenu>();
+		if (RadialMenu == null)
+			Debug.LogError("RadialMenu on SpellBook is null");
 	}
 
 	//TODO @Daxter

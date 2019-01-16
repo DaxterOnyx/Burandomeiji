@@ -11,6 +11,7 @@ public class GunShoot : WeaponScript
 
 	private void FixedUpdate()
 	{
-		Shoot();
+		if(inUse)
+			Shoot();
 	}
 }

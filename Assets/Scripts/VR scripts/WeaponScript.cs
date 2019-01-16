@@ -8,13 +8,13 @@ public abstract class WeaponScript : Tool
 {
     public float projectileSpeed = 1000f;
 	public Transform projectileSpawnPoint;
-	public GameObject Projectile;
+	public GameObject ActiveProjectile;
 
 	public virtual void Shoot()
 	{
-		if (Projectile != null && projectileSpawnPoint != null)
+		if (ActiveProjectile != null && projectileSpawnPoint != null)
 		{
-			GameObject clonedProjectile = Instantiate(Projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+			GameObject clonedProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 			Rigidbody projectileRigidbody = clonedProjectile.GetComponent<Rigidbody>();
 			if (projectileRigidbody != null)
 			{

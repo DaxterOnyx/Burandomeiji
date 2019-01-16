@@ -27,6 +27,8 @@ public class PlayerVRControl : MonoBehaviour {
 		//use weapon
 		LeftHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, true, LeftHand.Use);
 		RightHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, true, RightHand.Use);
+		LeftHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, false, LeftHand.EndUse);
+		RightHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, false, RightHand.EndUse);
 	}
 
 	public void Switch()

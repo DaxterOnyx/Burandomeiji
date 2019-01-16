@@ -55,11 +55,11 @@ public class PlayerPC : MonoBehaviour {
         
         if(playerPCController.ScrollWheel < 0f)
         {
-            UI.IconLeft();
+            playerPCSpawn.ChangeEnemy(UI.IconLeft());
         }
         else if(playerPCController.ScrollWheel > 0f)
         {
-            UI.IconRight();
+            playerPCSpawn.ChangeEnemy(UI.IconRight());
         }
     }
 

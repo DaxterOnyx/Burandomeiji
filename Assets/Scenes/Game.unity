@@ -841,11 +841,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 54014875544311954, guid: e47db903777574043bc120bac8d01c0c,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47db903777574043bc120bac8d01c0c, type: 2}
   m_IsPrefabAsset: 0
@@ -4752,24 +4747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
---- !u!1 &2047442658 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1192862646262678, guid: e47db903777574043bc120bac8d01c0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 500615319}
---- !u!114 &2047442660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047442658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b383e9966cf223b4daece0c1f4f01a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIPlayerPCPrefabs: {fileID: 0}
-  maxMana: 1000
 --- !u!1 &2051829045
 GameObject:
   m_ObjectHideFlags: 0

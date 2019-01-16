@@ -20,7 +20,7 @@ public class PlayerPC : MonoBehaviour {
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
 
-	private void Start ()
+	private void Awake ()
     {
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();
@@ -31,6 +31,7 @@ public class PlayerPC : MonoBehaviour {
 
         currentMana = maxMana;
         UI.SetMana(maxMana, currentMana);
+        UI.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
 	}
 	
 	private void Update ()
@@ -50,6 +51,15 @@ public class PlayerPC : MonoBehaviour {
                     }
                 }
             }
+        }
+        
+        if(playerPCController.ScrollWheel < 0f)
+        {
+            UI.IconLeft();
+        }
+        else if(playerPCController.ScrollWheel > 0f)
+        {
+            UI.IconRight();
         }
     }
 

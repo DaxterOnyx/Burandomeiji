@@ -6,7 +6,7 @@ public class PlayerPCSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject spawnerPrefabs;
     private GameObject enemyForSpawn;
-    public GameObject[] allEnemyTab;
+    public GameObject[] allEnemyTab; 
 
     private void Start()
     {

@@ -36,11 +36,6 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetAxis("Vertical"); }
     }
 
-    public bool SwitchEnemy
-    {
-        get { return Input.GetButtonDown("SwitchEnemy"); }
-    }
-
     public bool Up
     {
         get { return Input.GetButton("Up"); }
@@ -50,4 +45,10 @@ public class PlayerPCController : MonoBehaviour {
     {
         get { return Input.GetButton("Down"); }
     }
+
+    public float ScrollWheel
+    {
+        get { return Input.GetAxis("Mouse ScrollWheel"); }
+    }
+
 }

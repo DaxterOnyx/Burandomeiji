@@ -187,12 +187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaOfHit: {fileID: 64081444997657068}
+  icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Dis
   m_hitCooldown: 1
   m_speed: 4
   m_health: 1
   m_hitDamage: 1
   m_critical: 1
+  m_enemyType: 0
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1

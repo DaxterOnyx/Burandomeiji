@@ -13,8 +13,6 @@ public class IAScript : MonoBehaviour {
         m_agent = GetComponent<NavMeshAgent>();
 		m_target = GameObject.FindGameObjectWithTag("Player");
     }
-	
-    
 
 	// Update is called once per frame
 	void Update ()

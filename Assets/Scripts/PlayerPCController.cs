@@ -5,10 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerPCMotor))]
 public class PlayerPCController : MonoBehaviour {
 
-    public bool ClickDown
+    public bool ClickDown0
     {
         get { return Input.GetMouseButtonDown(0); }
     }
+
+    public bool ClickDown1
+    {
+        get { return Input.GetMouseButtonDown(1); }
+    }
+
     public bool Menu
     {
         get { return Input.GetButtonDown("Cancel"); }
@@ -17,12 +23,12 @@ public class PlayerPCController : MonoBehaviour {
     //Axis View
     public float MouseX
     {
-        get { return Input.GetAxisRaw("Mouse X"); }
+        get { return Input.GetAxis("Mouse X"); }
     }
 
     public float MouseY
     {
-        get { return Input.GetAxisRaw("Mouse Y"); }
+        get { return Input.GetAxis("Mouse Y"); }
     }
 
     //Axis Mouvement
@@ -36,8 +42,24 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetAxis("Vertical"); }
     }
 
-    public bool SwitchEnemy
+    public bool Up
     {
-        get { return Input.GetButtonDown("SwitchEnemy"); }
+        get { return Input.GetButton("Up"); }
     }
+
+    /*public bool Down
+    {
+        get { return Input.GetButton("Down"); }
+    }*/
+
+    public float ScrollWheel
+    {
+        get { return Input.GetAxis("Mouse ScrollWheel"); }
+    }
+
+    public bool BonusMenu
+    {
+        get { return Input.GetButtonDown("BonusMenu"); }
+    }
+
 }

@@ -86,13 +86,13 @@ public class PlayerPC : MonoBehaviour {
         }
         else
         {
-            if (playerPCController.ScrollWheel < 0f)
+            if (playerPCController.ScrollWheel > 0f)
             {
-                // Tourner la roue des bonus vers le haut
+                bonusMenuScript.IconUp();
             }
-            else if (playerPCController.ScrollWheel > 0f)
+            else if (playerPCController.ScrollWheel < 0f)
             {
-                // Tourner la roue des bonus vers le bas
+                bonusMenuScript.IconDown();
             }
 
             if(playerPCController.ClickDown0)

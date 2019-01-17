@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b383e9966cf223b4daece0c1f4f01a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIPlayerPCPrefabs: {fileID: 1816583332996702, guid: 5cae347fc8c6d9245bea4a7c513ad9f9,
+  UIPlayerPCPrefabs: {fileID: 1290223810525246, guid: 71a66d03775133f4a8d2a42ada2b7399,
     type: 2}
   maxMana: 1000
   manaRegen: 50

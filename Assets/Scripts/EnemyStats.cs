@@ -14,7 +14,7 @@ public class EnemyStats : MonoBehaviour {
     [SerializeField] private float m_health;
     [SerializeField] private float m_hitDamage;
     [SerializeField] private float m_critical;
-    [SerializeField] private int m_mana;
+    [SerializeField] private float m_mana;
     [SerializeField] private enemyType m_type;
     public int ID;
 
@@ -24,11 +24,11 @@ public class EnemyStats : MonoBehaviour {
     public float multCritical { get; set; }
     public float multHitCooldown { get; set; }
 
-    public int costSpeed { get; set; }
-    public int costHealth { get; set; }
-    public int costHitDamage { get; set; }
-    public int costCritical { get; set; }
-    public int costHitCooldown { get; set; }
+    public float costSpeed { get; set; }
+    public float costHealth { get; set; }
+    public float costHitDamage { get; set; }
+    public float costCritical { get; set; }
+    public float costHitCooldown { get; set; }
 
     public string enemyName { get { return m_enemyName; } private set { m_enemyName = value; } }
     public float hitCooldown { get { return m_hitCooldown * multHitCooldown; } private set { m_hitCooldown = value; } }
@@ -36,7 +36,7 @@ public class EnemyStats : MonoBehaviour {
     public float health { get { return m_health * multHealth; } private set { m_health = value; } }
     public float hitDamage { get { return m_hitDamage * multHitDamage; } private set { m_hitDamage = value; } }
     public float critical { get { return m_critical * multCritical; } private set { m_critical = value; } }
-    public int mana { get { return (m_mana + costCritical + costHealth + costHitCooldown + costHitDamage + costSpeed); } private set { m_mana = value; } }
+    public float mana { get { return (m_mana + costCritical + costHealth + costHitCooldown + costHitDamage + costSpeed); } private set { m_mana = value; } }
     public enemyType type { get { return m_type; } private set { m_type = value; } }
 
     public void GetID(int _ID)

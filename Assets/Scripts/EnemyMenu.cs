@@ -62,7 +62,7 @@ public class EnemyMenu : MonoBehaviour {
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
 
-        manaCost = GetComponent<BonusMenu>().SetManaCost(currentEnemyIcon, manaCost);
+        manaCost = GetComponent<BonusMenu>().UpdateManaCost(currentEnemyIcon, manaCost);
 
         return currentEnemyIcon;
     }
@@ -95,7 +95,7 @@ public class EnemyMenu : MonoBehaviour {
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
 
-        manaCost = GetComponent<BonusMenu>().SetManaCost(currentEnemyIcon, manaCost);
+        manaCost = GetComponent<BonusMenu>().UpdateManaCost(currentEnemyIcon, manaCost);
 
         return currentEnemyIcon;
     }
@@ -103,7 +103,7 @@ public class EnemyMenu : MonoBehaviour {
     public void SetManaCostInit()
     {
         stats = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
-        int costMana = stats.mana;
+        float costMana = stats.mana;
 
         manaCost.text = "-" + costMana + " mana";
     }

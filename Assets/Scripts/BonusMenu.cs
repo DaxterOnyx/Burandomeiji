@@ -4,12 +4,11 @@ using UnityEngine;
 using TMPro;
 
 public class BonusMenu : MonoBehaviour {
-
-    
+  
     [HideInInspector] public GameObject[] allEnemyTab;
-    public List<int[]> multList;
-    public List<int[]> costList;
-    public List<int[]>[] bonusTab;
+    public List<float[]> multList;
+    public List<float[]> costList;
+    public List<float[]>[] bonusTab;
 
     [SerializeField] private TextMeshProUGUI hightLeftText;
     [SerializeField] private TextMeshProUGUI hightRightText;
@@ -23,7 +22,19 @@ public class BonusMenu : MonoBehaviour {
 
     // 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
     [SerializeField] private GameObject[] iconBonusTab;
+    [SerializeField] private float[] costManaTab;
+    [SerializeField] private float[] multTab;
     private int currentIcon;
+    private int currentEnemyIcon;
+
+    private bool canDowngrade = true;
+
+    EnemyMenu enemyMenu;
+
+    private void Start()
+    {
+        enemyMenu = GetComponent<EnemyMenu>();
+    }
 
     #region UI
 
@@ -45,6 +56,7 @@ public class BonusMenu : MonoBehaviour {
             InsIcon(i);
         }
         currentIcon = 2;
+        UpdateText();
     }
 
     public void IconUp()
@@ -100,9 +112,81 @@ public class BonusMenu : MonoBehaviour {
         UpdateText();
     }
 
-    private void UpdateText()
+    public void UpdateText()
     {
+        currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
+        GameObject enemyGO_ = allEnemyTab[currentEnemyIcon];
+        EnemyStats enemyStats_ = enemyGO_.GetComponent<EnemyStats>();
 
+        hightLeftText.text = enemyStats_.enemyName;
+        centerLeftText.text = "Type : " + enemyStats_.type;
+
+        switch(currentIcon)
+        {
+            case 0:
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
+                centerRightText.text = " Speed : " + (bonusTab[0][currentEnemyIcon][currentIcon]*100).ToString("0") + " %";
+                hightRightText.text = enemyStats_.speed + " speed";
+                break;
+
+            case 1:
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
+                centerRightText.text = " Health : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
+                hightRightText.text = enemyStats_.health + " health";
+                break;
+
+            case 2:
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
+                centerRightText.text = " Critical rate : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
+                hightRightText.text = enemyStats_.critical + " % critical chance";
+                break;
+
+            case 3:
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
+                centerRightText.text = " Attack : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
+                hightRightText.text = enemyStats_.hitDamage + " damage";
+                break;
+
+            case 4:
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
+                centerRightText.text = " Attack speed : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
+                hightRightText.text = enemyStats_.hitDamage + " attack per second";
+                break;
+
+            default:
+                Debug.LogError("Problème dans le switch du script BonusMenu!");
+                break;
+        }
+
+    }
+
+    public void UpgradeBonus()
+    {
+        currentEnemyIcon = enemyMenu.currentEnemyIcon;
+        bonusTab[0][currentEnemyIcon][currentIcon] += multTab[currentIcon];
+        bonusTab[1][currentEnemyIcon][currentIcon] += costManaTab[currentIcon];
+        UpdateText();
+        enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+    }
+
+    public void DowngradeBonus()
+    {
+        if (canDowngrade)
+        {
+            currentEnemyIcon = enemyMenu.currentEnemyIcon;
+            bonusTab[0][currentEnemyIcon][currentIcon] -= multTab[currentIcon];
+
+
+
+            bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTab[currentIcon];
+            UpdateText();
+            enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+        }
     }
 
     #endregion
@@ -120,14 +204,14 @@ public class BonusMenu : MonoBehaviour {
 
     private void SetBonusTab()
     {
-        multList = new List<int[]>();
-        costList = new List<int[]>();
-        bonusTab = new List<int[]>[2];
+        multList = new List<float[]>();
+        costList = new List<float[]>();
+        bonusTab = new List<float[]>[2];
 
         foreach(GameObject GO in allEnemyTab)
         {
-            int[] tabM = new int[5];
-            int[] tabC = new int[5];
+            float[] tabM = new float[5];
+            float[] tabC = new float[5];
 
             for(int i = 0; i < tabM.Length; i++)
             {
@@ -164,18 +248,48 @@ public class BonusMenu : MonoBehaviour {
         }
     }
 
-    public TextMeshProUGUI SetManaCost(int _i, TextMeshProUGUI _manaCost)
+    public TextMeshProUGUI UpdateManaCost(int _currentEnemyIcon, TextMeshProUGUI _manaCost)
     {
-        EnemyStats stats = allEnemyTab[_i].GetComponent<EnemyStats>();
-        int costMana = stats.mana;
+        EnemyStats stats = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
+        float costMana = stats.mana;
 
-        for(int j = 0; j < bonusTab[1][_i].Length; j++)
+        for(int j = 0; j < bonusTab[1][_currentEnemyIcon].Length; j++)
         {
-            costMana += bonusTab[1][_i][j];
+            costMana += bonusTab[1][_currentEnemyIcon][j];
         }
+
+        /*if(costMana < stats.mana / 2)
+        {
+            costMana = stats.mana / 2;
+            canDowngrade = false;
+        }
+        else
+        {
+            canDowngrade = true;
+        }*/
 
         _manaCost.text = "-" + costMana + " mana";
         return _manaCost;
     }
+
+    public float UpdateLostMana()
+    {
+        EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
+
+        float manaLost = enemyStats_.mana;
+
+        for(int i = 0; i < bonusTab[1][currentEnemyIcon].Length; i++)
+        {
+            manaLost += bonusTab[1][currentEnemyIcon][i];
+        }
+
+        if (manaLost < enemyStats_.mana / 2)
+        {
+            manaLost = enemyStats_.mana / 2;
+        }
+
+        return manaLost;
+    }
+
     #endregion
 }

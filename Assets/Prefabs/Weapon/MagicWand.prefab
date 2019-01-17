@@ -50,8 +50,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562977874351892}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.1515, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.2, z: 0.01}
   m_Children:
   - {fileID: 4940771705696654}
@@ -130,10 +130,8 @@ MonoBehaviour:
     type: 2}
   FireProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
     type: 2}
-  EarthProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
-    type: 2}
-  WaterProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
-    type: 2}
+  ElectricityProjectile: {fileID: 0}
+  IceProjectile: {fileID: 0}
   WindProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
     type: 2}
-  projectileLife: 5
+  m_element: 1

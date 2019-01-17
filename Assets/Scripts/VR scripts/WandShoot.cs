@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 enum Element
 {
@@ -48,7 +49,7 @@ public class WandShoot : WeaponScript
 		//TODO charge
 	}
 
-	void ChageElement(Element p_element)
+	internal void ChangeElement(Element p_element)
 	{
 		m_element = p_element;
 	}

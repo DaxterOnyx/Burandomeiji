@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4236411411663234}
   - component: {fileID: 54291588844050308}
   m_Layer: 0
-  m_Name: SimpleBullet 3
+  m_Name: WindProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -25,7 +25,7 @@ public class PlayerPC : MonoBehaviour {
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 50f;
 
-	private void Awake ()
+	private void Start ()
     {
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();

@@ -16,7 +16,8 @@ public class PlayerPC : MonoBehaviour {
     /* Prefabs et instance */
     [SerializeField] private GameObject UIPlayerPCPrefabs;
     private GameObject UIPlayerPCInstance;
-    private GameObject[] bonusMenuGo;
+    private GameObject bonusMenuGo;
+    private GameObject cursorGO;
 
     /* Attributs */
     private bool canSpawn = true;
@@ -34,14 +35,17 @@ public class PlayerPC : MonoBehaviour {
         bonusMenuScript = UIPlayerPCInstance.GetComponent<BonusMenu>();
         enemyMenuScript = UIPlayerPCInstance.GetComponent<EnemyMenu>();
         manaBarScript = UIPlayerPCInstance.GetComponent<ManaBarScript>();
+        playerPCSpawn.GetUI(UIPlayerPCInstance);
 
         currentMana = maxMana;
-        manaBarScript.SetMana(maxMana, currentMana);
-        manaBarScript.SetManaRegen(manaRegen);
+        
         enemyMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
         bonusMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
-        bonusMenuGo = GameObject.FindGameObjectsWithTag("BonusMenu");
-        bonusMenuGo[0].SetActive(false);
+        manaBarScript.SetMana(maxMana, currentMana);
+        manaBarScript.SetManaRegen(manaRegen);
+        bonusMenuGo = GameObject.FindGameObjectWithTag("BonusMenu");
+        cursorGO = GameObject.FindGameObjectWithTag("Cursor");
+        bonusMenuGo.SetActive(false);
     }
 	
 	private void Update ()
@@ -64,7 +68,7 @@ public class PlayerPC : MonoBehaviour {
                     {
                         if(currentMana >= playerPCSpawn.enemyForSpawn.GetComponent<EnemyStats>().mana)
                         {
-                            StartCoroutine(playerPCSpawn.Spawn(hit));
+                            StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
                             currentMana -= playerPCSpawn.enemyForSpawn.GetComponent<EnemyStats>().mana;
                         }
                         
@@ -105,13 +109,9 @@ public class PlayerPC : MonoBehaviour {
         if(playerPCController.BonusMenu)
         {
             canSpawn = !canSpawn;
-
-            bonusMenuGo[0].SetActive(!canSpawn);
-            bonusMenuGo[1].SetActive(canSpawn);
+            cursorGO.SetActive(canSpawn);
+            bonusMenuGo.SetActive(!canSpawn);
         }
-       
-
-
     }
 
     private void RegenMana()

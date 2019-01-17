@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(BonusMenu))]
 public class EnemyMenu : MonoBehaviour {
 
     [SerializeField] private RectTransform enemyBar;
-    [SerializeField] private TextMeshProUGUI manaCost;
+    [SerializeField] public TextMeshProUGUI manaCost;
 
     private List<GameObject> enemyIconList = new List<GameObject>();
     [HideInInspector] public GameObject[] allEnemyTab;
 
     [HideInInspector] public int currentEnemyIcon;
+    private EnemyStats stats;
 
     public void SetAllEnemyTab(GameObject[] tab_)
     {
@@ -26,7 +28,7 @@ public class EnemyMenu : MonoBehaviour {
             InsIcon(i % allEnemyTab.Length, true);   
         }
         currentEnemyIcon = 1;
-        SetManaCost(currentEnemyIcon);
+        SetManaCostInit();
     }
 
     private void InsIcon(int number_, bool active_)
@@ -60,7 +62,7 @@ public class EnemyMenu : MonoBehaviour {
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
 
-        SetManaCost(currentEnemyIcon);
+        manaCost = GetComponent<BonusMenu>().SetManaCost(currentEnemyIcon, manaCost);
 
         return currentEnemyIcon;
     }
@@ -88,18 +90,21 @@ public class EnemyMenu : MonoBehaviour {
         else
         {
             InsIcon((currentEnemyIcon - 1) % allEnemyTab.Length, true);
-        }
+        } 
 
         InsIcon(currentEnemyIcon % allEnemyTab.Length, true);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length, true);
 
-        SetManaCost(currentEnemyIcon);
+        manaCost = GetComponent<BonusMenu>().SetManaCost(currentEnemyIcon, manaCost);
 
         return currentEnemyIcon;
     }
 
-    private void SetManaCost(int i)
+    public void SetManaCostInit()
     {
-        manaCost.text = "-" + allEnemyTab[i].GetComponent<EnemyStats>().mana + " mana";
+        stats = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
+        int costMana = stats.mana;
+
+        manaCost.text = "-" + costMana + " mana";
     }
 }

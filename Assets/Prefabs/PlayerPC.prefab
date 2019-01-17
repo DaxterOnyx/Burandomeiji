@@ -228,9 +228,6 @@ MonoBehaviour:
     type: 2}
   allEnemyTab:
   - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
-  - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
-  - {fileID: 1545489681706988, guid: 751b87220f5c84e4b90839de8d35ce4c, type: 2}
-  - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
   - {fileID: 1545489681706988, guid: 751b87220f5c84e4b90839de8d35ce4c, type: 2}
 --- !u!114 &114679362626588708
 MonoBehaviour:

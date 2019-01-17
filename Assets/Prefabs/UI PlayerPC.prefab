@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 114064747368735186}
   m_Layer: 5
   m_Name: Cursor
-  m_TagString: BonusMenu
+  m_TagString: Cursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,7 +8,7 @@ public class PlayerVRControl : MonoBehaviour {
 
 	public HandVRControl LeftHand;
 	public HandVRControl RightHand;
-	public VRTK_ControllerEvents.ButtonAlias SwitchButton;
+	public VRTK_ControllerEvents.ButtonAlias UseWeaponButton;
 
 
 	// Use this for initialization
@@ -23,11 +23,15 @@ public class PlayerVRControl : MonoBehaviour {
 			Debug.LogError("RightHand is null");
 			gameObject.SetActive(false);
 		}
-
-		LeftHand.GetComponent<VRTK.VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(SwitchButton, true, Switch);
+		
+		//use weapon
+		LeftHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, true, LeftHand.Use);
+		RightHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, true, RightHand.Use);
+		LeftHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, false, LeftHand.EndUse);
+		RightHand.GetComponent<VRTK_ControllerEvents>().SubscribeToButtonAliasEvent(UseWeaponButton, false, RightHand.EndUse);
 	}
 
-	private void Switch(object sender, ControllerInteractionEventArgs e)
+	public void Switch()
 	{
 		LeftHand.SwitchWeapon();
 		RightHand.SwitchWeapon();

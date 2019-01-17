@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1911,6 +1911,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114318214036044086, guid: a789c64c4bd4fbf4fbb9c00897d7879b,
+        type: 2}
+      propertyPath: ActiveProjectile
+      value: 
+      objectReference: {fileID: 1771020703}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a789c64c4bd4fbf4fbb9c00897d7879b, type: 2}
   m_IsPrefabAsset: 0
@@ -2420,7 +2425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956263169214410, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4956263169214410, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2446,6 +2451,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114530862202310814, guid: c3df26c5b73bef04e84273438dcc57c1,
+        type: 2}
+      propertyPath: Wand
+      value: 
+      objectReference: {fileID: 1771020704}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
   m_IsPrefabAsset: 0
@@ -4011,6 +4021,17 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 365845a097615834b8de81a4ed6bad4b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1771020703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1562977874351892, guid: 365845a097615834b8de81a4ed6bad4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771020702}
+--- !u!114 &1771020704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114102296085307730, guid: 365845a097615834b8de81a4ed6bad4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771020702}
+  m_Script: {fileID: 11500000, guid: 19b036d2c012ee848b0e70f09dc8aae8, type: 3}
 --- !u!1 &1787227411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,7 +4714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHand: {fileID: 955940858}
   RightHand: {fileID: 215768407}
-  SwitchButton: 10
+  UseWeaponButton: 0
 --- !u!1 &1980175398
 GameObject:
   m_ObjectHideFlags: 0

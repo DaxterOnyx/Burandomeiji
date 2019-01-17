@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class HandVRControl : MonoBehaviour {
 
@@ -29,7 +29,7 @@ public class HandVRControl : MonoBehaviour {
 	{
 		if(p_weapon == null)
 		{
-			UnityEngine.Debug.LogError("new weapon is null");
+			Debug.LogError("new weapon is null");
 			return;
 		}
 		if(ActiveWeapon != null)
@@ -39,6 +39,16 @@ public class HandVRControl : MonoBehaviour {
 		ActiveWeapon = p_weapon;
 		ActiveWeapon.gameObject.SetActive(true);
 		Debug.Log("Active Weapon is " + ActiveWeapon.gameObject);
+	}
+
+	internal void Use(object sender, ControllerInteractionEventArgs e)
+	{
+		ActiveWeapon.Use();
+	}
+
+	internal void EndUse(object sender, ControllerInteractionEventArgs e)
+	{
+		ActiveWeapon.EndUse();
 	}
 
 	internal void SwitchWeapon()

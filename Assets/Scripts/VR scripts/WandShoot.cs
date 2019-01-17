@@ -1,26 +1,56 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+enum Element
+{
+	Electricity,
+	Fire,
+	Ice,
+	Wind
+}
 
 public class WandShoot : WeaponScript
 {
-	//public new VRTK_ControllerEvents.ButtonAlias shotButton;
-	public GameObject projectile;
-	public Transform projectileSpawnPoint;
-	public float projectileSpeed = 1000f;
-	public float projectileLife = 5f;
-
-	public override void Use()
-	{
-		if (projectile != null && projectileSpawnPoint != null)
+	public new GameObject ActiveProjectile {
+		get
 		{
-			GameObject clonedProjectile = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-			Rigidbody projectileRigidbody = clonedProjectile.GetComponent<Rigidbody>();
-			float destroyTime = 0f;
-			if (projectileRigidbody != null)
+			switch (m_element)
 			{
-				projectileRigidbody.AddForce(clonedProjectile.transform.forward * projectileSpeed);
-				destroyTime = projectileLife;
+				case Element.Electricity:
+					return ElectricityProjectile;
+				case Element.Fire:
+					return FireProjectile;
+				case Element.Ice:
+					return IceProjectile;
+				case Element.Wind:
+					return WindProjectile;
+				default:
+					Debug.LogError("Element ERROR");
+					return FireProjectile;
 			}
-			Destroy(clonedProjectile, destroyTime);
 		}
+	}
+
+	public GameObject FireProjectile;
+	public GameObject ElectricityProjectile;
+	public GameObject IceProjectile;
+	public GameObject WindProjectile;
+	[SerializeField]
+	private Element m_element = Element.Fire;
+
+	public override void EndUse()
+	{
+		base.Use();
+		Shoot();
+	}
+
+	private void FixedUpdate()
+	{
+		//TODO charge
+	}
+
+	internal void ChangeElement(Element p_element)
+	{
+		m_element = p_element;
 	}
 }

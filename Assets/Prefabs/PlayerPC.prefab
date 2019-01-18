@@ -259,7 +259,7 @@ MonoBehaviour:
   speed_angle_turn: 5
   speed: 30
   cameraRotationLimit: 90
-  speed_Up_Down: 0.75
+  speed_Up_Down: 1
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

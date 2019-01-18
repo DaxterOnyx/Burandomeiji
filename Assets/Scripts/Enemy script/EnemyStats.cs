@@ -16,7 +16,7 @@ public class EnemyStats : MonoBehaviour {
     [SerializeField] private float m_critical;
     [SerializeField] private float m_mana;
     [SerializeField] private enemyType m_type;
-    public int ID;
+    [HideInInspector] public int ID;
 
     public float multSpeed { get; set; }
     public float multHealth { get; set; }

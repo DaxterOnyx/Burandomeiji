@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPCSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject spawnerPrefabs;
-    [HideInInspector] public GameObject enemyForSpawn;
+    private GameObject enemyForSpawn;
     public GameObject[] allEnemyTab;
     private BonusMenu bonusMenu;
     private EnemyMenu enemyMenu;
@@ -40,7 +40,7 @@ public class PlayerPCSpawn : MonoBehaviour
         }
     }
 
-    public void GetUI(GameObject _UI)
+    public void SetUI(GameObject _UI)
     {
         bonusMenu = _UI.GetComponent<BonusMenu>();
         enemyMenu = _UI.GetComponent<EnemyMenu>();

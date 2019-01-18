@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(EnemyMenu))]
 public class BonusMenu : MonoBehaviour {
   
     [HideInInspector] public GameObject[] allEnemyTab;
@@ -192,6 +193,7 @@ public class BonusMenu : MonoBehaviour {
     #endregion
 
     #region Bonus
+
     public void SetAllEnemyTab(GameObject[] tab_)
     {
         allEnemyTab = tab_;
@@ -210,16 +212,16 @@ public class BonusMenu : MonoBehaviour {
 
         foreach(GameObject GO in allEnemyTab)
         {
-            float[] tabM = new float[5];
-            float[] tabC = new float[5];
+            float[] tabM_ = new float[5];
+            float[] tabC_ = new float[5];
 
-            for(int i = 0; i < tabM.Length; i++)
+            for(int i = 0; i < tabM_.Length; i++)
             {
-                tabM[i] = 1;
-                tabC[i] = 0;
+                tabM_[i] = 1;
+                tabC_[i] = 0;
             }
-            multList.Add(tabM);
-            costList.Add(tabC);
+            multList.Add(tabM_);
+            costList.Add(tabC_);
         }
         bonusTab[0] = multList;
         bonusTab[1] = costList;
@@ -228,47 +230,38 @@ public class BonusMenu : MonoBehaviour {
 
     public void GetEnemyIns(GameObject _enemy)
     {     
-        EnemyStats stats = _enemy.GetComponent<EnemyStats>();
+        EnemyStats stats_ = _enemy.GetComponent<EnemyStats>();
         for(int i = 0; i < allEnemyTab.Length; i++)
         {
-            if(stats.ID == i)
+            if(stats_.ID == i)
             {
-                stats.multSpeed = bonusTab[0][i][0];
-                stats.multHealth = bonusTab[0][i][1];
-                stats.multCritical = bonusTab[0][i][2];
-                stats.multHitDamage = bonusTab[0][i][3];
-                stats.multHitCooldown = bonusTab[0][i][4];
+                stats_.multSpeed = bonusTab[0][i][0];
+                stats_.multHealth = bonusTab[0][i][1];
+                stats_.multCritical = bonusTab[0][i][2];
+                stats_.multHitDamage = bonusTab[0][i][3];
+                stats_.multHitCooldown = bonusTab[0][i][4];
 
-                stats.costSpeed = bonusTab[1][i][0];
-                stats.costHealth = bonusTab[1][i][1];
-                stats.costCritical = bonusTab[1][i][2];
-                stats.costHitDamage = bonusTab[1][i][3];
-                stats.costHitCooldown = bonusTab[1][i][4];
+                stats_.costSpeed = bonusTab[1][i][0];
+                stats_.costHealth = bonusTab[1][i][1];
+                stats_.costCritical = bonusTab[1][i][2];
+                stats_.costHitDamage = bonusTab[1][i][3];
+                stats_.costHitCooldown = bonusTab[1][i][4];
             }
         }
     }
 
     public TextMeshProUGUI UpdateManaCost(int _currentEnemyIcon, TextMeshProUGUI _manaCost)
     {
-        EnemyStats stats = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
-        float costMana = stats.mana;
+        EnemyStats stats_ = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
+        float costMana_ = stats_.mana;
 
         for(int j = 0; j < bonusTab[1][_currentEnemyIcon].Length; j++)
         {
-            costMana += bonusTab[1][_currentEnemyIcon][j];
+            costMana_ += bonusTab[1][_currentEnemyIcon][j];
         }
 
-        /*if(costMana < stats.mana / 2)
-        {
-            costMana = stats.mana / 2;
-            canDowngrade = false;
-        }
-        else
-        {
-            canDowngrade = true;
-        }*/
+        _manaCost.text = "-" + costMana_ + " mana";
 
-        _manaCost.text = "-" + costMana + " mana";
         return _manaCost;
     }
 
@@ -276,19 +269,14 @@ public class BonusMenu : MonoBehaviour {
     {
         EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
 
-        float manaLost = enemyStats_.mana;
+        float manaLost_ = enemyStats_.mana;
 
         for(int i = 0; i < bonusTab[1][currentEnemyIcon].Length; i++)
         {
-            manaLost += bonusTab[1][currentEnemyIcon][i];
+            manaLost_ += bonusTab[1][currentEnemyIcon][i];
         }
 
-        if (manaLost < enemyStats_.mana / 2)
-        {
-            manaLost = enemyStats_.mana / 2;
-        }
-
-        return manaLost;
+        return manaLost_;
     }
 
     #endregion

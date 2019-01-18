@@ -7,8 +7,10 @@ using UnityEngine;
 public class PlayerPC : MonoBehaviour {
 
     /* Différents scripts */
+        // scripts du player
     private PlayerPCController playerPCController;
     private PlayerPCSpawn playerPCSpawn;
+        // scripts du UI
     private BonusMenu bonusMenuScript;
     private ManaBarScript manaBarScript;
     private EnemyMenu enemyMenuScript;
@@ -27,22 +29,24 @@ public class PlayerPC : MonoBehaviour {
 
 	private void Start ()
     {
+        currentMana = maxMana;
+
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();
 
         UIPlayerPCInstance = Instantiate(UIPlayerPCPrefabs);
         UIPlayerPCInstance.name = UIPlayerPCPrefabs.name;
+
         bonusMenuScript = UIPlayerPCInstance.GetComponent<BonusMenu>();
         enemyMenuScript = UIPlayerPCInstance.GetComponent<EnemyMenu>();
         manaBarScript = UIPlayerPCInstance.GetComponent<ManaBarScript>();
-        playerPCSpawn.GetUI(UIPlayerPCInstance);
 
-        currentMana = maxMana;
-        
+        playerPCSpawn.SetUI(UIPlayerPCInstance);
         enemyMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
         bonusMenuScript.SetAllEnemyTab(playerPCSpawn.allEnemyTab);
         manaBarScript.SetMana(maxMana, currentMana);
         manaBarScript.SetManaRegen(manaRegen);
+
         bonusMenuGo = GameObject.FindGameObjectWithTag("BonusMenu");
         cursorGO = GameObject.FindGameObjectWithTag("Cursor");
         bonusMenuGo.SetActive(false);

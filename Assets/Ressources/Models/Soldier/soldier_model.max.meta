@@ -1,0 +1,477 @@
+fileFormatVersion: 2
+guid: 47d44368e02750e41821e66bf428f2ed
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: DrawCall_0003
+    100002: DrawCall_0004
+    100004: DrawCall_0005
+    100006: DrawCall_0006
+    100008: DrawCall_0007
+    100010: DrawCall_0008
+    100012: DrawCall_0009
+    100014: DrawCall_0010
+    100016: DrawCall_0011
+    100018: DrawCall_0012
+    100020: DrawCall_0013
+    100022: DrawCall_0014
+    100024: DrawCall_0015
+    100026: DrawCall_0016
+    100028: DrawCall_0017
+    100030: DrawCall_0018
+    100032: DrawCall_0019
+    100034: DrawCall_0020
+    100036: DrawCall_0022
+    100038: DrawCall_0023
+    100040: DrawCall_0024
+    100042: DrawCall_0025
+    100044: DrawCall_0027
+    100046: DrawCall_0029
+    100048: DrawCall_0030
+    100050: DrawCall_0031
+    100052: DrawCall_0032
+    100054: DrawCall_0033
+    100056: DrawCall_0034
+    100058: DrawCall_0035
+    100060: DrawCall_0036
+    100062: DrawCall_0037
+    100064: DrawCall_0038
+    100066: DrawCall_0039
+    100068: DrawCall_0040
+    100070: //RootNode
+    400000: DrawCall_0003
+    400002: DrawCall_0004
+    400004: DrawCall_0005
+    400006: DrawCall_0006
+    400008: DrawCall_0007
+    400010: DrawCall_0008
+    400012: DrawCall_0009
+    400014: DrawCall_0010
+    400016: DrawCall_0011
+    400018: DrawCall_0012
+    400020: DrawCall_0013
+    400022: DrawCall_0014
+    400024: DrawCall_0015
+    400026: DrawCall_0016
+    400028: DrawCall_0017
+    400030: DrawCall_0018
+    400032: DrawCall_0019
+    400034: DrawCall_0020
+    400036: DrawCall_0022
+    400038: DrawCall_0023
+    400040: DrawCall_0024
+    400042: DrawCall_0025
+    400044: DrawCall_0027
+    400046: DrawCall_0029
+    400048: DrawCall_0030
+    400050: DrawCall_0031
+    400052: DrawCall_0032
+    400054: DrawCall_0033
+    400056: DrawCall_0034
+    400058: DrawCall_0035
+    400060: DrawCall_0036
+    400062: DrawCall_0037
+    400064: DrawCall_0038
+    400066: DrawCall_0039
+    400068: DrawCall_0040
+    400070: //RootNode
+    2100000: b89a3340.dds
+    2100002: ce9105cb.dds
+    2100004: 35e245d6.dds
+    2100006: 36b7e921.dds
+    2100008: 74343440.dds
+    2300000: DrawCall_0003
+    2300002: DrawCall_0004
+    2300004: DrawCall_0005
+    2300006: DrawCall_0006
+    2300008: DrawCall_0007
+    2300010: DrawCall_0008
+    2300012: DrawCall_0009
+    2300014: DrawCall_0010
+    2300016: DrawCall_0011
+    2300018: DrawCall_0012
+    2300020: DrawCall_0013
+    2300022: DrawCall_0014
+    2300024: DrawCall_0015
+    2300026: DrawCall_0016
+    2300028: DrawCall_0017
+    2300030: DrawCall_0018
+    2300032: DrawCall_0019
+    2300034: DrawCall_0020
+    2300036: DrawCall_0022
+    2300038: DrawCall_0023
+    2300040: DrawCall_0024
+    2300042: DrawCall_0025
+    2300044: DrawCall_0027
+    2300046: DrawCall_0029
+    2300048: DrawCall_0030
+    2300050: DrawCall_0031
+    2300052: DrawCall_0032
+    2300054: DrawCall_0033
+    2300056: DrawCall_0034
+    2300058: DrawCall_0035
+    2300060: DrawCall_0036
+    2300062: DrawCall_0037
+    2300064: DrawCall_0038
+    2300066: DrawCall_0039
+    2300068: DrawCall_0040
+    3300000: DrawCall_0003
+    3300002: DrawCall_0004
+    3300004: DrawCall_0005
+    3300006: DrawCall_0006
+    3300008: DrawCall_0007
+    3300010: DrawCall_0008
+    3300012: DrawCall_0009
+    3300014: DrawCall_0010
+    3300016: DrawCall_0011
+    3300018: DrawCall_0012
+    3300020: DrawCall_0013
+    3300022: DrawCall_0014
+    3300024: DrawCall_0015
+    3300026: DrawCall_0016
+    3300028: DrawCall_0017
+    3300030: DrawCall_0018
+    3300032: DrawCall_0019
+    3300034: DrawCall_0020
+    3300036: DrawCall_0022
+    3300038: DrawCall_0023
+    3300040: DrawCall_0024
+    3300042: DrawCall_0025
+    3300044: DrawCall_0027
+    3300046: DrawCall_0029
+    3300048: DrawCall_0030
+    3300050: DrawCall_0031
+    3300052: DrawCall_0032
+    3300054: DrawCall_0033
+    3300056: DrawCall_0034
+    3300058: DrawCall_0035
+    3300060: DrawCall_0036
+    3300062: DrawCall_0037
+    3300064: DrawCall_0038
+    3300066: DrawCall_0039
+    3300068: DrawCall_0040
+    4300000: DrawCall_0003
+    4300002: DrawCall_0004
+    4300004: DrawCall_0005
+    4300006: DrawCall_0006
+    4300008: DrawCall_0007
+    4300010: DrawCall_0008
+    4300012: DrawCall_0009
+    4300014: DrawCall_0010
+    4300016: DrawCall_0011
+    4300018: DrawCall_0012
+    4300020: DrawCall_0013
+    4300022: DrawCall_0014
+    4300024: DrawCall_0015
+    4300026: DrawCall_0016
+    4300028: DrawCall_0017
+    4300030: DrawCall_0018
+    4300032: DrawCall_0019
+    4300034: DrawCall_0020
+    4300036: DrawCall_0022
+    4300038: DrawCall_0023
+    4300040: DrawCall_0024
+    4300042: DrawCall_0025
+    4300044: DrawCall_0027
+    4300046: DrawCall_0029
+    4300048: DrawCall_0030
+    4300050: DrawCall_0031
+    4300052: DrawCall_0032
+    4300054: DrawCall_0033
+    4300056: DrawCall_0034
+    4300058: DrawCall_0035
+    4300060: DrawCall_0036
+    4300062: DrawCall_0037
+    4300064: DrawCall_0038
+    4300066: DrawCall_0039
+    4300068: DrawCall_0040
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 35e245d6.dds
+    second: {fileID: 2100000, guid: cf74c3a8833abb34798aec560a1edd10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 36b7e921.dds
+    second: {fileID: 2100000, guid: 8a57c37c2a249a5439d0a34dcf03784f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 74343440.dds
+    second: {fileID: 2100000, guid: 6eeadbf091ed1a646a877af72004567e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: b89a3340.dds
+    second: {fileID: 2100000, guid: f27dade0dbeff5646b9be9b4302d6f22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ce9105cb.dds
+    second: {fileID: 2100000, guid: 93a981c8564b4194ca04ed192a037afe, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: soldier_model(Clone)
+      parentName: 
+      position: {x: 0.0089696115, y: 0.9943854, z: 0.015311088}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DrawCall_0003
+      parentName: soldier_model(Clone)
+      position: {x: -0.014583198, y: 0.027378354, z: -0.25905105}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0004
+      parentName: soldier_model(Clone)
+      position: {x: -0.047878545, y: -0.0077347183, z: -0.86625904}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0005
+      parentName: soldier_model(Clone)
+      position: {x: 0.17528991, y: -0.027487596, z: -0.03152466}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0006
+      parentName: soldier_model(Clone)
+      position: {x: 0.12056294, y: -0.02145596, z: 0.009016418}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0007
+      parentName: soldier_model(Clone)
+      position: {x: 0.1144913, y: 0.0043469593, z: -0.086933136}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0008
+      parentName: soldier_model(Clone)
+      position: {x: -0.116065525, y: 0.11198124, z: 0.6256698}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0009
+      parentName: soldier_model(Clone)
+      position: {x: -0.10602182, y: 0.098316, z: 0.74758625}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0010
+      parentName: soldier_model(Clone)
+      position: {x: -0.0074219415, y: -0.019837523, z: 0.5327651}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0011
+      parentName: soldier_model(Clone)
+      position: {x: 0.002479298, y: -0.04312815, z: 0.45966148}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0012
+      parentName: soldier_model(Clone)
+      position: {x: 0.00401942, y: 0.011233953, z: 0.57554066}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0013
+      parentName: soldier_model(Clone)
+      position: {x: -0.016036855, y: -0.029202905, z: 0.3850228}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0014
+      parentName: soldier_model(Clone)
+      position: {x: 0.00036036133, y: 0.029677013, z: 0.024766998}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0015
+      parentName: soldier_model(Clone)
+      position: {x: 0.00016665578, y: 0.03868915, z: 0.42464927}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0016
+      parentName: soldier_model(Clone)
+      position: {x: 0.002504878, y: -0.02199612, z: 0.2404782}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0017
+      parentName: soldier_model(Clone)
+      position: {x: 0.00037371516, y: 0.0057384903, z: 0.24081604}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0018
+      parentName: soldier_model(Clone)
+      position: {x: -0.012705119, y: 0.02252178, z: -0.375968}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0019
+      parentName: soldier_model(Clone)
+      position: {x: -0.014433476, y: -0.02716884, z: -0.38165373}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0020
+      parentName: soldier_model(Clone)
+      position: {x: -0.014140167, y: -0.057777595, z: -0.3791098}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0022
+      parentName: soldier_model(Clone)
+      position: {x: -0.19245417, y: -0.07336025, z: -0.041244812}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0023
+      parentName: soldier_model(Clone)
+      position: {x: 0.044211, y: 0.14290896, z: 0.581881}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0024
+      parentName: soldier_model(Clone)
+      position: {x: -0.12940131, y: -0.10701061, z: 0.025661925}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0025
+      parentName: soldier_model(Clone)
+      position: {x: -0.11361981, y: -0.051357154, z: 0.06021103}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0027
+      parentName: soldier_model(Clone)
+      position: {x: 0.0033478402, y: -0.021540703, z: 0.36655265}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0029
+      parentName: soldier_model(Clone)
+      position: {x: -0.0029573988, y: 0.073479034, z: 0.32449913}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0030
+      parentName: soldier_model(Clone)
+      position: {x: 0.0017827641, y: 0.13014363, z: 0.33113304}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0031
+      parentName: soldier_model(Clone)
+      position: {x: 0.003989122, y: -0.016834764, z: 0.20798644}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0032
+      parentName: soldier_model(Clone)
+      position: {x: -0.0013921987, y: -0.015222735, z: 0.81062675}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0033
+      parentName: soldier_model(Clone)
+      position: {x: -0.0006868183, y: -0.18448742, z: 0.7030285}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0034
+      parentName: soldier_model(Clone)
+      position: {x: -0.0056908308, y: 0.028098563, z: 0.86021996}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0035
+      parentName: soldier_model(Clone)
+      position: {x: -0.00002696395, y: -0.08791438, z: 0.8181481}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0036
+      parentName: soldier_model(Clone)
+      position: {x: -0.0039565465, y: -0.17029095, z: 0.8220647}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0037
+      parentName: soldier_model(Clone)
+      position: {x: -0.06842209, y: -0.14251429, z: 0.72596395}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0038
+      parentName: soldier_model(Clone)
+      position: {x: -0.005462285, y: -0.08071668, z: 0.9031978}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0039
+      parentName: soldier_model(Clone)
+      position: {x: 0.0025653457, y: -0.050540112, z: 0.8092162}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    - name: DrawCall_0040
+      parentName: soldier_model(Clone)
+      position: {x: -0.010039453, y: -0.091030695, z: 0.9206878}
+      rotation: {x: -0.0039641513, y: -0.08819442, z: 0.9928998, w: 0.07972544}
+      scale: {x: 6.371281, y: 10.442498, z: 5.839233}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

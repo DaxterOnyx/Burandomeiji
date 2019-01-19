@@ -1,0 +1,1136 @@
+fileFormatVersion: 2
+guid: eb54345e0792d924b97ffaa0c9e1ca6b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arm_1_L
+    100002: arm_2_L
+    100004: feet_bone_L
+    100006: feet_bone_R
+    100008: finger_1_l
+    100010: finger_2_l
+    100012: handle
+    100014: head
+    100016: ikHandle1
+    100018: ikHandle2
+    100020: ikHandle3
+    100022: ikHandle4
+    100024: ikHandle5
+    100026: ikHandle6
+    100028: ikHandle7
+    100030: ikHandle8
+    100032: joint11
+    100034: joint12
+    100036: joint12 1
+    100038: joint13
+    100040: joint13 1
+    100042: joint13 2
+    100044: joint13 3
+    100046: joint13 4
+    100048: joint13 5
+    100050: joint19
+    100052: joint20
+    100054: joint21
+    100056: joint22
+    100058: joint23
+    100060: joint26
+    100062: joint27
+    100064: joint28
+    100066: joint29
+    100068: joint3
+    100070: joint30
+    100072: joint31
+    100074: joint32
+    100076: joint33
+    100078: joint34
+    100080: joint35
+    100082: joint36
+    100084: joint38
+    100086: joint40
+    100088: joint42
+    100090: joint43
+    100092: joint43 1
+    100094: joint44
+    100096: joint44 1
+    100098: joint45
+    100100: joint46
+    100102: joint5
+    100104: joint8
+    100106: leg_1_L
+    100108: leg_2_L
+    100110: pelvic
+    100112: pipe
+    100114: polySurface100
+    100116: polySurface103
+    100118: polySurface104
+    100120: polySurface106
+    100122: polySurface108
+    100124: polySurface112
+    100126: polySurface113
+    100128: polySurface114
+    100130: polySurface115
+    100132: polySurface116
+    100134: polySurface117
+    100136: polySurface118
+    100138: polySurface119
+    100140: polySurface120
+    100142: polySurface121
+    100144: polySurface17
+    100146: polySurface18
+    100148: polySurface25
+    100150: polySurface26
+    100152: polySurface29
+    100154: polySurface32
+    100156: polySurface33
+    100158: polySurface34
+    100160: polySurface36
+    100162: polySurface37
+    100164: polySurface39
+    100166: polySurface40
+    100168: polySurface46
+    100170: polySurface49
+    100172: polySurface50
+    100174: polySurface51
+    100176: polySurface52
+    100178: polySurface54
+    100180: polySurface55
+    100182: polySurface79
+    100184: polySurface80
+    100186: polySurface81
+    100188: polySurface87
+    100190: polySurface88
+    100192: polySurface90
+    100194: polySurface94
+    100196: polySurface95
+    100198: polySurface96
+    100200: polySurface97
+    100202: //RootNode
+    100204: root_bone
+    400000: arm_1_L
+    400002: arm_2_L
+    400004: feet_bone_L
+    400006: feet_bone_R
+    400008: finger_1_l
+    400010: finger_2_l
+    400012: handle
+    400014: head
+    400016: ikHandle1
+    400018: ikHandle2
+    400020: ikHandle3
+    400022: ikHandle4
+    400024: ikHandle5
+    400026: ikHandle6
+    400028: ikHandle7
+    400030: ikHandle8
+    400032: joint11
+    400034: joint12
+    400036: joint12 1
+    400038: joint13
+    400040: joint13 1
+    400042: joint13 2
+    400044: joint13 3
+    400046: joint13 4
+    400048: joint13 5
+    400050: joint19
+    400052: joint20
+    400054: joint21
+    400056: joint22
+    400058: joint23
+    400060: joint26
+    400062: joint27
+    400064: joint28
+    400066: joint29
+    400068: joint3
+    400070: joint30
+    400072: joint31
+    400074: joint32
+    400076: joint33
+    400078: joint34
+    400080: joint35
+    400082: joint36
+    400084: joint38
+    400086: joint40
+    400088: joint42
+    400090: joint43
+    400092: joint43 1
+    400094: joint44
+    400096: joint44 1
+    400098: joint45
+    400100: joint46
+    400102: joint5
+    400104: joint8
+    400106: leg_1_L
+    400108: leg_2_L
+    400110: pelvic
+    400112: pipe
+    400114: polySurface100
+    400116: polySurface103
+    400118: polySurface104
+    400120: polySurface106
+    400122: polySurface108
+    400124: polySurface112
+    400126: polySurface113
+    400128: polySurface114
+    400130: polySurface115
+    400132: polySurface116
+    400134: polySurface117
+    400136: polySurface118
+    400138: polySurface119
+    400140: polySurface120
+    400142: polySurface121
+    400144: polySurface17
+    400146: polySurface18
+    400148: polySurface25
+    400150: polySurface26
+    400152: polySurface29
+    400154: polySurface32
+    400156: polySurface33
+    400158: polySurface34
+    400160: polySurface36
+    400162: polySurface37
+    400164: polySurface39
+    400166: polySurface40
+    400168: polySurface46
+    400170: polySurface49
+    400172: polySurface50
+    400174: polySurface51
+    400176: polySurface52
+    400178: polySurface54
+    400180: polySurface55
+    400182: polySurface79
+    400184: polySurface80
+    400186: polySurface81
+    400188: polySurface87
+    400190: polySurface88
+    400192: polySurface90
+    400194: polySurface94
+    400196: polySurface95
+    400198: polySurface96
+    400200: polySurface97
+    400202: //RootNode
+    400204: root_bone
+    2100000: blinn1
+    2300000: polySurface100
+    2300002: polySurface103
+    2300004: polySurface104
+    2300006: polySurface106
+    2300008: polySurface108
+    2300010: polySurface112
+    2300012: polySurface113
+    2300014: polySurface114
+    2300016: polySurface115
+    2300018: polySurface116
+    2300020: polySurface117
+    2300022: polySurface118
+    2300024: polySurface119
+    2300026: polySurface120
+    2300028: polySurface121
+    2300030: polySurface17
+    2300032: polySurface18
+    2300034: polySurface25
+    2300036: polySurface26
+    2300038: polySurface29
+    2300040: polySurface32
+    2300042: polySurface33
+    2300044: polySurface34
+    2300046: polySurface36
+    2300048: polySurface37
+    2300050: polySurface39
+    2300052: polySurface40
+    2300054: polySurface46
+    2300056: polySurface49
+    2300058: polySurface50
+    2300060: polySurface51
+    2300062: polySurface52
+    2300064: polySurface54
+    2300066: polySurface55
+    2300068: polySurface79
+    2300070: polySurface80
+    2300072: polySurface81
+    2300074: polySurface87
+    2300076: polySurface88
+    2300078: polySurface90
+    2300080: polySurface94
+    2300082: polySurface95
+    2300084: polySurface96
+    2300086: polySurface97
+    3300000: polySurface100
+    3300002: polySurface103
+    3300004: polySurface104
+    3300006: polySurface106
+    3300008: polySurface108
+    3300010: polySurface112
+    3300012: polySurface113
+    3300014: polySurface114
+    3300016: polySurface115
+    3300018: polySurface116
+    3300020: polySurface117
+    3300022: polySurface118
+    3300024: polySurface119
+    3300026: polySurface120
+    3300028: polySurface121
+    3300030: polySurface17
+    3300032: polySurface18
+    3300034: polySurface25
+    3300036: polySurface26
+    3300038: polySurface29
+    3300040: polySurface32
+    3300042: polySurface33
+    3300044: polySurface34
+    3300046: polySurface36
+    3300048: polySurface37
+    3300050: polySurface39
+    3300052: polySurface40
+    3300054: polySurface46
+    3300056: polySurface49
+    3300058: polySurface50
+    3300060: polySurface51
+    3300062: polySurface52
+    3300064: polySurface54
+    3300066: polySurface55
+    3300068: polySurface79
+    3300070: polySurface80
+    3300072: polySurface81
+    3300074: polySurface87
+    3300076: polySurface88
+    3300078: polySurface90
+    3300080: polySurface94
+    3300082: polySurface95
+    3300084: polySurface96
+    3300086: polySurface97
+    4300000: polySurface118
+    4300002: polySurface94
+    4300004: polySurface117
+    4300006: polySurface96
+    4300008: polySurface119
+    4300010: polySurface95
+    4300012: polySurface106
+    4300014: polySurface18
+    4300016: polySurface17
+    4300018: polySurface116
+    4300020: polySurface113
+    4300022: polySurface112
+    4300024: polySurface114
+    4300026: polySurface81
+    4300028: polySurface32
+    4300030: polySurface80
+    4300032: polySurface79
+    4300034: polySurface90
+    4300036: polySurface36
+    4300038: polySurface51
+    4300040: polySurface37
+    4300042: polySurface52
+    4300044: polySurface87
+    4300046: polySurface120
+    4300048: polySurface25
+    4300050: polySurface49
+    4300052: polySurface33
+    4300054: polySurface103
+    4300056: polySurface97
+    4300058: polySurface39
+    4300060: polySurface54
+    4300062: polySurface40
+    4300064: polySurface55
+    4300066: polySurface88
+    4300068: polySurface121
+    4300070: polySurface26
+    4300072: polySurface34
+    4300074: polySurface50
+    4300076: polySurface104
+    4300078: polySurface46
+    4300080: polySurface100
+    4300082: polySurface108
+    4300084: polySurface115
+    4300086: polySurface29
+    7400000: Take 001
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: 528d21032b29188499676848add5c3f3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'pipe' has translation animation that will be
+      discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: pelvic
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leg_1_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint3
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: leg_2_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint5
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: feet_bone_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: feet_bone_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint45
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pipe
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: arm_1_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: arm_2_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint27
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint20
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint28
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: finger_1_l
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint30
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint44 1
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint44
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint34
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint35
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint31
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint32
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: robot_model(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root_bone
+      parentName: robot_model(Clone)
+      position: {x: -0, y: -0.081336044, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pelvic
+      parentName: root_bone
+      position: {x: -0, y: 1.7333798, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leg_1_L
+      parentName: pelvic
+      position: {x: -0.688912, y: -0.002349898, z: -0.0925413}
+      rotation: {x: 8.542407e-24, y: -0.00000020898118, z: 0.0000000017048853, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leg_2_L
+      parentName: leg_1_L
+      position: {x: -0, y: -1.082904, z: 0.0398409}
+      rotation: {x: 6.765371e-16, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint11
+      parentName: leg_2_L
+      position: {x: -0, y: -0.468527, z: -0.0271842}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: feet_bone_L
+      parentName: joint11
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 7.3374844e-17, y: 0.97467476, z: -7.3374844e-17, w: 0.22362733}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint43 1
+      parentName: feet_bone_L
+      position: {x: 0.075207345, y: -0.052409925, z: -0.105238296}
+      rotation: {x: 3.3409147e-17, y: 0.92516875, z: -3.3409147e-17, w: -0.379556}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13 4
+      parentName: joint43 1
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface118
+      parentName: joint43 1
+      position: {x: 0.7540278, y: -0.12718907, z: 0.27518782}
+      rotation: {x: 0, y: -0.16305059, z: -0, w: 0.9866177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface94
+      parentName: joint43 1
+      position: {x: 0.75402784, y: -0.12808222, z: 0.27518773}
+      rotation: {x: 0, y: -0.1630505, z: -0, w: 0.98661774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint12 1
+      parentName: feet_bone_L
+      position: {x: 0.051378638, y: -0.052409925, z: 0.12770279}
+      rotation: {x: 8.4605866e-17, y: 0.84156907, z: -8.4605866e-17, w: 0.54014957}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13 3
+      parentName: joint12 1
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface117
+      parentName: joint12 1
+      position: {x: 0.2025527, y: -0.12718907, z: -0.6839957}
+      rotation: {x: 8.65906e-17, y: 0.7146679, z: -8.65906e-17, w: 0.6994639}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface96
+      parentName: joint12 1
+      position: {x: 0.20255262, y: -0.12718907, z: -0.6839957}
+      rotation: {x: 8.65906e-17, y: 0.714668, z: -8.65906e-17, w: 0.69946384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint44 1
+      parentName: feet_bone_L
+      position: {x: -0.14516559, y: -0.052409925, z: -0.0033990405}
+      rotation: {x: 0, y: -0.0033826416, z: -0, w: 0.9999943}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13 5
+      parentName: joint44 1
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface119
+      parentName: joint44 1
+      position: {x: -0.50808644, y: -0.12718907, z: 0.23526311}
+      rotation: {x: 4.5739915e-17, y: 0.97391266, z: -4.5739915e-17, w: -0.22692315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface95
+      parentName: joint44 1
+      position: {x: -0.5080864, y: -0.12718907, z: 0.23526318}
+      rotation: {x: 4.573991e-17, y: 0.97391266, z: -4.573991e-17, w: -0.2269232}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface106
+      parentName: leg_2_L
+      position: {x: -0.6745015, y: -0.648126, z: 0.052700453}
+      rotation: {x: 0, y: 0.0000000400887, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface18
+      parentName: leg_2_L
+      position: {x: 0.68891203, y: -0.648126, z: 0.052700344}
+      rotation: {x: 0, y: 0.0000000400887, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface17
+      parentName: leg_2_L
+      position: {x: 0.68891203, y: -0.648126, z: 0.052700344}
+      rotation: {x: 0, y: 0.0000000400887, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface116
+      parentName: leg_1_L
+      position: {x: 0.68891203, y: -1.73103, z: 0.09254125}
+      rotation: {x: 0, y: 0.0000000400887, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint3
+      parentName: pelvic
+      position: {x: 0.688912, y: -0.002349898, z: -0.0925413}
+      rotation: {x: 9.518137e-27, y: -0.000000003589674, z: 2.928485e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint5
+      parentName: joint3
+      position: {x: -0, y: -1.082904, z: 0.0398409}
+      rotation: {x: 6.765371e-16, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint8
+      parentName: joint5
+      position: {x: -0, y: -0.468527, z: -0.0271842}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: feet_bone_R
+      parentName: joint8
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 7.3374844e-17, y: 0.97467476, z: -7.3374844e-17, w: 0.22362733}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint43
+      parentName: feet_bone_R
+      position: {x: 0.055610698, y: -0.052409925, z: -0.08590503}
+      rotation: {x: 3.3409147e-17, y: 0.92516875, z: -3.3409147e-17, w: -0.379556}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13 1
+      parentName: joint43
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface113
+      parentName: joint43
+      position: {x: -0.5505359, y: -0.12718907, z: -0.16810948}
+      rotation: {x: 0, y: -0.16305065, z: -0, w: 0.9866177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint12
+      parentName: feet_bone_R
+      position: {x: 0.036037445, y: -0.052409925, z: 0.094213806}
+      rotation: {x: 8.4605866e-17, y: 0.84156907, z: -8.4605866e-17, w: 0.54014957}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13
+      parentName: joint12
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface112
+      parentName: joint12
+      position: {x: 0.23217656, y: -0.12718907, z: 0.69350976}
+      rotation: {x: 8.65906e-17, y: 0.7146679, z: -8.65906e-17, w: 0.69946396}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint44
+      parentName: feet_bone_R
+      position: {x: -0.11307865, y: -0.052409925, z: -0.0031819511}
+      rotation: {x: 0, y: -0.0033826416, z: -0, w: 0.9999943}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint13 2
+      parentName: joint44
+      position: {x: -0.2481502, y: 0, z: 0.009403885}
+      rotation: {x: 0, y: 0.048538525, z: -0, w: 0.9988213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface114
+      parentName: joint44
+      position: {x: 0.727838, y: -0.12718907, z: -0.37374422}
+      rotation: {x: 4.573992e-17, y: 0.97391266, z: -4.573992e-17, w: -0.2269231}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface81
+      parentName: joint5
+      position: {x: -0.688912, y: -0.648126, z: 0.0527004}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface32
+      parentName: joint5
+      position: {x: -0.688912, y: -0.648126, z: 0.0527004}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface80
+      parentName: joint3
+      position: {x: -0.688912, y: -1.73103, z: 0.0925413}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface79
+      parentName: joint3
+      position: {x: -0.688912, y: -1.73103, z: 0.0925413}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface90
+      parentName: joint3
+      position: {x: -0.688912, y: -1.73103, z: 0.0925413}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head
+      parentName: pelvic
+      position: {x: -0, y: 1.0696671, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint27
+      parentName: head
+      position: {x: 1.09622, y: 0.156543, z: -0.00368842}
+      rotation: {x: -0.06485646, y: -0.0035391625, z: -0.009378233, w: 0.9978443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint28
+      parentName: joint27
+      position: {x: 0.06275, y: -1.29028, z: 0.03924122}
+      rotation: {x: 0.17655528, y: 0.013228792, z: 0.022022778, w: 0.98395544}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint29
+      parentName: joint28
+      position: {x: -0, y: -0.747353, z: 0.3036122}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint30
+      parentName: joint29
+      position: {x: -0, y: -0.152845, z: 0.095783}
+      rotation: {x: -0.25881907, y: 0, z: -0, w: 0.9659258}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint31
+      parentName: joint30
+      position: {x: 0.16593, y: -0.187889, z: 0.072409}
+      rotation: {x: 0.28934336, y: 0.13900748, z: 0.25172034, w: 0.9130139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint32
+      parentName: joint31
+      position: {x: 0.08583749, y: -0.13818292, z: 0.14557697}
+      rotation: {x: 0.33139288, y: 0.43638214, z: 0.18503006, w: 0.81578994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint33
+      parentName: joint32
+      position: {x: -0.3778263, y: 0.0000004267169, z: -2.220446e-16}
+      rotation: {x: -0.2987943, y: -0.640876, z: -0.2987943, w: 0.640876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface36
+      parentName: joint32
+      position: {x: 0.008338206, y: -0.86902606, z: -1.5071001}
+      rotation: {x: -0.2987943, y: -0.6408759, z: -0.29879427, w: 0.640876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface51
+      parentName: joint31
+      position: {x: -1.1564335, y: -0.18039903, z: -1.071636}
+      rotation: {x: -0.04317881, y: -0.19942093, z: -0.20716533, w: 0.9567912}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint34
+      parentName: joint30
+      position: {x: -0.20147, y: -0.292229, z: 0.067132}
+      rotation: {x: 0.2918303, y: 0.8867307, z: 0.30426827, w: 0.18964343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint35
+      parentName: joint34
+      position: {x: 0.016992606, y: -0.06981281, z: -0.089215495}
+      rotation: {x: 0.24564746, y: 0.83766854, z: -0.09818777, w: 0.47783682}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint36
+      parentName: joint35
+      position: {x: 0.20209292, y: -0.2505257, z: 0.05424013}
+      rotation: {x: 0.029018255, y: 0.7022978, z: -0.029364811, w: 0.7106852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface37
+      parentName: joint35
+      position: {x: -0.74000734, y: -0.4363385, z: 0.86243314}
+      rotation: {x: 0.029018255, y: 0.7022978, z: -0.029364824, w: 0.7106852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface52
+      parentName: joint34
+      position: {x: 0.75805455, y: -1.0245156, z: 0.056259245}
+      rotation: {x: 0.23280303, y: 0.9352665, z: 0.064397804, w: -0.25871274}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface87
+      parentName: joint30
+      position: {x: -1.15897, y: -0.44859654, z: -0.761232}
+      rotation: {x: 0.25881907, y: 0, z: -0, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface120
+      parentName: polySurface87
+      position: {x: 2.3592311e-10, y: 0, z: 0.00000007011698}
+      rotation: {x: 2.7755576e-17, y: 0.000000031981255, z: -8.876581e-25, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle5
+      parentName: joint30
+      position: {x: 0.34813, y: -0.6778686, z: 0.161679}
+      rotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle6
+      parentName: joint30
+      position: {x: -0.33987, y: -0.6778686, z: 0.161679}
+      rotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface25
+      parentName: joint28
+      position: {x: -1.15897, y: -1.66931, z: -0.0355528}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface49
+      parentName: joint28
+      position: {x: -1.15897, y: -1.66931, z: -0.0355528}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface33
+      parentName: joint28
+      position: {x: -1.15897, y: -1.66931, z: -0.03555277}
+      rotation: {x: 0, y: 0.000000013924262, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface103
+      parentName: joint27
+      position: {x: -1.09622, y: -2.95959, z: 0.00368842}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface97
+      parentName: joint27
+      position: {x: -1.09622, y: -2.95959, z: 0.00368842}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm_1_L
+      parentName: head
+      position: {x: -1.0962234, y: 0.15654254, z: -0.0036884244}
+      rotation: {x: -0.064862385, y: 0.0035438673, z: 0.009376657, w: 0.99784386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm_2_L
+      parentName: arm_1_L
+      position: {x: -0.06274454, y: -1.2902802, z: 0.03924126}
+      rotation: {x: 0.17656915, y: -0.013303757, z: -0.022004178, w: 0.98395234}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint19
+      parentName: arm_2_L
+      position: {x: -0, y: -0.74735194, z: 0.30361173}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint20
+      parentName: joint19
+      position: {x: -0, y: -0.15284581, z: 0.095783375}
+      rotation: {x: -0.25881907, y: 0, z: -0, w: 0.9659258}
+      scale: {x: 1, y: 1, z: 1}
+    - name: finger_1_l
+      parentName: joint20
+      position: {x: -0.16593216, y: -0.18788831, z: 0.07240886}
+      rotation: {x: 0.28934097, y: 0.13900465, z: 0.2517218, w: 0.9130146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: finger_2_l
+      parentName: finger_1_l
+      position: {x: -0.2183009, y: -2.0816682e-17, z: 0}
+      rotation: {x: 0.33139288, y: 0.43638214, z: 0.18503006, w: 0.81578994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint26
+      parentName: finger_2_l
+      position: {x: -0.37782636, y: -1.3877788e-16, z: 2.3525632e-17}
+      rotation: {x: -0.2987943, y: -0.640876, z: -0.2987943, w: 0.640876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface39
+      parentName: finger_2_l
+      position: {x: 0.00834061, y: -0.86903787, z: 1.5070927}
+      rotation: {x: -0.29879457, y: -0.64087373, z: -0.29879203, w: 0.64087915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface54
+      parentName: finger_1_l
+      position: {x: 1.0551583, y: -1.185224, z: -0.013056302}
+      rotation: {x: -0.043176122, y: -0.19941832, z: -0.20716774, w: 0.95679134}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint21
+      parentName: joint20
+      position: {x: 0.20146789, y: -0.29222864, z: 0.06713165}
+      rotation: {x: 0.2918303, y: 0.8867307, z: 0.30426827, w: 0.18964343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint22
+      parentName: joint21
+      position: {x: -0.114551, y: 4.6837534e-17, z: -2.7755576e-17}
+      rotation: {x: 0.24564746, y: 0.83766854, z: -0.09818777, w: 0.47783682}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint23
+      parentName: joint22
+      position: {x: 0.20331387, y: -0.25062716, z: -0.04895258}
+      rotation: {x: 0.029018255, y: 0.7022978, z: -0.029364811, w: 0.7106852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface40
+      parentName: joint22
+      position: {x: -0.7194046, y: -0.43804434, z: -0.87884414}
+      rotation: {x: 0.029018238, y: 0.70229787, z: -0.029364806, w: 0.71068513}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface55
+      parentName: joint21
+      position: {x: -0.69301945, y: -0.2544082, z: 1.0404055}
+      rotation: {x: 0.23280305, y: 0.9352665, z: 0.064397834, w: -0.25871277}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface88
+      parentName: joint20
+      position: {x: 1.1589679, y: -0.4485962, z: -0.7612318}
+      rotation: {x: 0.25881907, y: 0.000000015704442, z: 0.0000000042079926, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface121
+      parentName: polySurface88
+      position: {x: -4.5126216e-25, y: -2.1761308e-32, z: -5.551115e-17}
+      rotation: {x: -1.9342932e-16, y: 0.000000004064608, z: 0.000000007040108, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle3
+      parentName: joint20
+      position: {x: 0.33986783, y: -0.6778682, z: 0.16167887}
+      rotation: {x: 0.25881907, y: -1.5979903e-24, z: 4.2818024e-25, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle4
+      parentName: joint20
+      position: {x: -0.34813213, y: -0.6778682, z: 0.16167887}
+      rotation: {x: 0.25881907, y: -1.5979903e-24, z: 4.2818024e-25, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface26
+      parentName: arm_2_L
+      position: {x: 1.1589679, y: -1.6693094, z: -0.035552837}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface34
+      parentName: arm_2_L
+      position: {x: 1.1589679, y: -1.6693094, z: -0.03555286}
+      rotation: {x: 0, y: 0.000000010882315, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface50
+      parentName: arm_2_L
+      position: {x: 1.1589679, y: -1.6693094, z: -0.035552874}
+      rotation: {x: 0, y: 0.000000016258433, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface104
+      parentName: arm_1_L
+      position: {x: 1.0962234, y: -2.9595895, z: 0.0036884244}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface46
+      parentName: arm_1_L
+      position: {x: 1.0962234, y: -2.9595895, z: 0.0036884244}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint46
+      parentName: head
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint45
+      parentName: joint46
+      position: {x: -0, y: 0.40452245, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint38
+      parentName: joint45
+      position: {x: -0, y: 0.6796941, z: 0}
+      rotation: {x: 0.11775522, y: -0.6972329, z: -0.11775522, w: 0.6972329}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pipe
+      parentName: joint38
+      position: {x: -0.6314413, y: 1.6653345e-16, z: 0.36770374}
+      rotation: {x: 0, y: -0, z: -0.5794777, w: 0.81498814}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint40
+      parentName: pipe
+      position: {x: -1.2749377, y: -2.331192e-16, z: 6.6847814e-17}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface100
+      parentName: pipe
+      position: {x: 4.094636, y: 0.59641826, z: -0.36770374}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface108
+      parentName: joint45
+      position: {x: -0, y: -3.2075694, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: handle
+      parentName: head
+      position: {x: 0.23655634, y: -0.56617385, z: 1.0100499}
+      rotation: {x: 0, y: 0, z: 0.018699875, w: 0.9998251}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint42
+      parentName: handle
+      position: {x: -0.587781, y: 1.4224733e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0.018699875, w: 0.9998251}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface115
+      parentName: handle
+      position: {x: -0.32003477, y: -2.226463, z: -1.0100499}
+      rotation: {x: 0, y: 0, z: -0.018699875, w: 0.9998251}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface29
+      parentName: head
+      position: {x: -0, y: -2.803047, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle2
+      parentName: root_bone
+      position: {x: 0.688912, y: 0.179599, z: -0.0798846}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle1
+      parentName: root_bone
+      position: {x: -0.688912, y: 0.179599, z: -0.0798846}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle7
+      parentName: root_bone
+      position: {x: 1.15897, y: 0.84062093, z: 0.339165}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ikHandle8
+      parentName: root_bone
+      position: {x: -1.1589679, y: 0.84062135, z: 0.33916456}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

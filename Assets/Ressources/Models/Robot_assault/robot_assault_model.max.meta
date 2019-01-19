@@ -74,7 +74,27 @@ ModelImporter:
     4300020: torso_tube6
     4300022: l_leg
     4300024: r_leg
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 11
+    second: {fileID: 2100000, guid: 4af7e50bf06572046959203003280d97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 333
+    second: {fileID: 2100000, guid: 1b8e6a43a3744ae4b936139bf20b0413, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 444
+    second: {fileID: 2100000, guid: e78a1cd199c26f9458396672a4a33f3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 555
+    second: {fileID: 2100000, guid: 77fe22912578fe44cbc469d18a22e6e6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

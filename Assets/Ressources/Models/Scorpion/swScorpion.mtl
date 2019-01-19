@@ -1,0 +1,27 @@
+newmtl Chrome_LakeSG
+illum 4
+Kd 0.60 0.66 0.68
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.50 0.80 0.91
+newmtl Silver_DeepSG
+illum 4
+Kd 0.50 0.45 0.40
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 1.00 1.00 1.00
+newmtl Silver_Deep_BumpSG
+illum 4
+Kd 0.50 0.45 0.40
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 1.00 1.00 1.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

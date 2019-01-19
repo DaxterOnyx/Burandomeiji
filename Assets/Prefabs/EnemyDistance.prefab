@@ -195,6 +195,8 @@ MonoBehaviour:
   m_hitDamage: 1
   m_critical: 1
   m_mana: 75
+  m_type: 1
+  ID: 0
 --- !u!114 &114981126235935946
 MonoBehaviour:
   m_ObjectHideFlags: 1

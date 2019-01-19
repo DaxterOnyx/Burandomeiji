@@ -62,4 +62,13 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetButtonDown("BonusMenu"); }
     }
 
+    public bool A
+    {
+        get { return Input.GetButtonDown("LeftA"); }
+    }
+
+    public bool E
+    {
+        get { return Input.GetButtonDown("RightE"); }
+    }
 }

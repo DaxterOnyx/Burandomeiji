@@ -28,7 +28,6 @@ public class PlayerPCSpawn : MonoBehaviour
         GameObject enemyIns_ = Instantiate(_enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
         enemyIns_.GetComponent<EnemyStats>().GetID(_count);
         bonusMenu.GetEnemyIns(enemyIns_);
-        Destroy(spawnerIns_, 1.5f);
     }
 
     public void ChangeEnemy(int count_)

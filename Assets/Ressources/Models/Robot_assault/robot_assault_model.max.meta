@@ -74,6 +74,7 @@ ModelImporter:
     4300020: torso_tube6
     4300022: l_leg
     4300024: r_leg
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material

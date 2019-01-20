@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23283422888360208}
   - component: {fileID: 136488520128063790}
   - component: {fileID: 114426588493633190}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body player VR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065138585749332}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

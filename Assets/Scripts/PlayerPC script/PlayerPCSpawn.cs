@@ -23,8 +23,9 @@ public class PlayerPCSpawn : MonoBehaviour
 
     public IEnumerator Spawn(RaycastHit _hit, GameObject _enemyForSpawn, int _count)
     {
-        GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point, Quaternion.identity);
-        yield return new WaitForSeconds(0.6f);
+        Vector3 tmp = new Vector3(0f, 0.66f, 0f);
+        GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point + tmp, Quaternion.identity);
+        yield return new WaitForSeconds(1.5f);
         GameObject enemyIns_ = Instantiate(_enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
         enemyIns_.GetComponent<EnemyStats>().GetID(_count);
         bonusMenu.GetEnemyIns(enemyIns_);

@@ -122,41 +122,43 @@ public class BonusMenu : MonoBehaviour {
         hightLeftText.text = enemyStats_.enemyName;
         centerLeftText.text = "Type : " + enemyStats_.type;
 
-        switch(currentIcon)
+        float mult = bonusTab[0][currentEnemyIcon][currentIcon];
+
+        switch (currentIcon)
         {
             case 0:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Speed : " + (bonusTab[0][currentEnemyIcon][currentIcon]*100).ToString("0") + " %";
-                hightRightText.text = enemyStats_.speed + " speed";
+                centerRightText.text = " Speed : " + (mult * 100).ToString("0") + " %";
+                hightRightText.text = (enemyStats_.speedNoMult * mult).ToString("0.0") + " speed";
                 break;
 
             case 1:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Health : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
-                hightRightText.text = enemyStats_.health + " health";
+                centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
+                hightRightText.text = (enemyStats_.healthNoMult * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Critical rate : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
-                hightRightText.text = enemyStats_.critical + " % critical chance";
+                centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
+                hightRightText.text = (enemyStats_.criticalNoMult * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
-                hightRightText.text = enemyStats_.hitDamage + " damage";
+                centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
+                hightRightText.text = (enemyStats_.hitDamageNoMult * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon] + " mana";
+                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack speed : " + (bonusTab[0][currentEnemyIcon][currentIcon] * 100).ToString("0") + " %";
-                hightRightText.text = enemyStats_.hitDamage + " attack per second";
+                centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
+                hightRightText.text = (enemyStats_.hitDamageNoMult * mult).ToString("0.0") + " attack per second";
                 break;
 
             default:
@@ -260,7 +262,7 @@ public class BonusMenu : MonoBehaviour {
             costMana_ += bonusTab[1][_currentEnemyIcon][j];
         }
 
-        _manaCost.text = "-" + costMana_ + " mana";
+        _manaCost.text = "-" + costMana_;
 
         return _manaCost;
     }

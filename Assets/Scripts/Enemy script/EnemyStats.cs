@@ -32,12 +32,18 @@ public class EnemyStats : MonoBehaviour {
 
     public string enemyName { get { return m_enemyName; } private set { m_enemyName = value; } }
     public float hitCooldown { get { return m_hitCooldown * multHitCooldown; } private set { m_hitCooldown = value; } }
-    public float speed { get { return m_speed; } private set { m_speed = value * multSpeed; } }
+    public float speed { get { return m_speed * multSpeed; } private set { m_speed = value * multSpeed; } }
     public float health { get { return m_health * multHealth; } private set { m_health = value; } }
     public float hitDamage { get { return m_hitDamage * multHitDamage; } private set { m_hitDamage = value; } }
     public float critical { get { return m_critical * multCritical; } private set { m_critical = value; } }
     public float mana { get { return (m_mana + costCritical + costHealth + costHitCooldown + costHitDamage + costSpeed); } private set { m_mana = value; } }
     public enemyType type { get { return m_type; } private set { m_type = value; } }
+
+    public float hitCooldownNoMult { get { return m_hitCooldown; } private set { m_hitCooldown = value; } }
+    public float speedNoMult { get { return m_speed; } private set { m_speed = value * multSpeed; } }
+    public float healthNoMult { get { return m_health; } private set { m_health = value; } }
+    public float hitDamageNoMult { get { return m_hitDamage; } private set { m_hitDamage = value; } }
+    public float criticalNoMult { get { return m_critical; } private set { m_critical = value; } }
 
     public void GetID(int _ID)
     {

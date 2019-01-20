@@ -27,7 +27,7 @@ public class ManaBarScript : MonoBehaviour {
     public void SetManaRegen(float _manaRegen)
     {
         manaRegen = _manaRegen;
-        textManaRegen.text = "+" + manaRegen.ToString("0") + " mana / sec";
+        textManaRegen.text = "+" + manaRegen.ToString("0") + "             / sec";
         //textManaRegen.text = "+" + ((manaRegen/manaMax)*100).ToString("0") + "% mana / sec";
     }
 }

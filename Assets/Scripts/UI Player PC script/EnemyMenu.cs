@@ -105,6 +105,6 @@ public class EnemyMenu : MonoBehaviour {
         stats = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
         float costMana = stats.mana;
 
-        manaCost.text = "-" + costMana + " mana";
+        manaCost.text = "-" + costMana;
     }
 }

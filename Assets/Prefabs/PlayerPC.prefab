@@ -224,11 +224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
     type: 2}
-  enemyForSpawn: {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650,
-    type: 2}
   allEnemyTab:
-  - {fileID: 1545489681706988, guid: c6a898c73b124924d88dca7a5efff650, type: 2}
-  - {fileID: 1545489681706988, guid: 751b87220f5c84e4b90839de8d35ce4c, type: 2}
+  - {fileID: 1462532190980112, guid: 829cf79efbfa93e4f9d7fb392c8d8dd7, type: 2}
+  - {fileID: 1016190419679808, guid: c1084297837cab944b285aa46a911cbc, type: 2}
 --- !u!114 &114679362626588708
 MonoBehaviour:
   m_ObjectHideFlags: 1

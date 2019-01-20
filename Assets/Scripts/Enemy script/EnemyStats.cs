@@ -32,7 +32,7 @@ public class EnemyStats : MonoBehaviour {
 
     public string enemyName { get { return m_enemyName; } private set { m_enemyName = value; } }
     public float hitCooldown { get { return m_hitCooldown * multHitCooldown; } private set { m_hitCooldown = value; } }
-    public float speed { get { return m_speed * multSpeed; } private set { m_speed = value; } }
+    public float speed { get { return m_speed; } private set { m_speed = value * multSpeed; } }
     public float health { get { return m_health * multHealth; } private set { m_health = value; } }
     public float hitDamage { get { return m_hitDamage * multHitDamage; } private set { m_hitDamage = value; } }
     public float critical { get { return m_critical * multCritical; } private set { m_critical = value; } }

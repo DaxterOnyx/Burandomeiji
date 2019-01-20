@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 195311096067039152}
   - component: {fileID: 114607072198632028}
   - component: {fileID: 114915277083918068}
+  - component: {fileID: 208597284393122802}
   m_Layer: 0
   m_Name: AIThirdPersonController
   m_TagString: Untagged
@@ -2709,7 +2710,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453731829766844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.9, y: 0.44, z: -23.63}
+  m_LocalPosition: {x: -5.48, y: 2.88, z: 17.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4596830845214510}
@@ -3286,3 +3287,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &208597284393122802
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453731829766844}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5

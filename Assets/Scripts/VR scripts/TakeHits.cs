@@ -18,7 +18,7 @@ public class TakeHits : MonoBehaviour {
     {
         Debug.Log("OnCollisionEnter");
 
-        if (collision.collider.GetComponent<IAScript>() != null)
+        if (collision.collider.GetComponent<AIScript>() != null)
         {
             HitPoints--;
             Debug.Log("HitPoints");
@@ -29,7 +29,7 @@ public class TakeHits : MonoBehaviour {
     {
         Debug.Log("OnTriggerEnter");
 
-        if (other.GetComponent<IAScript>() != null)
+        if (other.GetComponent<AIScript>() != null)
         {
             HitPoints--;
             Debug.Log("HitPoints");

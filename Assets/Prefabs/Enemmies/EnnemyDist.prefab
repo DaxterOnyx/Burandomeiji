@@ -3188,7 +3188,7 @@ MonoBehaviour:
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Dis
   m_hitCooldown: 1
-  m_speed: 4
+  m_speed: 1
   m_health: 1
   m_hitDamage: 1
   m_critical: 1

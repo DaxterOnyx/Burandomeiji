@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136488520128063790}
   - component: {fileID: 114426588493633190}
   m_Layer: 2
-  m_Name: body player VR
+  m_Name: BodyVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

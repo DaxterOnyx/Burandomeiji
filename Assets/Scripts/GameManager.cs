@@ -2,22 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : SingletonBehaviour<GameManager> {
 
-    public static GameManager instance;
-    public MatchSettings matchSettings;
+    [SerializeField]
+    private float timer = 600;
 
-    void Awake ()
+    [SerializeField]
+    private bool end = false;
+
+    public void Start()
     {
-        if (instance == null)
+        end = false;
+    }
+
+    void Update()
+    {
+        if(timer >0)
         {
-            instance = this;
-            DontDestroyOnLoad(this);
+            timer -= Time.deltaTime;
         }
         else
         {
-            Destroy(gameObject);
+            end = true;
         }
     }
-	
+
+    public string getTimeString()
+    {
+        int minute = (int)timer / 60;
+        int second = (int)timer % 60;
+        string time = minute + ":" + second.ToString("00");
+        return time;
+    }
+
+    public float timeRemain()
+    {
+        return timer;
+    }
+
+    public bool isGameFinish()
+    {
+        return end;
+    }
 }

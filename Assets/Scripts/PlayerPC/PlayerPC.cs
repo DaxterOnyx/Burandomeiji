@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerPCController))]
 [RequireComponent(typeof(PlayerPCSpawn))]
@@ -20,12 +21,16 @@ public class PlayerPC : MonoBehaviour {
     private GameObject UIPlayerPCInstance;
     private GameObject bonusMenuGo;
     private GameObject cursorGO;
+    private Transform target;
 
     /* Attributs */
     private bool canSpawn = true;
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 50f;
+
+    private bool isFirstTime = true;
+    Image imageCursor;
 
 	private void Start ()
     {
@@ -49,6 +54,7 @@ public class PlayerPC : MonoBehaviour {
 
         bonusMenuGo = GameObject.FindGameObjectWithTag("BonusMenu");
         cursorGO = GameObject.FindGameObjectWithTag("Cursor");
+        imageCursor = cursorGO.GetComponent<Image>();
         bonusMenuGo.SetActive(false);
     }
 	
@@ -59,7 +65,13 @@ public class PlayerPC : MonoBehaviour {
             RegenMana();
         }
 
-        if(canSpawn)
+        if(GameObject.FindGameObjectWithTag("Player") && isFirstTime)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            isFirstTime = false;
+        }
+
+        if(canSpawn && !isFirstTime)
         {
             Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
             RaycastHit hit = new RaycastHit();
@@ -67,15 +79,23 @@ public class PlayerPC : MonoBehaviour {
             {
                 if (hit.collider.gameObject.tag == "Terrain")
                 {
-                    //Debug.DrawRay(hit.point, hit.normal * 10, Color.green);
-                    if (playerPCController.ClickDown0)
+                    float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
+                    if (distanceVRCursor >= 15f)
                     {
-                        if(currentMana >= bonusMenuScript.UpdateLostMana())
+                        if (playerPCController.ClickDown0)
                         {
-                            StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
-                            currentMana -= bonusMenuScript.UpdateLostMana();
+                            float lostMana = bonusMenuScript.UpdateLostMana();
+                            if (currentMana >= lostMana)
+                            {
+                                StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
+                                currentMana -= lostMana;
+                            }
                         }
-                        
+                        imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
+                    }
+                    else
+                    {
+                        imageCursor.color = Color.HSVToRGB(0f, 100f, 85f);   // Rouge
                     }
                 }
             }

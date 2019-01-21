@@ -35,10 +35,10 @@ public class PlayerPCMotor : MonoBehaviour {
         {
             PerformUp();
         }
-        /*if(playerPCController.Down)
+        if(playerPCController.Down)
         {
             PerformDown();
-        }*/
+        }
     }
 
     private void PerformMovement()
@@ -61,7 +61,7 @@ public class PlayerPCMotor : MonoBehaviour {
         rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
     }
 
-    /*private void PerformDown()
+    private void PerformDown()
     {
         Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.down));
         RaycastHit hit = new RaycastHit();
@@ -72,5 +72,5 @@ public class PlayerPCMotor : MonoBehaviour {
         rb.velocity = Vector3.zero;
         Vector3 velocity = new Vector3(0f, -speed_Up_Down, 0f);
         rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
-    }*/
+    }
 }

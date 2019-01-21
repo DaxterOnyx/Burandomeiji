@@ -47,10 +47,10 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetButton("Up"); }
     }
 
-    /*public bool Down
+    public bool Down
     {
         get { return Input.GetButton("Down"); }
-    }*/
+    }
 
     public float ScrollWheel
     {

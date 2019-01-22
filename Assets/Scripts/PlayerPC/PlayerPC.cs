@@ -92,6 +92,7 @@ public class PlayerPC : MonoBehaviour {
                             }
                         }
                         imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
+                        bonusMenuScript.GetDistance(distanceVRCursor);
                     }
                     else
                     {

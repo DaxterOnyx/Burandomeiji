@@ -17,6 +17,7 @@ public class BonusMenu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI centerRightText;
     [SerializeField] private TextMeshProUGUI lowLeftText;
     [SerializeField] private TextMeshProUGUI lowRightText;
+    [SerializeField] private TextMeshProUGUI manaCost;
 
     [SerializeField] private RectTransform bonusBar;
     private List<GameObject> bonusIconList = new List<GameObject>();
@@ -27,6 +28,7 @@ public class BonusMenu : MonoBehaviour {
     [SerializeField] private float[] multTab;
     private int currentIcon;
     private int currentEnemyIcon;
+    private float distance;
 
     private bool canDowngrade = true;
 
@@ -35,6 +37,12 @@ public class BonusMenu : MonoBehaviour {
     private void Start()
     {
         enemyMenu = GetComponent<EnemyMenu>();
+        distance = 1f;
+    }
+
+    private void Update()
+    {
+        UpdateManaCost(currentEnemyIcon, manaCost);
     }
 
     #region UI
@@ -254,6 +262,7 @@ public class BonusMenu : MonoBehaviour {
 
     public TextMeshProUGUI UpdateManaCost(int _currentEnemyIcon, TextMeshProUGUI _manaCost)
     {
+        manaCost = _manaCost;
         EnemyStats stats_ = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
         float costMana_ = stats_.mana;
 
@@ -262,9 +271,14 @@ public class BonusMenu : MonoBehaviour {
             costMana_ += bonusTab[1][_currentEnemyIcon][j];
         }
 
-        _manaCost.text = "-" + costMana_;
-
+        // FORMULE POUR MODIFIER LE COUT EN MANA PAR RAPPORT A LA DISTANCE DU JOEUR VR
+        
         return _manaCost;
+    }
+
+    public void GetDistance(float _distance)
+    {
+        distance = _distance;
     }
 
     public float UpdateLostMana()

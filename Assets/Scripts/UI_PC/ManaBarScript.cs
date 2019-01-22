@@ -10,7 +10,6 @@ public class ManaBarScript : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI textManaRegen;
 
     private float manaRegen;
-    private float manaMax;
 
     public void SetMana(float manaMax_, float amount_)
     {
@@ -18,7 +17,6 @@ public class ManaBarScript : MonoBehaviour {
         {
             amount_ = 0;
         }
-        manaMax = manaMax_;
         manaBarFill.localScale = new Vector3(amount_ / manaMax_, 1f, 1f);
         textMana.text = amount_.ToString("0") + " / " + manaMax_.ToString("0");
         //textMana.text = ((amount_/manaMax_)*100).ToString("0") + "%";

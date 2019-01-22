@@ -94,6 +94,7 @@ public class EnemyMenu : MonoBehaviour {
         InsIcon(currentEnemyIcon % allEnemyTab.Length);
         InsIcon((currentEnemyIcon + 1) % allEnemyTab.Length);
 
+
         manaCost = bonusMenu.UpdateManaCost(currentEnemyIcon, manaCost);
 
         return currentEnemyIcon;
@@ -105,6 +106,6 @@ public class EnemyMenu : MonoBehaviour {
         stats = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
         float costMana = stats.mana;
 
-        manaCost.text = "-" + costMana;
+        manaCost.text = "" + costMana;
     }
 }

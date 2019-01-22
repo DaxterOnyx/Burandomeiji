@@ -17,7 +17,6 @@ public class BonusMenu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI centerRightText;
     [SerializeField] private TextMeshProUGUI lowLeftText;
     [SerializeField] private TextMeshProUGUI lowRightText;
-    [SerializeField] private TextMeshProUGUI manaCost;
 
     [SerializeField] private RectTransform bonusBar;
     private List<GameObject> bonusIconList = new List<GameObject>();
@@ -39,12 +38,6 @@ public class BonusMenu : MonoBehaviour {
         enemyMenu = GetComponent<EnemyMenu>();
         distance = 1f;
     }
-
-    private void Update()
-    {
-        UpdateManaCost(currentEnemyIcon, manaCost);
-    }
-
     #region UI
 
     private void InsIcon(int _number)
@@ -138,35 +131,35 @@ public class BonusMenu : MonoBehaviour {
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Speed : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.speedNoMult * mult).ToString("0.0") + " speed";
+                hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " speed";
                 break;
 
             case 1:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.healthNoMult * mult).ToString("0.0") + " health";
+                hightRightText.text = (enemyStats_.HitPoint * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.criticalNoMult * mult).ToString("0.0") + " % critical chance";
+                hightRightText.text = (enemyStats_.critical * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.hitDamageNoMult * mult).ToString("0.0") + " damage";
+                hightRightText.text = (enemyStats_.hitDamage * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.hitDamageNoMult * mult).ToString("0.0") + " attack per second";
+                hightRightText.text = (enemyStats_.hitDamage * mult).ToString("0.0") + " attack per second";
                 break;
 
             default:
@@ -181,7 +174,9 @@ public class BonusMenu : MonoBehaviour {
         currentEnemyIcon = enemyMenu.currentEnemyIcon;
         bonusTab[0][currentEnemyIcon][currentIcon] += multTab[currentIcon];
         bonusTab[1][currentEnemyIcon][currentIcon] += costManaTab[currentIcon];
+
         UpdateText();
+
         enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
     }
 
@@ -191,9 +186,6 @@ public class BonusMenu : MonoBehaviour {
         {
             currentEnemyIcon = enemyMenu.currentEnemyIcon;
             bonusTab[0][currentEnemyIcon][currentIcon] -= multTab[currentIcon];
-
-
-
             bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTab[currentIcon];
             UpdateText();
             enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
@@ -245,24 +237,14 @@ public class BonusMenu : MonoBehaviour {
         {
             if(stats_.ID == i)
             {
-                stats_.multSpeed = bonusTab[0][i][0];
-                stats_.multHealth = bonusTab[0][i][1];
-                stats_.multCritical = bonusTab[0][i][2];
-                stats_.multHitDamage = bonusTab[0][i][3];
-                stats_.multHitCooldown = bonusTab[0][i][4];
-
-                stats_.costSpeed = bonusTab[1][i][0];
-                stats_.costHealth = bonusTab[1][i][1];
-                stats_.costCritical = bonusTab[1][i][2];
-                stats_.costHitDamage = bonusTab[1][i][3];
-                stats_.costHitCooldown = bonusTab[1][i][4];
+                stats_.SetStats(bonusTab[0][i][0], bonusTab[0][i][1], bonusTab[0][i][2], bonusTab[0][i][3], bonusTab[0][i][4]);
+                stats_.SetCost(bonusTab[1][i][0] + bonusTab[1][i][1] + bonusTab[1][i][2] + bonusTab[1][i][3] + bonusTab[1][i][4]);
             }
         }
     }
 
-    public TextMeshProUGUI UpdateManaCost(int _currentEnemyIcon, TextMeshProUGUI _manaCost)
+    public TextMeshProUGUI UpdateManaCost(int _currentEnemyIcon, TextMeshProUGUI _costMana)
     {
-        manaCost = _manaCost;
         EnemyStats stats_ = allEnemyTab[_currentEnemyIcon].GetComponent<EnemyStats>();
         float costMana_ = stats_.mana;
 
@@ -271,18 +253,14 @@ public class BonusMenu : MonoBehaviour {
             costMana_ += bonusTab[1][_currentEnemyIcon][j];
         }
 
-        // FORMULE POUR MODIFIER LE COUT EN MANA PAR RAPPORT A LA DISTANCE DU JOEUR VR
+        _costMana.text = "" + costMana_;
         
-        return _manaCost;
-    }
-
-    public void GetDistance(float _distance)
-    {
-        distance = _distance;
+        return _costMana;
     }
 
     public float UpdateLostMana()
     {
+        currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
         EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
 
         float manaLost_ = enemyStats_.mana;
@@ -291,7 +269,6 @@ public class BonusMenu : MonoBehaviour {
         {
             manaLost_ += bonusTab[1][currentEnemyIcon][i];
         }
-
         return manaLost_;
     }
 

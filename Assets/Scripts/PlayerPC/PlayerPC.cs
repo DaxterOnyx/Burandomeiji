@@ -60,6 +60,7 @@ public class PlayerPC : MonoBehaviour {
 	
 	private void Update ()
     {
+        maxMana += Time.deltaTime/2;
         if (currentMana < maxMana)
         {
             RegenMana();
@@ -92,7 +93,6 @@ public class PlayerPC : MonoBehaviour {
                             }
                         }
                         imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
-                        bonusMenuScript.GetDistance(distanceVRCursor);
                     }
                     else
                     {

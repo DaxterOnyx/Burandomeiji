@@ -12,11 +12,7 @@ public class VRBody : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        
-        if(player != null)
-        {
-            Instantiate(body, player.transform, false);
-        }
+      
 	}
 
 

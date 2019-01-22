@@ -3184,14 +3184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 3
   areaOfHit: {fileID: 64637785550816226}
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Dis
-  m_hitCooldown: 1
-  m_speed: 1
-  m_health: 1
-  m_hitDamage: 1
-  m_critical: 1
+  m_hitCooldown: 0.5
+  m_speed: 4
+  m_health: 1500
+  m_hitDamage: 60
+  m_critical: 0.6
   m_mana: 75
   m_type: 1
   ID: 0

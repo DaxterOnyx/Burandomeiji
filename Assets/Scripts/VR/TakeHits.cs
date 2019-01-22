@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TakeHits : MonoBehaviour {
-    public int HitPoints = 3;
+    public float HitPoints;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class TakeHits : MonoBehaviour {
 	void Update () {
 
 	}
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("OnCollisionEnter");
@@ -21,7 +21,6 @@ public class TakeHits : MonoBehaviour {
         if (collision.collider.GetComponent<AIScript>() != null)
         {
             HitPoints--;
-            Debug.Log("HitPoints");
         }
     }
 
@@ -32,7 +31,6 @@ public class TakeHits : MonoBehaviour {
         if (other.GetComponent<AIScript>() != null)
         {
             HitPoints--;
-            Debug.Log("HitPoints");
         }
     }
 }

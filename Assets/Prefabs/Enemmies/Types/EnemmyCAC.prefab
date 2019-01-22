@@ -3165,14 +3165,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 3
   areaOfHit: {fileID: 64614025080192384}
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: CaC
-  m_hitCooldown: 1
-  m_speed: 1
-  m_health: 1
-  m_hitDamage: 1
-  m_critical: 1
+  m_hitCooldown: 0.9
+  m_speed: 4
+  m_health: 1000
+  m_hitDamage: 25
+  m_critical: 0.3
   m_mana: 50
   m_type: 0
   ID: 0

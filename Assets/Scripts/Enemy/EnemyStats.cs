@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour {
+public class EnemyStats : TakeHits {
 
     public enum enemyType { Melee, Distance }
 
     public Collider areaOfHit;
+    //TODO 
     public GameObject icon;
     [SerializeField] private string m_enemyName;
     [SerializeField] private float m_hitCooldown;
@@ -18,36 +19,37 @@ public class EnemyStats : MonoBehaviour {
     [SerializeField] private enemyType m_type;
     [HideInInspector] public int ID;
 
-    public float multSpeed { get; set; }
-    public float multHealth { get; set; }
-    public float multHitDamage { get; set; }
-    public float multCritical { get; set; }
-    public float multHitCooldown { get; set; }
-
-    public float costSpeed { get; set; }
-    public float costHealth { get; set; }
-    public float costHitDamage { get; set; }
-    public float costCritical { get; set; }
-    public float costHitCooldown { get; set; }
-
     public string enemyName { get { return m_enemyName; } private set { m_enemyName = value; } }
-    public float hitCooldown { get { return m_hitCooldown * multHitCooldown; } private set { m_hitCooldown = value; } }
-    public float speed { get { return m_speed * multSpeed; } private set { m_speed = value * multSpeed; } }
-    public float health { get { return m_health * multHealth; } private set { m_health = value; } }
-    public float hitDamage { get { return m_hitDamage * multHitDamage; } private set { m_hitDamage = value; } }
-    public float critical { get { return m_critical * multCritical; } private set { m_critical = value; } }
-    public float mana { get { return (m_mana + costCritical + costHealth + costHitCooldown + costHitDamage + costSpeed); } private set { m_mana = value; } }
+    public float hitCooldown { get { return m_hitCooldown; } private set { m_hitCooldown = value; } }
+    public float speed { get { return m_speed; } private set { m_speed = value; } }
+    public float HitPoint { get { return m_health; } private set { m_health = value; } }
+    public float hitDamage { get { return m_hitDamage; } private set { m_hitDamage = value; } }
+    public float critical { get { return m_critical; } private set { m_critical = value; } }
+    public float mana { get { return m_mana; } private set { m_mana = value; } }
     public enemyType type { get { return m_type; } private set { m_type = value; } }
 
-    public float hitCooldownNoMult { get { return m_hitCooldown; } private set { m_hitCooldown = value; } }
-    public float speedNoMult { get { return m_speed; } private set { m_speed = value * multSpeed; } }
-    public float healthNoMult { get { return m_health; } private set { m_health = value; } }
-    public float hitDamageNoMult { get { return m_hitDamage; } private set { m_hitDamage = value; } }
-    public float criticalNoMult { get { return m_critical; } private set { m_critical = value; } }
-
-    public void GetID(int _ID)
+    public void SetID(int _ID)
     {
         ID = _ID;
     }
 
+
+    void doHit(TakeHits _takeHits)
+    {
+        _takeHits.HitPoints -= hitDamage;
+    }
+
+    public void SetStats(float _multSpeed, float _multHealth, float _multCritical, float _multHitDamage, float _multHitCooldown)
+    {
+        m_speed *= _multSpeed;
+        m_health *= _multHealth;
+        m_critical *= _multCritical;
+        m_hitDamage *= _multHitDamage;
+        m_hitCooldown *= _multHitCooldown;
+    }
+
+    public void SetCost(float _costMana)
+    {
+        m_mana += _costMana;
+    }
 }

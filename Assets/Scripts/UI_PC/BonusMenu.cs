@@ -9,8 +9,9 @@ public class BonusMenu : MonoBehaviour {
     /// Ordre dans le tableau : 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
     
     [HideInInspector] public GameObject[] allEnemyTab;  // Tableau contenant tout les types d'ennemies
-    [SerializeField] private float[] costManaTab;   // Tableau des multiplicateurs
-    [SerializeField] private float[] multTab;   // Tableau des coûts en mana
+    [SerializeField] private float[] costManaTabSup;    // Tableau des coûts en mana pour les upgrades > 100%
+    [SerializeField] private float[] costManaTabInf;    // Tableau des coûts en mana pour les downgrades < 100%
+    [SerializeField] private float[] multTab;   // Tableau des multiplicateurs
     public List<float[]> multList;  // Liste de tableau des multiplicateurs -> Chaque tableau de la liste correspond à un ennemi du tableau allEnemyTab
     public List<float[]> costList;  // Liste de tableau des coûts en mana de chaque bonus -> Chaque tableau de la liste correspond à un ennemi du tableau allEnemyTab
     public List<float[]>[] bonusTab;    // Tableau contenant les deux listes précédentes (multList & costList)
@@ -129,39 +130,47 @@ public class BonusMenu : MonoBehaviour {
         centerLeftText.text = "Type : " + enemyStats_.type;
 
         float mult = bonusTab[0][currentEnemyIcon][currentIcon];
+        
+        if(mult * 100 > 100f)
+        {
+            lowLeftText.text = "Coût : ± " + costManaTabSup[currentIcon];
+        }
+        else if(mult * 100 < 100f)
+        {
+            lowLeftText.text = "Coût : ± " + costManaTabInf[currentIcon];
+        }
+        else
+        {
+            lowLeftText.text = "Coût : +" + costManaTabSup[currentIcon] + "/-" + costManaTabInf[currentIcon];
+        }
 
         switch (currentIcon)
         {
-            case 0:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
+            case 0:       
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Speed : " + (mult * 100).ToString("0") + " %";
                 hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " speed";
                 break;
 
             case 1:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
                 hightRightText.text = (takeHits_.health * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
                 hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
                 hightRightText.text = (doHits.hitDamage * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
-                lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
                 hightRightText.text = (doHits.hitCooldown * mult).ToString("0.0") + " attack per second";
@@ -184,8 +193,16 @@ public class BonusMenu : MonoBehaviour {
         
         if (canUpgrade)
         {
-            bonusTab[1][currentEnemyIcon][currentIcon] += costManaTab[currentIcon];        
+            if (bonusTab[0][currentEnemyIcon][currentIcon] * 100 > 100f)
+            {
+                bonusTab[1][currentEnemyIcon][currentIcon] += costManaTabSup[currentIcon]; 
+            }
+            else
+            {
+                bonusTab[1][currentEnemyIcon][currentIcon] += costManaTabInf[currentIcon];
+            }         
         }
+
         enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
         UpdateText();
         
@@ -200,7 +217,14 @@ public class BonusMenu : MonoBehaviour {
 
         if (canDowngrade)
         {
-            bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTab[currentIcon];
+            if (bonusTab[0][currentEnemyIcon][currentIcon] * 100 < 100f)
+            {
+                bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabInf[currentIcon];
+            }
+            else
+            {
+                bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabSup[currentIcon];
+            }
         }
         enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
         UpdateText();
@@ -275,8 +299,8 @@ public class BonusMenu : MonoBehaviour {
 
         foreach(GameObject GO in allEnemyTab)
         {
-            float[] tabM_ = new float[5];
-            float[] tabC_ = new float[5];
+            float[] tabM_ = new float[5];   // Tableau des multiplicateurs
+            float[] tabC_ = new float[5];   // Tableau des coûts en mana
 
             for(int i = 0; i < tabM_.Length; i++)
             {

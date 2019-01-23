@@ -31,7 +31,6 @@ public class PlayerPC : MonoBehaviour {
     private float click;
     private bool canClick = true;
 
-    private bool isFirstTime = true;
     Image imageCursor;
 
 	private void Start ()
@@ -62,19 +61,26 @@ public class PlayerPC : MonoBehaviour {
 	
 	private void Update ()
     {
-        maxMana += Time.deltaTime/2;
+        maxMana += Time.deltaTime/1.2f;
         if (currentMana < maxMana)
         {
             RegenMana();
         }
 
-        if(GameObject.FindGameObjectWithTag("Player") && isFirstTime)
+        if(target == null)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            isFirstTime = false;
+            GameObject JoueurVR = GameObject.FindGameObjectWithTag("Player");
+            if(JoueurVR != null)
+            {
+                target = JoueurVR.transform;
+            }
+            else
+            {
+                return;
+            }
         }
 
-        if(canSpawn && !isFirstTime)
+        if(canSpawn)
         {
             Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
             RaycastHit hit = new RaycastHit();

@@ -27,7 +27,7 @@ public class TakeHits : MonoBehaviour {
         if (!die)
         {
             m_currentHealth -= _hitDamage;
-            Debug.Log("Vie du joueur VR : " + m_currentHealth.ToString("0.0") + "hit damage : " + _hitDamage.ToString("0.0"));
+            Debug.Log("[" + this.name + "]" +  " health restant : " + m_currentHealth.ToString("0.0") + "hit damage : " + _hitDamage.ToString("0.0"));
 
             if (m_currentHealth <= 0f)
             {

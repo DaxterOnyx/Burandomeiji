@@ -21,7 +21,7 @@ public class DoHits : MonoBehaviour {
     {
         m_hitDamage *= _multHitDamage;
         m_hitCooldown *= _multHitCooldown;
-        m_critical *= _multCritical;
+        m_critical *= _multCritical;   
     }
 
     public void doHits(TakeHits _takeHits)

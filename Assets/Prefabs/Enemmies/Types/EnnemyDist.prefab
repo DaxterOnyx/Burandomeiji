@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 114400126236984590}
   - component: {fileID: 114024177275419662}
   - component: {fileID: 114103114360250820}
+  - component: {fileID: 114469616571494464}
   m_Layer: 0
   m_Name: EnnemyDist
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,9 +239,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4534913957472420}
   - component: {fileID: 64637785550816226}
+  - component: {fileID: 114716702422056604}
   m_Layer: 0
   m_Name: AreaOfHit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3184,15 +3186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 3
-  areaOfHit: {fileID: 64637785550816226}
+  col: {fileID: 64637785550816226}
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Dis
-  m_hitCooldown: 0.5
   m_speed: 4
-  m_health: 1500
-  m_hitDamage: 60
-  m_critical: 0.6
   m_mana: 75
   m_type: 1
   ID: 0
@@ -3208,6 +3205,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114469616571494464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016190419679808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 111
+--- !u!114 &114716702422056604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141081312954044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitDamage: 3
+  m_hitCooldown: 0.5
+  m_critical: 50
 --- !u!136 &136676607510821206
 CapsuleCollider:
   m_ObjectHideFlags: 1

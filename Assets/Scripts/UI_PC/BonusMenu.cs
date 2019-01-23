@@ -6,11 +6,16 @@ using TMPro;
 [RequireComponent(typeof(EnemyMenu))]
 public class BonusMenu : MonoBehaviour {
   
-    [HideInInspector] public GameObject[] allEnemyTab;
-    public List<float[]> multList;
-    public List<float[]> costList;
-    public List<float[]>[] bonusTab;
+    /// Ordre dans le tableau : 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
+    
+    [HideInInspector] public GameObject[] allEnemyTab;  // Tableau contenant tout les types d'ennemies
+    [SerializeField] private float[] costManaTab;   // Tableau des multiplicateurs
+    [SerializeField] private float[] multTab;   // Tableau des coûts en mana
+    public List<float[]> multList;  // Liste de tableau des multiplicateurs -> Chaque tableau de la liste correspond à un ennemi du tableau allEnemyTab
+    public List<float[]> costList;  // Liste de tableau des coûts en mana de chaque bonus -> Chaque tableau de la liste correspond à un ennemi du tableau allEnemyTab
+    public List<float[]>[] bonusTab;    // Tableau contenant les deux listes précédentes (multList & costList)
 
+    /* Les différents textes du menu de bonus */
     [SerializeField] private TextMeshProUGUI hightLeftText;
     [SerializeField] private TextMeshProUGUI hightRightText;
     [SerializeField] private TextMeshProUGUI centerLeftText;
@@ -18,17 +23,17 @@ public class BonusMenu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI lowLeftText;
     [SerializeField] private TextMeshProUGUI lowRightText;
 
-    [SerializeField] private RectTransform bonusBar;
-    private List<GameObject> bonusIconList = new List<GameObject>();
+    [SerializeField] private RectTransform bonusBar;    // Le transform de la bar contenant les icones des bonus
+    private List<GameObject> bonusIconList = new List<GameObject>();    // Liste des icons de bonus acctuellement instanciés
 
-    // 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
-    [SerializeField] private GameObject[] iconBonusTab;
-    [SerializeField] private float[] costManaTab;
-    [SerializeField] private float[] multTab;
-    private int currentIcon;
-    private int currentEnemyIcon;
-    private float distance;
+    
 
+    [SerializeField] private GameObject[] iconBonusTab; // Tableau des icons pour chaque bonus
+    
+    private int currentIcon;    // Indique quel bonus est actuellement selectionné par le joueur
+    private int currentEnemyIcon;   // Indique quel ennemie est actuellement selectionné par le joueur
+
+    private bool canUpgrade = true;
     private bool canDowngrade = true;
 
     EnemyMenu enemyMenu;
@@ -36,7 +41,6 @@ public class BonusMenu : MonoBehaviour {
     private void Start()
     {
         enemyMenu = GetComponent<EnemyMenu>();
-        distance = 1f;
     }
     #region UI
 
@@ -117,8 +121,9 @@ public class BonusMenu : MonoBehaviour {
     public void UpdateText()
     {
         currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
-        GameObject enemyGO_ = allEnemyTab[currentEnemyIcon];
-        EnemyStats enemyStats_ = enemyGO_.GetComponent<EnemyStats>();
+        EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
+        TakeHits takeHits_ = allEnemyTab[currentEnemyIcon].GetComponent<TakeHits>();
+        DoHits doHits = allEnemyTab[currentEnemyIcon].GetComponentInChildren<DoHits>();
 
         hightLeftText.text = enemyStats_.enemyName;
         centerLeftText.text = "Type : " + enemyStats_.type;
@@ -138,28 +143,28 @@ public class BonusMenu : MonoBehaviour {
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.HitPoint * mult).ToString("0.0") + " health";
+                hightRightText.text = (takeHits_.health * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.critical * mult).ToString("0.0") + " % critical chance";
+                hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.hitDamage * mult).ToString("0.0") + " damage";
+                hightRightText.text = (doHits.hitDamage * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
                 lowLeftText.text = "Coût : ± " + costManaTab[currentIcon];
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
                 centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.hitDamage * mult).ToString("0.0") + " attack per second";
+                hightRightText.text = (doHits.hitCooldown * mult).ToString("0.0") + " attack per second";
                 break;
 
             default:
@@ -169,28 +174,84 @@ public class BonusMenu : MonoBehaviour {
 
     }
 
+    /// Ordre dans le tableau : 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
     public void UpgradeBonus()
     {
+        canUpgrade = true;
         currentEnemyIcon = enemyMenu.currentEnemyIcon;
-        bonusTab[0][currentEnemyIcon][currentIcon] += multTab[currentIcon];
-        bonusTab[1][currentEnemyIcon][currentIcon] += costManaTab[currentIcon];
 
-        UpdateText();
-
+        SwitchBonus(true);
+        
+        if (canUpgrade)
+        {
+            bonusTab[1][currentEnemyIcon][currentIcon] += costManaTab[currentIcon];        
+        }
         enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+        UpdateText();
+        
     }
 
     public void DowngradeBonus()
     {
+        currentEnemyIcon = enemyMenu.currentEnemyIcon;
+        canDowngrade = true;
+
+        SwitchBonus(false);
+
         if (canDowngrade)
         {
-            currentEnemyIcon = enemyMenu.currentEnemyIcon;
-            bonusTab[0][currentEnemyIcon][currentIcon] -= multTab[currentIcon];
             bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTab[currentIcon];
-            UpdateText();
-            enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+        }
+        enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+        UpdateText();
+    }
+
+    private void SwitchBonus(bool _switch)
+    {
+        switch (currentIcon)
+        {
+            case 0:
+                CapBonus(0.25f, 2.05f, _switch);
+                break;
+            case 1:
+                CapBonus(0.55f, 3.25f, _switch);
+                break;
+            case 2:
+                CapBonus(0.2f, 10f, _switch);
+                break;
+            case 3:
+                CapBonus(0.5f, 2.5f, _switch);
+                break;
+            case 4:
+                CapBonus(0.5f, 2f, _switch);
+                break;
+            default:
+                Debug.LogError("currentIcon error!");
+                break;
         }
     }
+
+    private void CapBonus(float _min, float _max, bool _switch)
+    {
+        if(_switch)
+        {
+            bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] + multTab[currentIcon], _min, _max);
+            if (bonusTab[0][currentEnemyIcon][currentIcon] == _max)
+            {
+                canUpgrade = false;
+            }
+        }
+        else
+        {
+            bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] - multTab[currentIcon], _min, _max);
+            if (bonusTab[0][currentEnemyIcon][currentIcon] == _min)
+            {
+                canDowngrade = false;
+            }
+        }
+    }
+
+    
 
     #endregion
 

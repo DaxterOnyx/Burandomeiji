@@ -80,9 +80,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4703521161456880}
   - component: {fileID: 64614025080192384}
+  - component: {fileID: 114516439857227170}
   m_Layer: 0
   m_Name: AreaOfHit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,9 +943,10 @@ GameObject:
   - component: {fileID: 114337488784980924}
   - component: {fileID: 114066778171023224}
   - component: {fileID: 114091936259541536}
+  - component: {fileID: 114595263363553336}
   m_Layer: 0
   m_Name: EnemmyCAC
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3165,15 +3167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 3
-  areaOfHit: {fileID: 64614025080192384}
+  col: {fileID: 64614025080192384}
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: CaC
-  m_hitCooldown: 0.9
   m_speed: 4
-  m_health: 1000
-  m_hitDamage: 25
-  m_critical: 0.3
   m_mana: 50
   m_type: 0
   ID: 0
@@ -3189,6 +3186,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114516439857227170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026439384523232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitDamage: 1
+  m_hitCooldown: 2
+  m_critical: 20
+--- !u!114 &114595263363553336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462532190980112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 999
 --- !u!136 &136685940076068222
 CapsuleCollider:
   m_ObjectHideFlags: 1

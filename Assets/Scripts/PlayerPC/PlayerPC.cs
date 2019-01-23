@@ -28,6 +28,8 @@ public class PlayerPC : MonoBehaviour {
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 50f;
+    private float click;
+    private bool canClick = true;
 
     private bool isFirstTime = true;
     Image imageCursor;
@@ -83,7 +85,7 @@ public class PlayerPC : MonoBehaviour {
                     float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
                     if (distanceVRCursor >= 15f)
                     {
-                        if (playerPCController.ClickDown0)
+                        if (playerPCController.ClickDown)
                         {
                             float lostMana = bonusMenuScript.UpdateLostMana();
                             if (currentMana >= lostMana)
@@ -120,14 +122,18 @@ public class PlayerPC : MonoBehaviour {
                 bonusMenuScript.IconDown();
             }
 
-            if(playerPCController.ClickDown0)
+            if(playerPCController.ClickDown0 || playerPCController.ClickDown1)
             {
-                bonusMenuScript.UpgradeBonus();
+                if (canClick)
+                {
+                    StartCoroutine(TimeBetweenTwoClick());
+                }
             }
 
-            if (playerPCController.ClickDown1)
+            
+            if(!playerPCController.ClickDown0 && !playerPCController.ClickDown1)
             {
-                bonusMenuScript.DowngradeBonus();
+                click = 0.3f;
             }
 
             if(playerPCController.A)
@@ -161,5 +167,26 @@ public class PlayerPC : MonoBehaviour {
             currentMana = maxMana;
         }
         manaBarScript.SetMana(maxMana, currentMana);
+    }
+
+    private IEnumerator TimeBetweenTwoClick()
+    {
+        canClick = false;
+        if (playerPCController.ClickDown0)
+        {
+            bonusMenuScript.UpgradeBonus();
+        }    
+        else if(playerPCController.ClickDown1)
+        {
+            bonusMenuScript.DowngradeBonus();
+        }
+
+        if (click > 0.2f)
+        {
+            click -= 0.1f;
+        }
+
+        yield return new WaitForSeconds(click);
+        canClick = true;
     }
 }

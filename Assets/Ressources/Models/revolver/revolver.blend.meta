@@ -8,11 +8,23 @@ ModelImporter:
     100004: Plane_002
     100006: Plane_003
     100008: //RootNode
+    100010: Plane_004
+    100012: barillet
+    100014: chasis
+    100016: engrenagen1
+    100018: engrenagen2
+    100020: gachete
     400000: Plane
     400002: Plane_001
     400004: Plane_002
     400006: Plane_003
     400008: //RootNode
+    400010: Plane_004
+    400012: barillet
+    400014: chasis
+    400016: engrenagen1
+    400018: engrenagen2
+    400020: gachete
     2100000: BRONZE
     2100002: Material_007
     2100004: Material_013
@@ -27,18 +39,44 @@ ModelImporter:
     2100022: Material_021
     2100024: Material_029
     2100026: BRONZE_003
+    2100028: Material_040
+    2100030: Material_041
+    2100032: Material_042
+    2100034: Material_039
     2300000: Plane
     2300002: Plane_001
     2300004: Plane_002
     2300006: Plane_003
+    2300008: Plane_004
+    2300010: //RootNode
+    2300012: barillet
+    2300014: chasis
+    2300016: engrenagen1
+    2300018: engrenagen2
+    2300020: gachete
     3300000: Plane
     3300002: Plane_001
     3300004: Plane_002
     3300006: Plane_003
+    3300008: Plane_004
+    3300010: //RootNode
+    3300012: barillet
+    3300014: chasis
+    3300016: engrenagen1
+    3300018: engrenagen2
+    3300020: gachete
     4300000: Plane
     4300002: Plane_001
     4300004: Plane_002
     4300006: Plane_003
+    4300008: Cube
+    4300010: Plane_004
+    4300012: revolver
+    4300014: chasis
+    4300016: barillet
+    4300018: gachete
+    4300020: engrenagen1
+    4300022: engrenagen2
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

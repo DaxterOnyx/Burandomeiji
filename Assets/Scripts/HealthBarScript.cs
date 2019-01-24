@@ -39,7 +39,7 @@ public class HealthBarScript : MonoBehaviour {
             takeHits = player.GetComponentInChildren<TakeHits>();
             StartCoroutine(SetHealth(takeHits.health, takeHits.currentHealth));
         }
-        if (canUpdate)
+        if (canUpdate && takeHits != null)
         {
             StartCoroutine(SetHealth(takeHits.health, takeHits.currentHealth));
         }

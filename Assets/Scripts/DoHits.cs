@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoHits : MonoBehaviour {
 
     private bool canDoHits = true;
+    public bool playerFound = false;
 
     // Les attributs de bases. Ils peuvent être initialié directement dans l'inspector
     [SerializeField] private float m_hitDamage;
@@ -43,10 +44,15 @@ public class DoHits : MonoBehaviour {
 
     private void OnTriggerStay(Collider col)
     {
-
-        if(this.gameObject.tag == "Enemy" && col.gameObject.tag == "Enemy")
+        // Pour éviter que les enemies s'attaquent entre eux
+        if (this.gameObject.tag == "Enemy" && col.gameObject.tag == "Enemy")
         {
             return;
+        }
+
+        if(this.gameObject.tag == "Enemy")
+        {
+            playerFound = true;
         }
 
         TakeHits takeHits_ = col.GetComponent<TakeHits>();

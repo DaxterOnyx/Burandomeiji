@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
@@ -3063,6 +3063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarFill: {fileID: 224318632985972552}
   textHealth: {fileID: 114218551628214126}
+  currentHealth: 0
 --- !u!114 &114957040499734014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3920,8 +3921,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.8, y: 0}
-  m_SizeDelta: {x: 281.79, y: 41.6}
+  m_AnchoredPosition: {x: 6.1, y: -0.00000059605}
+  m_SizeDelta: {x: 173.93, y: 41.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224361384781857286
 RectTransform:
@@ -4366,7 +4367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000056267, y: 0.0000023842}
+  m_AnchoredPosition: {x: 5.3, y: 0.0000023842}
   m_SizeDelta: {x: 230.27, y: 51.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224983157580439528

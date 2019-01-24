@@ -1633,7 +1633,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016190419679808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.48, y: 2.88, z: 17.08}
+  m_LocalPosition: {x: -3.87, y: 2.88, z: 17.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318370095825930}
@@ -2335,8 +2335,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141081312954044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.06, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.375, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1.06, z: 4.96}
+  m_LocalScale: {x: 0.316325, y: 0.375, z: 1.0246366}
   m_Children: []
   m_Father: {fileID: 4011727789078902}
   m_RootOrder: 1
@@ -3205,6 +3205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  col: {fileID: 64637785550816226}
 --- !u!114 &114469616571494464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3228,6 +3229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAttack: 0
   m_hitDamage: 20
   m_hitCooldown: 0.5
   m_critical: 50

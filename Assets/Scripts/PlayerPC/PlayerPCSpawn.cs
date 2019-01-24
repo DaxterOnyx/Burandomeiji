@@ -27,7 +27,7 @@ public class PlayerPCSpawn : MonoBehaviour
         GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point + tmp, Quaternion.identity);
         yield return new WaitForSeconds(1.5f);
         GameObject enemyIns_ = Instantiate(_enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
-        enemyIns_.GetComponent<EnemyStats>().GetID(_count);
+        enemyIns_.GetComponent<EnemyStats>().SetID(_count);
         bonusMenu.GetEnemyIns(enemyIns_);
     }
 

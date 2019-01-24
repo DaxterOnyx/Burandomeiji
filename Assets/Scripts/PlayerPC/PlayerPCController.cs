@@ -5,14 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerPCMotor))]
 public class PlayerPCController : MonoBehaviour {
 
-    public bool ClickDown0
+    public bool ClickDown
     {
         get { return Input.GetMouseButtonDown(0); }
     }
 
+    public bool ClickDown0
+    {
+        get { return Input.GetMouseButton(0); }
+    }
+
     public bool ClickDown1
     {
-        get { return Input.GetMouseButtonDown(1); }
+        get { return Input.GetMouseButton(1); }
     }
 
     public bool Menu

@@ -12,6 +12,8 @@ public class AIScript : MonoBehaviour
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public Character character { get; private set; } // the character we are controlling
     public Transform target;                                    // target to aim for
+    [SerializeField] private Collider col;  // areaOfHits
+    private DoHits doHits;
 
 
     private void Start()
@@ -25,18 +27,25 @@ public class AIScript : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent.speed = GetComponent<EnemyStats>().speed;
+        doHits = col.GetComponent<DoHits>();
     }
 
 
     private void Update()
     {
         if (target != null)
+        {
             agent.SetDestination(target.position);
+        } 
 
         if (agent.remainingDistance > agent.stoppingDistance)
+        {
             character.Move(agent.desiredVelocity, false, false);
+        }
         else
+        {
             character.Move(Vector3.zero, false, false);
+        }     
     }
 
 

@@ -27,9 +27,10 @@ public class PlayerPC : MonoBehaviour {
     private bool canSpawn = true;
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
-    [SerializeField] private float manaRegen = 50f;
+    [SerializeField] private float manaRegen = 550f;
+    private float click;
+    private bool canClick = true;
 
-    private bool isFirstTime = true;
     Image imageCursor;
 
 	private void Start ()
@@ -60,18 +61,26 @@ public class PlayerPC : MonoBehaviour {
 	
 	private void Update ()
     {
+        maxMana += Time.deltaTime/1.2f;
         if (currentMana < maxMana)
         {
             RegenMana();
         }
 
-        if(GameObject.FindGameObjectWithTag("Player") && isFirstTime)
+        if(target == null)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            isFirstTime = false;
+            GameObject JoueurVR = GameObject.FindGameObjectWithTag("Player");
+            if(JoueurVR != null)
+            {
+                target = JoueurVR.transform;
+            }
+            else
+            {
+                return;
+            }
         }
 
-        if(canSpawn && !isFirstTime)
+        if(canSpawn)
         {
             Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
             RaycastHit hit = new RaycastHit();
@@ -82,7 +91,7 @@ public class PlayerPC : MonoBehaviour {
                     float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
                     if (distanceVRCursor >= 15f)
                     {
-                        if (playerPCController.ClickDown0)
+                        if (playerPCController.ClickDown)
                         {
                             float lostMana = bonusMenuScript.UpdateLostMana();
                             if (currentMana >= lostMana)
@@ -92,7 +101,6 @@ public class PlayerPC : MonoBehaviour {
                             }
                         }
                         imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
-                        bonusMenuScript.GetDistance(distanceVRCursor);
                     }
                     else
                     {
@@ -120,14 +128,18 @@ public class PlayerPC : MonoBehaviour {
                 bonusMenuScript.IconDown();
             }
 
-            if(playerPCController.ClickDown0)
+            if(playerPCController.ClickDown0 || playerPCController.ClickDown1)
             {
-                bonusMenuScript.UpgradeBonus();
+                if (canClick)
+                {
+                    StartCoroutine(TimeBetweenTwoClick());
+                }
             }
 
-            if (playerPCController.ClickDown1)
+            
+            if(!playerPCController.ClickDown0 && !playerPCController.ClickDown1)
             {
-                bonusMenuScript.DowngradeBonus();
+                click = 0.3f;
             }
 
             if(playerPCController.A)
@@ -160,6 +172,27 @@ public class PlayerPC : MonoBehaviour {
         {
             currentMana = maxMana;
         }
-        manaBarScript.SetMana(maxMana, currentMana);
+        manaRegen = manaBarScript.SetMana(maxMana, currentMana);
+    }
+
+    private IEnumerator TimeBetweenTwoClick()
+    {
+        canClick = false;
+        if (playerPCController.ClickDown0)
+        {
+            bonusMenuScript.UpgradeBonus();
+        }    
+        else if(playerPCController.ClickDown1)
+        {
+            bonusMenuScript.DowngradeBonus();
+        }
+
+        if (click > 0.2f)
+        {
+            click -= 0.1f;
+        }
+
+        yield return new WaitForSeconds(click);
+        canClick = true;
     }
 }

@@ -13,8 +13,8 @@ public class SpellBook : Tool
 	public float LeftOpenAngle = -75f;
 	public float RightCloseAngle = 0f;
 	public float LeftCloseAngle = 0f;
-	private bool Open { get { return LeftPage.transform.rotation.y >= LeftOpenAngle && RightPage.transform.rotation.y <= RightOpenAngle; } }
-	private bool Close { get { return LeftPage.transform.rotation.y <= LeftCloseAngle && RightPage.transform.rotation.y >= RightCloseAngle; } }
+	private bool Open { get { return LeftPage.transform.localRotation.y >= LeftOpenAngle && RightPage.transform.localRotation.y <= RightOpenAngle; } }
+	private bool Close { get { return LeftPage.transform.localRotation.y <= LeftCloseAngle && RightPage.transform.localRotation.y >= RightCloseAngle; } }
 
 	private void Awake()
 	{
@@ -50,8 +50,8 @@ public class SpellBook : Tool
 		{
 			if (Open)
 			{
-				LeftPage.transform.SetPositionAndRotation(LeftPage.transform.position, new Quaternion(0, LeftOpenAngle, 0, 0));
-				RightPage.transform.SetPositionAndRotation(RightPage.transform.position, new Quaternion(0, RightOpenAngle, 0, 0));
+				LeftPage.transform.localRotation = new Quaternion(0, LeftOpenAngle, 0, 0);
+				RightPage.transform.localRotation = new Quaternion(0, RightOpenAngle, 0, 0);
 			}
 			else
 			{
@@ -63,8 +63,8 @@ public class SpellBook : Tool
 		{
 			if (Close)
 			{
-				LeftPage.transform.SetPositionAndRotation(LeftPage.transform.position, new Quaternion(0, LeftCloseAngle, 0, 0));
-				RightPage.transform.SetPositionAndRotation(RightPage.transform.position, new Quaternion(0, RightCloseAngle, 0, 0));
+				LeftPage.transform.localRotation = new Quaternion(0, LeftCloseAngle, 0, 0);
+				RightPage.transform.localRotation = new Quaternion(0, RightCloseAngle, 0, 0);
 			}
 			else
 			{

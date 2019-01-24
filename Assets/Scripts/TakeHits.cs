@@ -40,7 +40,7 @@ public class TakeHits : MonoBehaviour {
     public void Die()
     {
         Debug.Log(gameObject.name + " est mort");
-        //die = true;
+        die = true;
         m_currentHealth = m_health;
     }
     

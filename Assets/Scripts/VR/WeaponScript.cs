@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
+/// <summary>
+/// script mère de toutes les armes du joueur VR
+/// @author Brice
+/// </summary>
 public abstract class WeaponScript : Tool
 {
     public float projectileSpeed = 1000f;
@@ -24,6 +28,10 @@ public abstract class WeaponScript : Tool
 	}
 }
 
+/// <summary>
+/// script mère de tous les objets qu'utilise le joueur VR
+/// @author Brice
+/// </summary>
 public abstract class Tool : MonoBehaviour
 {
 	protected bool inUse = false;

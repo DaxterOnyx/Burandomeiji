@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
+/// <summary>
+/// Script pour gérer une main et les objets avec laquelle elle intéragit
+/// @author Brice
+/// </summary>
 public class HandVRControl : MonoBehaviour {
 
 	List<WeaponScript> Weapons;

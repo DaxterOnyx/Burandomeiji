@@ -1,17 +1,37 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script à mettre sur le pistolet
+/// @author Brice
+/// </summary>
 public class GunShoot : WeaponScript
 {
+	public float RateOfFire = 1;
+	private float TimeLastFire;
+
+	private void Awake()
+	{
+		TimeLastFire = RateOfFire;	
+	}
 
 	public override void Use()
 	{
+		Shoot();
 		base.Use();
-		FixedUpdate();
 	}
 
 	private void FixedUpdate()
 	{
-		if(inUse)
+		TimeLastFire += Time.fixedDeltaTime;
+		if (inUse && TimeLastFire >= RateOfFire)
+		{
 			Shoot();
+		}
+	}
+
+	public override void Shoot()
+	{
+		TimeLastFire = 0;
+		base.Shoot();
 	}
 }

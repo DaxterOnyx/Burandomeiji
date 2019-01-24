@@ -1,53 +1,26 @@
 fileFormatVersion: 2
-guid: aa9aee3972584ec4c9f3c5cbca035be9
+guid: 4716b9130d39cdb4994d0f2b9fca17c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Plane
-    100002: Plane_001
-    100004: Plane_002
-    100006: Plane_003
-    100008: //RootNode
-    400000: Plane
-    400002: Plane_001
-    400004: Plane_002
-    400006: Plane_003
-    400008: //RootNode
-    2100000: BRONZE
-    2100002: Material_007
-    2100004: Material_013
-    2100006: Material_009
-    2100008: Material_005
-    2100010: Material_003
-    2100012: Material_006
-    2100014: Material_010
-    2100016: Material_008
-    2100018: GOLD_001
-    2100020: BRONZE_001
-    2100022: Material_021
-    2100024: Material_029
-    2100026: BRONZE_003
-    2300000: Plane
-    2300002: Plane_001
-    2300004: Plane_002
-    2300006: Plane_003
-    3300000: Plane
-    3300002: Plane_001
-    3300004: Plane_002
-    3300006: Plane_003
-    4300000: Plane
-    4300002: Plane_001
-    4300004: Plane_002
-    4300006: Plane_003
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+    100000: //RootNode
+    100002: segment
+    400000: //RootNode
+    400002: segment
+    2300000: segment
+    3300000: segment
+    4300000: segment
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: segmentMat
+    second: {fileID: 2100000, guid: db6c7040289ba7a4d971a743ab51ee51, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -76,10 +49,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -87,19 +60,19 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -118,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

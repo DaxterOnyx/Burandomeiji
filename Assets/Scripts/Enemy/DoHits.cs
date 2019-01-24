@@ -63,7 +63,7 @@ public class DoHits : MonoBehaviour {
     {
         canDoHits = false;
         doHits(takeHits_);
-        yield return new WaitForSeconds(1f/m_hitCooldown);
+        yield return new WaitForSeconds(1/m_hitCooldown);
         canDoHits = true;
     }
 }

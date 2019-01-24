@@ -9,9 +9,16 @@ public class ManaBarScript : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI textMana;
     [SerializeField] private TextMeshProUGUI textManaRegen;
 
+    private HealthBarScript healthBarScript;
+
     private float manaRegen;
 
-    public void SetMana(float manaMax_, float amount_)
+    private void Start()
+    {
+        healthBarScript = GetComponent<HealthBarScript>();
+    }
+
+    public float SetMana(float manaMax_, float amount_)
     {
         if (amount_ < 0)
         {
@@ -19,6 +26,12 @@ public class ManaBarScript : MonoBehaviour {
         }
         manaBarFill.localScale = new Vector3(amount_ / manaMax_, 1f, 1f);
         textMana.text = amount_.ToString("0") + " / " + manaMax_.ToString("0");
+
+        //float healthVR = healthBarScript.currentHealth;
+
+        //manaRegen = manaRegen - (healthVR / 2);
+
+        return manaRegen;
         //textMana.text = ((amount_/manaMax_)*100).ToString("0") + "%";
     }
 

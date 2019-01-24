@@ -27,7 +27,7 @@ public class PlayerPC : MonoBehaviour {
     private bool canSpawn = true;
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
-    [SerializeField] private float manaRegen = 50f;
+    [SerializeField] private float manaRegen = 550f;
     private float click;
     private bool canClick = true;
 
@@ -172,7 +172,7 @@ public class PlayerPC : MonoBehaviour {
         {
             currentMana = maxMana;
         }
-        manaBarScript.SetMana(maxMana, currentMana);
+        manaRegen = manaBarScript.SetMana(maxMana, currentMana);
     }
 
     private IEnumerator TimeBetweenTwoClick()

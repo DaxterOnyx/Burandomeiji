@@ -9,8 +9,8 @@ using VRTK;
 /// </summary>
 public class HandVRControl : MonoBehaviour {
 
-	List<WeaponScript> Weapons;
-	public WeaponScript ActiveWeapon { get;  private set;}
+	List<Tool> Tools;
+	public Tool ActiveWeapon { get;  private set;}
 
 	// Use this for initialization
 	void Start ()
@@ -19,19 +19,19 @@ public class HandVRControl : MonoBehaviour {
 
 	private void Awake()
 	{
-		Weapons = new List<WeaponScript>();
-		foreach (var item in gameObject.GetComponentsInChildren<WeaponScript>(true))
+		Tools = new List<Tool>();
+		foreach (var item in gameObject.GetComponentsInChildren<Tool>(true))
 		{
-			Weapons.Add(item);
+			Tools.Add(item);
 			item.gameObject.SetActive(false);
 		}
 
-		ChangeActiveWeapon(Weapons[0]);
+		ChangeActiveWeapon(Tools[0]);
 	}
 
-	private void ChangeActiveWeapon(WeaponScript p_weapon)
+	private void ChangeActiveWeapon(Tool p_tool)
 	{
-		if(p_weapon == null)
+		if(p_tool == null)
 		{
 			Debug.LogError("new weapon is null");
 			return;
@@ -40,7 +40,7 @@ public class HandVRControl : MonoBehaviour {
 		{
 			ActiveWeapon.gameObject.SetActive(false);
 		}
-		ActiveWeapon = p_weapon;
+		ActiveWeapon = p_tool;
 		ActiveWeapon.gameObject.SetActive(true);
 		Debug.Log("Active Weapon is " + ActiveWeapon.gameObject);
 	}
@@ -57,6 +57,6 @@ public class HandVRControl : MonoBehaviour {
 
 	internal void SwitchWeapon()
 	{
-		ChangeActiveWeapon(Weapons[Weapons.IndexOf(ActiveWeapon)+1%Weapons.Count]);
+		ChangeActiveWeapon(Tools[(Tools.IndexOf(ActiveWeapon)+1)%Tools.Count]);
 	}
 }

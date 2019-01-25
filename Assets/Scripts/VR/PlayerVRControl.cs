@@ -13,8 +13,8 @@ public class PlayerVRControl : MonoBehaviour
 
 	public HandVRControl LeftHand;
 	public HandVRControl RightHand;
-	public VRTK_ControllerEvents.ButtonAlias UseWeaponButton = VRTK_ControllerEvents.ButtonAlias.TriggerPress;
-	public VRTK_ControllerEvents.ButtonAlias SwitchWeaponButton = VRTK_ControllerEvents.ButtonAlias.StartMenuPress;
+	public VRTK_ControllerEvents.ButtonAlias UseWeaponButton = VRTK_ControllerEvents.ButtonAlias.TriggerClick;
+	public VRTK_ControllerEvents.ButtonAlias SwitchWeaponButton = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
 
 	// Use this for initialization
 	void Awake()

@@ -11,10 +11,9 @@ public class AIScript : MonoBehaviour
 {
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public Character character { get; private set; } // the character we are controlling
-    public Transform target;                                    // target to aim for
-    [SerializeField] private Collider col;  // areaOfHits
-    private DoHits doHits;
-
+    public Transform target;                    // target to aim for
+    [SerializeField] private Collider col;
+    DoHits doHits;
 
     private void Start()
     {

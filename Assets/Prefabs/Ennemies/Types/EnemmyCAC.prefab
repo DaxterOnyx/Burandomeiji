@@ -2714,7 +2714,7 @@ Transform:
   m_GameObject: {fileID: 1026439384523232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.000000022352, y: 1.06, z: 1.087}
-  m_LocalScale: {x: 0.23391947, y: 0.46496248, z: 0.22549917}
+  m_LocalScale: {x: 0.37286764, y: 0.7411502, z: 0.35944566}
   m_Children: []
   m_Father: {fileID: 4462482489631484}
   m_RootOrder: 1
@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canAttack: 0
+  playerFound: 0
   m_hitDamage: 10
   m_hitCooldown: 2
   m_critical: 20

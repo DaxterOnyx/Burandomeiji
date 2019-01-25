@@ -50,7 +50,7 @@ public class DoHits : MonoBehaviour {
             return;
         }
 
-        if(this.gameObject.tag == "Enemy")
+        if(col.name == "BodyVR(Clone)")
         {
             playerFound = true;
         }
@@ -63,6 +63,11 @@ public class DoHits : MonoBehaviour {
                 StartCoroutine(DoHitsCoroutine(takeHits_));
             }
         }
+    }
+
+    private void OnTriggerExit()
+    {
+        playerFound = false;
     }
 
     private IEnumerator DoHitsCoroutine(TakeHits takeHits_)

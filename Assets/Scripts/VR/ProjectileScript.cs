@@ -25,8 +25,3 @@ public class ProjectileScript : MonoBehaviour {
 		}
 	}
 }
-
-internal class ElementEffect
-{
-	internal float Power;
-}

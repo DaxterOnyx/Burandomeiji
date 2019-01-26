@@ -3213,6 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageGO: {fileID: 0}
   m_health: 999
 --- !u!136 &136685940076068222
 CapsuleCollider:

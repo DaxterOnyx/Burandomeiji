@@ -44,6 +44,7 @@ public class AIScript : MonoBehaviour
         else
         {
             character.Move(Vector3.zero, false, false);
+            transform.LookAt(target);
         }     
     }
 

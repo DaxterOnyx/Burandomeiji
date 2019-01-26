@@ -240,7 +240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPlayerPCPrefabs: {fileID: 1290223810525246, guid: 71a66d03775133f4a8d2a42ada2b7399,
     type: 2}
-  target: {fileID: 0}
   maxMana: 1000
   manaRegen: 50
 --- !u!114 &114687927097806008
@@ -258,7 +257,7 @@ MonoBehaviour:
   speed_angle_turn: 5
   speed: 30
   cameraRotationLimit: 90
-  speed_Up_Down: 1
+  speed_Up_Down: 0.66
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

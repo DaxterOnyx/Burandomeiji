@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TakeHits : MonoBehaviour {
 
     private bool die = false;
+    [SerializeField] private GameObject damageGO;
+    private Text damageText;
 
     [SerializeField] private float m_health;
     private float m_currentHealth;
@@ -33,7 +36,13 @@ public class TakeHits : MonoBehaviour {
             {
                 m_currentHealth = 0f;
                 Die();
+                return;
             }
+
+            /*GameObject Ins_ = Instantiate(damageGO, this.gameObject.transform);
+            damageText = Ins_.GetComponentInChildren<Text>();
+            damageText.text = _hitDamage.ToString("0");
+            Destroy(Ins_, 1f);*/
         }
     }
 

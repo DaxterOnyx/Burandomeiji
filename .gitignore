@@ -42,3 +42,5 @@ sysinfo.txt
 
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
+
+Assets/Plugins/ConsoleE/Editor/ConsoleE\.dll\.meta

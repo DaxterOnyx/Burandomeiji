@@ -11,7 +11,7 @@ enum Element
 
 public class WandShoot : WeaponScript
 {
-	public new GameObject ActiveProjectile {
+	internal new GameObject ActiveProjectile {
 		get
 		{
 			switch (m_element)
@@ -38,15 +38,46 @@ public class WandShoot : WeaponScript
 	[SerializeField]
 	private Element m_element = Element.Fire;
 
-	public override void EndUse()
+	public float Power = 1;
+	public float PowerStep = 1;
+	public float PowerStart = 1;
+	public float PowerEnd = 10;
+	private GameObject ChargingProjectile;
+
+	public override void Use()
 	{
 		base.Use();
-		Shoot();
+		Power = PowerStart;
+
+		if (projectileSpawnPoint == null)
+		{
+			Debug.LogError("projectile Spawn is null");
+			gameObject.SetActive(false);
+		}
+
+		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+		ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
+	}
+
+	public override void EndUse()
+	{
+		base.EndUse();
+		
+		Rigidbody projectileRigidbody = ChargingProjectile.GetComponent<Rigidbody>();
+		if (projectileRigidbody != null)
+		{
+			projectileRigidbody.AddForce(ChargingProjectile.transform.forward * projectileSpeed);
+		}
+		ChargingProjectile = null;
 	}
 
 	private void FixedUpdate()
 	{
-		//TODO charge
+		if(inUse)
+		{
+			Power += PowerStep * Time.fixedDeltaTime;
+			ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
+		}
 	}
 
 	internal void ChangeElement(Element p_element)

@@ -10,14 +10,13 @@ public class ProjectileScript : MonoBehaviour {
 	public float Damage = 1;
 	public string TargetTag = "Ennemy";
 
-	private void Awake()
+	void Awake()
 	{
 		Destroy(gameObject, LifeTime);
 	}
 
-	private void OnCollisionEnter(Collision collision)
+	void OnCollisionEnter(Collision collision)
 	{
-		//TODO Brice element différence
 		var target = collision.collider.GetComponent<TakeHits>();
 		if (target != null && target.tag == TargetTag)
 		{
@@ -25,4 +24,9 @@ public class ProjectileScript : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+}
+
+internal class ElementEffect
+{
+	internal float Power;
 }

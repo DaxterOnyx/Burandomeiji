@@ -31,7 +31,6 @@ public class SpellBook : Tool
 		}
 	}
 
-	//TODO @Daxter
 	public override void Use()
 	{
 		base.Use();

@@ -8,9 +8,12 @@ public class TakeHits : MonoBehaviour {
 
     private bool die = false;
     [SerializeField] private GameObject damagePopupPC;
+    [SerializeField] private GameObject criticalPopupPC;
     [SerializeField] private GameObject damagePopupVR;
+    [SerializeField] private GameObject criticalPopupVR;
     private TextMeshProUGUI damageTextPC;
     private TextMeshProUGUI damageTextVR;
+    private GameObject Ins;
 
     [SerializeField] private float m_health;
     private float m_currentHealth;
@@ -28,12 +31,12 @@ public class TakeHits : MonoBehaviour {
         m_currentHealth = m_health;
     }
 
-    public void takeHits(float _hitDamage)
+    public void takeHits(float _hitDamage, bool _critical)
     {
         if (!die)
         {
             m_currentHealth -= _hitDamage;
-            Debug.Log("[" + this.name + "]" +  " health restant : " + m_currentHealth.ToString("0.0") + "hit damage : " + _hitDamage.ToString("0.0"));
+            //Debug.Log("[" + this.name + "]" +  " health restant : " + m_currentHealth.ToString("0.0") + "hit damage : " + _hitDamage.ToString("0.0"));
 
             if (m_currentHealth <= 0f)
             {
@@ -42,26 +45,7 @@ public class TakeHits : MonoBehaviour {
                 return;
             }
 
-            /*GameObject Ins_ = Instantiate(damageGO, this.gameObject.transform);
-            damageText = Ins_.GetComponentInChildren<Text>();
-            damageText.text = _hitDamage.ToString("0");
-            Destroy(Ins_, 1f);*/
-
-            GameObject InsPC_ = Instantiate(damagePopupPC, this.gameObject.transform);
-            if(InsPC_ != null)
-            {
-                damageTextPC = GetComponentInChildren<TextMeshProUGUI>();
-                damageTextPC.text = _hitDamage.ToString("0");
-                Destroy(InsPC_, 2f);
-            }
-            
-            GameObject InsVR_ = Instantiate(damagePopupVR, this.gameObject.transform);
-            if(InsVR_ != null)
-            {
-                damageTextVR = GetComponentInChildren<TextMeshProUGUI>();
-                damageTextVR.text = _hitDamage.ToString("0");
-                Destroy(InsVR_, 2f);
-            }
+            DisplayDamage(_hitDamage, _critical);
         }
     }
 
@@ -70,6 +54,37 @@ public class TakeHits : MonoBehaviour {
         Debug.Log(gameObject.name + " est mort");
         die = true;
         m_currentHealth = m_health;
+    }
+
+    private void DisplayDamage(float _hitDamage, bool _critical)
+    {
+        Ins = null;
+        if (this.name == "BodyVR(Clone)")
+        {
+            if (_critical)
+                Ins = Instantiate(criticalPopupPC, this.gameObject.transform);
+            else
+                Ins = Instantiate(damagePopupPC, this.gameObject.transform);
+        }
+        else
+        {
+            if (_critical)
+                Ins = Instantiate(criticalPopupVR, this.gameObject.transform);
+            else
+                Ins = Instantiate(damagePopupVR, this.gameObject.transform);          
+        }
+
+        if (Ins != null)
+        {
+            damageTextVR = Ins.GetComponentInChildren<TextMeshProUGUI>();
+            damageTextVR.text = _hitDamage.ToString("0");
+            Destroy(Ins, 0.95f);
+        }
+        else
+        {
+            Debug.LogError("Le GO Ins du script TakeHits est null.");
+        }
+
     }
     
 }

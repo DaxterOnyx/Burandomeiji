@@ -34,11 +34,11 @@ public class DoHits : MonoBehaviour {
         if(crit_ < m_critical) // Si coup critique réussi
         {
             //Debug.Log("Coup critique réussi!");
-            _takeHits.takeHits(m_hitDamage * multCrit_);
+            _takeHits.takeHits(m_hitDamage * multCrit_, true);
         }
         else
         {
-            _takeHits.takeHits(m_hitDamage);
+            _takeHits.takeHits(m_hitDamage, false);
         }
     }
 

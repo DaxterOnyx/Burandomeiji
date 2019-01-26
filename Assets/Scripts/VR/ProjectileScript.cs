@@ -21,7 +21,7 @@ public class ProjectileScript : MonoBehaviour {
 		var target = collision.collider.GetComponent<TakeHits>();
 		if (target != null && target.tag == TargetTag)
 		{
-			target.takeHits(Damage);
+			target.takeHits(Damage, false);
 			Destroy(gameObject);
 		}
 	}

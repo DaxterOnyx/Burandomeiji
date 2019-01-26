@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - BonusMenu
   - Cursor
+  - CameraPC
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - UIForVR
+  - UIForPC
   - 
   - 
   - 

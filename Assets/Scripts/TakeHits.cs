@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TakeHits : MonoBehaviour {
 
     private bool die = false;
-    [SerializeField] private GameObject damageGO;
-    private Text damageText;
+    [SerializeField] private GameObject damagePopupPC;
+    [SerializeField] private GameObject damagePopupVR;
+    private TextMeshProUGUI damageTextPC;
+    private TextMeshProUGUI damageTextVR;
 
     [SerializeField] private float m_health;
     private float m_currentHealth;
@@ -43,6 +46,22 @@ public class TakeHits : MonoBehaviour {
             damageText = Ins_.GetComponentInChildren<Text>();
             damageText.text = _hitDamage.ToString("0");
             Destroy(Ins_, 1f);*/
+
+            GameObject InsPC_ = Instantiate(damagePopupPC, this.gameObject.transform);
+            if(InsPC_ != null)
+            {
+                damageTextPC = GetComponentInChildren<TextMeshProUGUI>();
+                damageTextPC.text = _hitDamage.ToString("0");
+                Destroy(InsPC_, 2f);
+            }
+            
+            GameObject InsVR_ = Instantiate(damagePopupVR, this.gameObject.transform);
+            if(InsVR_ != null)
+            {
+                damageTextVR = GetComponentInChildren<TextMeshProUGUI>();
+                damageTextVR.text = _hitDamage.ToString("0");
+                Destroy(InsVR_, 2f);
+            }
         }
     }
 

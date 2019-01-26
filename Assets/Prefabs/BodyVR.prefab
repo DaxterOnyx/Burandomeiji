@@ -96,7 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageGO: {fileID: 1518514690865438, guid: ac4e410849ed8be4489a592519cfe9a4, type: 2}
+  damagePopupPC: {fileID: 1291639452093374, guid: 686a87788f2b75a4f8397aad6b85fb61,
+    type: 2}
+  damagePopupVR: {fileID: 1111142912111810, guid: e71fccad6f434e24485ac5b6b51d17d6,
+    type: 2}
   m_health: 1000
 --- !u!136 &136488520128063790
 CapsuleCollider:

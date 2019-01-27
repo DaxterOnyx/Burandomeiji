@@ -469,6 +469,18 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2300000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265888043880d4849bd943f1c59dfab5, type: 3}
   m_IsPrefabAsset: 0
@@ -529,7 +541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 183eaa1cc548de2459e6216955f166c1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 183eaa1cc548de2459e6216955f166c1, type: 3}
       propertyPath: m_LocalScale.y
@@ -597,7 +609,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e14cf81bf69c6f54ca7a55e08ba8a177, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e14cf81bf69c6f54ca7a55e08ba8a177, type: 3}
       propertyPath: m_LocalScale.y

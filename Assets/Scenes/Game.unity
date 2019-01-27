@@ -238,15 +238,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 20468994572915638, guid: e47db903777574043bc120bac8d01c0c,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 567
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728221111435072, guid: e47db903777574043bc120bac8d01c0c, type: 2}
-      propertyPath: m_TagString
-      value: CameraPC
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47db903777574043bc120bac8d01c0c, type: 2}
   m_IsPrefabAsset: 0

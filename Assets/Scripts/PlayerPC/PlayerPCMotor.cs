@@ -58,7 +58,7 @@ public class PlayerPCMotor : MonoBehaviour {
     {
         rb.velocity = Vector3.zero;
         Vector3 velocity = new Vector3(0f, speed_Up_Down, 0f);
-        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
+        rb.AddForce(velocity * speed, ForceMode.VelocityChange);
     }
 
     private void PerformDown()
@@ -71,6 +71,6 @@ public class PlayerPCMotor : MonoBehaviour {
         }
         rb.velocity = Vector3.zero;
         Vector3 velocity = new Vector3(0f, -speed_Up_Down, 0f);
-        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
+        rb.AddForce(velocity * speed, ForceMode.VelocityChange);
     }
 }

@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 81736207549131318}
   m_Layer: 2
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: CameraPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPlayerPCPrefabs: {fileID: 1290223810525246, guid: 71a66d03775133f4a8d2a42ada2b7399,
     type: 2}
-  maxMana: 1000
-  manaRegen: 50
+  maxMana: 10000
+  manaRegen: 1000
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,7 +257,7 @@ MonoBehaviour:
   speed_angle_turn: 5
   speed: 30
   cameraRotationLimit: 90
-  speed_Up_Down: 0.66
+  speed_Up_Down: 0.75
 --- !u!114 &114707502108153376
 MonoBehaviour:
   m_ObjectHideFlags: 1

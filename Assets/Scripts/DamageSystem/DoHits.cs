@@ -6,6 +6,7 @@ public class DoHits : MonoBehaviour {
 
     private bool canDoHits = true;
     public bool playerFound = false;
+    TakeHits takeHits;
 
     // Les attributs de bases. Ils peuvent être initialié directement dans l'inspector
     [SerializeField] private float m_hitDamage;
@@ -29,16 +30,15 @@ public class DoHits : MonoBehaviour {
     {
         float crit_ = Random.Range(0f, 100f);
         float multCrit_ = Random.Range(2f, 4f);
-        //Debug.Log(crit_ + " / " + multCrit_);
+        float multRand_ = Random.Range(0.9f, 1.1f);
 
         if(crit_ < m_critical) // Si coup critique réussi
         {
-            //Debug.Log("Coup critique réussi!");
-            _takeHits.takeHits(m_hitDamage * multCrit_, true);
+            _takeHits.takeHits(multRand_ * m_hitDamage * multCrit_, true);
         }
         else
         {
-            _takeHits.takeHits(m_hitDamage, false);
+            _takeHits.takeHits(multRand_ * m_hitDamage, false);
         }
     }
 
@@ -55,12 +55,13 @@ public class DoHits : MonoBehaviour {
             playerFound = true;
         }
 
-        TakeHits takeHits_ = col.GetComponent<TakeHits>();
-        if(takeHits_ != null)
+        takeHits = col.GetComponent<TakeHits>();
+
+        if(takeHits != null)
         {
             if(canDoHits)
             {
-                StartCoroutine(DoHitsCoroutine(takeHits_));
+                StartCoroutine(DoHitsCoroutine(takeHits));
             }
         }
     }

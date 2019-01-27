@@ -3916,9 +3916,9 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  damagePopupVR: {fileID: 1060983474246806, guid: 3eabf6e30a07ddb40bb23843ca3e2196,
+  damagePopupVR: {fileID: 1476893559327436, guid: 7f4bbd52994b773448bcb37ce4d1377f,
     type: 2}
-  criticalPopupVR: {fileID: 1506056119207764, guid: e2c980282ab45594dbe06b7412aa22e7,
+  criticalPopupVR: {fileID: 1029801423354158, guid: e2c980282ab45594dbe06b7412aa22e7,
     type: 2}
   m_health: 1000
 --- !u!136 &136488520128063790

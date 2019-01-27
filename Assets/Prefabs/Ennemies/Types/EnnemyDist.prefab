@@ -2335,8 +2335,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141081312954044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.06, z: 0.17}
-  m_LocalScale: {x: 0.57564825, y: -1.1704901, z: 4.481532}
+  m_LocalPosition: {x: 0.00000071526, y: 1.06, z: 10.52}
+  m_LocalScale: {x: 0.81152034, y: -0.16898367, z: 2.2886288}
   m_Children: []
   m_Father: {fileID: 4011727789078902}
   m_RootOrder: 1
@@ -3221,9 +3221,9 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  damagePopupVR: {fileID: 1060983474246806, guid: 3eabf6e30a07ddb40bb23843ca3e2196,
+  damagePopupVR: {fileID: 1476893559327436, guid: 7f4bbd52994b773448bcb37ce4d1377f,
     type: 2}
-  criticalPopupVR: {fileID: 1682012912934688, guid: e2c980282ab45594dbe06b7412aa22e7,
+  criticalPopupVR: {fileID: 1029801423354158, guid: e2c980282ab45594dbe06b7412aa22e7,
     type: 2}
   m_health: 111
 --- !u!114 &114716702422056604

@@ -35,7 +35,7 @@ public class AIScript : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-        } 
+        }
 
         if (agent.remainingDistance > agent.stoppingDistance)
         {

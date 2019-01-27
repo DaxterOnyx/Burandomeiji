@@ -213,7 +213,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -306,7 +306,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 2.487}
-  m_SizeDelta: {x: 202.6078, y: 92.7284}
+  m_SizeDelta: {x: 368.2097, y: 197.275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224685373754007212
 RectTransform:
@@ -323,6 +323,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 46.364}
-  m_SizeDelta: {x: 181.34, y: 88.72}
+  m_AnchoredPosition: {x: 0.0000076294, y: 98.637}
+  m_SizeDelta: {x: 338.58, y: 180.72}
   m_Pivot: {x: 0.5, y: 0.5}

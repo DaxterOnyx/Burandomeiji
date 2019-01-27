@@ -128,7 +128,7 @@ public class PlayerPC : MonoBehaviour {
                 bonusMenuScript.IconDown();
             }
 
-            if(playerPCController.ClickDown0 || playerPCController.ClickDown1)
+            if(playerPCController.Click0 || playerPCController.Click1)
             {
                 if (canClick)
                 {
@@ -137,7 +137,7 @@ public class PlayerPC : MonoBehaviour {
             }
 
             
-            if(!playerPCController.ClickDown0 && !playerPCController.ClickDown1)
+            if(!playerPCController.Click0 && !playerPCController.Click1)
             {
                 click = 0.3f;
             }
@@ -178,11 +178,11 @@ public class PlayerPC : MonoBehaviour {
     private IEnumerator TimeBetweenTwoClick()
     {
         canClick = false;
-        if (playerPCController.ClickDown0)
+        if (playerPCController.Click0)
         {
             bonusMenuScript.UpgradeBonus();
         }    
-        else if(playerPCController.ClickDown1)
+        else if(playerPCController.Click1)
         {
             bonusMenuScript.DowngradeBonus();
         }

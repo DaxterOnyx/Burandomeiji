@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 198884465124960600}
   - component: {fileID: 199942775475005396}
   m_Layer: 9
-  m_Name: CCParticulesPc
+  m_Name: CCParticulesPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145240474543084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -130, z: 0}
+  m_LocalPosition: {x: 0, y: -150, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 224241491731068612}
@@ -150,7 +150,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 999
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -163,10 +163,10 @@ MonoBehaviour:
   m_fontColor: {r: 1, g: 0.8666667, b: 0.49019608, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
-    topLeft: {r: 0.9433962, g: 0.9019588, b: 0.07564971, a: 1}
-    topRight: {r: 0.9529412, g: 0.7220062, b: 0.14901957, a: 1}
-    bottomLeft: {r: 0.65882355, g: 0.7568628, b: 0.8745099, a: 1}
-    bottomRight: {r: 0.13861692, g: 0.74615526, b: 0.8396226, a: 1}
+    topLeft: {r: 0.6, g: 0.2509804, b: 1, a: 1}
+    topRight: {r: 0.6, g: 0.2509804, b: 1, a: 1}
+    bottomLeft: {r: 0.6, g: 0.2509804, b: 1, a: 1}
+    bottomRight: {r: 0.6, g: 0.2509804, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114267110465656934}
-    characterCount: 3
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -371,8 +371,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.8
-      minScalar: 0.4
+      scalar: 0.4
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -504,8 +504,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
-      minScalar: 12
+      scalar: 5
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -539,8 +539,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 2
+      scalar: 0.8
+      minScalar: 1.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -592,8 +592,8 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 2
+      scalar: 0.8
+      minScalar: 1.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1103,7 +1103,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 50
         minScalar: 3
         maxCurve:
           serializedVersion: 2
@@ -1481,15 +1481,15 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.9450981, g: 0.9450981, b: 0.9450981, a: 1}
         key1: {r: 1, g: 1, b: 0.53333336, a: 1}
-        key2: {r: 0.6156863, g: 0.10196079, b: 0.65882355, a: 1}
-        key3: {r: 0.61390543, g: 0.1027946, b: 0.6603774, a: 0.11372549}
+        key2: {r: 0.49451974, g: 0.09220363, b: 0.5283019, a: 1}
+        key3: {r: 0.51857126, g: 0.06563723, b: 0.5566038, a: 0.11372549}
         key4: {r: 0.61390543, g: 0.1027946, b: 0.6603774, a: 0}
         key5: {r: 1, g: 1, b: 1, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 578
-        ctime1: 17348
-        ctime2: 41827
+        ctime1: 11565
+        ctime2: 29298
         ctime3: 65342
         ctime4: 65342
         ctime5: 65535
@@ -4900,7 +4900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 155.6}
+  m_AnchoredPosition: {x: 0, y: 224.35}
   m_SizeDelta: {x: 459.1, y: 285.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224241491731068612
@@ -4921,5 +4921,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 2.82}
-  m_SizeDelta: {x: 498.804, y: 311.203}
+  m_SizeDelta: {x: 744.332, y: 448.699}
   m_Pivot: {x: 0.5, y: 0.5}

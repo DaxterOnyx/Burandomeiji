@@ -241,7 +241,7 @@ public class BonusMenu : MonoBehaviour {
                 CapBonus(0.55f, 3.25f, _switch);
                 break;
             case 2:
-                CapBonus(0.2f, 10f, _switch);
+                CapBonus(0.2f, 3f, _switch);
                 break;
             case 3:
                 CapBonus(0.5f, 2.5f, _switch);

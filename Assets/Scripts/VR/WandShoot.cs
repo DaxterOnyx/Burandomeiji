@@ -11,7 +11,9 @@ enum Element
 
 public class WandShoot : WeaponScript
 {
-	internal new GameObject ActiveProjectile {
+	[HideInInspector]
+	internal new GameObject ActiveProjectile
+	{
 		get
 		{
 			switch (m_element)
@@ -38,8 +40,17 @@ public class WandShoot : WeaponScript
 	[SerializeField]
 	private Element m_element = Element.Fire;
 
-	public float Power = 1;
-	public float PowerStep = 1;
+	private float power = 1;
+	public float Power
+	{
+		get { return power; }
+		set {
+			if (value > PowerEnd) power = PowerEnd;
+			else if (value < PowerStart) power = PowerStart;
+			else power = value;
+		}
+	}
+	public float PowerChargingSpeed = 1;
 	public float PowerStart = 1;
 	public float PowerEnd = 10;
 	private GameObject ChargingProjectile;
@@ -55,19 +66,14 @@ public class WandShoot : WeaponScript
 			gameObject.SetActive(false);
 		}
 
-		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation, GetComponentInParent<HandVRControl>().transform);
 		ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
 	}
 
 	public override void EndUse()
 	{
 		base.EndUse();
-		
-		Rigidbody projectileRigidbody = ChargingProjectile.GetComponent<Rigidbody>();
-		if (projectileRigidbody != null)
-		{
-			projectileRigidbody.AddForce(ChargingProjectile.transform.forward * projectileSpeed);
-		}
+		ChargingProjectile.GetComponent<ElementProjectile>().Launch(projectileSpeed);
 		ChargingProjectile = null;
 	}
 
@@ -75,7 +81,7 @@ public class WandShoot : WeaponScript
 	{
 		if(inUse)
 		{
-			Power += PowerStep * Time.fixedDeltaTime;
+			Power += PowerChargingSpeed * Time.fixedDeltaTime;
 			ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
 		}
 	}
@@ -83,5 +89,6 @@ public class WandShoot : WeaponScript
 	internal void ChangeElement(Element p_element)
 	{
 		m_element = p_element;
+		Debug.Log("Element = " + m_element);
 	}
 }

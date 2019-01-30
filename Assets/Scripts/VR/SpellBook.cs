@@ -77,6 +77,7 @@ public class SpellBook : Tool
 	{
 		m_element = p_element;
 		Wand.ChangeElement(p_element);
+		Debug.Log("Element = " + m_element);
 	}
 
 	public void IceChange()
@@ -86,16 +87,16 @@ public class SpellBook : Tool
 
 	public void WindChange()
 	{
-		m_element = Element.Wind;
+		ChangeElement(Element.Wind);
 	}
 
 	public void FireChange()
 	{
-		m_element = Element.Fire;
+		ChangeElement(Element.Fire);
 	}
 
 	public void ElectricityChange()
 	{
-		m_element = Element.Electricity;
+		ChangeElement(Element.Electricity);
 	}
 }

@@ -8,9 +8,9 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour {
 	public float LifeTime = 5;
 	public float Damage = 1;
-	public string TargetTag = "Ennemy";
+	public string TargetTag = "Enemy";
 
-	void Awake()
+	virtual protected void Awake()
 	{
 		Destroy(gameObject, LifeTime);
 	}

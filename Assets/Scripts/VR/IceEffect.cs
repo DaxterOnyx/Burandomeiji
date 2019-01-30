@@ -1,4 +1,0 @@
-﻿class IceEffect : ElementEffect
-{
-
-}

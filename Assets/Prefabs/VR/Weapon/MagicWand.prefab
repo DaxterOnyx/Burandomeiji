@@ -128,10 +128,16 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 4940771705696654}
   ActiveProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
     type: 2}
-  FireProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
+  FireProjectile: {fileID: 1170158472373774, guid: 07930c2c53bbb2146a1463afdf218619,
     type: 2}
-  ElectricityProjectile: {fileID: 0}
-  IceProjectile: {fileID: 0}
-  WindProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
+  ElectricityProjectile: {fileID: 1170158472373774, guid: 13178bca6c0ae584fbec5862c78730c2,
+    type: 2}
+  IceProjectile: {fileID: 1170158472373774, guid: 6608aba4760a90841ab3f3bcced6cab6,
+    type: 2}
+  WindProjectile: {fileID: 1170158472373774, guid: e15ae33c6121b404f9a7e018fa997f33,
     type: 2}
   m_element: 1
+  Power: 1
+  PowerStep: 2
+  PowerStart: 1
+  PowerEnd: 10

@@ -10,7 +10,7 @@ using VRTK;
 /// </summary>
 public abstract class WeaponScript : Tool
 {
-    public float projectileSpeed = 1000f;
+    public float projectileSpeed = 100f;
 	public Transform projectileSpawnPoint;
 	public GameObject ActiveProjectile;
 
@@ -22,7 +22,7 @@ public abstract class WeaponScript : Tool
 			Rigidbody projectileRigidbody = clonedProjectile.GetComponent<Rigidbody>();
 			if (projectileRigidbody != null)
 			{
-				projectileRigidbody.AddForce(clonedProjectile.transform.forward * projectileSpeed);
+				projectileRigidbody.AddForce(clonedProjectile.transform.forward * projectileSpeed,ForceMode.VelocityChange);
 			}
 		}
 	}

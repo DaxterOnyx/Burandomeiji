@@ -158,7 +158,7 @@ public class TakeHits : MonoBehaviour {
         }
     }
 
-    public void Defreeze()
+    public void UnFreeze()
     {
         if(isEnemy)
         {

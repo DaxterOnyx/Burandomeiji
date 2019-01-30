@@ -149,31 +149,96 @@ public class BonusMenu : MonoBehaviour {
         {
             case 0:       
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Speed : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " speed";
+
+                if((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+                
+                hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " walk speed";
                 break;
 
             case 1:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Health bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (takeHits_.health * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.hitDamage * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.hitCooldown * mult).ToString("0.0") + " attack per second";
                 break;
 

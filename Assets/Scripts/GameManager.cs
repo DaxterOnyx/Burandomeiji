@@ -17,13 +17,16 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     void Update()
     {
-        if(timer >0)
+        if (!end)
         {
-            timer -= Time.deltaTime;
-        }
-        else
-        {
-            end = true;
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                end = true;
+            }
         }
     }
 
@@ -43,5 +46,10 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public bool isGameFinish()
     {
         return end;
+    }
+
+    public void SetBoolEnd(bool _end)
+    {
+        end = _end;
     }
 }

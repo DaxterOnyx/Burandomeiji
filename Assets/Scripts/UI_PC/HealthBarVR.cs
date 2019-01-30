@@ -10,5 +10,9 @@ public class HealthBarVR : MonoBehaviour {
     public void SetHealthBar(float _currentAmount, float _healthMax)
     {
         healthBarFill.localScale = new Vector3(_currentAmount / _healthMax, 1f, 1f);
+        if(_currentAmount <= 0f)
+        {
+            GameManager.Instance.SetBoolEnd(true);
+        }
     }
 }

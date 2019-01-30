@@ -155,11 +155,11 @@ public class PlayerPC : MonoBehaviour {
                 bonusMenuScript.IconDown();
             }
 
-            if (playerPCController.A)
+            if (playerPCController.E)
             {
                 bonusMenuScript.UpgradeBonus();
             }
-            else if (playerPCController.E)
+            else if (playerPCController.A)
             {
                 bonusMenuScript.DowngradeBonus();
             }

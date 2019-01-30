@@ -12,7 +12,7 @@ public class HealthBarScript : MonoBehaviour {
     private TakeHits takeHits;
 
     private bool canUpdate = true;
-    public float currentHealth;
+    [HideInInspector] public float currentHealth;
 
     public IEnumerator SetHealth(float healthMax_, float currentAmount_)
     {

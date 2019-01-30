@@ -43,6 +43,7 @@ public class BonusMenu : MonoBehaviour {
     {
         enemyMenu = GetComponent<EnemyMenu>();
     }
+
     #region UI
 
     private void InsIcon(int _number)
@@ -124,7 +125,7 @@ public class BonusMenu : MonoBehaviour {
         currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
         EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
         TakeHits takeHits_ = allEnemyTab[currentEnemyIcon].GetComponent<TakeHits>();
-        DoHits doHits = allEnemyTab[currentEnemyIcon].GetComponentInChildren<DoHits>();
+        DoHits doHits = allEnemyTab[currentEnemyIcon].GetComponent<DoHits>();
 
         hightLeftText.text = enemyStats_.enemyName;
         centerLeftText.text = "Type : " + enemyStats_.type;

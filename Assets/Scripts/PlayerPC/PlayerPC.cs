@@ -20,16 +20,12 @@ public class PlayerPC : MonoBehaviour {
     [SerializeField] private GameObject UIPlayerPCPrefabs;
     private GameObject UIPlayerPCInstance;
     private GameObject bonusMenuGo;
-    private GameObject cursorGO;
     private Transform target;
 
     /* Attributs */
-    private bool canSpawn = true;
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 550f;
-    private float click;
-    private bool canClick = true;
 
     Image imageCursor;
 
@@ -54,14 +50,14 @@ public class PlayerPC : MonoBehaviour {
         manaBarScript.SetManaRegen(manaRegen);
 
         bonusMenuGo = GameObject.FindGameObjectWithTag("BonusMenu");
-        cursorGO = GameObject.FindGameObjectWithTag("Cursor");
-        imageCursor = cursorGO.GetComponent<Image>();
+        imageCursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<Image>();
         bonusMenuGo.SetActive(false);
     }
 	
 	private void Update ()
     {
         maxMana += Time.deltaTime/1.2f;
+
         if (currentMana < maxMana)
         {
             RegenMana();
@@ -80,88 +76,8 @@ public class PlayerPC : MonoBehaviour {
             }
         }
 
-        if(canSpawn)
-        {
-            Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
-            RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                if (hit.collider.gameObject.tag == "Terrain")
-                {
-                    float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
-                    if (distanceVRCursor >= 15f)
-                    {
-                        if (playerPCController.ClickDown)
-                        {
-                            float lostMana = bonusMenuScript.UpdateLostMana();
-                            if (currentMana >= lostMana)
-                            {
-                                StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
-                                currentMana -= lostMana;
-                            }
-                        }
-                        imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
-                    }
-                    else
-                    {
-                        imageCursor.color = Color.HSVToRGB(0f, 100f, 85f);   // Rouge
-                    }
-                }
-            }
-            if (playerPCController.ScrollWheel < 0f)
-            {
-                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
-            }
-            else if(playerPCController.ScrollWheel > 0f)
-            {
-                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
-            }
-        }
-        else
-        {
-            if (playerPCController.ScrollWheel > 0f)
-            {
-                bonusMenuScript.IconUp();
-            }
-            else if (playerPCController.ScrollWheel < 0f)
-            {
-                bonusMenuScript.IconDown();
-            }
-
-            if(playerPCController.Click0 || playerPCController.Click1)
-            {
-                if (canClick)
-                {
-                    StartCoroutine(TimeBetweenTwoClick());
-                }
-            }
-
-            
-            if(!playerPCController.Click0 && !playerPCController.Click1)
-            {
-                click = 0.3f;
-            }
-
-            if(playerPCController.A)
-            {
-                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
-                bonusMenuScript.UpdateText();
-            }
-
-            if(playerPCController.E)
-            {
-                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
-                bonusMenuScript.UpdateText();
-            }
-        }
-        
-        if(playerPCController.BonusMenu)
-        {
-            canSpawn = !canSpawn;
-            cursorGO.SetActive(canSpawn);
-            bonusMenuGo.SetActive(!canSpawn);
-            bonusMenuScript.UpdateText();
-        }
+        Spawn();
+        Controller();
     }
 
     private void RegenMana()
@@ -175,24 +91,78 @@ public class PlayerPC : MonoBehaviour {
         manaRegen = manaBarScript.SetMana(maxMana, currentMana);
     }
 
-    private IEnumerator TimeBetweenTwoClick()
+    private void Spawn()
     {
-        canClick = false;
-        if (playerPCController.Click0)
+        Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
+        RaycastHit hit = new RaycastHit();
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            bonusMenuScript.UpgradeBonus();
-        }    
-        else if(playerPCController.Click1)
+            if (hit.collider.gameObject.tag == "Terrain")
+            {
+                float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
+
+                if (distanceVRCursor >= 15f)
+                {
+                    if (playerPCController.ClickDown)
+                    {
+                        float lostMana = bonusMenuScript.UpdateLostMana();
+                        if (currentMana >= lostMana)
+                        {
+                            StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
+                            currentMana -= lostMana;
+                        }
+                    }
+                    imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
+                }
+                else
+                {
+                    imageCursor.color = Color.HSVToRGB(0f, 100f, 85f);   // Rouge
+                }
+            }
+        }  
+    }
+
+    private void Controller()
+    {
+        // Si le joueur appuie sur la touche "BonusMenu"
+        if (playerPCController.BonusMenu)
         {
-            bonusMenuScript.DowngradeBonus();
+            bonusMenuGo.SetActive(!bonusMenuGo.activeSelf);
+            bonusMenuScript.UpdateText();
         }
 
-        if (click > 0.2f)
+        // Si le menu des bonus est désactivé
+        if(bonusMenuGo.activeSelf == false)
         {
-            click -= 0.1f;
+            if (playerPCController.ScrollWheel < 0f)
+            {
+                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
+            }
+            else if (playerPCController.ScrollWheel > 0f)
+            {
+                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
+            }
         }
+        else // Si le menu des bonus est activé
+        {
+            if (playerPCController.ScrollWheel > 0f)
+            {
+                bonusMenuScript.IconUp();
+            }
+            else if (playerPCController.ScrollWheel < 0f)
+            {
+                bonusMenuScript.IconDown();
+            }
 
-        yield return new WaitForSeconds(click);
-        canClick = true;
+            if (playerPCController.A)
+            {
+                bonusMenuScript.UpgradeBonus();
+            }
+            else if (playerPCController.E)
+            {
+                bonusMenuScript.DowngradeBonus();
+            }
+        } 
     }
 }

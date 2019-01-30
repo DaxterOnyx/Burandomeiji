@@ -29,6 +29,10 @@ public class PlayerPCMotor : MonoBehaviour {
     // Utilisation de FixedUpdate pour toutes les updates liées à la physique
     void FixedUpdate()
     {
+        if(this.transform.position.y < 2f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, 2f, this.transform.position.z);
+        }
         PerformMovement();
         PerformRotation();
         if(playerPCController.Up)
@@ -65,7 +69,7 @@ public class PlayerPCMotor : MonoBehaviour {
     {
         Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.down));
         RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(ray, out hit, 3f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             return;
         }

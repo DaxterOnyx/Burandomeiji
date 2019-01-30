@@ -7,13 +7,16 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Character))]
 [RequireComponent(typeof(EnemyStats))]
+[RequireComponent(typeof(DoHits))]
 public class AIScript : MonoBehaviour
 {
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public Character character { get; private set; } // the character we are controlling
     public Transform target;                    // target to aim for
-    [SerializeField] private Collider col;
     DoHits doHits;
+    TakeHits takeHitsTarget;
+    private float distanceFly;
+    private bool isAttacking;
 
     private void Start()
     {
@@ -23,13 +26,15 @@ public class AIScript : MonoBehaviour
 
         agent.updateRotation = false;
         agent.updatePosition = true;
-
+    
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent.speed = GetComponent<EnemyStats>().speed;
-        doHits = col.GetComponent<DoHits>();
+        doHits = GetComponent<DoHits>();
+        takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
+
     }
 
-
+    
     private void Update()
     {
         if (target != null)
@@ -37,21 +42,45 @@ public class AIScript : MonoBehaviour
             agent.SetDestination(target.position);
         }
 
-        if (agent.remainingDistance > agent.stoppingDistance)
+        distanceFly = Vector3.Distance(target.position, this.transform.position);
+
+        if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
         {
-            character.Move(agent.desiredVelocity, false, false);
+            Attack();
         }
         else
         {
-            character.Move(Vector3.zero, false, false);
-            transform.LookAt(target);
-        }     
+            Move();
+        }
     }
 
-
-    public void SetTarget(Transform target)
+    public void SetTarget(Transform _target)
     {
-        this.target = target;
+        this.target = _target;
     }
+
+    private void Attack()
+    {
+        character.Move(Vector3.zero, false, false);
+        transform.LookAt(target);
+        agent.SetDestination(this.transform.position);
+        
+        doHits.Attack(takeHitsTarget);
+        isAttacking = true;     
+    }
+
+    private void Move()
+    {
+        if (isAttacking)
+        {
+            agent.SetDestination(target.position);
+            isAttacking = false;
+        }
+
+        character.Move(agent.desiredVelocity, false, false);
+    }
+
+    //TODO pour Marc
+    // Boolean animation attaque
 }
 

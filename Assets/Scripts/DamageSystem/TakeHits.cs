@@ -7,13 +7,18 @@ using TMPro;
 public class TakeHits : MonoBehaviour {
 
     private bool die = false;
-    [SerializeField] private GameObject damagePopupPC;
-    [SerializeField] private GameObject criticalPopupPC;
-    [SerializeField] private GameObject damagePopupVR;
-    [SerializeField] private GameObject criticalPopupVR;
-    private TextMeshProUGUI damageTextPC;
-    private TextMeshProUGUI damageTextVR;
     private GameObject Ins;
+    private bool isEnemy;
+
+    [SerializeField] private GameObject damagePopupVR;
+    [SerializeField] private GameObject damagePopupPC;
+    [SerializeField] private GameObject criticalPopupVR;
+    [SerializeField] private GameObject criticalPopupPC;
+
+    private List<GameObject> damagePopupListVR = new List<GameObject>();
+    private List<GameObject> damagePopupListPC = new List<GameObject>();
+    private List<GameObject> criticalPopupListVR = new List<GameObject>();
+    private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
     [SerializeField] private float m_health;
     private float m_currentHealth;
@@ -23,6 +28,33 @@ public class TakeHits : MonoBehaviour {
     private void Start()
     {
         m_currentHealth = m_health;
+
+        if(this.tag == "Enemy")
+        {
+            isEnemy = true;
+            for (int i = 0; i < 5; i++)
+            {
+                Ins = Instantiate(damagePopupVR, this.gameObject.transform);
+                damagePopupListVR.Add(Ins);
+                Ins.SetActive(false);
+                //Ins = Instantiate(criticalPopupVR, this.gameObject.transform);
+                //criticalPopupListVR.Add(Ins);
+                //Ins.SetActive(false);
+            }
+        }
+        else
+        {
+            isEnemy = false;
+            for (int i = 0; i < 5; i++)
+            {
+                Ins = Instantiate(damagePopupPC, this.gameObject.transform);
+                damagePopupListPC.Add(Ins);
+                Ins.SetActive(false);
+                Ins = Instantiate(criticalPopupPC, this.gameObject.transform);
+                criticalPopupListPC.Add(Ins);
+                Ins.SetActive(false);
+            }
+        }
     }
 
     public void SetAttributs(float _multHealth)
@@ -36,55 +68,74 @@ public class TakeHits : MonoBehaviour {
         if (!die)
         {
             m_currentHealth -= _hitDamage;
-            //Debug.Log("[" + this.name + "]" +  " health restant : " + m_currentHealth.ToString("0.0") + "hit damage : " + _hitDamage.ToString("0.0"));
-
+            
             if (m_currentHealth <= 0f)
             {
                 m_currentHealth = 0f;
                 Die();
-                return;
             }
-
-            DisplayDamage(_hitDamage, _critical);
+            else
+            {
+                Display(_hitDamage, _critical);  
+            }
+            
+            if(this.tag != "Enemy")
+            {
+                GetComponentInChildren<HealthBarVR>().SetHealthBar(currentHealth, health);
+            }
         }
     }
 
     public void Die()
     {
         Debug.Log(gameObject.name + " est mort");
-        //die = true;
-        m_currentHealth = m_health;
+        die = true;
+        //m_currentHealth = m_health;   
     }
 
-    private void DisplayDamage(float _hitDamage, bool _critical)
+    private void Display(float _hitDamage, bool _critical)
     {
-        Ins = null;
-        if (this.name == "BodyVR(Clone)")
+        if (isEnemy)
         {
-            if (_critical)
-                Ins = Instantiate(criticalPopupPC, this.gameObject.transform);
-            else
-                Ins = Instantiate(damagePopupPC, this.gameObject.transform);
+            //if (_critical)
+            //{
+               // DisplayAux(criticalPopupVR, criticalPopupListVR, _hitDamage);
+            //}
+            //else
+            //{
+                DisplayAux(damagePopupVR, damagePopupListVR, _hitDamage);
+            //}
         }
         else
         {
-            if (_critical)
-                Ins = Instantiate(criticalPopupVR, this.gameObject.transform);
+            if(_critical)
+            {
+                DisplayAux(criticalPopupPC, criticalPopupListPC, _hitDamage);
+            }
             else
-                Ins = Instantiate(damagePopupVR, this.gameObject.transform);          
+            {
+                DisplayAux(damagePopupPC, damagePopupListPC, _hitDamage);
+            }
         }
-
-        if (Ins != null)
-        {
-            damageTextVR = Ins.GetComponentInChildren<TextMeshProUGUI>();
-            damageTextVR.text = _hitDamage.ToString("0");
-            Destroy(Ins, 0.95f);
-        }
-        else
-        {
-            Debug.LogError("Le GO Ins du script TakeHits est null.");
-        }
-
     }
-    
+
+    private void DisplayAux(GameObject _Ins , List<GameObject> _list, float _hitDamage)
+    {
+        for (int i = 0; i < _list.Count; i++)
+        {
+            if (_list[i].activeSelf == false)
+            {
+                _list[i].SetActive(true);
+                _list[i].GetComponentInChildren<TextMeshProUGUI>().text = _hitDamage.ToString("0");
+                StartCoroutine(Wait(_list[i]));
+                return;
+            }
+        }
+    }
+
+    private IEnumerator Wait(GameObject _Popup)
+    {
+        yield return new WaitForSeconds(0.95f);
+        _Popup.SetActive(false);
+    }
 }

@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(TakeHits))]
+[RequireComponent(typeof(DoHits))]
 public class EnemyStats : MonoBehaviour {
 
     public enum enemyType { Melee, Distance }
-    [SerializeField] private Collider col;  // areaOfHits
     public GameObject icon;
-    TakeHits takeHits;
-    DoHits doHits;
 
     [SerializeField] private string m_enemyName;
     [SerializeField] private float m_speed;
@@ -29,10 +27,8 @@ public class EnemyStats : MonoBehaviour {
 
     public void SetStats(float _multSpeed, float _multHealth, float _multCritical, float _multHitDamage, float _multHitCooldown)
     {
-        takeHits = GetComponent<TakeHits>();
-        doHits = col.GetComponent<DoHits>();
-        takeHits.SetAttributs(_multHealth);
-        doHits.SetAttributs(_multHitDamage, _multHitCooldown, _multCritical);
+        GetComponent<TakeHits>().SetAttributs(_multHealth);
+        GetComponent<DoHits>().SetAttributs(_multHitDamage, _multHitCooldown, _multCritical);
 
         m_speed *= _multSpeed;
     }

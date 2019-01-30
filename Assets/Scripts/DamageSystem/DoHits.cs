@@ -6,7 +6,6 @@ public class DoHits : MonoBehaviour {
 
     private bool canDoHits = true;
     public bool playerFound = false;
-    TakeHits takeHits;
 
     // Les attributs de bases. Ils peuvent être initialié directement dans l'inspector
     [SerializeField] private float m_hitDamage;
@@ -42,29 +41,17 @@ public class DoHits : MonoBehaviour {
         }
     }
 
-    private void OnTriggerStay(Collider col)
+    public void Attack(TakeHits _takeHits)
     {
-        // Pour éviter que les enemies s'attaquent entre eux
-        if (this.gameObject.tag == "Enemy" && col.gameObject.tag == "Enemy")
+        if (_takeHits != null)
         {
-            return;
-        }
-
-        if(col.name == "BodyVR(Clone)")
-        {
-            playerFound = true;
-        }
-
-        takeHits = col.GetComponent<TakeHits>();
-
-        if(takeHits != null)
-        {
-            if(canDoHits)
+            if(canDoHits && m_hitCooldown > 0f)
             {
-                StartCoroutine(DoHitsCoroutine(takeHits));
+                StartCoroutine(DoHitsCoroutine(_takeHits));
             }
         }
     }
+
 
     private void OnTriggerExit()
     {
@@ -75,7 +62,7 @@ public class DoHits : MonoBehaviour {
     {
         canDoHits = false;
         doHits(takeHits_);
-        yield return new WaitForSeconds(1/m_hitCooldown);
+        yield return new WaitForSeconds(1 / m_hitCooldown);
         canDoHits = true;
     }
 }

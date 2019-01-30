@@ -10,7 +10,7 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetMouseButtonDown(0); }
     }
 
-    public bool Click0
+    /*public bool Click0
     {
         get { return Input.GetMouseButton(0); }
     }
@@ -18,7 +18,7 @@ public class PlayerPCController : MonoBehaviour {
     public bool Click1
     {
         get { return Input.GetMouseButton(1); }
-    }
+    }*/
 
     public bool Menu
     {

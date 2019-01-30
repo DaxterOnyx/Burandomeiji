@@ -13,45 +13,69 @@ public class AIScript : MonoBehaviour
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public Character character { get; private set; } // the character we are controlling
     public Transform target;                    // target to aim for
+    private Transform targetSave;
     DoHits doHits;
     TakeHits takeHitsTarget;
+    EnemyStats enemyStats;
     private float distanceFly;
     private bool isAttacking;
+    public bool isFreeze = false;
+    private const float slowPercentage = 0.07f;
 
     private void Start()
     {
         // get the components on the object we need ( should not be null due to require component so no need to check )
         agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
         character = GetComponent<Character>();
+        enemyStats = GetComponent<EnemyStats>();
+        doHits = GetComponent<DoHits>();
 
         agent.updateRotation = false;
         agent.updatePosition = true;
+        agent.speed = enemyStats.speed;
     
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = GetComponent<EnemyStats>().speed;
-        doHits = GetComponent<DoHits>();
         takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
-
+        targetSave = target;
+        
+        if(target != null)
+        {
+            agent.SetDestination(target.position);
+        }      
     }
 
     
     private void Update()
     {
-        if (target != null)
-        {
-            agent.SetDestination(target.position);
-        }
 
-        distanceFly = Vector3.Distance(target.position, this.transform.position);
-
-        if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+        if(isFreeze == false)
         {
-            Attack();
+            if (target == null)
+            {
+                target = targetSave;
+                agent.SetDestination(target.position);         
+            }
+
+            distanceFly = Vector3.Distance(target.position, this.transform.position);
+
+            if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+            {
+                
+                Attack();
+            }
+            else
+            {   
+                Move();
+            }
         }
         else
         {
-            Move();
+            character.Move(Vector3.zero, false, false);
+            agent.SetDestination(this.transform.position);
+            target = null;
+            isAttacking = false;
         }
+        
     }
 
     public void SetTarget(Transform _target)
@@ -61,23 +85,33 @@ public class AIScript : MonoBehaviour
 
     private void Attack()
     {
+        isAttacking = true; 
         character.Move(Vector3.zero, false, false);
         transform.LookAt(target);
         agent.SetDestination(this.transform.position);
         
         doHits.Attack(takeHitsTarget);
-        isAttacking = true;     
+            
     }
 
     private void Move()
     {
         if (isAttacking)
         {
-            agent.SetDestination(target.position);
             isAttacking = false;
         }
-
+        agent.SetDestination(target.position);
         character.Move(agent.desiredVelocity, false, false);
+    }
+
+    public void Slow(float _level)
+    {
+        agent.speed -= agent.speed * _level * slowPercentage;
+    }
+
+    public void UnSlow()
+    {
+        agent.speed = enemyStats.speed;
     }
 
     //TODO pour Marc

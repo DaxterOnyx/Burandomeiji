@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DoHits : MonoBehaviour {
 
-    private bool canDoHits = true;
+    private bool canDoHitsCoroutine = true;
     public bool playerFound = false;
+    private float oldHitCooldown;
+    private float slowTimeAdd = 0f;
+    private const float slowPercentage = 0.07f;
 
     // Les attributs de bases. Ils peuvent être initialié directement dans l'inspector
     [SerializeField] private float m_hitDamage;
@@ -31,7 +34,7 @@ public class DoHits : MonoBehaviour {
         float multCrit_ = Random.Range(2f, 4f);
         float multRand_ = Random.Range(0.9f, 1.1f);
 
-        if(crit_ < m_critical) // Si coup critique réussi
+        if (crit_ < m_critical) // Si coup critique réussi
         {
             _takeHits.takeHits(multRand_ * m_hitDamage * multCrit_, true);
         }
@@ -41,14 +44,13 @@ public class DoHits : MonoBehaviour {
         }
     }
 
+    // Fonction utilisé dans le script AIScript
+    // Permet d'attaquer
     public void Attack(TakeHits _takeHits)
     {
-        if (_takeHits != null)
+        if(canDoHitsCoroutine && m_hitCooldown > 0f)
         {
-            if(canDoHits && m_hitCooldown > 0f)
-            {
-                StartCoroutine(DoHitsCoroutine(_takeHits));
-            }
+            StartCoroutine(DoHitsCoroutine(_takeHits));
         }
     }
 
@@ -60,9 +62,21 @@ public class DoHits : MonoBehaviour {
 
     private IEnumerator DoHitsCoroutine(TakeHits takeHits_)
     {
-        canDoHits = false;
+        canDoHitsCoroutine = false;
         doHits(takeHits_);
-        yield return new WaitForSeconds(1 / m_hitCooldown);
-        canDoHits = true;
+        yield return new WaitForSeconds((1f / hitCooldown) + slowTimeAdd);
+        canDoHitsCoroutine = true;
+    }
+
+    public void Slow(float _level)
+    {
+        oldHitCooldown = hitCooldown;
+        slowTimeAdd = (1f / hitCooldown) * _level * slowPercentage;
+    }
+
+    public void UnSlow()
+    {
+        hitCooldown = oldHitCooldown;
+        slowTimeAdd = 0f;
     }
 }

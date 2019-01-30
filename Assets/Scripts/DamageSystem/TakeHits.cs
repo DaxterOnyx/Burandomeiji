@@ -9,6 +9,7 @@ public class TakeHits : MonoBehaviour {
     private bool die = false;
     private GameObject Ins;
     private bool isEnemy;
+    private bool isSlow;
 
     [SerializeField] private GameObject damagePopupVR;
     [SerializeField] private GameObject damagePopupPC;
@@ -20,6 +21,9 @@ public class TakeHits : MonoBehaviour {
     private List<GameObject> criticalPopupListVR = new List<GameObject>();
     private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
+    AIScript aiScript; // Contient "Speed"
+    DoHits doHits; // Contient "hitCooldown"
+
     [SerializeField] private float m_health;
     private float m_currentHealth;
     public float currentHealth { get { return m_currentHealth; } private set { m_currentHealth = value; } }
@@ -29,10 +33,11 @@ public class TakeHits : MonoBehaviour {
     {
         m_currentHealth = m_health;
 
-        if(this.tag == "Enemy")
+        if(this.tag == "Enemy") // C'est un ennemi
         {
             isEnemy = true;
-            for (int i = 0; i < 5; i++)
+
+            for (int i = 0; i < 6; i++)
             {
                 Ins = Instantiate(damagePopupVR, this.gameObject.transform);
                 damagePopupListVR.Add(Ins);
@@ -42,9 +47,10 @@ public class TakeHits : MonoBehaviour {
                 //Ins.SetActive(false);
             }
         }
-        else
+        else // C'est le joueur VR
         {
             isEnemy = false;
+
             for (int i = 0; i < 5; i++)
             {
                 Ins = Instantiate(damagePopupPC, this.gameObject.transform);
@@ -54,6 +60,12 @@ public class TakeHits : MonoBehaviour {
                 criticalPopupListPC.Add(Ins);
                 Ins.SetActive(false);
             }
+        }
+
+        if(isEnemy)
+        {
+            aiScript = this.GetComponent<AIScript>();
+            doHits = this.GetComponent<DoHits>();
         }
     }
 
@@ -76,10 +88,10 @@ public class TakeHits : MonoBehaviour {
             }
             else
             {
-                Display(_hitDamage, _critical);  
+                Display(_hitDamage, _critical);  // je display les dégâts
             }
             
-            if(this.tag != "Enemy")
+            if(this.tag != "Enemy") // Si c'est le joueur VR j'update la barre de vie au dessus de lui
             {
                 GetComponentInChildren<HealthBarVR>().SetHealthBar(currentHealth, health);
             }
@@ -90,7 +102,6 @@ public class TakeHits : MonoBehaviour {
     {
         Debug.Log(gameObject.name + " est mort");
         die = true;
-        //m_currentHealth = m_health;   
     }
 
     private void Display(float _hitDamage, bool _critical)
@@ -138,4 +149,51 @@ public class TakeHits : MonoBehaviour {
         yield return new WaitForSeconds(0.95f);
         _Popup.SetActive(false);
     }
+
+    public void Freeze() // L'ennemi de plus ni bouger ni attaquer
+    {
+        if(isEnemy)
+        {
+            aiScript.isFreeze = true;
+        }
+    }
+
+    public void Defreeze()
+    {
+        if(isEnemy)
+        {
+            aiScript.isFreeze = false;
+        }
+    }
+
+    // Niveau de slow entre 1 et 10 : -7% de speed à chaque niveau
+    public void Slow(float _power)
+    {
+        if (isEnemy)
+        {
+            if (_power >= 1 && _power <= 10)
+            {
+                if(isSlow == false)
+                {
+                    doHits.Slow(_power); // Diminue la vitesse d'attaque
+                    aiScript.Slow(_power);  // Diminue la vitesse de marche
+                    isSlow = true;
+                }
+                
+            }
+        }     
+    }
+
+    public void UnSlow()
+    {
+        if (isEnemy)
+        {
+            doHits.UnSlow();
+            aiScript.UnSlow();
+            isSlow = false;
+        }
+    }
+
+
+
 }

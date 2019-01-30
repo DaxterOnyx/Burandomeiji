@@ -54,6 +54,5 @@ public class PlayerPCSpawn : MonoBehaviour
     public GameObject GetEnemySpawn()
     {
         return enemyForSpawn;
-    }
-   
+    } 
 }

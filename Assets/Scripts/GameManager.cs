@@ -25,7 +25,9 @@ public class GameManager : SingletonBehaviour<GameManager> {
             }
             else
             {
+                timer = 0f;
                 end = true;
+                playerVRWin();
             }
         }
     }
@@ -43,6 +45,31 @@ public class GameManager : SingletonBehaviour<GameManager> {
         return timer;
     }
 
+    public void Win()
+    {
+        if(end)
+        {
+            if(timer == 0f)
+            {
+                playerVRWin();
+            }
+            else
+            {
+                playerPCWin();
+            }
+        }
+    }
+
+    private void playerPCWin()
+    {
+        Debug.Log("Le joueur PC a gagné !");
+    }
+
+    private void playerVRWin()
+    {
+        Debug.Log("Le joueur VR a gagné !");
+    }
+
     public bool isGameFinish()
     {
         return end;
@@ -51,5 +78,6 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public void SetBoolEnd(bool _end)
     {
         end = _end;
+        Win();
     }
 }

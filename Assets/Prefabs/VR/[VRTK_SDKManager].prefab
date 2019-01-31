@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 92549519722007162}
   m_Layer: 0
   m_Name: Camera (head)
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 114055049851698620}
   m_Layer: 0
   m_Name: Camera (eye)
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,7 +1127,7 @@ Transform:
   - {fileID: 4651381938201586}
   - {fileID: 4497091363787966}
   m_Father: {fileID: 4133133075426184}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4133133075426184
 Transform:
@@ -1139,8 +1139,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4650609819688066}
   - {fileID: 4130055061541942}
+  - {fileID: 4650609819688066}
   - {fileID: 4600744954689522}
   - {fileID: 4076955558146980}
   m_Father: {fileID: 4574832371238698}
@@ -1501,7 +1501,7 @@ Transform:
   m_Children:
   - {fileID: 4968840875309446}
   m_Father: {fileID: 4133133075426184}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4651381938201586
 Transform:
@@ -3296,8 +3296,8 @@ MonoBehaviour:
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:
-  - {fileID: 114175241077046520}
   - {fileID: 114972553295770068}
+  - {fileID: 114175241077046520}
   - {fileID: 114788480005192892}
   - {fileID: 114219042358314328}
   excludeTargetGroups: 1a0000001b000000

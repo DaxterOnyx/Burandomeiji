@@ -340,6 +340,19 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1097448832741622, guid: 47b46b692693818498640c1b8c760967, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896161698587852, guid: 47b46b692693818498640c1b8c760967, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 20150545557124604, guid: 47b46b692693818498640c1b8c760967,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47b46b692693818498640c1b8c760967, type: 2}
   m_IsPrefabAsset: 0
@@ -753,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a64d137591402747a349dafcebfecc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 1065138585749332, guid: deed1d050b61b344a86d17b46c6af1eb, type: 2}
+  body: {fileID: 1065138585749332, guid: a3c437644dc9669409dedae208b3abc6, type: 2}
 --- !u!114 &1629430430
 MonoBehaviour:
   m_ObjectHideFlags: 0

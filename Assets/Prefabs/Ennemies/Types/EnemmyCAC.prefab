@@ -71,23 +71,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1026439384523232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4703521161456880}
-  - component: {fileID: 64614025080192384}
-  - component: {fileID: 114516439857227170}
-  m_Layer: 0
-  m_Name: AreaOfHit
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1029562859524638
 GameObject:
   m_ObjectHideFlags: 1
@@ -944,6 +927,7 @@ GameObject:
   - component: {fileID: 114066778171023224}
   - component: {fileID: 114091936259541536}
   - component: {fileID: 114595263363553336}
+  - component: {fileID: 114562389891133194}
   m_Layer: 0
   m_Name: EnemmyCAC
   m_TagString: Enemy
@@ -2370,7 +2354,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4911120498693988}
-  - {fileID: 4703521161456880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2705,19 +2688,6 @@ Transform:
   - {fileID: 4328178666379400}
   m_Father: {fileID: 4762278042634932}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4703521161456880
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1026439384523232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000022352, y: 1.06, z: 1.087}
-  m_LocalScale: {x: 0.37286764, y: 0.7411502, z: 0.35944566}
-  m_Children: []
-  m_Father: {fileID: 4462482489631484}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4719562955168964
 Transform:
@@ -3105,20 +3075,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64614025080192384
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1026439384523232}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!95 &95613287093138812
 Animator:
   serializedVersion: 3
@@ -3167,10 +3123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 64614025080192384}
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: CaC
-  m_speed: 4
+  m_speed: 2
   m_mana: 50
   m_type: 0
   ID: 0
@@ -3186,22 +3141,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  col: {fileID: 64614025080192384}
---- !u!114 &114516439857227170
+  isFreeze: 0
+--- !u!114 &114562389891133194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1026439384523232}
+  m_GameObject: {fileID: 1462532190980112}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerFound: 0
-  m_hitDamage: 10
-  m_hitCooldown: 2
-  m_critical: 20
+  m_hitDamage: 20
+  m_hitCooldown: 1
+  m_critical: 10
 --- !u!114 &114595263363553336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3213,13 +3168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePopupVR: {fileID: 1476893559327436, guid: 7f4bbd52994b773448bcb37ce4d1377f,
+    type: 2}
   damagePopupPC: {fileID: 1291639452093374, guid: 686a87788f2b75a4f8397aad6b85fb61,
     type: 2}
+  criticalPopupVR: {fileID: 1029801423354158, guid: e2c980282ab45594dbe06b7412aa22e7,
+    type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
-    type: 2}
-  damagePopupVR: {fileID: 1060983474246806, guid: 3eabf6e30a07ddb40bb23843ca3e2196,
-    type: 2}
-  criticalPopupVR: {fileID: 1682012912934688, guid: e2c980282ab45594dbe06b7412aa22e7,
     type: 2}
   m_health: 999
 --- !u!136 &136685940076068222
@@ -3379,7 +3334,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

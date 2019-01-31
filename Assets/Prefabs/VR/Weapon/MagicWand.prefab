@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b036d2c012ee848b0e70f09dc8aae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10000
+  projectileSpeed: 20
   projectileSpawnPoint: {fileID: 4940771705696654}
   ActiveProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
     type: 2}
@@ -137,7 +137,6 @@ MonoBehaviour:
   WindProjectile: {fileID: 1170158472373774, guid: e15ae33c6121b404f9a7e018fa997f33,
     type: 2}
   m_element: 1
-  Power: 1
-  PowerStep: 2
+  PowerChargingSpeed: 2
   PowerStart: 1
   PowerEnd: 10

@@ -3,7 +3,7 @@
 	protected override void StartEffect()
 	{
 		//TODO add graphic electricity effect
-		//TakeHits.Freeze();
+		TakeHits.Freeze();
 	}
 	protected override void Effect()
 	{
@@ -12,6 +12,6 @@
 	protected override void StopEffect()
 	{
 		//TODO remove graphic electricity effect
-		//TakeHits.UnFreeze();
+		TakeHits.UnFreeze();
 	}
 }

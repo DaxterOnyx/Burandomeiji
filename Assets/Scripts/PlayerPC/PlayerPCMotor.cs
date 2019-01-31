@@ -18,7 +18,9 @@ public class PlayerPCMotor : MonoBehaviour {
     [SerializeField] private float cameraRotationLimit = 90f;
     [SerializeField] private float speed_Up_Down = 1f;
 
+	public Transform Eye;
     private Vector3 localRotation;
+	private Vector3 eyeRotation;
 
     private void Start()
     {
@@ -29,6 +31,10 @@ public class PlayerPCMotor : MonoBehaviour {
     // Utilisation de FixedUpdate pour toutes les updates liées à la physique
     void FixedUpdate()
     {
+        if(this.transform.position.y < 2f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, 2f, this.transform.position.z);
+        }
         PerformMovement();
         PerformRotation();
         if(playerPCController.Up)
@@ -50,27 +56,29 @@ public class PlayerPCMotor : MonoBehaviour {
 
     private void PerformRotation()
     {
-        localRotation = new Vector3(Mathf.Clamp(localRotation.x - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * playerPCController.MouseX, 0f);
-        this.transform.localRotation = Quaternion.Euler(localRotation);
+        eyeRotation = new Vector3(Mathf.Clamp(eyeRotation.x - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit), 0f, 0f);
+		localRotation = new Vector3(0f, localRotation.y + speed_angle_turn * playerPCController.MouseX, 0f);
+		transform.localRotation = Quaternion.Euler(localRotation);
+		Eye.localRotation = Quaternion.Euler(eyeRotation);
     }
 
     private void PerformUp()
     {
         rb.velocity = Vector3.zero;
         Vector3 velocity = new Vector3(0f, speed_Up_Down, 0f);
-        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
+        rb.AddForce(velocity * speed, ForceMode.VelocityChange);
     }
 
     private void PerformDown()
     {
         Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.down));
         RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(ray, out hit, 3f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             return;
         }
         rb.velocity = Vector3.zero;
         Vector3 velocity = new Vector3(0f, -speed_Up_Down, 0f);
-        rb.AddRelativeForce(velocity * speed, ForceMode.VelocityChange);
+        rb.AddForce(velocity * speed, ForceMode.VelocityChange);
     }
 }

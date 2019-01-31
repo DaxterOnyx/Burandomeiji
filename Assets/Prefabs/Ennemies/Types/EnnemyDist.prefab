@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114024177275419662}
   - component: {fileID: 114103114360250820}
   - component: {fileID: 114469616571494464}
+  - component: {fileID: 114450527697048988}
   m_Layer: 0
   m_Name: EnnemyDist
   m_TagString: Enemy
@@ -226,23 +227,6 @@ GameObject:
   m_Layer: 0
   m_Name: b_RightWeapon_end
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1141081312954044
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4534913957472420}
-  - component: {fileID: 64637785550816226}
-  - component: {fileID: 114716702422056604}
-  m_Layer: 0
-  m_Name: AreaOfHit
-  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1633,11 +1617,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016190419679808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.87, y: 2.88, z: 12.48}
+  m_LocalPosition: {x: -13.3821335, y: -0.40999827, z: -8.4123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318370095825930}
-  - {fileID: 4534913957472420}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2327,19 +2310,6 @@ Transform:
   - {fileID: 4775555567128766}
   m_Father: {fileID: 4185547153452806}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4534913957472420
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141081312954044}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.06, z: 0.17}
-  m_LocalScale: {x: 0.57564825, y: -1.1704901, z: 4.481532}
-  m_Children: []
-  m_Father: {fileID: 4011727789078902}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4542331418227024
 Transform:
@@ -3106,20 +3076,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64637785550816226
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141081312954044}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!95 &95523247038288422
 Animator:
   serializedVersion: 3
@@ -3186,10 +3142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121e5f79c7944146a31c7301c679a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 64637785550816226}
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Dis
-  m_speed: 4
+  m_speed: 2
   m_mana: 75
   m_type: 1
   ID: 0
@@ -3205,7 +3160,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  col: {fileID: 64637785550816226}
+  isFreeze: 0
+--- !u!114 &114450527697048988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016190419679808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFound: 0
+  m_hitDamage: 10
+  m_hitCooldown: 10
+  m_critical: 10
 --- !u!114 &114469616571494464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3217,30 +3187,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePopupVR: {fileID: 1476893559327436, guid: 7f4bbd52994b773448bcb37ce4d1377f,
+    type: 2}
   damagePopupPC: {fileID: 1291639452093374, guid: 686a87788f2b75a4f8397aad6b85fb61,
+    type: 2}
+  criticalPopupVR: {fileID: 1029801423354158, guid: e2c980282ab45594dbe06b7412aa22e7,
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  damagePopupVR: {fileID: 1060983474246806, guid: 3eabf6e30a07ddb40bb23843ca3e2196,
-    type: 2}
-  criticalPopupVR: {fileID: 1682012912934688, guid: e2c980282ab45594dbe06b7412aa22e7,
-    type: 2}
   m_health: 111
---- !u!114 &114716702422056604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141081312954044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFound: 0
-  m_hitDamage: 20
-  m_hitCooldown: 0.5
-  m_critical: 50
 --- !u!136 &136676607510821206
 CapsuleCollider:
   m_ObjectHideFlags: 1

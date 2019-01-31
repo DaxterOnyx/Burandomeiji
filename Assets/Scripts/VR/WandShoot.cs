@@ -73,6 +73,7 @@ public class WandShoot : WeaponScript
 	public override void EndUse()
 	{
 		base.EndUse();
+		ChargingProjectile.GetComponent<ElementProjectile>().Power = Power;
 		ChargingProjectile.GetComponent<ElementProjectile>().Launch(projectileSpeed);
 		ChargingProjectile = null;
 	}

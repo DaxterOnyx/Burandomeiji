@@ -15,6 +15,9 @@ ModelImporter:
     100018: Bone_013
     100020: Cube
     100022: //RootNode
+    100024: moitie_D
+    100026: moitie_G
+    100028: papier
     400000: Armature
     400002: Bone_005
     400004: Bone_006
@@ -27,10 +30,25 @@ ModelImporter:
     400018: Bone_013
     400020: Cube
     400022: //RootNode
+    400024: moitie_D
+    400026: moitie_G
+    400028: papier
     2100000: unnamed
     2300000: Cube
+    2300002: //RootNode
+    2300004: moitie_D
+    2300006: moitie_G
+    2300008: papier
     3300000: Cube
+    3300002: //RootNode
+    3300004: moitie_D
+    3300006: moitie_G
+    3300008: papier
     4300000: Cube
+    4300002: livre
+    4300004: moitie_G
+    4300006: moitie_D
+    4300008: papier
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

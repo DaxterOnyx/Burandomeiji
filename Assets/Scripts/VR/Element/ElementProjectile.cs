@@ -6,6 +6,7 @@ class ElementProjectile : ProjectileScript
 {
 	public float Power = 1;
 	public GameObject ElementEffect;
+	public static float multiplierScaleExplosion = 100;
 
 	protected override void Awake()
 	{
@@ -26,21 +27,30 @@ class ElementProjectile : ProjectileScript
 
 		//Create Explosion on Impact
 		Vector3 explosionPos = transform.position;
-		foreach (Collider hit in Physics.OverlapSphere(explosionPos, Power,100))
+		transform.localScale = Vector3.one * (100 * Power);
+		Debug.Log(Power+" -> " + transform.localScale);
+
+
+		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+		GetComponent<Rigidbody>().Sleep();
+		GetComponentInChildren<Collider>().enabled = false;
+
+		foreach (Collider hit in Physics.OverlapSphere(position: explosionPos, radius: 100*Power))
 		{
-			if(hit.tag == TargetTag)
+			if (hit.tag == TargetTag)
 			{
 				GameObject go = Instantiate(ElementEffect, hit.transform);
 				ElementEffect elementEffect = go.GetComponent<ElementEffect>();
 				elementEffect.Power = Power;
-				if(elementEffect is WindEffect)
+				if (elementEffect is WindEffect)
 				{
 					((WindEffect)elementEffect).impact = explosionPos;
 					//TODO add graphic effect of wind TORNADO
 				}
 			}
 		}
-		Destroy(gameObject);
+		Destroy(gameObject,0.5f);
 	}
 }
 
@@ -63,8 +73,13 @@ abstract class ElementEffect : MonoBehaviour
 	{
 		if(Power != -1)
 		{
-			Power += p_Power;
-			StartCoroutine(CallEffect());
+			if (Power == 0)
+			{
+				Power = p_Power;
+				StartCoroutine(CallEffect());
+			}
+			else
+				Power += p_Power;
 		}
 	}
 

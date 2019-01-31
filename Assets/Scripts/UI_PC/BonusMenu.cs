@@ -43,6 +43,7 @@ public class BonusMenu : MonoBehaviour {
     {
         enemyMenu = GetComponent<EnemyMenu>();
     }
+
     #region UI
 
     private void InsIcon(int _number)
@@ -124,7 +125,7 @@ public class BonusMenu : MonoBehaviour {
         currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
         EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
         TakeHits takeHits_ = allEnemyTab[currentEnemyIcon].GetComponent<TakeHits>();
-        DoHits doHits = allEnemyTab[currentEnemyIcon].GetComponentInChildren<DoHits>();
+        DoHits doHits = allEnemyTab[currentEnemyIcon].GetComponent<DoHits>();
 
         hightLeftText.text = enemyStats_.enemyName;
         centerLeftText.text = "Type : " + enemyStats_.type;
@@ -148,31 +149,96 @@ public class BonusMenu : MonoBehaviour {
         {
             case 0:       
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Speed : " + (mult * 100).ToString("0") + " %";
-                hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " speed";
+
+                if((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+                
+                hightRightText.text = (enemyStats_.speed * mult).ToString("0.0") + " walk speed";
                 break;
 
             case 1:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Health : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Health bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (takeHits_.health * mult).ToString("0.0") + " health";
                 break;
 
             case 2:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Critical rate : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical chance";
                 break;
 
             case 3:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.hitDamage * mult).ToString("0.0") + " damage";
                 break;
 
             case 4:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
-                centerRightText.text = " Attack speed : " + (mult * 100).ToString("0") + " %";
+
+                if ((mult * 100 - 100f) > 0) // Positif
+                {
+                    centerRightText.text = "<color=#25C42A>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else if ((mult * 100 - 100f) < 0) // Négatif
+                {
+                    centerRightText.text = "<color=#DC2323>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
+                }
+                else // = 0
+                {
+                    centerRightText.text = "Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %";
+                }
+
                 hightRightText.text = (doHits.hitCooldown * mult).ToString("0.0") + " attack per second";
                 break;
 
@@ -241,7 +307,7 @@ public class BonusMenu : MonoBehaviour {
                 CapBonus(0.55f, 3.25f, _switch);
                 break;
             case 2:
-                CapBonus(0.2f, 10f, _switch);
+                CapBonus(0.2f, 3f, _switch);
                 break;
             case 3:
                 CapBonus(0.5f, 2.5f, _switch);

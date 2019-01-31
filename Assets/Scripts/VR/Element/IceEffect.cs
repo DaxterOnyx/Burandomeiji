@@ -6,7 +6,7 @@
 	protected override void StartEffect()
 	{
 		//TODO add graphic ice effect
-		//TakeHits.Slow();
+		TakeHits.Slow(10);
 	}
 	protected override void Effect()
 	{
@@ -15,6 +15,6 @@
 	protected override void StopEffect()
 	{
 		//TODO remove graphic ice effect
-		//TakeHits.UnSlow();
+		TakeHits.UnSlow();
 	}
 }

@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 5
   Damage: 1
-  TargetTag: Ennemy
+  TargetTag: Enemy
   Power: 1
   ElementEffect: {fileID: 1893684876888340, guid: 05e0d79d0f130d34891245d84baa6dfb,
     type: 2}

@@ -353,6 +353,14 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 311
       objectReference: {fileID: 0}
+    - target: {fileID: 1044719856735650, guid: 47b46b692693818498640c1b8c760967, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300845084474380, guid: 47b46b692693818498640c1b8c760967, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47b46b692693818498640c1b8c760967, type: 2}
   m_IsPrefabAsset: 0

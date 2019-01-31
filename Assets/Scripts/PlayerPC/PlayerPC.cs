@@ -11,6 +11,7 @@ public class PlayerPC : MonoBehaviour {
         // scripts du player
     private PlayerPCController playerPCController;
     private PlayerPCSpawn playerPCSpawn;
+    private PlayerPCMotor playerPCMotor;
         // scripts du UI
     private BonusMenu bonusMenuScript;
     private ManaBarScript manaBarScript;
@@ -35,6 +36,7 @@ public class PlayerPC : MonoBehaviour {
 
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();
+        playerPCMotor = GetComponent<PlayerPCMotor>();
 
         UIPlayerPCInstance = Instantiate(UIPlayerPCPrefabs);
         UIPlayerPCInstance.name = UIPlayerPCPrefabs.name;
@@ -93,7 +95,7 @@ public class PlayerPC : MonoBehaviour {
 
     private void Spawn()
     {
-        Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
+        Ray ray = new Ray(this.transform.position, playerPCMotor.Eye.transform.TransformDirection(Vector3.forward));
         RaycastHit hit = new RaycastHit();
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))

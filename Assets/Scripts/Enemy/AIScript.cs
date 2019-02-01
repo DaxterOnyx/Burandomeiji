@@ -70,7 +70,7 @@ public class AIScript : MonoBehaviour
         }
         else
         {
-            character.Move(Vector3.zero, false, false);
+            character.Move(Vector3.zero, false, false, false);
             agent.SetDestination(this.transform.position);
             target = null;
             isAttacking = false;
@@ -86,7 +86,7 @@ public class AIScript : MonoBehaviour
     private void Attack()
     {
         isAttacking = true; 
-        character.Move(Vector3.zero, false, false);
+        character.Move(Vector3.zero, false, false, true);
         transform.LookAt(target);
         agent.SetDestination(this.transform.position);
         
@@ -101,7 +101,7 @@ public class AIScript : MonoBehaviour
             isAttacking = false;
         }
         agent.SetDestination(target.position);
-        character.Move(agent.desiredVelocity, false, false);
+        character.Move(agent.desiredVelocity, false, false, false);
     }
 
     public void Slow(float _level)
@@ -115,6 +115,7 @@ public class AIScript : MonoBehaviour
     }
 
     //TODO pour Marc
-    // Boolean animation attaque
+    // Boolean animation attaque fait
+    // Reste à faire l'animation
 }
 

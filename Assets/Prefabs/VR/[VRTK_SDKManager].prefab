@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 114554850928871170}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 114809756282237794}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 114055049851698620}
   m_Layer: 0
   m_Name: Camera (eye)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3190,7 +3190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a86c1078ce4314b9c4224560e031b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrcam: {fileID: 0}
+  vrcam: {fileID: 114055049851698620}
 --- !u!114 &114665027398938768
 MonoBehaviour:
   m_ObjectHideFlags: 1

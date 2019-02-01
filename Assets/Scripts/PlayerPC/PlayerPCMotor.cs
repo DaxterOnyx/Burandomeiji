@@ -7,7 +7,8 @@ using UnityEngine;
 public class PlayerPCMotor : MonoBehaviour {
 
     private Rigidbody rb;
-
+    [SerializeField] private GameObject cam;
+    private Camera camScript;
     /* Controller */
     private PlayerPCController playerPCController;
 
@@ -19,11 +20,13 @@ public class PlayerPCMotor : MonoBehaviour {
     [SerializeField] private float speed_Up_Down = 1f;
 
     private Vector3 localRotation;
+    private float currentCameraRotationX;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerPCController = GetComponent<PlayerPCController>();
+        camScript = cam.GetComponent<Camera>();
     }
 
     // Utilisation de FixedUpdate pour toutes les updates liées à la physique
@@ -45,6 +48,12 @@ public class PlayerPCMotor : MonoBehaviour {
         }
     }
 
+    /*private void PerformRotation()
+    {
+        localRotation = new Vector3(Mathf.Clamp(localRotation.x - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * playerPCController.MouseX, 0f);
+        this.transform.localRotation = Quaternion.Euler(localRotation);
+    }*/
+
     private void PerformMovement()
     {
         rb.velocity = Vector3.zero;
@@ -54,8 +63,9 @@ public class PlayerPCMotor : MonoBehaviour {
 
     private void PerformRotation()
     {
-        localRotation = new Vector3(Mathf.Clamp(localRotation.x - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit), localRotation.y + speed_angle_turn * playerPCController.MouseX, 0f);
-        this.transform.localRotation = Quaternion.Euler(localRotation);
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(new Vector3(0f, playerPCController.MouseX, 0f) * speed_angle_turn));
+        currentCameraRotationX = Mathf.Clamp(currentCameraRotationX - speed_angle_up * playerPCController.MouseY, -cameraRotationLimit, cameraRotationLimit);
+        cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 
     private void PerformUp()

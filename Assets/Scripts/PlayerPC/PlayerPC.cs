@@ -16,8 +16,11 @@ public class PlayerPC : MonoBehaviour {
     private ManaBarScript manaBarScript;
     private EnemyMenu enemyMenuScript;
 
+    private Camera camScript;
+
     /* Prefabs et instance */
     [SerializeField] private GameObject UIPlayerPCPrefabs;
+    [SerializeField] private GameObject cam;
     private GameObject UIPlayerPCInstance;
     private GameObject bonusMenuGo;
     private Transform target;
@@ -35,6 +38,7 @@ public class PlayerPC : MonoBehaviour {
 
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();
+        camScript = cam.GetComponent<Camera>();
 
         UIPlayerPCInstance = Instantiate(UIPlayerPCPrefabs);
         UIPlayerPCInstance.name = UIPlayerPCPrefabs.name;
@@ -93,7 +97,7 @@ public class PlayerPC : MonoBehaviour {
 
     private void Spawn()
     {
-        Ray ray = new Ray(this.transform.position, this.transform.TransformDirection(Vector3.forward));
+        Ray ray = new Ray(this.transform.position, camScript.transform.TransformDirection(Vector3.forward));
         RaycastHit hit = new RaycastHit();
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))

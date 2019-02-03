@@ -1,4 +1,6 @@
-﻿class IceEffect : ElementEffect
+﻿using UnityEngine;
+
+class IceEffect : ElementEffect
 {
 	[UnityEngine.Tooltip("Damage each second")]
 	public float Damage = 5;
@@ -7,6 +9,7 @@
 	{
 		//TODO add graphic ice effect
 		TakeHits.Slow(10);
+		Debug.Log("IceEffect on "+ TakeHits);
 	}
 	protected override void Effect()
 	{

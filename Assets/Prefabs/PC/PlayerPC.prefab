@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPlayerPCPrefabs: {fileID: 1290223810525246, guid: 71a66d03775133f4a8d2a42ada2b7399,
     type: 2}
+  cam: {fileID: 1728221111435072}
   maxMana: 1000
   manaRegen: 50
 --- !u!114 &114687927097806008
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1728221111435072}
   speed_angle_up: 10
   speed_angle_turn: 5
   speed: 20

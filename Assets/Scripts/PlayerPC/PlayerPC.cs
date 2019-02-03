@@ -17,8 +17,11 @@ public class PlayerPC : MonoBehaviour {
     private ManaBarScript manaBarScript;
     private EnemyMenu enemyMenuScript;
 
+    private Camera camScript;
+
     /* Prefabs et instance */
     [SerializeField] private GameObject UIPlayerPCPrefabs;
+    [SerializeField] private GameObject cam;
     private GameObject UIPlayerPCInstance;
     private GameObject bonusMenuGo;
     private Transform target;

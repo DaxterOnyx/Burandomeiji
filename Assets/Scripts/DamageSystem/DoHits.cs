@@ -79,4 +79,9 @@ public class DoHits : MonoBehaviour {
         hitCooldown = oldHitCooldown;
         slowTimeAdd = 0f;
     }
+
+    //Placeholder functions for Animation events
+    void Hit()
+    {
+    }
 }

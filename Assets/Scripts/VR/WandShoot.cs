@@ -50,9 +50,11 @@ public class WandShoot : WeaponScript
 			else power = value;
 		}
 	}
+	public float PowerScale { get { return Power / ScaleModifierProjectile; } }
 	public float PowerChargingSpeed = 1;
 	public float PowerStart = 1;
 	public float PowerEnd = 10;
+	public float ScaleModifierProjectile = 50f;
 	private GameObject ChargingProjectile;
 
 	public override void Use()
@@ -67,7 +69,7 @@ public class WandShoot : WeaponScript
 		}
 
 		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation, GetComponentInParent<HandVRControl>().transform);
-		ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
+		ChargingProjectile.transform.localScale = new Vector3(PowerScale, PowerScale, PowerScale);
 	}
 
 	public override void EndUse()
@@ -83,7 +85,8 @@ public class WandShoot : WeaponScript
 		if(inUse)
 		{
 			Power += PowerChargingSpeed * Time.fixedDeltaTime;
-			ChargingProjectile.transform.localScale = new Vector3(Power, Power, Power);
+			
+			ChargingProjectile.transform.localScale = new Vector3(PowerScale, PowerScale, PowerScale);
 		}
 	}
 

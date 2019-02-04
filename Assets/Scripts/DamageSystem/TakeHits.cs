@@ -97,6 +97,16 @@ public class TakeHits : MonoBehaviour {
     {
         Debug.Log(gameObject.name + " est mort");
         die = true;
+
+        if(isEnemy)
+        {
+            GameManager.Instance.enemyInsList.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            // Le joueur VR est mort
+        }
     }
 
     private void Display(float _hitDamage, bool _critical)

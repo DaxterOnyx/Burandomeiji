@@ -30,6 +30,7 @@ public class PlayerPC : MonoBehaviour {
     private float currentMana;
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 550f;
+    [Range(1000f, 3000f)] [SerializeField] private float maxManaClamp = 1500f;
 
     Image imageCursor;
 
@@ -61,7 +62,7 @@ public class PlayerPC : MonoBehaviour {
 	
 	private void Update ()
     {
-        maxMana += Time.deltaTime/1.2f;
+        maxMana = Mathf.Clamp(maxMana + Time.deltaTime/1.2f, 1000f, maxManaClamp);
 
         if (currentMana < maxMana)
         {

@@ -358,6 +358,7 @@ MonoBehaviour:
   cam: {fileID: 1728221111435072}
   maxMana: 1000
   manaRegen: 50
+  maxManaClamp: 1034
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1

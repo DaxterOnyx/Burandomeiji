@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : SingletonBehaviour<GameManager> {
 
+    public List<GameObject> enemyInsList = new List<GameObject>();
+
     [SerializeField]
     private float timer = 600;
 

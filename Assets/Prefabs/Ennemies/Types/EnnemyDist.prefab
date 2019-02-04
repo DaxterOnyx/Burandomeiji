@@ -3670,7 +3670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFound: 0
   m_hitDamage: 10
-  m_hitCooldown: 10
+  m_hitCooldown: 1
   m_critical: 10
 --- !u!114 &114469616571494464
 MonoBehaviour:

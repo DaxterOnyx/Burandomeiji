@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 223763229459055534}
   - component: {fileID: 114377273398690004}
   - component: {fileID: 114027486369389682}
-  - component: {fileID: 114603511886734222}
   - component: {fileID: 95075501164110796}
+  - component: {fileID: 114349136753350064}
   m_Layer: 8
   m_Name: CCPopupVR
   m_TagString: Untagged
@@ -147,6 +147,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114349136753350064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029801423354158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50c1eb325f2d9c44ad5c6b6295c4635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114377273398690004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,17 +292,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &114603511886734222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029801423354158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3179837e66fd9478d00fc7b5bcb0a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &198916315651723922
 ParticleSystem:
   m_ObjectHideFlags: 1

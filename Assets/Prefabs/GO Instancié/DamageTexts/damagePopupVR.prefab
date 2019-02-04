@@ -40,8 +40,8 @@ GameObject:
   - component: {fileID: 223145035848567610}
   - component: {fileID: 114775005704168550}
   - component: {fileID: 114027327820976406}
-  - component: {fileID: 114895914080939184}
   - component: {fileID: 95825327155415584}
+  - component: {fileID: 114338032662863538}
   m_Layer: 8
   m_Name: damagePopupVR
   m_TagString: Untagged
@@ -260,6 +260,17 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114338032662863538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476893559327436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50c1eb325f2d9c44ad5c6b6295c4635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114775005704168550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,17 +292,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114895914080939184
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476893559327436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3179837e66fd9478d00fc7b5bcb0a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &198817081706520586
 ParticleSystem:
   m_ObjectHideFlags: 1

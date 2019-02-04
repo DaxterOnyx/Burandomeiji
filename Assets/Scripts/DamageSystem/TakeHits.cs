@@ -18,7 +18,7 @@ public class TakeHits : MonoBehaviour {
 
     private List<GameObject> damagePopupListVR = new List<GameObject>();
     private List<GameObject> damagePopupListPC = new List<GameObject>();
-    private List<GameObject> criticalPopupListVR = new List<GameObject>();
+    //private List<GameObject> criticalPopupListVR = new List<GameObject>();
     private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
     AIScript aiScript; // Contient "Speed"
@@ -89,11 +89,6 @@ public class TakeHits : MonoBehaviour {
             else
             {
                 Display(_hitDamage, _critical);  // je display les dégâts
-            }
-            
-            if(this.tag != "Enemy") // Si c'est le joueur VR j'update la barre de vie au dessus de lui
-            {
-                GetComponentInChildren<HealthBarVR>().SetHealthBar(currentHealth, health);
             }
         }
     }

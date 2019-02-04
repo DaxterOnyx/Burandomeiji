@@ -8,7 +8,6 @@ public class PlayerPCMotor : MonoBehaviour {
 
     private Rigidbody rb;
     [SerializeField] private GameObject cam;
-    private Camera camScript;
     /* Controller */
     private PlayerPCController playerPCController;
 
@@ -27,7 +26,6 @@ public class PlayerPCMotor : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         playerPCController = GetComponent<PlayerPCController>();
-        camScript = cam.GetComponent<Camera>();
     }
 
     // Utilisation de FixedUpdate pour toutes les updates liées à la physique

@@ -31,6 +31,7 @@ public class PlayerPC : MonoBehaviour {
     [SerializeField] private float maxMana = 1000f;
     [SerializeField] private float manaRegen = 550f;
     [Range(1000f, 3000f)] [SerializeField] private float maxManaClamp = 1500f;
+    [Range(10, 30)] [SerializeField] private int maxEnemyInGame = 20;
 
     Image imageCursor;
 
@@ -108,7 +109,7 @@ public class PlayerPC : MonoBehaviour {
             {
                 float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
 
-                if (distanceVRCursor >= 20f)
+                if (distanceVRCursor >= 20f && GameManager.Instance.enemyCountInGame < maxEnemyInGame)
                 {
                     if (playerPCController.ClickDown)
                     {

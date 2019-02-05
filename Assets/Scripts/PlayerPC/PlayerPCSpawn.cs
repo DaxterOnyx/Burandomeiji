@@ -10,8 +10,6 @@ public class PlayerPCSpawn : MonoBehaviour
     private BonusMenu bonusMenu;
     private EnemyMenu enemyMenu;
 
-    [Range(10, 30)] [SerializeField] private int maxEnemyInGame = 20;
-
     private int count;
 
     private void Start()
@@ -25,16 +23,13 @@ public class PlayerPCSpawn : MonoBehaviour
 
     public IEnumerator Spawn(RaycastHit _hit, GameObject _enemyForSpawn, int _count)
     {
+        GameManager.Instance.enemyCountInGame++;
         Vector3 tmp = new Vector3(0f, 0.66f, 0f);
         GameObject spawnerIns_ = Instantiate(spawnerPrefabs, _hit.point + tmp, Quaternion.identity);
         yield return new WaitForSeconds(1.5f);
-        if (GameManager.Instance.enemyInsList.Count <= maxEnemyInGame)
-        {
-            GameObject enemyIns_ = Instantiate(_enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
-            enemyIns_.GetComponent<EnemyStats>().SetID(_count);
-            bonusMenu.GetEnemyIns(enemyIns_);
-            GameManager.Instance.enemyInsList.Add(enemyIns_);
-        }
+        GameObject enemyIns_ = Instantiate(_enemyForSpawn, spawnerIns_.transform.position, spawnerIns_.transform.rotation);
+        enemyIns_.GetComponent<EnemyStats>().SetID(_count);
+        bonusMenu.GetEnemyIns(enemyIns_);
     }
 
     public void ChangeEnemy(int count_)

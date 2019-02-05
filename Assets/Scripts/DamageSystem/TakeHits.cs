@@ -100,7 +100,7 @@ public class TakeHits : MonoBehaviour {
 
         if(isEnemy)
         {
-            GameManager.Instance.enemyInsList.Remove(this.gameObject);
+            GameManager.Instance.enemyCountInGame--;
             Destroy(this.gameObject);
         }
         else

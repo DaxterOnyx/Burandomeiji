@@ -54,7 +54,7 @@ public class AIScript : MonoBehaviour
 
             distanceFly = Vector3.Distance(target.position, this.transform.position);
 
-            if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+            if (distanceFly <= agent.stoppingDistance + 0.2f) // Si la distance est plus petit ou égal à stoppingDistance
             {
                 
                 Attack();

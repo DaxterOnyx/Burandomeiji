@@ -134,15 +134,15 @@ public class BonusMenu : MonoBehaviour {
         
         if(mult * 100 > 100f)
         {
-            lowLeftText.text = "Coût : ± " + costManaTabSup[currentIcon];
+            lowLeftText.text = "Cost : ± " + costManaTabSup[currentIcon];
         }
         else if(mult * 100 < 100f)
         {
-            lowLeftText.text = "Coût : ± " + costManaTabInf[currentIcon];
+            lowLeftText.text = "Cost : ± " + costManaTabInf[currentIcon];
         }
         else
         {
-            lowLeftText.text = "Coût : +" + costManaTabSup[currentIcon] + "/-" + costManaTabInf[currentIcon];
+            lowLeftText.text = "Cost : +" + costManaTabSup[currentIcon] + "/-" + costManaTabInf[currentIcon];
         }
 
         switch (currentIcon)

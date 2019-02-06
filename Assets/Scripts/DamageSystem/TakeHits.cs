@@ -100,7 +100,19 @@ public class TakeHits : MonoBehaviour {
 
         if(isEnemy)
         {
-            GameManager.Instance.enemyCountInGame--;
+            if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Melee)
+            {
+                GameManager.Instance.enemyCountInGame_cac--;
+            }
+            else if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Distance)
+            {
+                GameManager.Instance.enemyCountInGame_dis--;
+            }
+            else
+            {
+                GameManager.Instance.enemyCountInGame_boss--;
+            }
+
             Destroy(this.gameObject);
         }
         else

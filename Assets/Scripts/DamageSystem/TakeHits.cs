@@ -171,20 +171,21 @@ public class TakeHits : MonoBehaviour {
         }
     }
 
-    // Niveau de slow entre 1 et 10 : -7% de speed à chaque niveau
+
+
+    /// <summary>
+    /// Niveau de slow entre 1 et 10 : -7% de speed à chaque niveau
+    /// </summary>
+    /// <param name="_power"></param>
     public void Slow(float _power)
     {
         if (isEnemy)
         {
-            if (_power >= 1 && _power <= 10)
+            if(isSlow == false)
             {
-                if(isSlow == false)
-                {
-                    doHits.Slow(_power); // Diminue la vitesse d'attaque
-                    aiScript.Slow(_power);  // Diminue la vitesse de marche
-                    isSlow = true;
-                }
-                
+                doHits.Slow(_power); // Diminue la vitesse d'attaque
+                aiScript.Slow(_power);  // Diminue la vitesse de marche
+                isSlow = true;
             }
         }     
     }

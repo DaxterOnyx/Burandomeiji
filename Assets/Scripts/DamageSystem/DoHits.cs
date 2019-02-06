@@ -8,7 +8,6 @@ public class DoHits : MonoBehaviour {
     public bool playerFound = false;
     private float oldHitCooldown;
     private float slowTimeAdd = 0f;
-    private const float slowPercentage = 0.07f;
 
     // Les attributs de bases. Ils peuvent être initialié directement dans l'inspector
     [SerializeField] private float m_hitDamage;
@@ -71,7 +70,7 @@ public class DoHits : MonoBehaviour {
     public void Slow(float _level)
     {
         oldHitCooldown = hitCooldown;
-        slowTimeAdd = (1f / hitCooldown) * _level * slowPercentage;
+        slowTimeAdd = (1f / hitCooldown) * (_level / 100f);
     }
 
     public void UnSlow()
@@ -83,5 +82,6 @@ public class DoHits : MonoBehaviour {
     //Placeholder functions for Animation events
     void Hit()
     {
+
     }
 }

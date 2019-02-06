@@ -342,6 +342,7 @@ MonoBehaviour:
   allEnemyTab:
   - {fileID: 1462532190980112, guid: 829cf79efbfa93e4f9d7fb392c8d8dd7, type: 2}
   - {fileID: 1016190419679808, guid: c1084297837cab944b285aa46a911cbc, type: 2}
+  - {fileID: 1462532190980112, guid: 0ed9313edb6e0c8469810ddbb772b409, type: 2}
 --- !u!114 &114679362626588708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,6 +360,7 @@ MonoBehaviour:
   maxMana: 1000
   manaRegen: 50
   maxManaClamp: 1034
+  maxEnemyInGame: 20
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1

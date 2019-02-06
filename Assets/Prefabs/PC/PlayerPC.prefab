@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197187211452448}
   - component: {fileID: 54014875544311954}
+  - component: {fileID: 136664878676620432}
   - component: {fileID: 114707502108153376}
   - component: {fileID: 114687927097806008}
   - component: {fileID: 114401180596391590}
@@ -625,3 +626,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ec06b46544934eb8ac924fdbed9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &136664878676620432
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192862646262678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.46
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1, z: 0.42}

@@ -12,9 +12,9 @@ public class PlayerPCSpawn : MonoBehaviour
 
     private int count;
 
-    private void Start()
+    private void Update()
     {
-        if (allEnemyTab.Length > 0)
+        if (allEnemyTab.Length > 0 && enemyMenu != null && enemyForSpawn == null)
         {
             enemyForSpawn = allEnemyTab[enemyMenu.currentEnemyIcon];
             count = enemyMenu.currentEnemyIcon;

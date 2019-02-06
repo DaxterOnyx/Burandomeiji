@@ -7,8 +7,8 @@ public class LobbyScriptPC : MonoBehaviour {
     public string scenePlayName;
     public string sceneCreditsName;
 
-    private bool playPC = false;
-    private bool playVR = false;
+    [SerializeField] private bool playPC = false;
+    [SerializeField] private bool playVR = false;
 
     [SerializeField] private TextMeshProUGUI textPC;
     [SerializeField] private TextMeshProUGUI textVR;

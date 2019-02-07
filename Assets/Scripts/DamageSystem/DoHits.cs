@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoHits : MonoBehaviour {
 
     private bool canDoHitsCoroutine = true;
-    public bool playerFound = false;
     private float oldHitCooldown;
     private float slowTimeAdd = 0f;
 
@@ -51,12 +50,6 @@ public class DoHits : MonoBehaviour {
         {
             StartCoroutine(DoHitsCoroutine(_takeHits));
         }
-    }
-
-
-    private void OnTriggerExit()
-    {
-        playerFound = false;
     }
 
     private IEnumerator DoHitsCoroutine(TakeHits takeHits_)

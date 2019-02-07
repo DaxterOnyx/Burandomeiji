@@ -11,6 +11,7 @@ TagManager:
   - Cursor
   - CameraPC
   - CountEnemy
+  - UI VR
   layers:
   - Default
   - TransparentFX

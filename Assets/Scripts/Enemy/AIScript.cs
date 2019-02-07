@@ -44,7 +44,7 @@ public class AIScript : MonoBehaviour
     
     private void Update()
     {
-        if (isFreeze == false)
+        /*if (isFreeze == false)
         {
             if (target == null)
             {
@@ -67,6 +67,47 @@ public class AIScript : MonoBehaviour
         else
         {
             character.Move(Vector3.zero, false, false, false);
+        }*/
+
+        if(isFreeze)
+        {
+            character.Move(Vector3.zero, false, false, false);
+        }
+        else
+        {
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+                agent.SetDestination(target.position);
+            }
+
+
+            if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
+            {
+                if (agent.remainingDistance < agent.stoppingDistance)
+                {
+                    Attack();
+                    agent.SetDestination(target.position);
+                }
+                else
+                {
+                    Move();
+                }
+            }
+            else
+            {
+                distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
+                if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+                {
+
+                    Attack();
+                }
+                else
+                {
+                    Move();
+                }
+
+            }
         }
         
     }

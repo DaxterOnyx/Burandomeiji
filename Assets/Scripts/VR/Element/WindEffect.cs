@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 class WindEffect : ElementEffect
 {
@@ -8,6 +9,7 @@ class WindEffect : ElementEffect
 
 	protected override void StartEffect()
 	{
+		base.StartEffect();
 		//TODO add Wind effect
 		//TakeHits.GetComponent<Rigidbody>().AddForce(WindForce,ForceMode.Acceleration);
 	}
@@ -18,7 +20,20 @@ class WindEffect : ElementEffect
 	}
 	protected override void StopEffect()
 	{
+		base.StopEffect();
 		//TODO remove wind effect
+	}
+
+	internal void Eye(Vector3 position)
+	{
+		if(impact == null)
+		{
+			impact = position;
+		}
+		else
+		{
+			impact = new Vector3(position.x + impact.x/2, position.y + impact.y/2, position.z + impact.z/2);
+		}
 	}
 }
 

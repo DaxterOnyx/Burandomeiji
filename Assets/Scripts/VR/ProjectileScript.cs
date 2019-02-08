@@ -21,7 +21,7 @@ public class ProjectileScript : MonoBehaviour {
 		if (target != null && target.tag == TargetTag)
 		{
 			target.takeHits(Damage, false);
-			Destroy(gameObject);
 		}
+		Destroy(gameObject);
 	}
 }

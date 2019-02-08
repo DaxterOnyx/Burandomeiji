@@ -5,10 +5,12 @@ class ElementProjectile : ProjectileScript
 {
 	public float Power = 1;
 	public GameObject ElementEffect;
-	public static float multiplierScaleExplosion = 10f;
-	private bool inEffect;
-
-	public float MultiplierScaleExplosion { get { return multiplierScaleExplosion; } set { multiplierScaleExplosion = value; } }
+	public float multiplierScaleExplosion = 5f;
+	public GameObject ElementFX;
+	bool IsLaunched = false;
+	public float FXMin = 1;
+	public float FXMax = 10;
+	private bool IsLanded = false;
 	protected override void Awake()
 	{
 		GetComponent<Rigidbody>().useGravity = false;
@@ -16,72 +18,70 @@ class ElementProjectile : ProjectileScript
 
 	internal void Launch(float speed)
 	{
+		IsLaunched = true;
 		Destroy(gameObject, LifeTime);
 		transform.SetParent(null);
+		GetComponentInChildren<Collider>(true).enabled = true;
 		GetComponent<Rigidbody>().AddForce(transform.forward * speed,ForceMode.VelocityChange);
 		GetComponent<Rigidbody>().useGravity = true;
 	}
 
-	private void OnTriggerStay(Collider collider)
+	private void OnCollisionEnter(Collision collision)
 	{
-		if(inEffect)
+		//TODO
+		if (ElementEffect == null) { Debug.LogError("ElementEffect is not define in projectile"); return; }
+		if (collision.collider.tag == "Player" || !IsLaunched) { return; }
+
+		//Create Explosion on Impact
+		Vector3 explosionPos = transform.position;
+		GameObject l_elementFX = Instantiate(ElementFX, explosionPos, Quaternion.identity);
+
+		//set effect on ennemy in zone
+		foreach (Collider hit in Physics.OverlapSphere(position: explosionPos, radius: multiplierScaleExplosion))
 		{
-			if (collider.tag != TargetTag) { return; }
-			Debug.Log(collider.tag);
-
-			var ellementEffect = collider.GetComponentInChildren<ElementEffect>();
-			//Debug.Log(t.GetType() + ""  + ElementEffect.GetType());
-			if (ellementEffect != null && ellementEffect.GetType() == ElementEffect.GetType())
+			if(hit.tag==TargetTag)
 			{
 
-			}
-			else
-			{
-				Debug.Log("add effect " + ElementEffect + " sur " + collider);
-				GameObject newEllementEffect = Instantiate(ElementEffect, collider.transform);
-				ElementEffect elementEffect = newEllementEffect.GetComponent<ElementEffect>();
+				ElementEffect elementEffect = null;
+				ElementEffect[] elements = collision.collider.GetComponentsInChildren<ElementEffect>();
+				for (int i = 0; elementEffect == null && i < elements.Length; i++)
+				{
+					if (elements[i].GetType() == ElementEffect.GetType())
+					{
+						elementEffect = elements[i];
+					}
+				}
+
+				if (!elementEffect)
+				{
+					Debug.Log("add effect " + ElementEffect + " sur " + hit);
+					GameObject newEllementEffect = Instantiate(ElementEffect, Vector3.zero, Quaternion.identity, hit.transform);
+					elementEffect = newEllementEffect.GetComponent<ElementEffect>();
+				}
 				if (elementEffect is WindEffect)
 				{
-					((WindEffect)elementEffect).impact = transform.position;
+					((WindEffect)elementEffect).Eye(transform.position);
 					//TODO add graphic effect of wind TORNADO
 				}
 				elementEffect.ActiveEffect(Power);
 			}
-
 		}
-			
+
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+		GetComponentInChildren<Collider>().enabled = false;
+		foreach(var a in GetComponentsInChildren<ParticleSystem>()) a.Stop();
+		IsLanded = true;
 	}
 
-	private void OnCollisionEnter(Collision collision)
+	private void Update()
 	{
-		if (ElementEffect == null) { Debug.LogError("ElementEffect is not define in projectile"); return; }
-		if (collision.collider.tag == "Player") { return; }
-
-		//Create Explosion on Impact
-		Vector3 explosionPos = transform.position;
-		transform.localScale = Vector3.one * (multiplierScaleExplosion * Power);
-
-		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-		GetComponentInChildren<Collider>().isTrigger = true;
-
-		inEffect = true;
-		//foreach (Collider hit in Physics.OverlapSphere(position: explosionPos, radius: multiplierScaleExplosion*Power))
-		//{
-		//	if (hit.tag == TargetTag)
-		//	{
-		//		GameObject go = Instantiate(ElementEffect, hit.transform);
-		//		ElementEffect elementEffect = go.GetComponent<ElementEffect>();
-		//		elementEffect.Power = Power;
-		//		if (elementEffect is WindEffect)
-		//		{
-		//			((WindEffect)elementEffect).impact = explosionPos;
-		//			//TODO add graphic effect of wind TORNADO
-		//		}
-		//	}
-		//	else
-		//		Debug.Log("hit object with tag = " + hit.tag); 
-		//}
-		Destroy(gameObject, Power);
+		if (GetComponentInChildren<ParticleSystem>().particleCount == 0)
+			Debug.Log("particle is dead");
+		if (IsLaunched && IsLanded && GetComponentInChildren<ParticleSystem>().particleCount == 0)
+		{
+			Debug.Log("Destroy inactive particle : " + this);
+			Destroy(gameObject);
+		}
 	}
 }
 
@@ -129,7 +129,16 @@ abstract class ElementEffect : MonoBehaviour
 		StopEffect();
 	}
 
-	protected abstract void StartEffect();
+	protected virtual void StartEffect()
+	{
+		foreach(var ps in GetComponentsInChildren<ParticleSystem>())
+			ps.Play();
+
+	}
 	protected abstract void Effect();
-	protected abstract void StopEffect();
+	protected virtual void StopEffect()
+	{
+		foreach(var ps in GetComponentsInChildren<ParticleSystem>())
+			ps.Stop();
+	}
 }

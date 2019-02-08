@@ -21,7 +21,7 @@ public class ManaBarScript : MonoBehaviour {
         textMana.text = amount_.ToString("0") + " / " + manaMax_.ToString("0");
 
         manaRegen = manaMax_ *  ((600f - GameManager.Instance.timeRemain()) / 3300f) + 10f;
-        manaRegen = Mathf.Clamp(manaRegen, 10f, manaMax_ * 0.3f);
+        manaRegen = Mathf.Clamp(manaRegen, 10f, manaMax_ * 0.14f);
         SetManaRegen(manaRegen);
         return manaRegen;
         //textMana.text = ((amount_/manaMax_)*100).ToString("0") + "%";

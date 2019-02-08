@@ -44,31 +44,6 @@ public class AIScript : MonoBehaviour
     
     private void Update()
     {
-        /*if (isFreeze == false)
-        {
-            if (target == null)
-            {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-                agent.SetDestination(target.position);         
-            }
-
-            distanceFly = Vector3.Distance(target.position, this.transform.position);
-
-            if (distanceFly <= agent.stoppingDistance + 0.2f) // Si la distance est plus petit ou égal à stoppingDistance
-            {
-                
-                Attack();
-            }
-            else
-            {   
-                Move();
-            }
-        }
-        else
-        {
-            character.Move(Vector3.zero, false, false, false);
-        }*/
-
         if(isFreeze)
         {
             character.Move(Vector3.zero, false, false, false);
@@ -81,12 +56,21 @@ public class AIScript : MonoBehaviour
                 agent.SetDestination(target.position);
             }
 
+            distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
 
             if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
             {
-                if (agent.remainingDistance < agent.stoppingDistance)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    Attack();
+                    if(distanceFly < 5f)
+                    {
+                        Attack();
+                    }
+                    else
+                    {
+                        Move();
+                    }
+                    
                     agent.SetDestination(target.position);
                 }
                 else
@@ -96,7 +80,6 @@ public class AIScript : MonoBehaviour
             }
             else
             {
-                distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
                 if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
                 {
 

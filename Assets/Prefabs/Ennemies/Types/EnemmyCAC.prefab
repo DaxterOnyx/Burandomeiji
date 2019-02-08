@@ -26223,7 +26223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
-  m_enemyName: CaC
+  m_enemyName: Berserk
   m_speed: 1
   m_mana: 33
   m_type: 0
@@ -26252,9 +26252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitDamage: 10
-  m_hitCooldown: 1
-  m_critical: 10
+  m_hitDamage: 30
+  m_hitCooldown: 1.5
+  m_critical: 5
 --- !u!114 &114595263363553336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26274,7 +26274,7 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  m_health: 999
+  m_health: 150
 --- !u!136 &136685940076068222
 CapsuleCollider:
   m_ObjectHideFlags: 1

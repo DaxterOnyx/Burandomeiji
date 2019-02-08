@@ -68,7 +68,7 @@ public class PlayerPC : MonoBehaviour {
         {
             touchHelp.SetActive(false);
             imageCursor.gameObject.SetActive(true);
-            maxMana = Mathf.Clamp(maxMana + Time.deltaTime * 0.34f, 0f, maxManaClamp);
+            maxMana = Mathf.Clamp(maxMana + (Time.deltaTime * 0.5f), 0f, maxManaClamp);
 
             if (currentMana < maxMana)
             {

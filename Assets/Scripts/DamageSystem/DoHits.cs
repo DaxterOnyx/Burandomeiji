@@ -29,8 +29,8 @@ public class DoHits : MonoBehaviour {
     public void doHits(TakeHits _takeHits)
     {
         float crit_ = Random.Range(0f, 100f);
-        float multCrit_ = Random.Range(2f, 4f);
-        float multRand_ = Random.Range(0.9f, 1.1f);
+        float multCrit_ = Random.Range(2f, 3f);
+        float multRand_ = Random.Range(0.85f, 1.15f);
 
         if (crit_ < m_critical) // Si coup critique réussi
         {

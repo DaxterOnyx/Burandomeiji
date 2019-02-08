@@ -132,11 +132,11 @@ public class BonusMenu : MonoBehaviour {
 
         float mult = bonusTab[0][currentEnemyIcon][currentIcon];
         
-        if(mult * 100 > 100f)
+        if(mult >= 1.005f)
         {
             lowLeftText.text = "Cost : ± " + costManaTabSup[currentIcon];
         }
-        else if(mult * 100 < 100f)
+        else if(mult <= 0.995f)
         {
             lowLeftText.text = "Cost : ± " + costManaTabInf[currentIcon];
         }
@@ -150,11 +150,11 @@ public class BonusMenu : MonoBehaviour {
             case 0:       
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
 
-                if((mult * 100 - 100f) > 0) // Positif
+                if(mult >= 1.005f) // Positif
                 {
                     centerRightText.text = "<color=#25C42A>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
-                else if((mult * 100 - 100f) < 0) // Négatif
+                else if(mult <= 0.995f) // Négatif
                 {
                     centerRightText.text = "<color=#DC2323>Speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
@@ -169,11 +169,11 @@ public class BonusMenu : MonoBehaviour {
             case 1:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
 
-                if ((mult * 100 - 100f) > 0) // Positif
+                if (mult >= 1.005f) // Positif
                 {
                     centerRightText.text = "<color=#25C42A>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
-                else if ((mult * 100 - 100f) < 0) // Négatif
+                else if (mult <= 0.995f) // Négatif
                 {
                     centerRightText.text = "<color=#DC2323>Health bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
@@ -188,11 +188,11 @@ public class BonusMenu : MonoBehaviour {
             case 2:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
 
-                if ((mult * 100 - 100f) > 0) // Positif
+                if (mult >= 1.005f) // Positif
                 {
                     centerRightText.text = "<color=#25C42A>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
-                else if ((mult * 100 - 100f) < 0) // Négatif
+                else if (mult <= 0.995f) // Négatif
                 {
                     centerRightText.text = "<color=#DC2323>Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
@@ -201,17 +201,17 @@ public class BonusMenu : MonoBehaviour {
                     centerRightText.text = "Critical bonus : " + (mult * 100 - 100f).ToString("0") + " %";
                 }
 
-                hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical chance";
+                hightRightText.text = (doHits.critical * mult).ToString("0.0") + " % critical (x2.5)";
                 break;
 
             case 3:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
 
-                if ((mult * 100 - 100f) > 0) // Positif
+                if (mult >= 1.005f) // Positif
                 {
                     centerRightText.text = "<color=#25C42A>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
-                else if ((mult * 100 - 100f) < 0) // Négatif
+                else if (mult <= 0.995f) // Négatif
                 {
                     centerRightText.text = "<color=#DC2323>Attack bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
@@ -226,11 +226,11 @@ public class BonusMenu : MonoBehaviour {
             case 4:
                 lowRightText.text = "Bonus : ± " + multTab[currentIcon]*100 + " %";
 
-                if ((mult * 100 - 100f) > 0) // Positif
+                if (mult >= 1.005f) // Positif
                 {
                     centerRightText.text = "<color=#25C42A>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
-                else if ((mult * 100 - 100f) < 0) // Négatif
+                else if (mult <= 0.995f) // Négatif
                 {
                     centerRightText.text = "<color=#DC2323>Attack speed bonus : " + (mult * 100 - 100f).ToString("0") + " %</color>";
                 }
@@ -254,12 +254,14 @@ public class BonusMenu : MonoBehaviour {
     {
         canUpgrade = true;
         currentEnemyIcon = enemyMenu.currentEnemyIcon;
-
-        SwitchBonus(true);
         
-        if (canUpgrade)
+        if (SwitchBonus(true))
         {
-            if (bonusTab[0][currentEnemyIcon][currentIcon] * 100 > 100f)
+            if (bonusTab[0][currentEnemyIcon][currentIcon] >= 0.995f && bonusTab[0][currentEnemyIcon][currentIcon] <= 1.005f)
+            {
+                bonusTab[1][currentEnemyIcon][currentIcon] += costManaTabInf[currentIcon];
+            }
+            else if (bonusTab[0][currentEnemyIcon][currentIcon] > 1.005f)
             {
                 bonusTab[1][currentEnemyIcon][currentIcon] += costManaTabSup[currentIcon]; 
             }
@@ -276,69 +278,82 @@ public class BonusMenu : MonoBehaviour {
 
     public void DowngradeBonus()
     {
-        currentEnemyIcon = enemyMenu.currentEnemyIcon;
+        currentEnemyIcon = GetComponent<EnemyMenu>().currentEnemyIcon;
+        EnemyStats enemyStats_ = allEnemyTab[currentEnemyIcon].GetComponent<EnemyStats>();
         canDowngrade = true;
 
-        SwitchBonus(false);
-
-        if (canDowngrade)
+        if (UpdateLostMana() - costManaTabInf[currentIcon] >= enemyStats_.mana)
         {
-            if (bonusTab[0][currentEnemyIcon][currentIcon] * 100 < 100f)
+            if (SwitchBonus(false))
             {
-                bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabInf[currentIcon];
+                if (bonusTab[0][currentEnemyIcon][currentIcon] >= 0.995f && bonusTab[0][currentEnemyIcon][currentIcon] <= 1.005f)
+                {
+                    bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabSup[currentIcon];
+                }
+                else if (bonusTab[0][currentEnemyIcon][currentIcon] < 1.005f)
+                {
+                    bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabInf[currentIcon];
+                }
+                else
+                {
+                    bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabSup[currentIcon];
+                }
             }
-            else
-            {
-                bonusTab[1][currentEnemyIcon][currentIcon] -= costManaTabSup[currentIcon];
-            }
+            enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
+            UpdateText();
         }
-        enemyMenu.manaCost = UpdateManaCost(currentEnemyIcon, enemyMenu.manaCost);
-        UpdateText();
     }
 
-    private void SwitchBonus(bool _switch)
+    private bool SwitchBonus(bool _switch)
     {
         switch (currentIcon)
         {
             case 0:
-                CapBonus(0.25f, 2.05f, _switch);
-                break;
+                return CapBonus(0.4f, 2f, _switch);
             case 1:
-                CapBonus(0.55f, 3.25f, _switch);
-                break;
+                return CapBonus(0.2f, 3f, _switch);
             case 2:
-                CapBonus(0.2f, 3f, _switch);
-                break;
+                return CapBonus(0.2f, 3f, _switch);
             case 3:
-                CapBonus(0.5f, 2.5f, _switch);
-                break;
+                return CapBonus(0.25f, 2.25f, _switch);
             case 4:
-                CapBonus(0.5f, 2f, _switch);
-                break;
+                return CapBonus(0.4f, 2f, _switch);
             default:
                 Debug.LogError("currentIcon error!");
                 break;
         }
+        return false;
     }
 
-    private void CapBonus(float _min, float _max, bool _switch)
+    private bool CapBonus(float _min, float _max, bool _switch)
     {
         if(_switch)
         {
-            bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] + multTab[currentIcon], _min, _max);
-            if (bonusTab[0][currentEnemyIcon][currentIcon] == _max)
-            {
+            
+            if (bonusTab[0][currentEnemyIcon][currentIcon] >= _max - 0.005f)
+            {   
                 canUpgrade = false;
+                return canUpgrade;           
+            }
+            else
+            {
+                bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] + multTab[currentIcon], _min, _max);
             }
         }
         else
         {
-            bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] - multTab[currentIcon], _min, _max);
-            if (bonusTab[0][currentEnemyIcon][currentIcon] == _min)
+           
+            if (bonusTab[0][currentEnemyIcon][currentIcon] <= _min + 0.005f)
             {
                 canDowngrade = false;
+                return canDowngrade;
+            }
+            else
+            {
+                bonusTab[0][currentEnemyIcon][currentIcon] = Mathf.Clamp(bonusTab[0][currentEnemyIcon][currentIcon] - multTab[currentIcon], _min, _max);
             }
         }
+        return true;
     }
 
     

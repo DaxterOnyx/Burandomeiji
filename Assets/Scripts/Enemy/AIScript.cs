@@ -44,29 +44,53 @@ public class AIScript : MonoBehaviour
     
     private void Update()
     {
-        if (isFreeze == false)
+        if(isFreeze)
+        {
+            character.Move(Vector3.zero, false, false, false);
+        }
+        else
         {
             if (target == null)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                agent.SetDestination(target.position);         
+                agent.SetDestination(target.position);
             }
 
-            distanceFly = Vector3.Distance(target.position, this.transform.position);
+            distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
 
-            if (distanceFly <= agent.stoppingDistance + 0.2f) // Si la distance est plus petit ou égal à stoppingDistance
+            if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
             {
-                
-                Attack();
+                if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    if(distanceFly < 5f)
+                    {
+                        Attack();
+                    }
+                    else
+                    {
+                        Move();
+                    }
+                    
+                    agent.SetDestination(target.position);
+                }
+                else
+                {
+                    Move();
+                }
             }
             else
-            {   
-                Move();
+            {
+                if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+                {
+
+                    Attack();
+                }
+                else
+                {
+                    Move();
+                }
+
             }
-        }
-        else
-        {
-            character.Move(Vector3.zero, false, false, false);
         }
         
     }

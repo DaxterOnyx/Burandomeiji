@@ -55,7 +55,7 @@ public class Character : MonoBehaviour
         move = Vector3.ProjectOnPlane(move, m_GroundNormal);
         m_TurnAmount = Mathf.Atan2(move.x, move.z);
         m_ForwardAmount = move.z;
-
+        m_Attacking = false;
         ApplyExtraTurnRotation();
 
         // control and velocity handling is different when grounded and airborne:

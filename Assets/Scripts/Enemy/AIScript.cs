@@ -13,7 +13,6 @@ public class AIScript : MonoBehaviour
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public Character character { get; private set; } // the character we are controlling
     public Transform target;                    // target to aim for
-    private Transform targetSave;
     DoHits doHits;
     TakeHits takeHitsTarget;
     EnemyStats enemyStats;
@@ -36,7 +35,6 @@ public class AIScript : MonoBehaviour
     
         target = GameObject.FindGameObjectWithTag("Player").transform;
         takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
-        targetSave = target;
         
         if(target != null)
         {
@@ -47,12 +45,11 @@ public class AIScript : MonoBehaviour
     
     private void Update()
     {
-
-        if(isFreeze == false)
+        if (isFreeze == false)
         {
             if (target == null)
             {
-                target = targetSave;
+                target = GameObject.FindGameObjectWithTag("Player").transform;
                 agent.SetDestination(target.position);         
             }
 
@@ -71,9 +68,6 @@ public class AIScript : MonoBehaviour
         else
         {
             character.Move(Vector3.zero, false, false, false);
-            agent.SetDestination(this.transform.position);
-            target = null;
-            isAttacking = false;
         }
         
     }
@@ -85,21 +79,14 @@ public class AIScript : MonoBehaviour
 
     private void Attack()
     {
-        isAttacking = true; 
         character.Move(Vector3.zero, false, false, true);
-        transform.LookAt(target);
-        agent.SetDestination(this.transform.position);
-        
+        transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         doHits.Attack(takeHitsTarget);
             
     }
 
     private void Move()
     {
-        if (isAttacking)
-        {
-            isAttacking = false;
-        }
         agent.SetDestination(target.position);
         character.Move(agent.desiredVelocity, false, false, false);
     }
@@ -113,9 +100,5 @@ public class AIScript : MonoBehaviour
     {
         agent.speed = enemyStats.speed;
     }
-
-    //TODO pour Marc
-    // Boolean animation attaque fait
-    // Reste à faire l'animation
 }
 

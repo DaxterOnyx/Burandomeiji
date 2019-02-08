@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224013843600120178}
   - component: {fileID: 222388119457066470}
   - component: {fileID: 114809461896895514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224912727072728218}
   - component: {fileID: 222396479534975892}
   - component: {fileID: 114082489746343314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224228627914969296}
   - component: {fileID: 222415737641463862}
   - component: {fileID: 114049574451204206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224265910011053256}
   - component: {fileID: 222118633114330114}
   - component: {fileID: 114145998778366650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TouchGuidePC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224801728632177492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 224955562406084632}
   - component: {fileID: 222783532445945484}
   - component: {fileID: 114790596267367016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_up (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 223847327508830066}
   - component: {fileID: 114323785374538946}
   - component: {fileID: 114392246621953776}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TouchHelpPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 224503085481525084}
   - component: {fileID: 222200065831728206}
   - component: {fileID: 114864120843856588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 224220277915095146}
   - component: {fileID: 222290165783595714}
   - component: {fileID: 114754860639650548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 224018016531290894}
   - component: {fileID: 222076448554995522}
   - component: {fileID: 114848259501772396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 224879946202203074}
   - component: {fileID: 222059065464232770}
   - component: {fileID: 114279092209738162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_Shift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 224834521935243362}
   - component: {fileID: 222172673373371828}
   - component: {fileID: 114163306338716620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 224527969728771180}
   - component: {fileID: 222370932352393456}
   - component: {fileID: 114549402927545056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 224508099116016708}
   - component: {fileID: 222158641649045800}
   - component: {fileID: 114861093879659480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 224100470928151074}
   - component: {fileID: 222428095901223820}
   - component: {fileID: 114724132876038188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 224098448238421996}
   - component: {fileID: 222005155253425220}
   - component: {fileID: 114331053230709686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_Q
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 224845523857319988}
   - component: {fileID: 222760290591611086}
   - component: {fileID: 114482000503248584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch Q
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 224932461280974830}
   - component: {fileID: 222754850534726252}
   - component: {fileID: 114317849145856606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_Improvements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 224484919805652764}
   - component: {fileID: 222815486691682318}
   - component: {fileID: 114119838954099290}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Contour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 224540696312857158}
   - component: {fileID: 222939904982505038}
   - component: {fileID: 114736850889162750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 224377211070551780}
   - component: {fileID: 222029529051642774}
   - component: {fileID: 114252931483079700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 224515323515469520}
   - component: {fileID: 222794102748474444}
   - component: {fileID: 114410881572747616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Touch D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2078,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 1
@@ -2515,6 +2515,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -63, y: -6.1}
+  m_AnchoredPosition: {x: -63, y: -6.1000004}
   m_SizeDelta: {x: 100.01, y: 25.85}
   m_Pivot: {x: -1.5000675, y: 2.1043172}

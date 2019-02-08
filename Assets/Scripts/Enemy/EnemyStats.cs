@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(DoHits))]
 public class EnemyStats : MonoBehaviour {
 
-    public enum enemyType { Melee, Distance }
+    public enum enemyType { Melee, Distance, Boss }
     public GameObject icon;
 
     [SerializeField] private string m_enemyName;

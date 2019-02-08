@@ -4,13 +4,40 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: batman
+    100004: Camera
+    100006: Camera.001
+    100008: Camera.002
+    100010: Lamp
+    100012: Plane
+    100014: Plane.001
     400000: //RootNode
+    400002: batman
+    400004: Camera
+    400006: Camera.001
+    400008: Camera.002
+    400010: Lamp
+    400012: Plane
+    400014: Plane.001
+    2000000: Camera
+    2000002: Camera.001
+    2000004: Camera.002
     2100000: No Name
     2100002: Material
+    2100004: Material.001
     2300000: //RootNode
+    2300002: batman
+    2300004: Plane
+    2300006: Plane.001
     3300000: //RootNode
+    3300002: batman
+    3300004: Plane
+    3300006: Plane.001
     4300000: Plane
+    4300002: batman
+    4300004: Plane.001
     6400000: //RootNode
+    10800000: Lamp
     2186277476908879412: ImportLogs
   externalObjects:
   - first:

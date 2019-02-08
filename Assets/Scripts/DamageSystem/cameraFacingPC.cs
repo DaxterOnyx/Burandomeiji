@@ -7,19 +7,22 @@ public class cameraFacingPC : MonoBehaviour {
     GameObject camGO;
     Camera cam;
 
-    private void Start()
-    {
-        camGO = GameObject.FindGameObjectWithTag("CameraPC");
-
-        if (camGO  != null)
-        {
-            cam = camGO.GetComponent<Camera>();
-        }
-    }
-
     void Update()
     {
-        if(cam != null)
-            transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+        if(camGO == null)
+        {
+            camGO = GameObject.FindGameObjectWithTag("CameraPC");
+        }
+        else
+        {
+            if(cam == null)
+            {
+                cam = camGO.GetComponent<Camera>();
+            }
+            else
+            {
+                transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+            }
+        }
     }
 }

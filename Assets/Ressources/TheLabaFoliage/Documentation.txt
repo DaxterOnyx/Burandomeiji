@@ -1,0 +1,18 @@
+Stylized Low-Poly Nature asset
+
+
+Folders:
+
+1) Material : Contain all different material for the models (To create new material copy an existing asset, press ctrl+D and change the color ) 
+    a) Texture: Contain all textures for the models (if you have different types of leaves or grass put it there )
+
+2) Models : Contain all the models in .FBX format   (Change the model with your 3d editor if you want to modify something)
+
+3) Prefabs : Contain all the prefabs to use in your scene
+
+4) Scenes : Contain 3 different scenes (two  demo example and one scene with all the models )
+
+5) Script : Contain a flyng camera script to move around in the scene.
+
+
+For any problems contact us: thelabaofficial@gmail.com

@@ -6,14 +6,15 @@ public class cameraFacingVR : MonoBehaviour {
 
     Camera cam;
 
-    private void Start()
-    {
-        cam = Camera.main;
-    }
-
     void Update()
     {
-        if(cam != null)
+        if(cam == null)
+        {
+            cam = Camera.main;
+        }
+        else
+        {
             transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+        }
     }
 }

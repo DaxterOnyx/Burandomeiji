@@ -17,7 +17,4 @@ public class Timer : MonoBehaviour {
     {
         timer.text = GameManager.Instance.getTimeString();
     }
-
-
-
 }

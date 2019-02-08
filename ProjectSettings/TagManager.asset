@@ -10,6 +10,7 @@ TagManager:
   - BonusMenu
   - Cursor
   - CameraPC
+  - CountEnemy
   layers:
   - Default
   - TransparentFX

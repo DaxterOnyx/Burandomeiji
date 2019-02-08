@@ -51,6 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e47fbacbef18cf4a9d5edd2cec1c167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dontDestroyOnLoad: 0
-  timer: 600
-  end: 0
+  m_dontDestroyOnLoad: 1
+  enemyCountInGame_cac: 0
+  enemyCountInGame_dis: 0
+  enemyCountInGame_boss: 0
+  enemyCountMax_cac: 3
+  enemyCountMax_dis: 3
+  enemyCountMax_boss: 0
+  timer: 593.8875
+  timerMatchBegin: 1
+  matchIsProgress: 1

@@ -18,7 +18,7 @@ public class TakeHits : MonoBehaviour {
 
     private List<GameObject> damagePopupListVR = new List<GameObject>();
     private List<GameObject> damagePopupListPC = new List<GameObject>();
-    private List<GameObject> criticalPopupListVR = new List<GameObject>();
+    //private List<GameObject> criticalPopupListVR = new List<GameObject>();
     private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
     AIScript aiScript; // Contient "Speed"
@@ -90,11 +90,6 @@ public class TakeHits : MonoBehaviour {
             {
                 Display(_hitDamage, _critical);  // je display les dégâts
             }
-            
-            if(this.tag != "Enemy") // Si c'est le joueur VR j'update la barre de vie au dessus de lui
-            {
-                GetComponentInChildren<HealthBarVR>().SetHealthBar(currentHealth, health);
-            }
         }
     }
 
@@ -102,6 +97,28 @@ public class TakeHits : MonoBehaviour {
     {
         Debug.Log(gameObject.name + " est mort");
         die = true;
+
+        if(isEnemy)
+        {
+            if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Melee)
+            {
+                GameManager.Instance.enemyCountInGame_cac--;
+            }
+            else if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Distance)
+            {
+                GameManager.Instance.enemyCountInGame_dis--;
+            }
+            else
+            {
+                GameManager.Instance.enemyCountInGame_boss--;
+            }
+
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            // Le joueur VR est mort
+        }
     }
 
     private void Display(float _hitDamage, bool _critical)
@@ -166,20 +183,21 @@ public class TakeHits : MonoBehaviour {
         }
     }
 
-    // Niveau de slow entre 1 et 10 : -7% de speed à chaque niveau
+
+
+    /// <summary>
+    /// Niveau de slow entre 1 et 10 : -7% de speed à chaque niveau
+    /// </summary>
+    /// <param name="_power"></param>
     public void Slow(float _power)
     {
         if (isEnemy)
         {
-            if (_power >= 1 && _power <= 10)
+            if(isSlow == false)
             {
-                if(isSlow == false)
-                {
-                    doHits.Slow(_power); // Diminue la vitesse d'attaque
-                    aiScript.Slow(_power);  // Diminue la vitesse de marche
-                    isSlow = true;
-                }
-                
+                doHits.Slow(_power); // Diminue la vitesse d'attaque
+                aiScript.Slow(_power);  // Diminue la vitesse de marche
+                isSlow = true;
             }
         }     
     }

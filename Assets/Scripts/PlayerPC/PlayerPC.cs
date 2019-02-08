@@ -25,17 +25,20 @@ public class PlayerPC : MonoBehaviour {
     private GameObject UIPlayerPCInstance;
     private GameObject bonusMenuGo;
     private Transform target;
+    [SerializeField] GameObject touchHelp;
 
     /* Attributs */
     private float currentMana;
-    [SerializeField] private float maxMana = 1000f;
-    [SerializeField] private float manaRegen = 550f;
+    [SerializeField] private float maxMana = 100f;
+    [SerializeField] private float manaRegen = 5f;
+    [Range(0f, 1000f)] [SerializeField] private float maxManaClamp = 150f;
+    [Range(5f, 25f)] [SerializeField] private float distanceMinSpawn = 15f;
 
     Image imageCursor;
 
 	private void Start ()
     {
-        currentMana = maxMana;
+        currentMana = 0f;
 
         playerPCSpawn = GetComponent<PlayerPCSpawn>();
         playerPCController = GetComponent<PlayerPCController>();
@@ -61,27 +64,37 @@ public class PlayerPC : MonoBehaviour {
 	
 	private void Update ()
     {
-        maxMana += Time.deltaTime/1.2f;
-
-        if (currentMana < maxMana)
+        if (GameManager.Instance.matchIsProgress)
         {
-            RegenMana();
-        }
+            touchHelp.SetActive(false);
+            imageCursor.gameObject.SetActive(true);
+            maxMana = Mathf.Clamp(maxMana + Time.deltaTime * 0.34f, 0f, maxManaClamp);
 
-        if(target == null)
+            if (currentMana < maxMana)
+            {
+                RegenMana();
+            }
+
+            if(target == null)
+            {
+                GameObject JoueurVR = GameObject.FindGameObjectWithTag("Player");
+                if(JoueurVR != null)
+                {
+                    target = JoueurVR.transform;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            Spawn();
+        }
+        else
         {
-            GameObject JoueurVR = GameObject.FindGameObjectWithTag("Player");
-            if(JoueurVR != null)
-            {
-                target = JoueurVR.transform;
-            }
-            else
-            {
-                return;
-            }
+            imageCursor.gameObject.SetActive(false);
         }
-
-        Spawn();
+        
         Controller();
     }
 
@@ -107,7 +120,7 @@ public class PlayerPC : MonoBehaviour {
             {
                 float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
 
-                if (distanceVRCursor >= 20f)
+                if (distanceVRCursor >= distanceMinSpawn && playerPCSpawn.CanSpawn())
                 {
                     if (playerPCController.ClickDown)
                     {

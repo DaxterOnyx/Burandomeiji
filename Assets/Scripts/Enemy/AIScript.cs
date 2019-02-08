@@ -19,7 +19,6 @@ public class AIScript : MonoBehaviour
     private float distanceFly;
     private bool isAttacking;
     public bool isFreeze = false;
-    private const float slowPercentage = 0.07f;
 
     private void Start()
     {
@@ -55,7 +54,7 @@ public class AIScript : MonoBehaviour
 
             distanceFly = Vector3.Distance(target.position, this.transform.position);
 
-            if (distanceFly <= agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+            if (distanceFly <= agent.stoppingDistance + 0.2f) // Si la distance est plus petit ou égal à stoppingDistance
             {
                 
                 Attack();
@@ -93,7 +92,7 @@ public class AIScript : MonoBehaviour
 
     public void Slow(float _level)
     {
-        agent.speed -= agent.speed * _level * slowPercentage;
+        agent.speed -= agent.speed * (_level / 100f);
     }
 
     public void UnSlow()

@@ -8,10 +8,12 @@ public class LobbyScriptPC : MonoBehaviour {
     public string sceneCreditsName;
 
     [SerializeField] private bool playPC = false;
-    [SerializeField] private bool playVR = false;
+    public bool playVR = false;
 
-    [SerializeField] private TextMeshProUGUI textPC;
-    [SerializeField] private TextMeshProUGUI textVR;
+    [SerializeField] private TextMeshProUGUI textPC_PC;
+    [SerializeField] private TextMeshProUGUI textVR_PC;
+    [SerializeField] private TextMeshProUGUI textPC_VR;
+    [SerializeField] private TextMeshProUGUI textVR_VR;
 
     private void Start()
     {
@@ -27,34 +29,33 @@ public class LobbyScriptPC : MonoBehaviour {
             Cursor.visible = false;
             SceneManager.LoadScene(scenePlayName);
         }
+
+        if(playPC)
+        {
+            textPC_PC.color = Color.green;
+            textVR_PC.color = Color.green;
+        }
+        else
+        {
+            textPC_PC.color = Color.white;
+            textVR_PC.color = Color.white;
+        }
+
+        if (playVR)
+        {
+            textVR_VR.color = Color.green;
+            textPC_VR.color = Color.green;
+        }
+        else
+        {
+            textVR_VR.color = Color.white;
+            textPC_VR.color = Color.white;
+        }
     }
     
 	public void PlayPC()
     {
-        if(!playPC)
-        {
-            textPC.color = Color.green;
-            playPC = true;
-        }
-        else
-        {
-            textPC.color = Color.white;
-            playPC = false;
-        }
-    }
-
-    public void PlayVR()
-    {
-        if (!playVR)
-        {
-            textVR.color = Color.green;
-            playVR = true;
-        }
-        else
-        {
-            textVR.color = Color.white;
-            playVR = false;
-        }
+        playPC = !playPC;
     }
 
     public void Quit()

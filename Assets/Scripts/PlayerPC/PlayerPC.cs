@@ -68,7 +68,7 @@ public class PlayerPC : MonoBehaviour {
         {
             touchHelp.SetActive(false);
             imageCursor.gameObject.SetActive(true);
-            maxMana = Mathf.Clamp(maxMana + Time.deltaTime * 0.34f, 0f, maxManaClamp);
+            maxMana = Mathf.Clamp(maxMana + (Time.deltaTime * 0.5f), 0f, maxManaClamp);
 
             if (currentMana < maxMana)
             {
@@ -164,11 +164,11 @@ public class PlayerPC : MonoBehaviour {
         }
         else // Si le menu des bonus est activé
         {
-            if (playerPCController.ScrollWheel > 0f)
+            if (playerPCController.ScrollWheel < 0f)
             {
                 bonusMenuScript.IconUp();
             }
-            else if (playerPCController.ScrollWheel < 0f)
+            else if (playerPCController.ScrollWheel > 0f)
             {
                 bonusMenuScript.IconDown();
             }

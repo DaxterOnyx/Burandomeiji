@@ -11,9 +11,9 @@ public class GameManager : SingletonBehaviour<GameManager> {
     [HideInInspector] public int enemyCountInGame_boss = 0;
     private int enemySelected;
 
-    public int enemyCountMax_cac = 3;
-    public int enemyCountMax_dis = 3;
-    public int enemyCountMax_boss = 0;
+    [HideInInspector] public int enemyCountMax_cac = 3;
+    [HideInInspector] public int enemyCountMax_dis = 3;
+    [HideInInspector] public int enemyCountMax_boss = 0;
     private bool canSetEnemyMax = true;
 
     [SerializeField] private float timer = 600f;
@@ -118,7 +118,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
         enemyCountMax_cac = (int)(-0.045f * timer + 30f);
         enemyCountMax_dis = (int)(-0.0283f * timer + 20f);
-        enemyCountMax_boss = (int)(-0.00833f * timer + 5f);
+        enemyCountMax_boss = (int)(-0.00833f * timer + 50f);
         DisplayEnemyCount(enemySelected);
         yield return new WaitForSeconds(10f);
         canSetEnemyMax = true;

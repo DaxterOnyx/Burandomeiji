@@ -57,7 +57,7 @@ MonoBehaviour:
   enemyCountInGame_boss: 0
   enemyCountMax_cac: 3
   enemyCountMax_dis: 3
-  enemyCountMax_boss: 0
-  timer: 593.8875
+  enemyCountMax_boss: 1
+  timer: 600
   timerMatchBegin: 1
-  matchIsProgress: 1
+  matchIsProgress: 0

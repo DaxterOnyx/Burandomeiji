@@ -44,29 +44,46 @@ public class AIScript : MonoBehaviour
     
     private void Update()
     {
-        if (isFreeze == false)
+        if(isFreeze)
+        {
+            character.Move(Vector3.zero, false, false, false);
+            agent.SetDestination(this.gameObject.transform.position);
+            target = null;
+        }
+        else
         {
             if (target == null)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform;
-                agent.SetDestination(target.position);         
+                takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
+                agent.SetDestination(target.position);
             }
 
-            distanceFly = Vector3.Distance(target.position, this.transform.position);
+            distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
 
-            if (distanceFly <= agent.stoppingDistance + 0.2f) // Si la distance est plus petit ou égal à stoppingDistance
+            if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
             {
-                
-                Attack();
+                if (agent.remainingDistance < agent.stoppingDistance && distanceFly < agent.stoppingDistance)
+                {
+                    Attack();
+                }
+                else
+                {
+                    Move();
+                }
             }
             else
-            {   
-                Move();
+            {
+                if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+                {  
+                    Attack();
+                }
+                else
+                {
+                    Move();
+                }
+
             }
-        }
-        else
-        {
-            character.Move(Vector3.zero, false, false, false);
         }
         
     }
@@ -78,10 +95,10 @@ public class AIScript : MonoBehaviour
 
     private void Attack()
     {
+        agent.SetDestination(this.gameObject.transform.position);
         character.Move(Vector3.zero, false, false, true);
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         doHits.Attack(takeHitsTarget);
-            
     }
 
     private void Move()

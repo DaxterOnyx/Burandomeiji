@@ -90,6 +90,12 @@ public class TakeHits : MonoBehaviour {
             {
                 Display(_hitDamage, _critical);  // je display les dégâts
             }
+
+            if(!isEnemy)
+            {
+                Animator anim = GameObject.FindGameObjectWithTag("UI VR").GetComponentInChildren<Animator>();
+                anim.SetTrigger("Damage");
+            }
         }
     }
 

@@ -39,6 +39,8 @@ public class WandShoot : WeaponScript
 	public GameObject WindProjectile;
 	[SerializeField]
 	private Element m_element = Element.Fire;
+	public AudioSource AudioSource;
+	public AudioClip Charged;
 
 	private float power = 1;
 	public float Power
@@ -81,9 +83,20 @@ public class WandShoot : WeaponScript
 	{
 		if (inUse)
 		{
-			Power += PowerChargingSpeed * Time.fixedDeltaTime;
-			var ps = ChargingProjectile.GetComponentInChildren<ParticleSystem>();
 			ElementProjectile ep = ChargingProjectile.GetComponent<ElementProjectile>();
+
+			if (Power<PowerEnd)
+			{
+				Power += PowerChargingSpeed * Time.fixedDeltaTime;
+				if(Power == PowerEnd)
+				{
+					ep.FullCharged();
+					AudioSource.clip = Charged;
+					AudioSource.Play();
+				}
+			}
+
+			var ps = ChargingProjectile.GetComponentInChildren<ParticleSystem>();
 			if (ep == null || ps == null) Debug.Break();
 			float coef = (ep.FXMax - ep.FXMin) / (PowerEnd-PowerStart);
 			float delta = ep.FXMin - (coef * PowerStart);

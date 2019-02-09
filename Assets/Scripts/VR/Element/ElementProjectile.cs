@@ -11,9 +11,17 @@ class ElementProjectile : ProjectileScript
 	public float FXMin = 1;
 	public float FXMax = 10;
 	private bool IsLanded = false;
+	public AudioSource AudioSource;
+	public AudioClip InLoading;
+	public AudioClip FullLoaded;
+	public AudioClip Land;
+	public AudioClip InFly;
+
 	protected override void Awake()
 	{
 		GetComponent<Rigidbody>().useGravity = false;
+		AudioSource.clip = InLoading;
+		AudioSource.Play();
 	}
 
 	internal void Launch(float speed)
@@ -24,11 +32,15 @@ class ElementProjectile : ProjectileScript
 		GetComponentInChildren<Collider>(true).enabled = true;
 		GetComponent<Rigidbody>().AddForce(transform.forward * speed,ForceMode.VelocityChange);
 		GetComponent<Rigidbody>().useGravity = true;
+
+		AudioSource.Stop();
+		AudioSource.clip = InFly;
+		AudioSource.loop = true;
+		AudioSource.Play();
 	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		//TODO
 		if (ElementEffect == null) { Debug.LogError("ElementEffect is not define in projectile"); return; }
 		if (collision.collider.tag == "Player" || !IsLaunched) { return; }
 
@@ -71,17 +83,29 @@ class ElementProjectile : ProjectileScript
 		GetComponentInChildren<Collider>().enabled = false;
 		foreach(var a in GetComponentsInChildren<ParticleSystem>()) a.Stop();
 		IsLanded = true;
+
+		AudioSource.Stop();
+		AudioSource.clip = Land;
+		AudioSource.loop = false;
+		AudioSource.Play();
 	}
 
 	private void Update()
 	{
-		if (GetComponentInChildren<ParticleSystem>().particleCount == 0)
-			Debug.Log("particle is dead");
-		if (IsLaunched && IsLanded && GetComponentInChildren<ParticleSystem>().particleCount == 0)
+		if (IsLaunched && IsLanded && GetComponentInChildren<ParticleSystem>().particleCount == 0 && !AudioSource.isPlaying)
 		{
 			Debug.Log("Destroy inactive particle : " + this);
 			Destroy(gameObject);
 		}
+	}
+
+	internal void FullCharged()
+	{
+		//TODO Brice c'est moche
+		AudioSource.Stop();
+		AudioSource.clip = FullLoaded;
+		AudioSource.loop = true;
+		AudioSource.Play();
 	}
 }
 

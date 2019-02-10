@@ -731,6 +731,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RadialMenu: {fileID: 114619042614075972}
   Wand: {fileID: 0}
+  LeftPage: {fileID: 23767340659278046}
+  RightPage: {fileID: 23245895629593012}
+  ElectricityLeftMaterial: {fileID: 2100000, guid: d0f315f6213bc6f46aee2825c184fe7a,
+    type: 2}
+  ElectricityRightMaterial: {fileID: 2100000, guid: e175a23084e47ab45b7c914b4e0e0ada,
+    type: 2}
+  FireLeftMaterial: {fileID: 2100000, guid: e1edb29c50ba95342b405c0fa9303b15, type: 2}
+  FireRightMaterial: {fileID: 2100000, guid: b9b4294e0cfa03b4d9aa7b540c450f40, type: 2}
+  IceLeftMaterial: {fileID: 2100000, guid: 6cb54e179c80ac14f899f38cc38b393f, type: 2}
+  IceRightMaterial: {fileID: 2100000, guid: c9a5c53eac14b5e479a2315fd33fa93f, type: 2}
+  WindLeftMaterial: {fileID: 2100000, guid: e2724b637a12dc244a18beb19e56782d, type: 2}
+  WindRightMaterial: {fileID: 2100000, guid: c78082f5c6e036b47b4ea786a460d63d, type: 2}
 --- !u!114 &114619042614075972
 MonoBehaviour:
   m_ObjectHideFlags: 1

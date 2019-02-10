@@ -5,6 +5,7 @@
 	
 	protected override void StartEffect()
 	{
+		base.StartEffect();
 		//TODO add graphic fire effect 
 	}
 	protected override void Effect()
@@ -13,6 +14,7 @@
 	}
 	protected override void StopEffect()
 	{
+		base.StopEffect();
 		//TODO remove graphic fire effect
 	}
 }

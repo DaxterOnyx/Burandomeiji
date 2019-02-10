@@ -9,6 +9,7 @@ public class ProjectileScript : MonoBehaviour {
 	public float LifeTime = 5;
 	public float Damage = 1;
 	public string TargetTag = "Enemy";
+	private bool destroy = false;
 
 	virtual protected void Awake()
 	{
@@ -21,7 +22,16 @@ public class ProjectileScript : MonoBehaviour {
 		if (target != null && target.tag == TargetTag)
 		{
 			target.takeHits(Damage, false);
-			Destroy(gameObject);
 		}
+		destroy = true;
+		GetComponent<Rigidbody>().detectCollisions = false;
+		foreach(var a in GetComponentsInChildren<Collider>())
+			a.enabled = false;
+	}
+
+	private void Update()
+	{
+		if (destroy && !GetComponent<AudioSource>().isPlaying)
+			Destroy(gameObject);
 	}
 }

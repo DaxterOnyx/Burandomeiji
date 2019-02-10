@@ -39,6 +39,8 @@ public class WandShoot : WeaponScript
 	public GameObject WindProjectile;
 	[SerializeField]
 	private Element m_element = Element.Fire;
+	public AudioSource AudioSource;
+	public AudioClip Charged;
 
 	private float power = 1;
 	public float Power
@@ -50,11 +52,9 @@ public class WandShoot : WeaponScript
 			else power = value;
 		}
 	}
-	public float PowerScale { get { return Power / ScaleModifierProjectile; } }
-	public float PowerChargingSpeed = 1;
+	public float PowerChargingSpeed = 3;
 	public float PowerStart = 1;
 	public float PowerEnd = 10;
-	public float ScaleModifierProjectile = 50f;
 	private GameObject ChargingProjectile;
 
 	public override void Use()
@@ -68,8 +68,7 @@ public class WandShoot : WeaponScript
 			gameObject.SetActive(false);
 		}
 
-		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation, GetComponentInParent<HandVRControl>().transform);
-		ChargingProjectile.transform.localScale = new Vector3(PowerScale, PowerScale, PowerScale);
+		ChargingProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation, transform);
 	}
 
 	public override void EndUse()
@@ -82,11 +81,50 @@ public class WandShoot : WeaponScript
 
 	private void FixedUpdate()
 	{
-		if(inUse)
+		if (inUse)
 		{
-			Power += PowerChargingSpeed * Time.fixedDeltaTime;
-			
-			ChargingProjectile.transform.localScale = new Vector3(PowerScale, PowerScale, PowerScale);
+			ElementProjectile ep = ChargingProjectile.GetComponent<ElementProjectile>();
+
+			if (Power<PowerEnd)
+			{
+				Power += PowerChargingSpeed * Time.fixedDeltaTime;
+				if(Power == PowerEnd)
+				{
+					ep.FullCharged();
+					AudioSource.clip = Charged;
+					AudioSource.Play();
+				}
+			}
+
+			var ps = ChargingProjectile.GetComponentInChildren<ParticleSystem>();
+			if (ep == null || ps == null) Debug.Break();
+			float coef = (ep.FXMax - ep.FXMin) / (PowerEnd-PowerStart);
+			float delta = ep.FXMin - (coef * PowerStart);
+			float value = Power * coef + delta;
+			switch (m_element)
+			{
+				case Element.Electricity:
+					Debug.Log("value = " + value);
+					var psShape = ps.shape;
+					psShape.arcSpeed = value;
+					break;
+				case Element.Fire:
+					var psEmission = ps.emission;
+					psEmission.rateOverTime = value;
+					break;
+				case Element.Ice:
+					var psEmissionIce = ps.emission;
+					psEmissionIce.rateOverTime = value;
+					break;
+				case Element.Wind:
+					//TODO triple tornado
+					foreach (var psWind in ChargingProjectile.GetComponentsInChildren<ParticleSystem>())
+					{
+						var psShapeWind = psWind.shape;
+						psShapeWind.arcSpeed = value;
+					}
+					break;
+			}
 		}
 	}
 

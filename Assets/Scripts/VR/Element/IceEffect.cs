@@ -7,6 +7,7 @@ class IceEffect : ElementEffect
 
 	protected override void StartEffect()
 	{
+		base.StartEffect();
 		//TODO add graphic ice effect
 		TakeHits.Slow(10);
 		Debug.Log("IceEffect on "+ TakeHits);
@@ -17,6 +18,7 @@ class IceEffect : ElementEffect
 	}
 	protected override void StopEffect()
 	{
+		base.StopEffect();
 		//TODO remove graphic ice effect
 		TakeHits.UnSlow();
 	}

@@ -118,7 +118,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
         enemyCountMax_cac = (int)(-0.045f * timer + 30f);
         enemyCountMax_dis = (int)(-0.0283f * timer + 20f);
-        enemyCountMax_boss = (int)(-0.00833f * timer + 50f);
+        enemyCountMax_boss = (int)(-0.00833f * timer + 4f);
         DisplayEnemyCount(enemySelected);
         yield return new WaitForSeconds(10f);
         canSetEnemyMax = true;

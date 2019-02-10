@@ -521,22 +521,12 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 594935169}
-    - target: {fileID: 114549402927545056, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114279092209738162, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114549402927545056, guid: bba1e4489c755ff4f8c228c64e17e9ea,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114790596267367016, guid: bba1e4489c755ff4f8c228c64e17e9ea,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114790596267367016, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114279092209738162, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -551,22 +541,42 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114279092209738162, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114549402927545056, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114279092209738162, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114549402927545056, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114809461896895514, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114252931483079700, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114809461896895514, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114252931483079700, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317849145856606, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317849145856606, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114790596267367016, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114790596267367016, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -601,16 +611,6 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114252931483079700, guid: bba1e4489c755ff4f8c228c64e17e9ea,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114252931483079700, guid: bba1e4489c755ff4f8c228c64e17e9ea,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114724132876038188, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -621,23 +621,14 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114317849145856606, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114809461896895514, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114317849145856606, guid: bba1e4489c755ff4f8c228c64e17e9ea,
+    - target: {fileID: 114809461896895514, guid: bba1e4489c755ff4f8c228c64e17e9ea,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223847327508830066, guid: bba1e4489c755ff4f8c228c64e17e9ea,
-        type: 2}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1691303536967404, guid: bba1e4489c755ff4f8c228c64e17e9ea, type: 2}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1188,7 +1179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1831202286
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26224,7 +26224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: Berserk
-  m_speed: 1
+  m_speed: 0.65
   m_mana: 33
   m_type: 0
   ID: 0
@@ -26274,7 +26274,7 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  m_health: 150
+  m_health: 75
 --- !u!136 &136685940076068222
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -26432,7 +26432,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

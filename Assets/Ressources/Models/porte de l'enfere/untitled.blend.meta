@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 8080e26be8bb33a4cbea2f9e4592524c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Circle_001
+    100004: //RootNode
+    100006: acsnseur
+    100008: base
+    100010: pierre_phile_n2
+    100012: Cylinder
+    100014: engretyp1N2
+    100016: engretype1N1
+    100018: engretype2N1
+    100020: engretype2N2
+    100022: engretype2N290d
+    100024: systeme_d_evacuation_de_vapeur
+    100026: engretype2N3
+    100028: engretype2N4
+    400000: Circle
+    400002: Circle_001
+    400004: //RootNode
+    400006: acsnseur
+    400008: base
+    400010: pierre_phile_n2
+    400012: Cylinder
+    400014: engretyp1N2
+    400016: engretype1N1
+    400018: engretype2N1
+    400020: engretype2N2
+    400022: engretype2N290d
+    400024: systeme_d_evacuation_de_vapeur
+    400026: engretype2N3
+    400028: engretype2N4
+    2100000: unnamed
+    2300000: Circle
+    2300002: Circle_001
+    2300004: acsnseur
+    2300006: base
+    2300008: pierre_phile_n2
+    2300010: Cylinder
+    2300012: engretyp1N2
+    2300014: engretype1N1
+    2300016: engretype2N1
+    2300018: engretype2N2
+    2300020: engretype2N290d
+    2300022: systeme_d_evacuation_de_vapeur
+    2300024: engretype2N3
+    2300026: engretype2N4
+    3300000: Circle
+    3300002: Circle_001
+    3300004: acsnseur
+    3300006: base
+    3300008: pierre_phile_n2
+    3300010: Cylinder
+    3300012: engretyp1N2
+    3300014: engretype1N1
+    3300016: engretype2N1
+    3300018: engretype2N2
+    3300020: engretype2N290d
+    3300022: systeme_d_evacuation_de_vapeur
+    3300024: engretype2N3
+    3300026: engretype2N4
+    4300000: Circle_001
+    4300002: Circle
+    4300004: pierre_phile_n2
+    4300006: acsnseur
+    4300008: base
+    4300010: Cylinder
+    4300012: engretype2N1
+    4300014: engretype1N1
+    4300016: engretyp1N2
+    4300018: engretype2N290d
+    4300020: engretype2N2
+    4300022: systeme_d_evacuation_de_vapeur
+    4300024: engretype2N3
+    4300026: engretype2N4
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

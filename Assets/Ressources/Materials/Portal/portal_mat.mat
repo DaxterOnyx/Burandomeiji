@@ -8,14 +8,13 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: portal_mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: EFFECT_BUMP _ALPHABLEND_ON _DETAIL_MULX2 _FADING_ON _METALLICGLOSSMAP
-    _NORMALMAP _REQUIRE_UV2
+  m_ShaderKeywords: EFFECT_BUMP _DETAIL_MULX2 _FADING_ON _METALLICGLOSSMAP _NORMALMAP
+    _REQUIRE_UV2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -73,7 +72,7 @@ Material:
     - _DistortionEnabled: 1
     - _DistortionStrength: 10
     - _DistortionStrengthScaled: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionEnabled: 0
     - _FlipbookMode: 1
     - _GlossMapScale: 1
@@ -82,7 +81,7 @@ Material:
     - _InvFade: 3
     - _LightingEnabled: 1
     - _Metallic: 0
-    - _Mode: 2
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
@@ -90,9 +89,9 @@ Material:
     - _SoftParticlesFarFadeDistance: 0
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _UVSec: 0
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1367.1212, g: 1367.1212, b: 1367.1212, a: 1}

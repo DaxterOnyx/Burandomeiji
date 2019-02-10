@@ -6,6 +6,16 @@ public class SpellBook : Tool
 	public VRTK.VRTK_RadialMenu RadialMenu;
 	public WandShoot Wand;
 	private Element m_element;
+	public Renderer LeftPage;
+	public Renderer RightPage;
+	public Material ElectricityLeftMaterial;
+	public Material ElectricityRightMaterial;
+	public Material FireLeftMaterial;
+	public Material FireRightMaterial;
+	public Material IceLeftMaterial;
+	public Material IceRightMaterial;
+	public Material WindLeftMaterial;
+	public Material WindRightMaterial;
 
 	//public GameObject LeftPage;
 	//public GameObject RightPage;
@@ -29,6 +39,8 @@ public class SpellBook : Tool
 		{
 			Debug.LogError("Wand on SpellBook is unfindable maibe inactive");
 		}
+
+		FireChange();
 	}
 
 	public override void Use()
@@ -83,20 +95,28 @@ public class SpellBook : Tool
 	public void IceChange()
 	{
 		ChangeElement(Element.Ice);
+		LeftPage.material = IceLeftMaterial;
+		RightPage.material = IceRightMaterial;
 	}
 
 	public void WindChange()
 	{
 		ChangeElement(Element.Wind);
+		LeftPage.material = WindLeftMaterial;
+		RightPage.material = WindRightMaterial;
 	}
 
 	public void FireChange()
 	{
 		ChangeElement(Element.Fire);
+		LeftPage.material = FireLeftMaterial;
+		RightPage.material = FireRightMaterial;
 	}
 
 	public void ElectricityChange()
 	{
 		ChangeElement(Element.Electricity);
+		LeftPage.material = ElectricityLeftMaterial;
+		RightPage.material = ElectricityRightMaterial;
 	}
 }

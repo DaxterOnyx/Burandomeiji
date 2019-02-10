@@ -32,7 +32,6 @@ public class GunShoot : WeaponScript
 	public override void Shoot()
 	{
 		TimeLastFire = 0;
-		GetComponent<AudioSource>().Play();
 		base.Shoot();
 	}
 }

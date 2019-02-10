@@ -173,7 +173,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -237,8 +237,7 @@ MonoBehaviour:
   AudioSource: {fileID: 82380479953702618}
   InLoading: {fileID: 8300000, guid: a149a327e70bab5439d18d5794ae32a2, type: 3}
   FullLoaded: {fileID: 8300000, guid: 25860a46ba1a20b41bfed05669197ad3, type: 3}
-  Land: {fileID: 8300000, guid: 25860a46ba1a20b41bfed05669197ad3, type: 3}
-  InFly: {fileID: 8300000, guid: 25860a46ba1a20b41bfed05669197ad3, type: 3}
+  InFly: {fileID: 8300000, guid: 42447e78e99130546afb1f380d8bcf6c, type: 3}
 --- !u!135 &135571432080576366
 SphereCollider:
   m_ObjectHideFlags: 1

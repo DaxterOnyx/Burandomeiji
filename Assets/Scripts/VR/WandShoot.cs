@@ -52,7 +52,7 @@ public class WandShoot : WeaponScript
 			else power = value;
 		}
 	}
-	public float PowerChargingSpeed = 1;
+	public float PowerChargingSpeed = 3;
 	public float PowerStart = 1;
 	public float PowerEnd = 10;
 	private GameObject ChargingProjectile;

@@ -520,7 +520,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -604,6 +604,6 @@ MonoBehaviour:
   m_element: 1
   AudioSource: {fileID: 82560938381439352}
   Charged: {fileID: 8300000, guid: 9f210e59de1eb28428fc47bc0a837c44, type: 3}
-  PowerChargingSpeed: 1
+  PowerChargingSpeed: 3
   PowerStart: 1
   PowerEnd: 10

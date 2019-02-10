@@ -14,7 +14,6 @@ class ElementProjectile : ProjectileScript
 	public AudioSource AudioSource;
 	public AudioClip InLoading;
 	public AudioClip FullLoaded;
-	public AudioClip Land;
 	public AudioClip InFly;
 
 	protected override void Awake()
@@ -83,16 +82,11 @@ class ElementProjectile : ProjectileScript
 		GetComponentInChildren<Collider>().enabled = false;
 		foreach(var a in GetComponentsInChildren<ParticleSystem>()) a.Stop();
 		IsLanded = true;
-
-		AudioSource.Stop();
-		AudioSource.clip = Land;
-		AudioSource.loop = false;
-		AudioSource.Play();
 	}
 
 	private void Update()
 	{
-		if (IsLaunched && IsLanded && GetComponentInChildren<ParticleSystem>().particleCount == 0 && !AudioSource.isPlaying)
+		if (IsLaunched && IsLanded && GetComponentInChildren<ParticleSystem>().particleCount == 0)
 		{
 			Debug.Log("Destroy inactive particle : " + this);
 			Destroy(gameObject);

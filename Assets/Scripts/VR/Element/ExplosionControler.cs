@@ -9,7 +9,7 @@ public class ExplosionControler : MonoBehaviour {
 	{
 		if (GetComponentInChildren<ParticleSystem>().particleCount != 0)
 			IsExploded = true;
-		if (IsExploded && GetComponentInChildren<ParticleSystem>().particleCount == 0)
+		if (IsExploded && GetComponentInChildren<ParticleSystem>().particleCount == 0 && !GetComponent<AudioSource>().isPlaying)
 		{
 			Debug.Log("explosion is dead");
 			Destroy(gameObject);

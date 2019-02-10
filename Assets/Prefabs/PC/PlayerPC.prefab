@@ -320,7 +320,7 @@ Camera:
     m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
@@ -560,7 +560,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728221111435072}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &114401180596391590
 MonoBehaviour:
   m_ObjectHideFlags: 1

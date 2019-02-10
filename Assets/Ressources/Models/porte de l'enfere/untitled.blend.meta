@@ -16,6 +16,8 @@ ModelImporter:
     100020: engretype2N2
     100022: engretype2N290d
     100024: systeme_d_evacuation_de_vapeur
+    100026: engretype2N3
+    100028: engretype2N4
     400000: Circle
     400002: Circle_001
     400004: //RootNode
@@ -29,6 +31,8 @@ ModelImporter:
     400020: engretype2N2
     400022: engretype2N290d
     400024: systeme_d_evacuation_de_vapeur
+    400026: engretype2N3
+    400028: engretype2N4
     2100000: unnamed
     2300000: Circle
     2300002: Circle_001
@@ -42,6 +46,8 @@ ModelImporter:
     2300018: engretype2N2
     2300020: engretype2N290d
     2300022: systeme_d_evacuation_de_vapeur
+    2300024: engretype2N3
+    2300026: engretype2N4
     3300000: Circle
     3300002: Circle_001
     3300004: acsnseur
@@ -54,6 +60,8 @@ ModelImporter:
     3300018: engretype2N2
     3300020: engretype2N290d
     3300022: systeme_d_evacuation_de_vapeur
+    3300024: engretype2N3
+    3300026: engretype2N4
     4300000: Circle_001
     4300002: Circle
     4300004: pierre_phile_n2
@@ -66,6 +74,8 @@ ModelImporter:
     4300018: engretype2N290d
     4300020: engretype2N2
     4300022: systeme_d_evacuation_de_vapeur
+    4300024: engretype2N3
+    4300026: engretype2N4
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

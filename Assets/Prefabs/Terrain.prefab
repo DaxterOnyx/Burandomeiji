@@ -883,12 +883,12 @@ GameObject:
   - component: {fileID: 33275532021667838}
   - component: {fileID: 23734741540637764}
   - component: {fileID: 65937999346222474}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!1 &1391516324474002
 GameObject:

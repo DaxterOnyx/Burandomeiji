@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54291588844050308}
   - component: {fileID: 114054590860360800}
   - component: {fileID: 82822745025068658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SimpleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33554760989999936}
   - component: {fileID: 136668379349285394}
   - component: {fileID: 23927150067640786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33395728355175808}
   - component: {fileID: 135456754664385626}
   - component: {fileID: 23860861349589298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

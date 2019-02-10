@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54291588844050308}
   - component: {fileID: 114977305218266654}
   - component: {fileID: 82380479953702618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4257795595857424}
   - component: {fileID: 198074182695243202}
   - component: {fileID: 199134720586335546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4790866867890486}
   - component: {fileID: 135571432080576366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54291588844050308}
   - component: {fileID: 114673619729411034}
   - component: {fileID: 82560069213491810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ElectricityProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4140965361255130}
   - component: {fileID: 198371739961850324}
   - component: {fileID: 199985524224501212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4561051909538448}
   - component: {fileID: 135456754664385626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

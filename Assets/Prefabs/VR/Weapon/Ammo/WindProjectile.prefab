@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54291588844050308}
   - component: {fileID: 114598403059853190}
   - component: {fileID: 82500537054604326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WindProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4902733990775748}
   - component: {fileID: 198119593861807620}
   - component: {fileID: 199902796239532974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4105672386742610}
   - component: {fileID: 198640227788718070}
   - component: {fileID: 199071125701348406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tornado (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4309949330990546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Triple tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4595747029655006}
   - component: {fileID: 198311910560255920}
   - component: {fileID: 199016145065531904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tornado (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4561051909538448}
   - component: {fileID: 135456754664385626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

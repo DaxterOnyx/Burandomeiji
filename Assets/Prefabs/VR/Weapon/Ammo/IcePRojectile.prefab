@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54291588844050308}
   - component: {fileID: 114294022836001528}
   - component: {fileID: 82561623172483468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: IcePRojectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4561051909538448}
   - component: {fileID: 135456754664385626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4461286514573136}
   - component: {fileID: 198555718580313278}
   - component: {fileID: 199522026304590150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -309,15 +309,15 @@ public class BonusMenu : MonoBehaviour {
         switch (currentIcon)
         {
             case 0:
-                return CapBonus(0.75f, 1.25f, _switch);
+                return CapBonus(0.25f, 2.5f, _switch);
             case 1:
-                return CapBonus(0.75f, 1.25f, _switch);
+                return CapBonus(0.25f, 2.5f, _switch);
             case 2:
-                return CapBonus(0.75f, 1.25f, _switch);
+                return CapBonus(0.25f, 2.5f, _switch);
             case 3:
-                return CapBonus(0.75f, 1.25f, _switch);
+                return CapBonus(0.25f, 2.5f, _switch);
             case 4:
-                return CapBonus(0.75f, 1.25f, _switch);
+                return CapBonus(0.25f, 2.5f, _switch);
             default:
                 Debug.LogError("currentIcon error!");
                 break;

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_dontDestroyOnLoad: 1
   timer: 480
   timerMatchBegin: 20
-  timerMatchEnd: 20
+  timerMatchEnd: 10
   pointSpawnMax: 60
   pointSpawnCurrent: 0
   pointSpawnPriceCAC: 3

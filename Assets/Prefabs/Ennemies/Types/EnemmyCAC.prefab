@@ -26462,7 +26462,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   isFreeze: 0
-  isAnimated: 1
 --- !u!114 &114562389891133194
 MonoBehaviour:
   m_ObjectHideFlags: 1

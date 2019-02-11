@@ -2825,17 +2825,17 @@ MonoBehaviour:
   - 30
   - 20
   costManaTabInf:
-  - 17
-  - 37
-  - 5
-  - 25
-  - 17
+  - 20
+  - 30
+  - 20
+  - 30
+  - 20
   multTab:
-  - 0.2
-  - 0.4
-  - 0.4
   - 0.25
-  - 0.2
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
   hightLeftText: {fileID: 114134309492198730}
   hightRightText: {fileID: 114760368364017876}
   centerLeftText: {fileID: 114849276362870616}

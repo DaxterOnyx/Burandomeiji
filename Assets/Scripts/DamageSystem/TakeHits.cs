@@ -102,15 +102,15 @@ public class TakeHits : MonoBehaviour {
         {
             if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Melee)
             {
-                GameManager.Instance.enemyCountInGame_cac--;
+                GameManager.Instance.pointSpawnCurrent += GameManager.Instance.pointSpawnPriceCAC;
             }
             else if(GetComponent<EnemyStats>().type == EnemyStats.enemyType.Distance)
             {
-                GameManager.Instance.enemyCountInGame_dis--;
+                GameManager.Instance.pointSpawnCurrent += GameManager.Instance.pointSpawnPriceDIS;
             }
             else
             {
-                GameManager.Instance.enemyCountInGame_boss--;
+                GameManager.Instance.pointSpawnCurrent += GameManager.Instance.pointSpawnPriceBOSS;
             }
 
             Destroy(this.gameObject);

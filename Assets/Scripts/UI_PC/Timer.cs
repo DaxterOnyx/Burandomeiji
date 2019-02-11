@@ -10,11 +10,11 @@ public class Timer : MonoBehaviour {
 
     void Start()
     {
-        timer.text = GameManager.Instance.getTimeString();
+        timer.text = GameManager.Instance.getTimeString(GameManager.Instance.TimeDisplay());
     }
 
     void LateUpdate()
     {
-        timer.text = GameManager.Instance.getTimeString();
+        timer.text = GameManager.Instance.getTimeString(GameManager.Instance.TimeDisplay());
     }
 }

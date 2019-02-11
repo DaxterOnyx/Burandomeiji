@@ -10,6 +10,7 @@ public class PlayerPCController : MonoBehaviour {
         get { return Input.GetMouseButtonDown(0); }
     }
 
+
     /*public bool Click0
     {
         get { return Input.GetMouseButton(0); }

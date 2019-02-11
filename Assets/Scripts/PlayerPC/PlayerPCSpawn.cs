@@ -39,7 +39,6 @@ public class PlayerPCSpawn : MonoBehaviour
         {
             enemyForSpawn = allEnemyTab[count_];
         }
-        GameManager.Instance.DisplayEnemyCount(count);
     }
 
     public void SetUI(GameObject _UI)
@@ -60,36 +59,21 @@ public class PlayerPCSpawn : MonoBehaviour
 
     private void AddOneEnemy(GameObject _enemyForSpawn)
     {
-        if(_enemyForSpawn == allEnemyTab[0])
+        if(_enemyForSpawn == allEnemyTab[0] && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceCAC)
         {
-            GameManager.Instance.enemyCountInGame_cac++;
-            GameManager.Instance.DisplayEnemyCount(0);
+            GameManager.Instance.pointSpawnCurrent -= GameManager.Instance.pointSpawnPriceCAC;
         }
-        else if(_enemyForSpawn == allEnemyTab[1])
+        else if(_enemyForSpawn == allEnemyTab[1] && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceDIS)
         {
-            GameManager.Instance.enemyCountInGame_dis++;
-            GameManager.Instance.DisplayEnemyCount(1);
+            GameManager.Instance.pointSpawnCurrent -= GameManager.Instance.pointSpawnPriceDIS;
         }
-        else
+        else if (_enemyForSpawn == allEnemyTab[2] && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceBOSS)
         {
-            GameManager.Instance.enemyCountInGame_boss++;
-            GameManager.Instance.DisplayEnemyCount(2);
-        }
-    }
-
-    public bool CanSpawn()
-    {
-        if(enemyForSpawn == allEnemyTab[0])
-        {
-            return (GameManager.Instance.enemyCountInGame_cac < GameManager.Instance.enemyCountMax_cac);
-        }
-        else if(enemyForSpawn == allEnemyTab[1])
-        {
-            return (GameManager.Instance.enemyCountInGame_dis < GameManager.Instance.enemyCountMax_dis);
+            GameManager.Instance.pointSpawnCurrent -= GameManager.Instance.pointSpawnPriceBOSS;
         }
         else
         {
-            return (GameManager.Instance.enemyCountInGame_boss < GameManager.Instance.enemyCountMax_boss);
+            Debug.LogError("pointSpawn error");
         }
     }
 }

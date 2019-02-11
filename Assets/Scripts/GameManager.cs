@@ -1,23 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : SingletonBehaviour<GameManager> {
 
-    [HideInInspector] public int enemyCountInGame_cac = 0;
-    [HideInInspector] public int enemyCountInGame_dis = 0;
-    [HideInInspector] public int enemyCountInGame_boss = 0;
-    private int enemySelected;
-
-    [HideInInspector] public int enemyCountMax_cac = 3;
-    [HideInInspector] public int enemyCountMax_dis = 3;
-    [HideInInspector] public int enemyCountMax_boss = 0;
-    private bool canSetEnemyMax = true;
-
     [SerializeField] private float timer = 420f;
     [SerializeField] private float timerMatchBegin = 20f;
+    [SerializeField] private float timerMatchEnd = 20f;
+    [SerializeField] private int pointSpawnMax = 60;
+    private float timeDisplay;
+    public int pointSpawnCurrent;
+
+    public int pointSpawnPriceCAC;
+    public int pointSpawnPriceDIS;
+    public int pointSpawnPriceBOSS;
+
 
     private bool end = false;
     public bool matchIsProgress = false;
@@ -27,68 +26,96 @@ public class GameManager : SingletonBehaviour<GameManager> {
     {
         end = false;
         matchIsProgress = false;
+        pointSpawnCurrent = pointSpawnMax;
     }
 
     void Update()
     {
-        if (!end && matchIsProgress)
+        if(timerMatchBegin > 0)
         {
-            if (timer > 0f)
+            timeDisplay = timerMatchBegin;
+            timerMatchBegin = UpdateTimer(timerMatchBegin);
+        }
+        else if(timer > 0 && !end)
+        {
+            matchIsProgress = true;
+            timeDisplay = timer;
+            timer = UpdateTimer(timer);
+            if(timer < 0f)
             {
-                timer -= Time.deltaTime;
-            }
-            else
-            {
-                timer = 0f;
                 end = true;
-                playerVRWin();
+                Win();
             }
-
-            if(canSetEnemyMax)
-                StartCoroutine(SetEnemyMax());
+        }
+        else if(timerMatchEnd > 0)
+        {
+            end = true;
+            matchIsProgress = false;
+            timeDisplay = timerMatchEnd;
+            timerMatchEnd = UpdateTimer(timerMatchEnd);
+            
         }
         else
         {
-            if(!matchIsProgress && !end)
-            {
-                if(timerMatchBegin > 0f)
-                {
-                    timerMatchBegin -= Time.deltaTime;
-                }
-                else
-                {
-                    matchIsProgress = true;
-                }
-            }
+            EndGame();
         }
     }
 
-    public string getTimeString()
+    private float UpdateTimer(float _timer)
     {
-        int minute = (int)timer / 60;
-        int second = (int)timer % 60;
-        string time = minute + ":" + second.ToString("00");
-        return time;
+        _timer -= Time.deltaTime;
+        return _timer;
     }
 
-    public float timeRemain()
+    public string getTimeString(float _timer)
+    {
+        int minute_ = (int)_timer / 60;
+        int second_ = (int)_timer % 60;
+        string time_ = minute_ + ":" + second_.ToString("00");
+        return time_;
+    }
+
+    public float TimeRemain()
     {
         return timer;
+    }
+
+    public float TimeRemainEnd()
+    {
+        return timerMatchEnd;
+    }
+
+    public float TimeRemainBegin()
+    {
+        return timerMatchBegin;
+    }
+
+    public float TimeDisplay()
+    {
+        return timeDisplay;
     }
 
     public void Win()
     {
         if(end)
         {
-            if(timer == 0f)
+
+            GameObject[] enemyTab = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach (var enemy in enemyTab)
+            {
+                TakeHits takeHits = enemy.GetComponent<TakeHits>();
+                takeHits.Die();
+            }
+
+            if (timer < 0f)
             {
                 playerVRWin();
             }
             else
             {
                 playerPCWin();
-            }
-            matchIsProgress = false;
+            }      
         }
     }
 
@@ -102,6 +129,11 @@ public class GameManager : SingletonBehaviour<GameManager> {
         Debug.Log("Le joueur VR a gagné !");
     }
 
+    private void EndGame()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+
     public bool isGameFinish()
     {
         return end;
@@ -111,37 +143,5 @@ public class GameManager : SingletonBehaviour<GameManager> {
     {
         end = _end;
         Win();
-    }
-
-    private IEnumerator SetEnemyMax()
-    {
-        canSetEnemyMax = false;
-
-        enemyCountMax_cac = (int)(-0.045f * timer + 30f);
-        enemyCountMax_dis = (int)(-0.0283f * timer + 20f);
-        enemyCountMax_boss = (int)(-0.00833f * timer + 5f);
-        DisplayEnemyCount(enemySelected);
-        yield return new WaitForSeconds(10f);
-        canSetEnemyMax = true;
-    }
-
-
-    public void DisplayEnemyCount(int _enemy)
-    {
-        enemySelected = _enemy;
-        TextMeshProUGUI textCount = GameObject.FindGameObjectWithTag("CountEnemy").GetComponent<TextMeshProUGUI>();
-
-        if(_enemy == 0)
-        {
-            textCount.text = enemyCountInGame_cac + " / " + enemyCountMax_cac;
-        }
-        else if(_enemy == 1)
-        {
-            textCount.text = enemyCountInGame_dis + " / " + enemyCountMax_dis;
-        }
-        else if(_enemy == 2)
-        {
-            textCount.text = enemyCountInGame_boss + " / " + enemyCountMax_boss;
-        }   
     }
 }

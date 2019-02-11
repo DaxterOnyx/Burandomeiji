@@ -22,7 +22,7 @@ public class HealthBarScript : MonoBehaviour {
             currentAmount_ = 0;
         }
         healthBarFill.localScale = new Vector3(currentAmount_ / healthMax_, 1f, 1f);
-        textHealth.text = ((currentAmount_/healthMax_)*100).ToString("0") + "%";
+        textHealth.text = ((currentAmount_/healthMax_)*100).ToString("0.0") + "%";
         currentHealth = currentAmount_;
         yield return new WaitForSeconds(0.1f);
         canUpdate = true;

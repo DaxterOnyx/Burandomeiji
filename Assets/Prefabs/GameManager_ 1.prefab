@@ -52,12 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 1
-  enemyCountInGame_cac: 0
-  enemyCountInGame_dis: 0
-  enemyCountInGame_boss: 0
-  enemyCountMax_cac: 3
-  enemyCountMax_dis: 3
-  enemyCountMax_boss: 1
-  timer: 420
+  timer: 480
   timerMatchBegin: 5
+  timerMatchEnd: 20
+  pointSpawnMax: 60
+  pointSpawnCurrent: 0
+  pointSpawnPriceCAC: 3
+  pointSpawnPriceDIS: 4
+  pointSpawnPriceBOSS: 15
   matchIsProgress: 0

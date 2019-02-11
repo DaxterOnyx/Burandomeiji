@@ -26244,7 +26244,7 @@ MonoBehaviour:
   icon: {fileID: 1859792659733152, guid: 717bd87b89e3d81498bfbbff73207f71, type: 2}
   m_enemyName: Elite
   m_speed: 0.5
-  m_mana: 100
+  m_mana: 150
   m_type: 2
   ID: 0
 --- !u!114 &114337488784980924
@@ -26271,9 +26271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitDamage: 80
+  m_hitDamage: 70
   m_hitCooldown: 1
-  m_critical: 10
+  m_critical: 20
 --- !u!114 &114595263363553336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26446,7 +26446,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1462532190980112}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.25
+  m_Radius: 0.5
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50

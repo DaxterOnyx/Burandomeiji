@@ -3766,7 +3766,7 @@ MonoBehaviour:
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Trapper
   m_speed: 0.8
-  m_mana: 50
+  m_mana: 45
   m_type: 1
   ID: 0
 --- !u!114 &114400126236984590
@@ -3793,9 +3793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitDamage: 35
+  m_hitDamage: 45
   m_hitCooldown: 0.5
-  m_critical: 15
+  m_critical: 10
 --- !u!114 &114469616571494464
 MonoBehaviour:
   m_ObjectHideFlags: 1

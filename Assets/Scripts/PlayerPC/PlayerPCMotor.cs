@@ -18,6 +18,12 @@ public class PlayerPCMotor : MonoBehaviour {
     [SerializeField] private float cameraRotationLimit = 90f;
     [SerializeField] private float speed_Up_Down = 1f;
 
+    [SerializeField] private float maxY = 20f;
+    [SerializeField] private float maxX = 0f;
+    [SerializeField] private float minX = 0f;
+    [SerializeField] private float maxZ = 0f;
+    [SerializeField] private float minZ = 0f;
+
 	public Transform Eye;
     private Vector3 localRotation;
 	private Vector3 eyeRotation;
@@ -35,6 +41,29 @@ public class PlayerPCMotor : MonoBehaviour {
         {
             this.transform.position = new Vector3(this.transform.position.x, 2f, this.transform.position.z);
         }
+        else if (this.transform.position.y > maxY)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, maxY, this.transform.position.z);
+        }
+
+        if (this.transform.position.x > maxX)
+        {
+            this.transform.position = new Vector3(maxX, this.transform.position.y, this.transform.position.z);
+        }
+        else if (this.transform.position.x < minX)
+        {
+            this.transform.position = new Vector3(minX, this.transform.position.y, this.transform.position.z);
+        }
+
+        if (this.transform.position.z > maxZ)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, maxZ);
+        }
+        else if (this.transform.position.z < minZ)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, minZ);
+        }
+
         PerformMovement();
         PerformRotation();
         if(playerPCController.Up)

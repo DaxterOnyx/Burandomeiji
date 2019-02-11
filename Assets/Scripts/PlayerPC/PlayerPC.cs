@@ -68,7 +68,7 @@ public class PlayerPC : MonoBehaviour {
         {
             touchHelp.SetActive(false);
             imageCursor.gameObject.SetActive(true);
-            maxMana = Mathf.Clamp(maxMana + (Time.deltaTime * 0.5f), 0f, maxManaClamp);
+            maxMana = Mathf.Clamp(maxMana + (Time.deltaTime * 0.625f), 0f, maxManaClamp);
 
             if (currentMana < maxMana)
             {
@@ -120,11 +120,12 @@ public class PlayerPC : MonoBehaviour {
             {
                 float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
 
-                if (distanceVRCursor >= distanceMinSpawn && playerPCSpawn.CanSpawn())
+                if (distanceVRCursor >= distanceMinSpawn)
                 {
                     if (playerPCController.ClickDown)
                     {
                         float lostMana = bonusMenuScript.UpdateLostMana();
+
                         if (currentMana >= lostMana)
                         {
                             StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
@@ -153,13 +154,13 @@ public class PlayerPC : MonoBehaviour {
         // Si le menu des bonus est désactivé
         if(bonusMenuGo.activeSelf == false)
         {
-            if (playerPCController.ScrollWheel < 0f)
-            {
-                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
-            }
-            else if (playerPCController.ScrollWheel > 0f)
+            if (playerPCController.E)
             {
                 playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
+            }
+            else if (playerPCController.A)
+            {
+                playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
             }
         }
         else // Si le menu des bonus est activé

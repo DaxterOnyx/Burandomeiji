@@ -1,12 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class HealthBarScript : MonoBehaviour {
+public class HealthVR : MonoBehaviour {
 
     [SerializeField] private RectTransform healthBarFill;
-    [SerializeField] private TextMeshProUGUI textHealth;
 
     private GameObject player;
     private TakeHits takeHits;
@@ -21,13 +20,8 @@ public class HealthBarScript : MonoBehaviour {
         {
             currentAmount_ = 0;
         }
-        healthBarFill.localScale = new Vector3(currentAmount_ / healthMax_, 1f, 1f);
+        healthBarFill.localScale = new Vector3(1f, currentAmount_ / healthMax_, 1f);
 
-        if(textHealth != null)
-        {
-            textHealth.text = ((currentAmount_/healthMax_)*100).ToString("0.0") + "%";
-        }
-        
         currentHealth = currentAmount_;
         yield return new WaitForSeconds(0.05f);
         canUpdate = true;
@@ -37,7 +31,7 @@ public class HealthBarScript : MonoBehaviour {
     {
         if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");      
+            player = GameObject.FindGameObjectWithTag("Player");
         }
         else if (takeHits == null)
         {
@@ -50,4 +44,3 @@ public class HealthBarScript : MonoBehaviour {
         }
     }
 }
-

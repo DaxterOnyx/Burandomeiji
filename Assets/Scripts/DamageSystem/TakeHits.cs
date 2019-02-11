@@ -114,8 +114,6 @@ public class TakeHits : MonoBehaviour {
             }
 
             aiScript.Die();
-
-            Destroy(this.gameObject);
         }
         else
         {

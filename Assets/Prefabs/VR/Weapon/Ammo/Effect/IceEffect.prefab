@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 0.2
   Speed: 0.5
-  Damage: 5
+  Damage: 4
 --- !u!198 &198067533324686492
 ParticleSystem:
   m_ObjectHideFlags: 1

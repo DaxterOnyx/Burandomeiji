@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1117042146989010
 GameObject:
   m_ObjectHideFlags: 1
@@ -1611,11 +1611,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2819,23 +2819,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEnemyTab: []
   costManaTabSup:
-  - 20
   - 30
-  - 20
+  - 40
   - 30
-  - 20
+  - 40
+  - 30
   costManaTabInf:
-  - 17
-  - 37
-  - 5
-  - 25
-  - 17
+  - 20
+  - 30
+  - 20
+  - 30
+  - 20
   multTab:
-  - 0.2
-  - 0.4
-  - 0.4
-  - 0.25
-  - 0.2
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
   hightLeftText: {fileID: 114134309492198730}
   hightRightText: {fileID: 114760368364017876}
   centerLeftText: {fileID: 114849276362870616}
@@ -3531,6 +3531,7 @@ MonoBehaviour:
   manaCost: {fileID: 114206599082065758}
   allEnemyTab: []
   currentEnemyIcon: 0
+  pointSpawn: {fileID: 114158347536306980}
 --- !u!114 &114808924582147684
 MonoBehaviour:
   m_ObjectHideFlags: 1

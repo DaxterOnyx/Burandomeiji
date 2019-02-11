@@ -120,7 +120,7 @@ public class PlayerPC : MonoBehaviour {
             {
                 float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
 
-                if (distanceVRCursor >= distanceMinSpawn)
+                if (distanceVRCursor >= distanceMinSpawn && playerPCSpawn.CanSpawn())
                 {
                     if (playerPCController.ClickDown)
                     {
@@ -154,11 +154,11 @@ public class PlayerPC : MonoBehaviour {
         // Si le menu des bonus est désactivé
         if(bonusMenuGo.activeSelf == false)
         {
-            if (playerPCController.E)
+            if (playerPCController.E || playerPCController.ScrollWheel < 0f)
             {
                 playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
             }
-            else if (playerPCController.A)
+            else if (playerPCController.A || playerPCController.ScrollWheel > 0f)
             {
                 playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
             }

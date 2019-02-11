@@ -12,9 +12,6 @@ public class cameraFacingVR : MonoBehaviour {
         {
             cam = Camera.main;
         }
-        else
-        {
-            transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
-        }
+        transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
     }
 }

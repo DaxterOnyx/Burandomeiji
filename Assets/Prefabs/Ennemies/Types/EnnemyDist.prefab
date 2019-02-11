@@ -1796,7 +1796,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016190419679808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.44, y: 0.374, z: 3.79}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318370095825930}
@@ -3968,7 +3968,7 @@ MonoBehaviour:
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Trapper
   m_speed: 3
-  m_mana: 45
+  m_mana: 35
   m_type: 1
   ID: 0
 --- !u!114 &114400126236984590
@@ -3984,7 +3984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   isFreeze: 0
-  isAnimated: 1
 --- !u!114 &114450527697048988
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,8 +7,9 @@ class WindEffect : ElementEffect
 	internal Vector3 impact;
 	[Tooltip("Force of the windn, will attract the targets at the impact")]
 	public float WindForce = 10;
+    public float DistanceAttraction = 5f;
 
-	protected override void StartEffect()
+    protected override void StartEffect()
 	{
 		base.StartEffect();
         GetComponentInParent<AIScript>().agent.enabled = false;
@@ -18,7 +19,7 @@ class WindEffect : ElementEffect
 	protected override void Effect()
 	{
 		//DO nothing; or increase force
-		TakeHits.transform.position = Vector3.MoveTowards(TakeHits.transform.position, impact, WindForce * Time.deltaTime);
+		TakeHits.aiScript.parentrb.AddExplosionForce(WindForce, TakeHits.transform.position, DistanceAttraction);
 	}
 	protected override void StopEffect()
 	{

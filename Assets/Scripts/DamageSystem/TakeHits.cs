@@ -21,7 +21,7 @@ public class TakeHits : MonoBehaviour {
     //private List<GameObject> criticalPopupListVR = new List<GameObject>();
     private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
-    AIScript aiScript; // Contient "Speed"
+    public AIScript aiScript; // Contient "Speed"
     DoHits doHits; // Contient "hitCooldown"
 
     [SerializeField] private float m_health;
@@ -37,7 +37,7 @@ public class TakeHits : MonoBehaviour {
         {
             isEnemy = true;
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 12; i++)
             {
                 Ins = Instantiate(damagePopupVR, this.gameObject.transform);
                 damagePopupListVR.Add(Ins);
@@ -51,7 +51,7 @@ public class TakeHits : MonoBehaviour {
         {
             isEnemy = false;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 8; i++)
             {
                 Ins = Instantiate(damagePopupPC, this.gameObject.transform);
                 damagePopupListPC.Add(Ins);

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using VRTK;
 
 enum Element
 {
@@ -57,6 +58,8 @@ public class WandShoot : WeaponScript
 	public float PowerEnd = 10;
 	private GameObject ChargingProjectile;
 	private bool Explosion = false;
+	private VRTK_ControllerReference Controller;
+	public float DurationHaptic = 0.1f;
 
 	public override void Use()
 	{
@@ -101,6 +104,11 @@ public class WandShoot : WeaponScript
 					ep.FullCharged();
 				}
 			}
+
+			if (!VRTK_ControllerReference.IsValid(Controller))
+				Controller = VRTK_ControllerReference.GetControllerReference(GetComponentInParent<VRTK_TrackedController>().gameObject);
+			VRTK.VRTK_ControllerHaptics.TriggerHapticPulse(Controller, Power/50f, DurationHaptic, 0.01f);
+			Debug.Log("haptci on " + Power / 10f);
 
 			var ps = ChargingProjectile.GetComponentInChildren<ParticleSystem>();
 			if (ep == null || ps == null) Debug.Break();

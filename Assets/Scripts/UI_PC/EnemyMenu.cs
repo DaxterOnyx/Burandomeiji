@@ -15,6 +15,13 @@ public class EnemyMenu : MonoBehaviour {
     private EnemyStats stats;
     private BonusMenu bonusMenu;
 
+    [SerializeField] private TextMeshProUGUI pointSpawn;
+
+    private void Update()
+    {
+        pointSpawn.text = GameManager.Instance.pointSpawnCurrent + " / " + GameManager.Instance.pointSpawnMax;
+    }
+
     public void SetAllEnemyTab(GameObject[] tab_)
     {
         allEnemyTab = tab_;

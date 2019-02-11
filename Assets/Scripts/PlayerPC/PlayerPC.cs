@@ -120,7 +120,7 @@ public class PlayerPC : MonoBehaviour {
             {
                 float distanceVRCursor = Mathf.Abs(Vector3.Distance(hit.point, target.transform.position));
 
-                if (distanceVRCursor >= distanceMinSpawn)
+                if (distanceVRCursor >= distanceMinSpawn && playerPCSpawn.CanSpawn())
                 {
                     if (playerPCController.ClickDown)
                     {

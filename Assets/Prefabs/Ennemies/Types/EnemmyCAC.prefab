@@ -26445,13 +26445,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: Berserk
-<<<<<<< HEAD
-  m_speed: 0.75
-  m_mana: 30
-=======
   m_speed: 3
   m_mana: 33
->>>>>>> a815b8816cad8e3d8a4a5001beb445e3b1c63758
   m_type: 0
   ID: 0
 --- !u!114 &114337488784980924
@@ -26479,7 +26474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitDamage: 15
+  m_hitDamage: 30
   m_hitCooldown: 1.5
   m_critical: 5
 --- !u!114 &114595263363553336
@@ -26501,9 +26496,6 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-<<<<<<< HEAD
-  m_health: 60
-=======
   m_health: 75
 --- !u!135 &135017260711031742
 SphereCollider:
@@ -26582,7 +26574,6 @@ CapsuleCollider:
   m_Height: 0.9136892
   m_Direction: 0
   m_Center: {x: -0.4568446, y: 0, z: 0}
->>>>>>> a815b8816cad8e3d8a4a5001beb445e3b1c63758
 --- !u!136 &136685940076068222
 CapsuleCollider:
   m_ObjectHideFlags: 1

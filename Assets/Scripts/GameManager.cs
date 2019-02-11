@@ -16,6 +16,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public int pointSpawnPriceCAC;
     public int pointSpawnPriceDIS;
     public int pointSpawnPriceBOSS;
+    private bool win = false;
 
 
     private bool end = false;
@@ -55,10 +56,6 @@ public class GameManager : SingletonBehaviour<GameManager> {
             timerMatchEnd = UpdateTimer(timerMatchEnd);
             
         }
-        else
-        {
-            EndGame();
-        }
     }
 
     private float UpdateTimer(float _timer)
@@ -97,9 +94,10 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     public void Win()
     {
-        if(end)
+        
+        if(end && !win)
         {
-
+            win = true;
             GameObject[] enemyTab = GameObject.FindGameObjectsWithTag("Enemy");
 
             foreach (var enemy in enemyTab)
@@ -122,11 +120,13 @@ public class GameManager : SingletonBehaviour<GameManager> {
     private void playerPCWin()
     {
         Debug.Log("Le joueur PC a gagné !");
+        EndGame();
     }
 
     private void playerVRWin()
     {
         Debug.Log("Le joueur VR a gagné !");
+        EndGame();
     }
 
     private void EndGame()

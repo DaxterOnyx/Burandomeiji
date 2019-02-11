@@ -609,11 +609,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1728221111435072}
-  speed_angle_up: 10
-  speed_angle_turn: 5
-  speed: 20
+  speed_angle_up: 9
+  speed_angle_turn: 4
+  speed: 16
   cameraRotationLimit: 90
-  speed_Up_Down: 0.6
+  speed_Up_Down: 0.65
   maxY: 18
   maxX: 45
   minX: -50

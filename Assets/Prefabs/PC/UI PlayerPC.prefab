@@ -2831,11 +2831,11 @@ MonoBehaviour:
   - 30
   - 20
   multTab:
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
   hightLeftText: {fileID: 114134309492198730}
   hightRightText: {fileID: 114760368364017876}
   centerLeftText: {fileID: 114849276362870616}

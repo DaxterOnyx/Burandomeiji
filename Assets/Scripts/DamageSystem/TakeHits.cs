@@ -6,7 +6,7 @@ using TMPro;
 
 public class TakeHits : MonoBehaviour {
 
-    private bool die = false;
+    internal bool die = false;
     private GameObject Ins;
     private bool isEnemy;
     private bool isSlow;

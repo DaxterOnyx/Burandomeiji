@@ -163,6 +163,11 @@ abstract class ElementEffect : MonoBehaviour
 		StartEffect();
 		while (Power > 0)
 		{
+			if (TakeHits.die)
+			{
+				Destroy(gameObject);
+				break;
+			}
 			Effect();
 			yield return new WaitForSeconds(Cooldown);
 			Power-=Speed;

@@ -110,11 +110,13 @@ public class AIScript : MonoBehaviour
     public void Slow(float _level)
     {
         agent.speed -= agent.speed * (_level / 100f);
+        character.AnimSpeedMultiplier = _level / 100f;
     }
 
     public void UnSlow()
     {
         agent.speed = enemyStats.speed;
+        character.AnimSpeedMultiplier = 1f;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 class WindEffect : ElementEffect
 {
@@ -10,6 +11,7 @@ class WindEffect : ElementEffect
 	protected override void StartEffect()
 	{
 		base.StartEffect();
+        GetComponentInParent<AIScript>().agent.enabled = false;
 		//TODO add Wind effect
 		//TakeHits.GetComponent<Rigidbody>().AddForce(WindForce,ForceMode.Acceleration);
 	}
@@ -21,8 +23,9 @@ class WindEffect : ElementEffect
 	protected override void StopEffect()
 	{
 		base.StopEffect();
-		//TODO remove wind effect
-	}
+        GetComponentInParent<AIScript>().agent.enabled = true;
+        //TODO remove wind effect
+    }
 
 	internal void Eye(Vector3 position)
 	{

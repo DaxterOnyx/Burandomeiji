@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83272effde3203c4dbb2320951b27741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WindForce: 1000
+  WindForce: 250
 --- !u!198 &198019909472969884
 ParticleSystem:
   m_ObjectHideFlags: 1

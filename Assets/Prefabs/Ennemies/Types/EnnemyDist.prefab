@@ -3594,7 +3594,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016190419679808}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 70
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -3747,7 +3747,7 @@ MonoBehaviour:
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
   m_JumpPower: 6
-  m_GravityMultiplier: 2
+  m_GravityMultiplier: 4
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
@@ -3765,7 +3765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1503882718864510, guid: f8b64ec716a4c9c408c4c923743433de, type: 2}
   m_enemyName: Trapper
-  m_speed: 0.6
+  m_speed: 0.8
   m_mana: 50
   m_type: 1
   ID: 0
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09778feece5eef847bcb5ed77925e149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitDamage: 70
+  m_hitDamage: 35
   m_hitCooldown: 0.5
   m_critical: 15
 --- !u!114 &114469616571494464
@@ -3973,7 +3973,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 11
+  m_StoppingDistance: 15
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

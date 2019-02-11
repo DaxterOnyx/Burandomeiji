@@ -90,12 +90,6 @@ public class TakeHits : MonoBehaviour {
             {
                 Display(_hitDamage, _critical);  // je display les dégâts
             }
-
-            if(!isEnemy)
-            {
-                Animator anim = GameObject.FindGameObjectWithTag("UI VR").GetComponentInChildren<Animator>();
-                anim.SetTrigger("Damage");
-            }
         }
     }
 
@@ -124,6 +118,7 @@ public class TakeHits : MonoBehaviour {
         else
         {
             // Le joueur VR est mort
+            GameManager.Instance.SetBoolEnd(true);
         }
     }
 
@@ -131,18 +126,12 @@ public class TakeHits : MonoBehaviour {
     {
         if (isEnemy)
         {
-            //if (_critical)
-            //{
-               // DisplayAux(criticalPopupVR, criticalPopupListVR, _hitDamage);
-            //}
-            //else
-            //{
-                DisplayAux(damagePopupVR, damagePopupListVR, _hitDamage);
-            //}
+            DisplayAux(damagePopupVR, damagePopupListVR, _hitDamage);
+
         }
         else
         {
-            if(_critical)
+            if (_critical)
             {
                 DisplayAux(criticalPopupPC, criticalPopupListPC, _hitDamage);
             }

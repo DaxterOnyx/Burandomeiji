@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     [SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
     [SerializeField] float m_MoveSpeedMultiplier = 1f;
     [SerializeField] float m_AnimSpeedMultiplier = 1f;
+    public float AnimSpeedMultiplier { get { return m_AnimSpeedMultiplier; } set { m_AnimSpeedMultiplier = value; } }
     [SerializeField] float m_GroundCheckDistance = 0.1f;
 
     Rigidbody m_Rigidbody;

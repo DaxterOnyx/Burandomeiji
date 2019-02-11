@@ -66,7 +66,7 @@ class ElementProjectile : ProjectileScript
 				if (!elementEffect)
 				{
 					Debug.Log("add effect " + ElementEffect + " sur " + hit);
-					GameObject newEllementEffect = Instantiate(ElementEffect, Vector3.zero, Quaternion.identity, hit.transform);
+					GameObject newEllementEffect = Instantiate(ElementEffect, hit.transform.position, Quaternion.identity, hit.transform);
 					elementEffect = newEllementEffect.GetComponent<ElementEffect>();
 				}
 				if (elementEffect is WindEffect)

@@ -16,7 +16,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     [HideInInspector] public int enemyCountMax_boss = 0;
     private bool canSetEnemyMax = true;
 
-    [SerializeField] private float timer = 600f;
+    [SerializeField] private float timer = 420f;
     [SerializeField] private float timerMatchBegin = 20f;
 
     private bool end = false;
@@ -88,6 +88,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
             {
                 playerPCWin();
             }
+            matchIsProgress = false;
         }
     }
 
@@ -118,7 +119,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
         enemyCountMax_cac = (int)(-0.045f * timer + 30f);
         enemyCountMax_dis = (int)(-0.0283f * timer + 20f);
-        enemyCountMax_boss = (int)(-0.00833f * timer + 4f);
+        enemyCountMax_boss = (int)(-0.00833f * timer + 5f);
         DisplayEnemyCount(enemySelected);
         yield return new WaitForSeconds(10f);
         canSetEnemyMax = true;

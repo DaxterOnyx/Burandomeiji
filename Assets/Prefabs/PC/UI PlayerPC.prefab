@@ -2819,11 +2819,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEnemyTab: []
   costManaTabSup:
-  - 20
   - 30
-  - 20
+  - 40
   - 30
-  - 20
+  - 40
+  - 30
   costManaTabInf:
   - 20
   - 30
@@ -2831,11 +2831,11 @@ MonoBehaviour:
   - 30
   - 20
   multTab:
-  - 0.25
-  - 0.25
-  - 0.25
-  - 0.25
-  - 0.25
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
   hightLeftText: {fileID: 114134309492198730}
   hightRightText: {fileID: 114760368364017876}
   centerLeftText: {fileID: 114849276362870616}

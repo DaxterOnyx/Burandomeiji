@@ -154,11 +154,11 @@ public class PlayerPC : MonoBehaviour {
         // Si le menu des bonus est désactivé
         if(bonusMenuGo.activeSelf == false)
         {
-            if (playerPCController.E)
+            if (playerPCController.E || playerPCController.ScrollWheel < 0f)
             {
                 playerPCSpawn.ChangeEnemy(enemyMenuScript.IconRight());
             }
-            else if (playerPCController.A)
+            else if (playerPCController.A || playerPCController.ScrollWheel > 0f)
             {
                 playerPCSpawn.ChangeEnemy(enemyMenuScript.IconLeft());
             }

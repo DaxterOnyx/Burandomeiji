@@ -23,15 +23,6 @@ public class ProjectileScript : MonoBehaviour {
 		{
 			target.takeHits(Damage, false);
 		}
-		destroy = true;
-		GetComponent<Rigidbody>().detectCollisions = false;
-		foreach(var a in GetComponentsInChildren<Collider>())
-			a.enabled = false;
-	}
-
-	private void Update()
-	{
-		if (destroy && !GetComponent<AudioSource>().isPlaying)
-			Destroy(gameObject);
+		Destroy(gameObject);
 	}
 }

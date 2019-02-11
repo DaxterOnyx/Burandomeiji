@@ -233,11 +233,12 @@ MonoBehaviour:
   multiplierScaleExplosion: 5
   ElementFX: {fileID: 1636249735910232, guid: 2a4416c4c2efe244381cf2fd06c05602, type: 2}
   FXMin: 0
-  FXMax: 200
+  FXMax: 500
   AudioSource: {fileID: 82380479953702618}
   InLoading: {fileID: 8300000, guid: a149a327e70bab5439d18d5794ae32a2, type: 3}
   FullLoaded: {fileID: 8300000, guid: 25860a46ba1a20b41bfed05669197ad3, type: 3}
   InFly: {fileID: 8300000, guid: 42447e78e99130546afb1f380d8bcf6c, type: 3}
+  ExplosionPowerValue: 4
 --- !u!135 &135571432080576366
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -238,6 +238,7 @@ MonoBehaviour:
   InLoading: {fileID: 8300000, guid: 7481603804fecf14189bece0c47810ad, type: 3}
   FullLoaded: {fileID: 8300000, guid: 5a4c405fda1bfad4db35bd3a457783ae, type: 3}
   InFly: {fileID: 8300000, guid: 9f92f18a14bfbd747bba499629b7dea3, type: 3}
+  ExplosionPowerValue: 3
 --- !u!135 &135456754664385626
 SphereCollider:
   m_ObjectHideFlags: 1

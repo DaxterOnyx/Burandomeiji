@@ -313,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183489483751194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0.0009, y: 0.0481, z: 0.1757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4319169735569584}
@@ -756,6 +756,7 @@ MonoBehaviour:
   ActiveProjectile: {fileID: 1170158472373774, guid: 9f3e880283a88b141b7afac504b4721a,
     type: 2}
   RateOfFire: 0.2
+  Explosion: {fileID: 1996348730954596, guid: 32617d250cce41844825121634ac0237, type: 2}
 --- !u!114 &114693369287087250
 MonoBehaviour:
   m_ObjectHideFlags: 1

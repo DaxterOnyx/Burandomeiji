@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676e4d10de8d55e4ebb8c3675381ce45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cooldown: 0.3
+  Speed: 1
   Damage: 10
 --- !u!198 &198033663183337514
 ParticleSystem:

@@ -19,73 +19,112 @@ public class AIScript : MonoBehaviour
     private float distanceFly;
     private bool isAttacking;
     public bool isFreeze = false;
+    Rigidbody[] corpse;
+    public bool isAnimated = true;
+    Animator animator;
 
-    private void Start()
+    void Start()
     {
         // get the components on the object we need ( should not be null due to require component so no need to check )
-        agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         character = GetComponent<Character>();
         enemyStats = GetComponent<EnemyStats>();
         doHits = GetComponent<DoHits>();
+        corpse = GetComponentsInChildren<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         agent.updateRotation = false;
         agent.updatePosition = true;
         agent.speed = enemyStats.speed;
-    
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
-        
-        if(target != null)
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
+            target = player.transform;
+            takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
             agent.SetDestination(target.position);
-        }      
+        }
+
+        foreach (Rigidbody rb in corpse)
+        {
+            rb.isKinematic = true;
+        }
     }
 
     
     private void Update()
     {
-        if(isFreeze)
+        if(isAnimated)
         {
-            character.Move(Vector3.zero, false, false, false);
-            agent.SetDestination(this.gameObject.transform.position);
-            target = null;
-        }
-        else
-        {
-            if (target == null)
+            if (isFreeze)
             {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-                takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
-                agent.SetDestination(target.position);
-            }
-
-            distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
-
-            if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
-            {
-                if (agent.remainingDistance < agent.stoppingDistance && distanceFly < agent.stoppingDistance)
-                {
-                    Attack();
-                }
-                else
-                {
-                    Move();
-                }
+                character.Move(Vector3.zero, false, false, false);
+                agent.SetDestination(this.gameObject.transform.position);
+                target = null;
             }
             else
             {
-                if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
-                {  
-                    Attack();
+                if (target == null)
+                {
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    if (player != null)
+                    {
+                        target = player.transform;
+                        takeHitsTarget = target.gameObject.GetComponentInChildren<TakeHits>();
+                        agent.SetDestination(target.position);
+                    }
+                }
+
+                distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
+
+                if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
+                {
+                    if (agent.remainingDistance < agent.stoppingDistance && distanceFly < agent.stoppingDistance)
+                    {
+                        Attack();
+                    }
+                    else
+                    {
+                        Move();
+                    }
                 }
                 else
                 {
-                    Move();
-                }
+                    if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+                    {
+                        Attack();
+                    }
+                    else
+                    {
+                        Move();
+                    }
 
+                }
             }
         }
-        
+        else
+        {
+            SetCorpseAnimated(false);
+        }
+    }
+
+    public void SetCorpseAnimated(bool active)
+    {
+        Debug.Log("Animated " + active);
+        isAnimated = active;
+        agent.enabled = active;
+        animator.enabled = active;
+
+        foreach (Rigidbody rb in corpse)
+        {
+            rb.isKinematic = active;
+        }
+    }
+
+    public void Die()
+    {
+        SetCorpseAnimated(false);
+        Destroy(this.gameObject, 10f);
     }
 
     public void SetTarget(Transform _target)

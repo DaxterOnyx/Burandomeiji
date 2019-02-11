@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 class ElementProjectile : ProjectileScript
@@ -15,6 +16,7 @@ class ElementProjectile : ProjectileScript
 	public AudioClip InLoading;
 	public AudioClip FullLoaded;
 	public AudioClip InFly;
+	public float ExplosionPowerValue = 4;
 
 	protected override void Awake()
 	{
@@ -43,45 +45,62 @@ class ElementProjectile : ProjectileScript
 		if (ElementEffect == null) { Debug.LogError("ElementEffect is not define in projectile"); return; }
 		if (collision.collider.tag == "Player" || !IsLaunched) { return; }
 
-		//Create Explosion on Impact
-		Vector3 explosionPos = transform.position;
-		GameObject l_elementFX = Instantiate(ElementFX, explosionPos, Quaternion.identity);
-
-		//set effect on ennemy in zone
-		foreach (Collider hit in Physics.OverlapSphere(position: explosionPos, radius: multiplierScaleExplosion))
+		if(Power < ExplosionPowerValue)
 		{
-			if(hit.tag==TargetTag)
+			//no explosion
+			if (collision.gameObject.tag == TargetTag)
+				AddEffect(collision.gameObject);
+		}
+		else
+		{
+			//Explosion
+
+			//Create Explosion on Impact
+			Vector3 explosionPos = transform.position;
+			GameObject l_elementFX = Instantiate(ElementFX, explosionPos, Quaternion.identity);
+
+			//set effect on ennemy in zone
+			foreach (Collider hit in Physics.OverlapSphere(position: explosionPos, radius: multiplierScaleExplosion))
 			{
-
-				ElementEffect elementEffect = null;
-				ElementEffect[] elements = collision.collider.GetComponentsInChildren<ElementEffect>();
-				for (int i = 0; elementEffect == null && i < elements.Length; i++)
+				if (hit.tag == TargetTag)
 				{
-					if (elements[i].GetType() == ElementEffect.GetType())
-					{
-						elementEffect = elements[i];
-					}
+					AddEffect(hit.gameObject);
 				}
-
-				if (!elementEffect)
-				{
-					Debug.Log("add effect " + ElementEffect + " sur " + hit);
-					GameObject newEllementEffect = Instantiate(ElementEffect, hit.transform.position, Quaternion.identity, hit.transform);
-					elementEffect = newEllementEffect.GetComponent<ElementEffect>();
-				}
-				if (elementEffect is WindEffect)
-				{
-					((WindEffect)elementEffect).Eye(transform.position);
-					//TODO add graphic effect of wind TORNADO
-				}
-				elementEffect.ActiveEffect(Power);
 			}
 		}
+
 
 		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 		GetComponentInChildren<Collider>().enabled = false;
 		foreach(var a in GetComponentsInChildren<ParticleSystem>()) a.Stop();
 		IsLanded = true;
+	}
+
+	private void AddEffect(GameObject hit)
+	{
+		ElementEffect elementEffect = null;
+		System.Type type = ElementEffect.GetComponent<ElementEffect>().GetType();
+		ElementEffect[] elements = hit.GetComponentsInChildren<ElementEffect>();
+		for (int i = 0; elementEffect == null && i < elements.Length; i++)
+		{
+			if (elements[i].GetType() == type)
+			{
+				elementEffect = elements[i];
+			}
+		}
+
+		if (elementEffect == null)
+		{
+			Debug.Log("add effect " + ElementEffect + " sur " + hit);
+			GameObject newEllementEffect = Instantiate(ElementEffect, hit.transform.position, Quaternion.identity, hit.transform);
+			elementEffect = newEllementEffect.GetComponent<ElementEffect>();
+		}
+		if (elementEffect is WindEffect)
+		{
+			((WindEffect)elementEffect).Eye(transform.position);
+			//TODO add graphic effect of wind TORNADO
+		}
+		elementEffect.ActiveEffect(Power);
 	}
 
 	private void Update()
@@ -95,7 +114,7 @@ class ElementProjectile : ProjectileScript
 
 	internal void FullCharged()
 	{
-		//TODO Brice c'est moche
+		//TODO Brice c'est moche, quoi que ?
 		AudioSource.Stop();
 		AudioSource.clip = FullLoaded;
 		AudioSource.loop = true;
@@ -107,6 +126,11 @@ abstract class ElementEffect : MonoBehaviour
 {
 	protected float Power;
 	protected TakeHits TakeHits;
+	public float Cooldown = 0.2f;
+	[Range(0.1f,1),Tooltip("Speed of decrement, \n" +
+		"1 is very speed (1 of power was consume by callEffect),\n" +
+		"0.1 is very long (0.1 of Power was consume by callEffect)")]
+	public float Speed = 1;
 
 	private void Awake()
 	{
@@ -140,8 +164,8 @@ abstract class ElementEffect : MonoBehaviour
 		while (Power > 0)
 		{
 			Effect();
-			yield return new WaitForSeconds(1f);
-			Power--;
+			yield return new WaitForSeconds(Cooldown);
+			Power-=Speed;
 		}
 		Power = 0;
 		StopEffect();

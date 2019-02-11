@@ -122,17 +122,25 @@ public class PlayerPC : MonoBehaviour {
 
                 if (distanceVRCursor >= distanceMinSpawn && playerPCSpawn.CanSpawn())
                 {
+                    float lostMana = bonusMenuScript.UpdateLostMana();
+
+                    if(currentMana >= lostMana)
+                    {
+                        imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
+                    }
+                    else
+                    {
+                        imageCursor.color = Color.HSVToRGB(0f, 100f, 85f);   // Rouge
+                    }
+
                     if (playerPCController.ClickDown)
                     {
-                        float lostMana = bonusMenuScript.UpdateLostMana();
-
                         if (currentMana >= lostMana)
-                        {
+                        {                    
                             StartCoroutine(playerPCSpawn.Spawn(hit, playerPCSpawn.GetEnemySpawn(), playerPCSpawn.GetCount()));
                             currentMana -= lostMana;
                         }
                     }
-                    imageCursor.color = Color.HSVToRGB(0f, 0f, 0f);   // Noir
                 }
                 else
                 {

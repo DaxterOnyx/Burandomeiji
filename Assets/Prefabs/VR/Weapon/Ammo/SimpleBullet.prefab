@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 5
-  Damage: 30
+  Damage: 6
   TargetTag: Enemy
 --- !u!135 &135456754664385626
 SphereCollider:

@@ -26445,8 +26445,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1859792659733152, guid: 717bd87b89e3d81498bfbbff73207f71, type: 2}
   m_enemyName: Elite
-  m_speed: 2
-  m_mana: 150
+  m_speed: 1.75
+  m_mana: 100
   m_type: 2
   ID: 0
 --- !u!114 &114337488784980924
@@ -26495,7 +26495,7 @@ MonoBehaviour:
     type: 2}
   criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
     type: 2}
-  m_health: 300
+  m_health: 400
 --- !u!135 &135591218800912392
 SphereCollider:
   m_ObjectHideFlags: 1

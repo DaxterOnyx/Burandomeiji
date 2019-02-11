@@ -26446,7 +26446,7 @@ MonoBehaviour:
   icon: {fileID: 1503882718864510, guid: 4445b2903d8a7084391bef202d7af104, type: 2}
   m_enemyName: Berserk
   m_speed: 3
-  m_mana: 30
+  m_mana: 20
   m_type: 0
   ID: 0
 --- !u!114 &114337488784980924

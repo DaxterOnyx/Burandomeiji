@@ -131,7 +131,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     private void EndGame()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 
     public bool isGameFinish()

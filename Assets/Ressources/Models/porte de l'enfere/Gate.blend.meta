@@ -76,6 +76,17 @@ ModelImporter:
     4300022: systeme_d_evacuation_de_vapeur
     4300024: engretype2N3
     4300026: engretype2N4
+    6400000: acsnseur
+    6400002: base
+    6400004: engretyp1N2
+    6400006: engretype1N1
+    6400008: engretype2N1
+    6400010: engretype2N2
+    6400012: engretype2N290d
+    6400014: engretype2N3
+    6400016: engretype2N4
+    6400018: pierre_phile_n2
+    6400020: systeme_d_evacuation_de_vapeur
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -111,11 +122,11 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
-    importVisibility: 1
+    addColliders: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -136,7 +147,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -151,10 +162,10 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

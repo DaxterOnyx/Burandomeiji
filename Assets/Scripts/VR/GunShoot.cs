@@ -8,6 +8,8 @@ using VRTK;
 public class GunShoot : WeaponScript
 {
 	public float RateOfFire = 1;
+	public float NbFire;
+	public float TrueRateOfFire { get { return RateOfFire*(20f+NbFire)/20f; } }
 	private float TimeLastFire;
 	private VRTK_ControllerReference Controller;
 	public GameObject Explosion;
@@ -16,22 +18,31 @@ public class GunShoot : WeaponScript
 
 	private void Awake()
 	{
-		TimeLastFire = RateOfFire;
+		TimeLastFire = TrueRateOfFire;
 		Controller = VRTK.VRTK_ControllerReference.GetControllerReference(GetComponentInParent<HandVRControl>().gameObject);
 	}
 
 	public override void Use()
 	{
-		Shoot();
+		//Shoot();
 		base.Use();
 	}
 
 	private void FixedUpdate()
 	{
 		TimeLastFire += Time.fixedDeltaTime;
-		if (inUse && TimeLastFire >= RateOfFire)
+		if(inUse)
 		{
-			Shoot();
+			if (TimeLastFire >= TrueRateOfFire)
+			{
+				NbFire++;
+				Shoot();
+			}
+		}
+		else
+		{
+			if (NbFire > 0)
+				NbFire--;
 		}
 	}
 
@@ -42,6 +53,7 @@ public class GunShoot : WeaponScript
 		
 		if(!VRTK_ControllerReference.IsValid(Controller))
 			Controller = VRTK_ControllerReference.GetControllerReference(GetComponentInParent<VRTK_TrackedController>().gameObject);
+
 		VRTK.VRTK_ControllerHaptics.TriggerHapticPulse(Controller,ForceHaptic,DurationHaptic,0.01f);
 		base.Shoot();
 	}

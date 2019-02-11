@@ -8,6 +8,7 @@ public class GunShoot : WeaponScript
 {
 	public float RateOfFire = 1;
 	private float TimeLastFire;
+	public GameObject Explosion;
 
 	private void Awake()
 	{
@@ -32,6 +33,7 @@ public class GunShoot : WeaponScript
 	public override void Shoot()
 	{
 		TimeLastFire = 0;
+		Instantiate(Explosion, projectileSpawnPoint.position, projectileSpawnPoint.rotation, projectileSpawnPoint);
 		base.Shoot();
 	}
 }

@@ -113,7 +113,7 @@ public class TakeHits : MonoBehaviour {
                 GameManager.Instance.enemyCountInGame_boss--;
             }
 
-            Destroy(this.gameObject);
+            aiScript.Die();
         }
         else
         {

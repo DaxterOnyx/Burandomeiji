@@ -76,4 +76,24 @@ public class PlayerPCSpawn : MonoBehaviour
             Debug.LogError("pointSpawn error");
         }
     }
+
+    public bool CanSpawn()
+    {
+        if (count == 0 && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceCAC)
+        {
+            return true;
+        }
+        else if (count == 1 && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceDIS)
+        {
+            return true;
+        }
+        else if (count == 2 && GameManager.Instance.pointSpawnCurrent >= GameManager.Instance.pointSpawnPriceBOSS)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

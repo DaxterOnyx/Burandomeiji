@@ -122,7 +122,7 @@ public class PlayerPC : MonoBehaviour {
 
                 if (distanceVRCursor >= distanceMinSpawn)
                 {
-                    if (playerPCController.ClickDown)
+                    if (playerPCController.ClickDown && playerPCSpawn.CanSpawn())
                     {
                         float lostMana = bonusMenuScript.UpdateLostMana();
 

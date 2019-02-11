@@ -173,7 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83272effde3203c4dbb2320951b27741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WindForce: 250
+  Cooldown: 0.2
+  Speed: 0.2
+  WindForce: 100
 --- !u!198 &198019909472969884
 ParticleSystem:
   m_ObjectHideFlags: 1

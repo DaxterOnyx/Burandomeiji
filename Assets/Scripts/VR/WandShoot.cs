@@ -56,11 +56,13 @@ public class WandShoot : WeaponScript
 	public float PowerStart = 1;
 	public float PowerEnd = 10;
 	private GameObject ChargingProjectile;
+	private bool Explosion = false;
 
 	public override void Use()
 	{
 		base.Use();
 		Power = PowerStart;
+		Explosion = false;
 
 		if (projectileSpawnPoint == null)
 		{
@@ -88,11 +90,15 @@ public class WandShoot : WeaponScript
 			if (Power<PowerEnd)
 			{
 				Power += PowerChargingSpeed * Time.fixedDeltaTime;
+				if(Power >= ep.ExplosionPowerValue && !Explosion)
+				{
+					Explosion = true;
+					AudioSource.clip = Charged;
+					AudioSource.Play();
+				}
 				if(Power == PowerEnd)
 				{
 					ep.FullCharged();
-					AudioSource.clip = Charged;
-					AudioSource.Play();
 				}
 			}
 

@@ -21,7 +21,7 @@ public class TakeHits : MonoBehaviour {
     //private List<GameObject> criticalPopupListVR = new List<GameObject>();
     private List<GameObject> criticalPopupListPC = new List<GameObject>();
 
-    AIScript aiScript; // Contient "Speed"
+    public AIScript aiScript; // Contient "Speed"
     DoHits doHits; // Contient "hitCooldown"
 
     [SerializeField] private float m_health;

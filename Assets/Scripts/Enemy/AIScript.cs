@@ -19,6 +19,7 @@ public class AIScript : MonoBehaviour
     private float distanceFly;
     private bool isAttacking;
     public bool isFreeze = false;
+    public Rigidbody parentrb;
     Rigidbody[] corpse;
     bool isAnimated = true;
     Animator animator;
@@ -30,6 +31,7 @@ public class AIScript : MonoBehaviour
         character = GetComponent<Character>();
         enemyStats = GetComponent<EnemyStats>();
         doHits = GetComponent<DoHits>();
+        parentrb = GetComponent<Rigidbody>();
         corpse = GetComponentsInChildren<Rigidbody>();
         animator = GetComponent<Animator>();
 

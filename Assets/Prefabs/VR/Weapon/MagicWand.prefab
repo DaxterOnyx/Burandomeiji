@@ -607,3 +607,4 @@ MonoBehaviour:
   PowerChargingSpeed: 3
   PowerStart: 1
   PowerEnd: 10
+  DurationHaptic: 0.01

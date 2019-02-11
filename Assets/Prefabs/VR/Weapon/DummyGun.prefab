@@ -326,8 +326,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678232493233670}
-  m_LocalRotation: {x: -0.4932973, y: 0.10806967, z: -0.014709417, w: 0.8629962}
-  m_LocalPosition: {x: -0.5391742, y: -0.8756999, z: 0.20219588}
+  m_LocalRotation: {x: -0.6817742, y: 0.2841061, z: -0.21906482, w: 0.6375565}
+  m_LocalPosition: {x: -0.34757733, y: -0.21408463, z: 0.703748}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4443417491079414}
@@ -757,6 +757,8 @@ MonoBehaviour:
     type: 2}
   RateOfFire: 0.2
   Explosion: {fileID: 1996348730954596, guid: 32617d250cce41844825121634ac0237, type: 2}
+  ForceHaptic: 200
+  DurationHaptic: 0.02
 --- !u!114 &114693369287087250
 MonoBehaviour:
   m_ObjectHideFlags: 1

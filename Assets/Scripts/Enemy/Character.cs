@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     [SerializeField] float m_MoveSpeedMultiplier = 1f;
     [SerializeField] float m_AnimSpeedMultiplier = 1f;
     public float AnimSpeedMultiplier { get { return m_AnimSpeedMultiplier; } set { m_AnimSpeedMultiplier = value; } }
-    [SerializeField] float m_GroundCheckDistance = 0.1f;
+    [SerializeField] float m_GroundCheckDistance = 0.3f;
 
     Rigidbody m_Rigidbody;
     Animator m_Animator;
@@ -116,7 +116,7 @@ public class Character : MonoBehaviour
         Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
         m_Rigidbody.AddForce(extraGravityForce);
 
-        m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+        m_GroundCheckDistance = m_Rigidbody.velocity.y < -1 ? m_OrigGroundCheckDistance : 0.2f;
     }
 
 
@@ -134,6 +134,10 @@ public class Character : MonoBehaviour
         else if (attack)
         {
             m_Attacking = true;
+        }
+        else
+        {
+            m_GroundCheckDistance = 0.3f;
         }
     }
 

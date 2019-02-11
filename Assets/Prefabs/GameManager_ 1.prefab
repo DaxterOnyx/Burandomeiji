@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 1
   timer: 480
-  timerMatchBegin: 5
+  timerMatchBegin: 20
   timerMatchEnd: 20
   pointSpawnMax: 60
   pointSpawnCurrent: 0

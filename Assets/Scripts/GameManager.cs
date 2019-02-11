@@ -9,7 +9,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     [SerializeField] private float timer = 420f;
     [SerializeField] private float timerMatchBegin = 20f;
     [SerializeField] private float timerMatchEnd = 20f;
-    [SerializeField] private int pointSpawnMax = 60;
+    public int pointSpawnMax = 60;
     private float timeDisplay;
     public int pointSpawnCurrent;
 

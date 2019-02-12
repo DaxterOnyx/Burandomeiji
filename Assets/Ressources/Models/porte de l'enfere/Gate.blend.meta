@@ -107,7 +107,97 @@ ModelImporter:
     6400020: systeme_d_evacuation_de_vapeur
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FER
+    second: {fileID: 2100000, guid: 267743c54a4d74041a3e5e5f0a37bd6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: eab8f133bfee05d4fae49fd94551cf71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: c3d8e74134d236940afe42fb28842a69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OR
+    second: {fileID: 2100000, guid: eb607c126abb3af4380b5b28d05d6cd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bouchon
+    second: {fileID: 2100000, guid: 003a9b5b7608b344f8ecf488479d101e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bouchon_001
+    second: {fileID: 2100000, guid: e3fdcbbce0ea9df418e984b6ce719825, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bouchon_002
+    second: {fileID: 2100000, guid: 04fea548b38874445a153c44657d1433, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bronze
+    second: {fileID: 2100000, guid: 9693d23d24c0c5542bea40c95fb61c84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: evac1
+    second: {fileID: 2100000, guid: 643f222fc8383d34f8e8e16addcecf34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: evac2et3
+    second: {fileID: 2100000, guid: 88b35f04c2cf7ca4d98ad3789978d119, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gretal
+    second: {fileID: 2100000, guid: 1d68282ec5c81b640801925ae640a0a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: malakite
+    second: {fileID: 2100000, guid: b047289d8cd80aa4bb29201b20b95275, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: maron
+    second: {fileID: 2100000, guid: f799536f311a19448aee3809f9efdb91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 3aba0ceaf6622fb428bae75e328eb232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: or
+    second: {fileID: 2100000, guid: 15999146b47730944adaaa26fc72f7a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: or_001
+    second: {fileID: 2100000, guid: 2e05d963d8321344898209c5f9cf2c0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silver
+    second: {fileID: 2100000, guid: ea5646773cf812242a4ad099dadc62ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sliver
+    second: {fileID: 2100000, guid: 8c8706d82f66d8949992d99ba1e9a96d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

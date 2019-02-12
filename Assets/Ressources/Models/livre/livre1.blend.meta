@@ -34,6 +34,10 @@ ModelImporter:
     400026: moitie_G
     400028: papier
     2100000: unnamed
+    2100002: papierN1
+    2100004: Material
+    2100006: exterieur
+    2100008: papierN1_001
     2300000: Cube
     2300002: //RootNode
     2300004: moitie_D

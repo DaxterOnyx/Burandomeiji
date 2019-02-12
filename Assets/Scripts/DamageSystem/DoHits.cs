@@ -13,6 +13,10 @@ public class DoHits : MonoBehaviour {
     [SerializeField] private float m_hitCooldown;
     [SerializeField] private float m_critical;
 
+	//sound and particle to hit
+	public GameObject PrefabSound;
+	public Transform SpawnSound;
+
     public float hitDamage { get { return m_hitDamage; } private set { m_hitDamage = value; } }
     public float hitCooldown { get { return m_hitCooldown; } private set { m_hitCooldown = value; } }
     public float critical { get { return m_critical; } private set { m_critical = value; } }
@@ -40,6 +44,9 @@ public class DoHits : MonoBehaviour {
         {
             _takeHits.takeHits(multRand_ * m_hitDamage, false);
         }
+
+		//Spawn Sound
+		GameObject newSound = Instantiate(PrefabSound, SpawnSound.position, SpawnSound.rotation, null);
     }
 
     // Fonction utilisé dans le script AIScript

@@ -113,6 +113,7 @@ public class AIScript : MonoBehaviour
         isAnimated = active;
         agent.enabled = active;
         animator.enabled = active;
+        parentrb.isKinematic = !active;
 
         foreach (Rigidbody rb in corpse)
         {

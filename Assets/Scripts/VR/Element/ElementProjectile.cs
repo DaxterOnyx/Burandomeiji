@@ -98,7 +98,6 @@ class ElementProjectile : ProjectileScript
 		if (elementEffect is WindEffect)
 		{
 			((WindEffect)elementEffect).Eye(transform.position);
-            ((WindEffect)elementEffect).DistanceAttraction = multiplierScaleExplosion;
             //TODO add graphic effect of wind TORNADO
         }
 		elementEffect.ActiveEffect(Power);

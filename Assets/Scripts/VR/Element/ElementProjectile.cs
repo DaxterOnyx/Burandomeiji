@@ -131,6 +131,7 @@ abstract class ElementEffect : MonoBehaviour
 		"1 is very speed (1 of power was consume by callEffect),\n" +
 		"0.1 is very long (0.1 of Power was consume by callEffect)")]
 	public float Speed = 1;
+	public float Damage;
 
 	private void Awake()
 	{
@@ -163,11 +164,11 @@ abstract class ElementEffect : MonoBehaviour
 		StartEffect();
 		while (Power > 0)
 		{
-			//if (takeHits.die())
-			//{
-			//	Destroy(gameObject);
-			//	break;
-			//}
+			if (TakeHits.die)
+			{
+				Destroy(gameObject);
+				break;
+			}
 			Effect();
 			yield return new WaitForSeconds(Cooldown);
 			Power-=Speed;

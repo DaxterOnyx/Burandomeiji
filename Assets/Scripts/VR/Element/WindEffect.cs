@@ -22,6 +22,7 @@ class WindEffect : ElementEffect
         Vector3 force = transform.position-TakeHits.transform.position;
         Debug.Log(force);
         TakeHits.aiScript.parentrb.AddForce(force.normalized*WindForce, ForceMode.Impulse);
+		TakeHits.takeHits(Damage, false);
 	}
 
 	protected override void StopEffect()

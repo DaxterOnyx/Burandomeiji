@@ -1018,6 +1018,7 @@ Transform:
   m_Children:
   - {fileID: 1459051198}
   - {fileID: 2090295623}
+  - {fileID: 409944800}
   m_Father: {fileID: 805128135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1173,6 +1174,32 @@ Prefab:
     - target: {fileID: 1943316258331648, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665995617022650, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509691365031288, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798856443299772, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305663227223222, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198368978609670914, guid: 0eeb62656258dc54e8bbe2f7f34a880a,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 198368978609670914, guid: 0eeb62656258dc54e8bbe2f7f34a880a,
+        type: 2}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.22352941
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eeb62656258dc54e8bbe2f7f34a880a, type: 2}

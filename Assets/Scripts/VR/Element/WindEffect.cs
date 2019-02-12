@@ -18,8 +18,10 @@ class WindEffect : ElementEffect
 	}
 	protected override void Effect()
 	{
-		//DO nothing; or increase force
-		TakeHits.aiScript.parentrb.AddExplosionForce(WindForce, TakeHits.transform.position, DistanceAttraction);
+        //DO nothing; or increase force
+        Vector3 force = transform.position-TakeHits.transform.position;
+        Debug.Log(force);
+        TakeHits.aiScript.parentrb.AddExplosionForce(WindForce, force, DistanceAttraction);
 	}
 	protected override void StopEffect()
 	{

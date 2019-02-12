@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 0.2
   Speed: 0.2
+  Damage: 2
   WindForce: 100
 --- !u!198 &198019909472969884
 ParticleSystem:

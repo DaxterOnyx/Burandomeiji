@@ -8,6 +8,7 @@
 	protected override void Effect()
 	{
 		//DO nothing;
+		TakeHits.takeHits(Damage, false);
 	}
 	protected override void StopEffect()
 	{

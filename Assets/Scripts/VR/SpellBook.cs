@@ -6,16 +6,11 @@ public class SpellBook : Tool
 	public VRTK.VRTK_RadialMenu RadialMenu;
 	public WandShoot Wand;
 	private Element m_element;
-	public Renderer LeftPage;
-	public Renderer RightPage;
-	public Material ElectricityLeftMaterial;
-	public Material ElectricityRightMaterial;
-	public Material FireLeftMaterial;
-	public Material FireRightMaterial;
-	public Material IceLeftMaterial;
-	public Material IceRightMaterial;
-	public Material WindLeftMaterial;
-	public Material WindRightMaterial;
+	public Renderer Book;
+	public Material ElectricityMaterial;
+	public Material FireMaterial;
+	public Material IceMaterial;
+	public Material WindMaterial;
 
 	//public GameObject LeftPage;
 	//public GameObject RightPage;
@@ -95,28 +90,24 @@ public class SpellBook : Tool
 	public void IceChange()
 	{
 		ChangeElement(Element.Ice);
-		LeftPage.material = IceLeftMaterial;
-		RightPage.material = IceRightMaterial;
+		Book.material = IceMaterial;
 	}
 
 	public void WindChange()
 	{
 		ChangeElement(Element.Wind);
-		LeftPage.material = WindLeftMaterial;
-		RightPage.material = WindRightMaterial;
+		Book.material = WindMaterial;
 	}
 
 	public void FireChange()
 	{
 		ChangeElement(Element.Fire);
-		LeftPage.material = FireLeftMaterial;
-		RightPage.material = FireRightMaterial;
+		Book.material = FireMaterial;
 	}
 
 	public void ElectricityChange()
 	{
 		ChangeElement(Element.Electricity);
-		LeftPage.material = ElectricityLeftMaterial;
-		RightPage.material = ElectricityRightMaterial;
+		Book.material = ElectricityMaterial;
 	}
 }

@@ -42,14 +42,10 @@ public class GameManager : SingletonBehaviour<GameManager> {
             matchIsProgress = true;
             timeDisplay = timer;
             timer = UpdateTimer(timer);
-            if(timer < 0f)
-            {
-                end = true;
-                Win();
-            }
         }
         else if(timerMatchEnd > 0)
         {
+            Win();  // Activé si le joueur VR gagne
             end = true;
             matchIsProgress = false;
             timeDisplay = timerMatchEnd;
@@ -93,10 +89,10 @@ public class GameManager : SingletonBehaviour<GameManager> {
     }
 
     public void Win()
-    {
-        
+    {  
         if(end && !win)
         {
+            matchIsProgress = false;
             win = true;
             GameObject[] enemyTab = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -120,17 +116,18 @@ public class GameManager : SingletonBehaviour<GameManager> {
     private void playerPCWin()
     {
         Debug.Log("Le joueur PC a gagné !");
-        EndGame();
+        StartCoroutine(EndGame());
     }
 
     private void playerVRWin()
     {
         Debug.Log("Le joueur VR a gagné !");
-        EndGame();
+        StartCoroutine(EndGame());
     }
 
-    private void EndGame()
+    private IEnumerator EndGame()
     {
+        yield return new WaitForSeconds(10f);
         SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 
@@ -142,6 +139,5 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public void SetBoolEnd(bool _end)
     {
         end = _end;
-        Win();
     }
 }

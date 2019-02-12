@@ -26506,7 +26506,8 @@ MonoBehaviour:
   m_hitDamage: 15
   m_hitCooldown: 1.5
   m_critical: 5
-  PrefabSound: {fileID: 0}
+  PrefabSound: {fileID: 1717911441374118, guid: 3ad0bc46e21476d4ca7000f4395b8946,
+    type: 2}
   SpawnSound: {fileID: 4505977400658084}
 --- !u!114 &114595263363553336
 MonoBehaviour:

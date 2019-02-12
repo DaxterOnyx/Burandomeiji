@@ -113,6 +113,7 @@ public class AIScript : MonoBehaviour
         isAnimated = active;
         agent.enabled = active;
         animator.enabled = active;
+		GetComponent<Collider>().enabled = false;
 
         foreach (Rigidbody rb in corpse)
         {

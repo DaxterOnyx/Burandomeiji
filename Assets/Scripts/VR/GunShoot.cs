@@ -18,6 +18,7 @@ public class GunShoot : WeaponScript
 
 	private void Awake()
 	{
+		inUse = false;
 		TimeLastFire = TrueRateOfFire;
 		Controller = VRTK.VRTK_ControllerReference.GetControllerReference(GetComponentInParent<HandVRControl>().gameObject);
 	}

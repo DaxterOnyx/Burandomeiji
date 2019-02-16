@@ -16342,12 +16342,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4183948300987250, guid: 365845a097615834b8de81a4ed6bad4b,
     type: 2}
   m_PrefabInternal: {fileID: 1270753115}
---- !u!114 &1270753117 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114300411700594504, guid: 365845a097615834b8de81a4ed6bad4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1270753115}
-  m_Script: {fileID: 11500000, guid: 19b036d2c012ee848b0e70f09dc8aae8, type: 3}
 --- !u!1 &1272719105
 GameObject:
   m_ObjectHideFlags: 0
@@ -17826,7 +17820,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373105614}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1373105616
 Camera:
   m_ObjectHideFlags: 0
@@ -18222,11 +18216,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114606008268560262, guid: c3df26c5b73bef04e84273438dcc57c1,
-        type: 2}
-      propertyPath: Wand
-      value: 
-      objectReference: {fileID: 1270753117}
+    - target: {fileID: 4595021217698656, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595021217698656, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595021217698656, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3df26c5b73bef04e84273438dcc57c1, type: 2}
   m_IsPrefabAsset: 0

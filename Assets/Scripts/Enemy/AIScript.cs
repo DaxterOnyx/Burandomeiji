@@ -93,7 +93,7 @@ public class AIScript : MonoBehaviour
                     }
                     else
                     {
-                        if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou égal à stoppingDistance
+                        if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou ï¿½gal ï¿½ stoppingDistance
                         {
                             Attack();
                         }
@@ -113,6 +113,7 @@ public class AIScript : MonoBehaviour
         isAnimated = active;
         agent.enabled = active;
         animator.enabled = active;
+        parentrb.isKinematic = !active;
 
         foreach (Rigidbody rb in corpse)
         {

@@ -15,10 +15,10 @@ public class TakeHitsVR : TakeHits {
 
         for (int i = 0; i < 5; i++)
         {
-            Ins = Instantiate(damagePopupPC, this.gameObject.transform);
+            Ins = Instantiate(damagePopupPC, gameObject.transform);
             damagePopupListPC.Add(Ins);
             Ins.SetActive(false);
-            Ins = Instantiate(criticalPopupPC, this.gameObject.transform);
+            Ins = Instantiate(criticalPopupPC, gameObject.transform);
             criticalPopupListPC.Add(Ins);
             Ins.SetActive(false);
         }

@@ -36,7 +36,7 @@ public class TakeHitsEnemy : TakeHits {
     {
         base.Die();
         aiScript.Die();
-     }
+    }
    
     protected override void Display(float _hitDamage, bool _critical)
     {
@@ -52,12 +52,14 @@ public class TakeHitsEnemy : TakeHits {
     {
         aiScript.isFreeze = false;
     }
+
     public override void Slow(float _power)
     {
         doHits.Slow(_power); // Diminue la vitesse d'attaque
         aiScript.Slow(_power);  // Diminue la vitesse de marche
         isSlow = true;
     }
+
     public override void UnSlow()
     {
         doHits.UnSlow();

@@ -43,9 +43,7 @@ public abstract class TakeHits : MonoBehaviour {
     {
         die = true;
     }
-
-    protected abstract void Display(float _hitDamage, bool _critical);
-
+    
     protected void DisplayAux(GameObject _Ins, List<GameObject> _list, float _hitDamage)
     {
         for (int i = 0; i < _list.Count; i++)
@@ -66,7 +64,7 @@ public abstract class TakeHits : MonoBehaviour {
         _Popup.SetActive(false);
     }
 
-
+    protected abstract void Display(float _hitDamage, bool _critical);
     public virtual void Freeze() { }
     public virtual void UnFreeze() { }
     public virtual void Slow(float _power) { }

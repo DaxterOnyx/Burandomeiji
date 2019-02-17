@@ -12,7 +12,7 @@ public class TakeHitsVR : TakeHits {
     protected override void Start()
     {
         currentHealth = health;
-
+		//Valeur en dur ???
         for (int i = 0; i < 5; i++)
         {
             Ins = Instantiate(damagePopupPC, gameObject.transform);
@@ -26,15 +26,19 @@ public class TakeHitsVR : TakeHits {
 
     public override void takeHits(float _hitDamage, bool _critical)
     {
-        base.takeHits(_hitDamage, _critical);
+		//pourquoi tu override si tu fais juste appel au la version de la classe mere
+
+		base.takeHits(_hitDamage, _critical);
     }
 
     public override void Die()
     {
+		//ici oui tu change un truc
         base.Die();
         GameManager.Instance.SetBoolEnd(true);
     }
 
+	//c'est un peu lourd mais c'est plus clair, donc c'est bien
     protected override void Display(float _hitDamage, bool _critical)
     {
         if (_critical)

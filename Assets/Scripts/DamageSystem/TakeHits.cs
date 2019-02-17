@@ -65,6 +65,8 @@ public abstract class TakeHits : MonoBehaviour {
     }
 
     protected abstract void Display(float _hitDamage, bool _critical);
+
+	//ces fonctions ne seront jamais appellé (actuelement si mais il faut changer la ou ça bloque) dans TakeHitsVR , donc il faut juste  le mettre dans TakeHitsEnnemy 
     public virtual void Freeze() { }
     public virtual void UnFreeze() { }
     public virtual void Slow(float _power) { }
@@ -101,7 +103,7 @@ public abstract class TakeHits : MonoBehaviour {
             if(this.tag == "Enemy") // C'est un ennemi
             {
                 isEnemy = true;
-
+				valeur en dur
                 for (int i = 0; i < 6; i++)
                 {
                     Ins = Instantiate(damagePopupVR, this.gameObject.transform);
@@ -113,6 +115,7 @@ public abstract class TakeHits : MonoBehaviour {
             {
                 isEnemy = false;
 
+	//valeur en dur
                 for (int i = 0; i < 5; i++)
                 {
                     Ins = Instantiate(damagePopupPC, this.gameObject.transform);
@@ -220,6 +223,7 @@ public abstract class TakeHits : MonoBehaviour {
 
         private IEnumerator Wait(GameObject _Popup)
         {
+		//valeur en dur
             yield return new WaitForSeconds(0.95f);
             _Popup.SetActive(false);
         }

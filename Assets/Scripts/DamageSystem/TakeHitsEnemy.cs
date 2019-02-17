@@ -18,7 +18,7 @@ public class TakeHitsEnemy : TakeHits {
     protected override void Start()
     {
         currentHealth = health;
-
+		//valeur en dur ???
         for (int i = 0; i < 6; i++)
         {
             Ins = Instantiate(damagePopupVR, this.gameObject.transform);
@@ -29,12 +29,14 @@ public class TakeHitsEnemy : TakeHits {
 
     public override void takeHits(float _hitDamage, bool _critical)
     {
+		//pourquoi tu override si tu fais juste appel au la version de la classe mere
         base.takeHits(_hitDamage, _critical);
     }
 
     public override void Die()
     {
-        base.Die();
+		//ici oui tu change un truc
+		base.Die();
         aiScript.Die();
     }
    
@@ -43,6 +45,7 @@ public class TakeHitsEnemy : TakeHits {
         DisplayAux(damagePopupVR, damagePopupListVR, _hitDamage);
     }
 
+	//override est de trop il n'y a aucun interet que se soit défini dans la classe TakeHits car TakeHitsVR n'en a pas besoin
     public override void Freeze()
     {
         aiScript.isFreeze = true;

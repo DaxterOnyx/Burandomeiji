@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(BonusMenu))]
-public class EnemyMenu : MonoBehaviour {
+public class EnemyMenu : MonoBehaviour
+{
 
-    /* Attribut de la classe */
+    #region Ancien script
+
+    /* 
     [SerializeField] private RectTransform enemyBar;
     public TextMeshProUGUI manaCost;
     private List<GameObject> enemyIconList = new List<GameObject>();
@@ -114,5 +116,6 @@ public class EnemyMenu : MonoBehaviour {
         float costMana = stats.mana;
 
         manaCost.text = "" + costMana;
-    }
+    }*/
+    #endregion
 }

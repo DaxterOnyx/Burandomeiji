@@ -311,8 +311,6 @@ GameObject:
   - component: {fileID: 223051777461187484}
   - component: {fileID: 114722372098759144}
   - component: {fileID: 114844225388927800}
-  - component: {fileID: 114609939358064684}
-  - component: {fileID: 114806028559227414}
   - component: {fileID: 114530996505151862}
   - component: {fileID: 114957040499734014}
   - component: {fileID: 114952249578883302}
@@ -2806,49 +2804,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114609939358064684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1290223810525246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2be332fea057b24a8fd572789084780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allEnemyTab: []
-  costManaTabSup:
-  - 30
-  - 40
-  - 30
-  - 40
-  - 30
-  costManaTabInf:
-  - 20
-  - 30
-  - 20
-  - 30
-  - 20
-  multTab:
-  - 0.75
-  - 0.75
-  - 0.75
-  - 0.75
-  - 0.75
-  hightLeftText: {fileID: 114134309492198730}
-  hightRightText: {fileID: 114760368364017876}
-  centerLeftText: {fileID: 114849276362870616}
-  centerRightText: {fileID: 114767905701318360}
-  lowLeftText: {fileID: 114439260048633086}
-  lowRightText: {fileID: 114674048215081796}
-  bonusBar: {fileID: 224000286578164396}
-  iconBonusTab:
-  - {fileID: 1771131120223788, guid: 3a767acad124f31438710e84a6ada4c5, type: 2}
-  - {fileID: 1742173842769930, guid: 79dd533304b6ef941b71e517e7d20d3e, type: 2}
-  - {fileID: 1712650848137522, guid: 376ffcb218f1e8047b827509ad67e246, type: 2}
-  - {fileID: 1064256074539970, guid: 5d8036093b11de943aa2753cd8997095, type: 2}
-  - {fileID: 1290394276872450, guid: b9da5bfb9204a114891a07693d8fcb45, type: 2}
 --- !u!114 &114613179855516336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3516,22 +3471,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114806028559227414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1290223810525246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aafad4373856dd4eafeb44c9e22a025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBar: {fileID: 224223449210594794}
-  manaCost: {fileID: 114206599082065758}
-  allEnemyTab: []
-  currentEnemyIcon: 0
-  pointSpawn: {fileID: 114158347536306980}
 --- !u!114 &114808924582147684
 MonoBehaviour:
   m_ObjectHideFlags: 1

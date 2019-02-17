@@ -3,13 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(PlayerPCController))]
 [RequireComponent(typeof(PlayerPCSpawn))]
+[RequireComponent(typeof(PlayerPCMotor))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerPC : MonoBehaviour {
 
-    /* Différents scripts */
+    /// Components  
+     
+    protected PlayerPCSpawn playerPCSpawn;
+    protected PlayerPCMotor playerPCMotor;
+    protected Rigidbody rb;
+
+
+    /// Attributs
+
+    [SerializeField] protected float currentMana = 0f;
+    [SerializeField] private float maxMana = 100f;
+    [SerializeField] private float manaRegen = 5f;
+    [SerializeField] private float maxManaClamp = 150f;
+    [Range(5, 25)] [SerializeField] private int distanceMinSpawn = 15;
+    public GameObject[] allEnemyTab;
+    public int enemyIndex;
+
+    /// Instanciations
+
+    [SerializeField] protected GameObject UIPlayerPCPrefabs;
+    private GameObject UIPlayerPCInstance;
+
+    private void Awake()
+    {
+        playerPCMotor = GetComponent<PlayerPCMotor>();
+        playerPCSpawn = GetComponent<PlayerPCSpawn>();
+        rb = GetComponent<Rigidbody>();
+        UIPlayerPCInstance = Instantiate(UIPlayerPCPrefabs);
+        UIPlayerPCInstance.name = UIPlayerPCPrefabs.name;
+    }
+
+    private void Start()
+    {
+        rb.freezeRotation = true;
+        rb.useGravity = false;
+    }
+
+    private void Update()
+    {
+        Spawn();
+    }
+
+    private void Spawn()
+    {
+        if (PlayerPCController.Click0_Down)
+        {
+            Ray ray_ = new Ray(this.transform.position, playerPCMotor.eyes.TransformDirection(Vector3.forward));
+            RaycastHit hit_ = new RaycastHit();
+
+            if (Physics.Raycast(ray_, out hit_, Mathf.Infinity))
+            {
+                if (hit_.collider.gameObject.tag == "Terrain")
+                {
+                    playerPCSpawn.Spawn_One_Spawner(hit_);
+                }
+            }
+        }
+    }
+
+
+    #region Ancien script
+    /*
         // scripts du player
-    private PlayerPCController playerPCController;
     private PlayerPCSpawn playerPCSpawn;
     private PlayerPCMotor playerPCMotor;
         // scripts du UI
@@ -19,7 +80,6 @@ public class PlayerPC : MonoBehaviour {
 
     private Camera camScript;
 
-    /* Prefabs et instance */
     [SerializeField] private GameObject UIPlayerPCPrefabs;
     [SerializeField] private GameObject cam;
     private GameObject UIPlayerPCInstance;
@@ -27,7 +87,6 @@ public class PlayerPC : MonoBehaviour {
     private Transform target;
     [SerializeField] GameObject touchHelp;
 
-    /* Attributs */
     private float currentMana;
     [SerializeField] private float maxMana = 100f;
     [SerializeField] private float manaRegen = 5f;
@@ -192,4 +251,7 @@ public class PlayerPC : MonoBehaviour {
             }
         } 
     }
+
+    */
+    #endregion
 }

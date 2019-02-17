@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(EnemyMenu))]
 public class BonusMenu : MonoBehaviour {
-  
+
+
+
+    #region Ancien script
+    /*
     /// Ordre dans le tableau : 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed
     
     [HideInInspector] public GameObject[] allEnemyTab;  // Tableau contenant tout les types d'ennemies
@@ -16,7 +19,6 @@ public class BonusMenu : MonoBehaviour {
     public List<float[]> costList;  // Liste de tableau des coûts en mana de chaque bonus -> Chaque tableau de la liste correspond à un ennemi du tableau allEnemyTab
     public List<float[]>[] bonusTab;    // Tableau contenant les deux listes précédentes (multList & costList)
 
-    /* Les différents textes du menu de bonus */
     [SerializeField] private TextMeshProUGUI hightLeftText;
     [SerializeField] private TextMeshProUGUI hightRightText;
     [SerializeField] private TextMeshProUGUI centerLeftText;
@@ -368,9 +370,6 @@ public class BonusMenu : MonoBehaviour {
         SetBonusTab();
     }
 
-    /* 0/1 : mult ou cost
-     * 0/x : ID du monstre
-     * 0/4 : selection du mult ou cost -> 0:speed, 1:health, 2:critical, 3:hitDamage, 4:attackSpeed */
 
     private void SetBonusTab()
     {
@@ -437,6 +436,9 @@ public class BonusMenu : MonoBehaviour {
         }
         return manaLost_;
     }
+
+    #endregion
+    */
 
     #endregion
 }

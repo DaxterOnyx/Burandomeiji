@@ -2,9 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerPC))]
 public class PlayerPCSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject spawnerPrefabs;
+    private Collider colSpawnerPrefabs;
+    private PlayerPC playerPC;
+    [SerializeField] private float minDistanceBtwTwoSpawner = 5f;
+    private Dictionary<SpawnerEnemy, GameObject> spawnerDictionary = new Dictionary<SpawnerEnemy, GameObject>();
+
+    private void Awake()
+    {
+        playerPC = GetComponent<PlayerPC>();
+        colSpawnerPrefabs = spawnerPrefabs.GetComponent<Collider>();
+    }
+
+    public void Spawn_One_Spawner(RaycastHit _hit)
+    {
+        Vector3 spawnerPosition = new Vector3(_hit.point.x, _hit.point.y + (colSpawnerPrefabs.bounds.center.y / 2f), _hit.point.z);
+
+        foreach(var spawner_ in spawnerDictionary)
+        {
+            if(Vector3.Distance(spawnerPosition, spawner_.Value.transform.position) < minDistanceBtwTwoSpawner)
+            {
+                return;
+            }
+        }
+        GameObject spawnerIns_ = Instantiate(spawnerPrefabs, spawnerPosition, Quaternion.identity);
+        SpawnerEnemy spawnerEnemy_ = spawnerIns_.GetComponent<SpawnerEnemy>();
+        spawnerDictionary.Add(spawnerEnemy_, spawnerIns_);
+    }
+}
+
+
+    #region Ancien script
+    /*[SerializeField] private GameObject spawnerPrefabs;
     private GameObject enemyForSpawn;
     public GameObject[] allEnemyTab;
     private BonusMenu bonusMenu;
@@ -95,5 +127,6 @@ public class PlayerPCSpawn : MonoBehaviour
         {
             return false;
         }
-    }
-}
+    }*/
+
+    #endregion

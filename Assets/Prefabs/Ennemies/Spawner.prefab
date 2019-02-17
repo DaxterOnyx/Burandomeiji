@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4111606554278346}
   - component: {fileID: 199517868848704674}
   - component: {fileID: 198618964138165840}
+  - component: {fileID: 114779083757849354}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -166,6 +167,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114779083757849354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790243174383396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f643151fbbf6104a86ff7d0cd8bdada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  enemy: {fileID: 0}
+  health: 1000
+  currentHealth: 0
 --- !u!198 &198618964138165840
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -176,7 +192,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 2
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0

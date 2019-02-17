@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4197187211452448}
   - component: {fileID: 54014875544311954}
   - component: {fileID: 136664878676620432}
-  - component: {fileID: 114707502108153376}
   - component: {fileID: 114687927097806008}
   - component: {fileID: 114401180596391590}
   - component: {fileID: 114679362626588708}
@@ -572,12 +571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54be9c9cc8d5544daa50f7e33939490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerPrefabs: {fileID: 1790243174383396, guid: d03cec7fd889fd1449a5168c06de4047,
+  spawnerPrefabs: {fileID: 1330604042039640, guid: 0e250813e47a50948a767ae018d928ad,
     type: 2}
-  allEnemyTab:
-  - {fileID: 1462532190980112, guid: 829cf79efbfa93e4f9d7fb392c8d8dd7, type: 2}
-  - {fileID: 1016190419679808, guid: c1084297837cab944b285aa46a911cbc, type: 2}
-  - {fileID: 1462532190980112, guid: 0ed9313edb6e0c8469810ddbb772b409, type: 2}
+  minDistanceBtwTwoSpawner: 10
 --- !u!114 &114679362626588708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,14 +585,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b383e9966cf223b4daece0c1f4f01a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMana: 0
+  maxMana: 100
+  manaRegen: 5
+  maxManaClamp: 150
+  distanceMinSpawn: 15
+  allEnemyTab: []
+  enemyIndex: 0
   UIPlayerPCPrefabs: {fileID: 1290223810525246, guid: 71a66d03775133f4a8d2a42ada2b7399,
     type: 2}
-  cam: {fileID: 1728221111435072}
-  touchHelp: {fileID: 0}
-  maxMana: 100
-  manaRegen: 10
-  maxManaClamp: 300
-  distanceMinSpawn: 17
 --- !u!114 &114687927097806008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -608,29 +605,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a11472560d4a1d48afceeabb4fa180f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1728221111435072}
-  speed_angle_up: 9
+  speed_angle_up: 7
   speed_angle_turn: 4
-  speed: 16
+  speed: 40
   cameraRotationLimit: 90
-  speed_Up_Down: 0.65
-  maxY: 18
-  maxX: 45
-  minX: -50
-  maxZ: 55
-  minZ: -43
-  Eye: {fileID: 4483637812226606}
---- !u!114 &114707502108153376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1192862646262678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ec06b46544934eb8ac924fdbed9eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  speed_Up_Down: 1
+  eyes: {fileID: 4483637812226606}
+  maxY: 100
+  minY: -100
+  maxX: 100
+  minX: -100
+  maxZ: 100
+  minZ: -100
 --- !u!136 &136664878676620432
 CapsuleCollider:
   m_ObjectHideFlags: 1

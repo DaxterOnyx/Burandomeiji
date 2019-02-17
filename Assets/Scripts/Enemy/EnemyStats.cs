@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TakeHits))]
-[RequireComponent(typeof(DoHits))]
 public class EnemyStats : MonoBehaviour {
 
     public enum enemyType { Melee, Distance, Boss }
@@ -23,18 +21,5 @@ public class EnemyStats : MonoBehaviour {
     public void SetID(int _ID)
     {
         ID = _ID;
-    }
-
-    public void SetStats(float _multSpeed, float _multHealth, float _multCritical, float _multHitDamage, float _multHitCooldown)
-    {
-        GetComponent<TakeHits>().SetAttributs(_multHealth);
-        GetComponent<DoHits>().SetAttributs(_multHitDamage, _multHitCooldown, _multCritical);
-
-        m_speed *= _multSpeed;
-    }
-
-    public void SetCost(float _costMana)
-    {
-        m_mana += _costMana;
     }
 }

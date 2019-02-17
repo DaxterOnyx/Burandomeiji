@@ -8,6 +8,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Character))]
 [RequireComponent(typeof(EnemyStats))]
 [RequireComponent(typeof(DoHits))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 public class AIScript : MonoBehaviour
 {
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
@@ -24,7 +26,7 @@ public class AIScript : MonoBehaviour
     bool isAnimated = true;
     Animator animator;
 
-    void Start()
+    private void Awake()
     {
         // get the components on the object we need ( should not be null due to require component so no need to check )
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -34,7 +36,10 @@ public class AIScript : MonoBehaviour
         parentrb = GetComponent<Rigidbody>();
         corpse = GetComponentsInChildren<Rigidbody>();
         animator = GetComponent<Animator>();
+    }
 
+    private void Start()
+    {
         agent.updateRotation = false;
         agent.updatePosition = true;
         agent.speed = enemyStats.speed;

@@ -6063,8 +6063,8 @@ GameObject:
   - component: {fileID: 114337488784980924}
   - component: {fileID: 114066778171023224}
   - component: {fileID: 114091936259541536}
-  - component: {fileID: 114595263363553336}
   - component: {fileID: 114562389891133194}
+  - component: {fileID: 114477396605002442}
   m_Layer: 0
   m_Name: EnemmyBoss
   m_TagString: Enemy
@@ -26492,6 +26492,24 @@ MonoBehaviour:
   target: {fileID: 0}
   isFreeze: 0
   parentrb: {fileID: 0}
+--- !u!114 &114477396605002442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462532190980112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4903bd4e90bc34ebf7e6e7c3e800fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: 0
+  isSlow: 0
+  aiScript: {fileID: 0}
+  doHits: {fileID: 0}
+  m_health: 0
+  m_currentHealth: 0
+  damagePopupVR: {fileID: 0}
 --- !u!114 &114562389891133194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26509,27 +26527,6 @@ MonoBehaviour:
   PrefabSound: {fileID: 1717911441374118, guid: 3ad0bc46e21476d4ca7000f4395b8946,
     type: 2}
   SpawnSound: {fileID: 4920549230191608}
---- !u!114 &114595263363553336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462532190980112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92097e506577cb14d840fcb4bdfa86d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePopupVR: {fileID: 1476893559327436, guid: 7f4bbd52994b773448bcb37ce4d1377f,
-    type: 2}
-  damagePopupPC: {fileID: 1291639452093374, guid: 686a87788f2b75a4f8397aad6b85fb61,
-    type: 2}
-  criticalPopupVR: {fileID: 1029801423354158, guid: e2c980282ab45594dbe06b7412aa22e7,
-    type: 2}
-  criticalPopupPC: {fileID: 1019215882381446, guid: 627a38774b2d0e244947bbc6a4c1aa5a,
-    type: 2}
-  aiScript: {fileID: 0}
-  m_health: 400
 --- !u!135 &135591218800912392
 SphereCollider:
   m_ObjectHideFlags: 1

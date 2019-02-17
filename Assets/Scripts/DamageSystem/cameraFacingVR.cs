@@ -10,7 +10,7 @@ public class cameraFacingVR : MonoBehaviour {
     {
         if(cam == null)
         {
-            cam = Camera.main;
+            cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         }
         transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
     }

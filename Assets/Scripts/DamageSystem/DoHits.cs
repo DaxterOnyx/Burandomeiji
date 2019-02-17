@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoHits : MonoBehaviour {
+public abstract class DoHits : MonoBehaviour {
 
     private bool canDoHitsCoroutine = true;
     private float oldHitCooldown;
@@ -20,15 +20,6 @@ public class DoHits : MonoBehaviour {
     public float hitDamage { get { return m_hitDamage; } private set { m_hitDamage = value; } }
     public float hitCooldown { get { return m_hitCooldown; } private set { m_hitCooldown = value; } }
     public float critical { get { return m_critical; } private set { m_critical = value; } }
-
-    // Fonction utilisé pour les ennemies
-    // Permet de récupérer et d'affecter les multiplicateus
-    public void SetAttributs(float _multHitDamage, float _multHitCooldown, float _multCritical)
-    {
-        m_hitDamage *= _multHitDamage;
-        m_hitCooldown *= _multHitCooldown;
-        m_critical *= _multCritical;   
-    }
 
     public void doHits(TakeHits _takeHits)
     {

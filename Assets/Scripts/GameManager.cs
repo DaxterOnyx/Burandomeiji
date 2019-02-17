@@ -9,13 +9,13 @@ public class GameManager : SingletonBehaviour<GameManager> {
     [SerializeField] private float timer = 420f;
     [SerializeField] private float timerMatchBegin = 20f;
     [SerializeField] private float timerMatchEnd = 20f;
-    public int pointSpawnMax = 60;
+    //public int pointSpawnMax = 60;
     private float timeDisplay;
-    public int pointSpawnCurrent;
+    //public int pointSpawnCurrent;
 
-    public int pointSpawnPriceCAC;
-    public int pointSpawnPriceDIS;
-    public int pointSpawnPriceBOSS;
+    //public int pointSpawnPriceCAC;
+    //public int pointSpawnPriceDIS;
+    //public int pointSpawnPriceBOSS;
     private bool win = false;
 
 
@@ -27,7 +27,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     {
         end = false;
         matchIsProgress = false;
-        pointSpawnCurrent = pointSpawnMax;
+        //pointSpawnCurrent = pointSpawnMax;
     }
 
     void Update()

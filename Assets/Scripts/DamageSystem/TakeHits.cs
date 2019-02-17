@@ -6,8 +6,9 @@ using TMPro;
 public abstract class TakeHits : MonoBehaviour {
 
     public bool die = false;
-    public bool isSlow;
+    public bool isSlow = false;
     protected GameObject Ins;
+    protected const int maxPopup = 6;
 
     [HideInInspector] public AIScript aiScript; // Contient "Speed"
     [HideInInspector] public DoHits doHits; // Contient "hitCooldown"
@@ -17,34 +18,11 @@ public abstract class TakeHits : MonoBehaviour {
     public float currentHealth { get { return m_currentHealth; } protected set { m_currentHealth = value; } }
     public float health { get { return m_health; } protected set { m_health = value; } }
 
-    protected virtual void Awake() { }
-
     protected abstract void Start();
-
-    public virtual void takeHits(float _hitDamage, bool _critical)
-    {
-        if (!die)
-        {
-            m_currentHealth -= _hitDamage;
-
-            if (m_currentHealth <= 0f)
-            {
-                m_currentHealth = 0f;
-                Die();
-            }
-            else
-            {
-                Display(_hitDamage, _critical);  // je display les dégâts
-            }
-        }
-    }
-
-    public virtual void Die()
-    {
-        die = true;
-    }
+    public abstract void takeHits(float _hitDamage, bool _critical);
+    public abstract void Die();
     
-    protected void DisplayAux(GameObject _Ins, List<GameObject> _list, float _hitDamage)
+    protected void Display(GameObject _Ins, List<GameObject> _list, float _hitDamage)
     {
         for (int i = 0; i < _list.Count; i++)
         {
@@ -58,19 +36,13 @@ public abstract class TakeHits : MonoBehaviour {
         }
     }
 
-    protected IEnumerator Wait(GameObject _Popup)
+    private IEnumerator Wait(GameObject _Popup)
     {
         yield return new WaitForSeconds(0.95f);
         _Popup.SetActive(false);
     }
 
-    protected abstract void Display(float _hitDamage, bool _critical);
-
-	//ces fonctions ne seront jamais appellé (actuelement si mais il faut changer la ou ça bloque) dans TakeHitsVR , donc il faut juste  le mettre dans TakeHitsEnnemy 
-    public virtual void Freeze() { }
-    public virtual void UnFreeze() { }
-    public virtual void Slow(float _power) { }
-    public virtual void UnSlow() { }
+    
 
     #region Ancien script
     /*

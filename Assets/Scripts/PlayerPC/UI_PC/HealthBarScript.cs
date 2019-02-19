@@ -35,6 +35,7 @@ public class HealthBarScript : MonoBehaviour {
 
     private void Update()
     {
+        //TODO TO_CHANGE Deplace find to gamemanager
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");      

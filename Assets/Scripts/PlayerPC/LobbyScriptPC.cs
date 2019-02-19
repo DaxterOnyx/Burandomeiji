@@ -63,6 +63,7 @@ public class LobbyScriptPC : MonoBehaviour {
         Application.Quit();
     }
 
+    //TODO TO_CHANGE Create scene credit, and his menu implemented too
     public void Credits()
     {
         /*Cursor.lockState = CursorLockMode.Locked;

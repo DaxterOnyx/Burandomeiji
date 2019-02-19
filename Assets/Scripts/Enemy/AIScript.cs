@@ -13,18 +13,27 @@ using UnityEngine.AI;
 public class AIScript : MonoBehaviour
 {
     public NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
-    public Character character { get; private set; } // the character we are controlling
-    public Transform target;                    // target to aim for
-    DoHits doHits;
-    TakeHits takeHitsTarget;
-    EnemyStats enemyStats;
-    private float distanceFly;
-    private bool isAttacking;
-    public bool isFreeze = false;
+    public Character character { get; private set; }            // the character we are controlling
+    public Transform target;                                    // target to aim for
+    DoHits doHits;                                              // script for dammage
+    EnemyStats enemyStats;                                      // stats like speed
+
+    //physic system
     public Rigidbody parentrb;
     Rigidbody[] corpse;
-    bool isAnimated = true;
     Animator animator;
+
+    //States
+    bool isAnimated;                    //Switch to animation or ragdoll
+    private bool isAttacking;           //attack
+    public bool isFreeze = false;       //Is freeze
+
+    //extern player
+    //TO_CHANGE see start
+    TakeHits takeHitsTarget;
+
+    //Detection
+    private float _distance_fly;
 
     private void Awake()
     {
@@ -44,6 +53,8 @@ public class AIScript : MonoBehaviour
         agent.updatePosition = true;
         agent.speed = enemyStats.speed;
 
+        //Player search
+        //TODO TO_CHANGE Deplace to gamemanager
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -52,6 +63,8 @@ public class AIScript : MonoBehaviour
             agent.SetDestination(target.position);
         }
 
+        //Begin with animation
+        isAnimated = true;
         foreach (Rigidbody rb in corpse)
         {
             rb.isKinematic = true;
@@ -83,11 +96,12 @@ public class AIScript : MonoBehaviour
                 }
                 else
                 {
-                    distanceFly = Vector3.Distance(target.position, this.transform.position) - 1f;
+                    _distance_fly = Vector3.Distance(target.position, this.transform.position) - 1f;
 
+                    //TODO TO_CHANGE create function, and do heritage for boss, etc. Only if more enemies behaviours.
                     if (enemyStats.type == EnemyStats.enemyType.Melee || enemyStats.type == EnemyStats.enemyType.Boss)
                     {
-                        if (agent.remainingDistance < agent.stoppingDistance && distanceFly < agent.stoppingDistance)
+                        if (agent.remainingDistance < agent.stoppingDistance && _distance_fly < agent.stoppingDistance)
                         {
                             Attack();
                         }
@@ -98,7 +112,7 @@ public class AIScript : MonoBehaviour
                     }
                     else
                     {
-                        if (distanceFly < agent.stoppingDistance) // Si la distance est plus petit ou �gal � stoppingDistance
+                        if (_distance_fly < agent.stoppingDistance) // Si la distance est plus petit ou �gal � stoppingDistance
                         {
                             Attack();
                         }
@@ -113,6 +127,7 @@ public class AIScript : MonoBehaviour
         }
     }
 
+    //TODO verify colliders movements
     public void SetCorpseAnimated(bool active)
     {
         isAnimated = active;
@@ -143,6 +158,7 @@ public class AIScript : MonoBehaviour
         agent.SetDestination(this.gameObject.transform.position);
         character.Move(Vector3.zero, false, false, true);
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+        //TODO TO_CHANGE necessary ?
         doHits.Attack(takeHitsTarget);
     }
 

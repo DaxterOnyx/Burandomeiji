@@ -9,7 +9,8 @@ public class GunShoot : WeaponScript
 {
 	public float RateOfFire = 1;
 	public float NbFire;
-	public float TrueRateOfFire { get { return RateOfFire*(20f+NbFire)/20f; } }
+    //TODO TO_CHANGE Why this strange numbers ?
+    public float TrueRateOfFire { get { return RateOfFire*(20f+NbFire)/20f; } }
 	private float TimeLastFire;
 	private VRTK_ControllerReference Controller;
 	public GameObject Explosion;

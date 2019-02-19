@@ -50,7 +50,8 @@ public class SpellBook : Tool
 		RadialMenu.HideMenu(true);
 	}
 
-	public void FixedUpdate()
+    //TODO TO_CHANGE useless ? Delete for optimisation
+    public void FixedUpdate()
 	{
 		//if (inUse)
 		//{

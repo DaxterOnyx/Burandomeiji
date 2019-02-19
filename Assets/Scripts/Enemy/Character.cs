@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(Animator))]
+//TODO TO_CHANGE Simplify
 public class Character : MonoBehaviour
 {
     [SerializeField] float m_MovingTurnSpeed = 360;
@@ -115,7 +116,7 @@ public class Character : MonoBehaviour
         // apply extra gravity from multiplier:
         Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
         m_Rigidbody.AddForce(extraGravityForce);
-
+        //TODO TO_CHANGE 0.2f was changed during a bug from 0.01f, but can do it again.
         m_GroundCheckDistance = m_Rigidbody.velocity.y < -1 ? m_OrigGroundCheckDistance : 0.2f;
     }
 

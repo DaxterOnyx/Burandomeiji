@@ -20,8 +20,8 @@ public abstract class WeaponScript : Tool
 		{
 			GameObject clonedProjectile = Instantiate(ActiveProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 			Rigidbody projectileRigidbody = clonedProjectile.GetComponent<Rigidbody>();
-			if (projectileRigidbody != null)
-			{
+			if (projectileRigidbody != null) //TODO TO_CHANGE can really be null ?
+            {
 				projectileRigidbody.AddForce(clonedProjectile.transform.forward * projectileSpeed,ForceMode.VelocityChange);
 			}
 		}

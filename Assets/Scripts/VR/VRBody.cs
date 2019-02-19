@@ -18,6 +18,7 @@ public class VRBody : MonoBehaviour {
 
     private void Update()
     {
+        //TODO TO_CHANGE Deplace to gamemanager
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");

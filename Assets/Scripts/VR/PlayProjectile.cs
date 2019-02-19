@@ -13,6 +13,7 @@ public class PlayProjectile : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
+        //TODO TO_CHANGE Debug useless ?
         Debug.Log("Collision!");
         lobbyScriptPC.playVR = !lobbyScriptPC.playVR;
     }

@@ -29,6 +29,7 @@ public class HealthVR : MonoBehaviour {
 
     private void Update()
     {
+        //TODO TO_CHANGE deplace to gamemanager
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");

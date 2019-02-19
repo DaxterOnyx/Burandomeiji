@@ -67,7 +67,8 @@ public class WandShoot : WeaponScript
 		Power = PowerStart;
 		Explosion = false;
 
-		if (projectileSpawnPoint == null)
+        //TODO TO_CHANGE uselless ?
+        if (projectileSpawnPoint == null)
 		{
 			Debug.LogError("projectile Spawn is null");
 			gameObject.SetActive(false);
@@ -108,7 +109,8 @@ public class WandShoot : WeaponScript
 			if (!VRTK_ControllerReference.IsValid(Controller))
 				Controller = VRTK_ControllerReference.GetControllerReference(GetComponentInParent<VRTK_TrackedController>().gameObject);
 			VRTK.VRTK_ControllerHaptics.TriggerHapticPulse(Controller, Power/50f, DurationHaptic, 0.01f);
-			Debug.Log("haptci on " + Power / 10f);
+            //TODO TO_CHANGE Debug useless ?
+            Debug.Log("haptci on " + Power / 10f);
 
 			var ps = ChargingProjectile.GetComponentInChildren<ParticleSystem>();
 			if (ep == null || ps == null) Debug.Break();

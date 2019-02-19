@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO TO_CHANGE All stats herte, even dammage.
 public class EnemyStats : MonoBehaviour {
 
     public enum enemyType { Melee, Distance, Boss }

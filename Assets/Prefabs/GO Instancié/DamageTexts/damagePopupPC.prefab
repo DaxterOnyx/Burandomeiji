@@ -266,9 +266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1291639452093374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3179837e66fd9478d00fc7b5bcb0a6, type: 3}
+  m_Script: {fileID: 11500000, guid: d50c1eb325f2d9c44ad5c6b6295c4635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name_tag_object: CameraPC
 --- !u!114 &114811419868517812
 MonoBehaviour:
   m_ObjectHideFlags: 1

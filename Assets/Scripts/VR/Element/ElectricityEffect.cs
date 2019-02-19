@@ -3,16 +3,16 @@
 	protected override void StartEffect()
 	{
 		base.StartEffect();
-		TakeHits.Freeze();
+		takeHitsEnemy.Freeze();
 	}
 	protected override void Effect()
 	{
 		//DO nothing;
-		TakeHits.takeHits(Damage, false);
+		takeHitsEnemy.takeHits(Damage, false);
 	}
 	protected override void StopEffect()
 	{
 		base.StopEffect();
-		TakeHits.UnFreeze();
+		takeHitsEnemy.UnFreeze();
 	}
 }

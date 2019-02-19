@@ -9,17 +9,17 @@ class IceEffect : ElementEffect
 	{
 		base.StartEffect();
 		//TODO add graphic ice effect
-		TakeHits.Slow(10);
-		Debug.Log("IceEffect on "+ TakeHits);
+		takeHitsEnemy.Slow(10);
+		Debug.Log("IceEffect on "+ takeHitsEnemy);
 	}
 	protected override void Effect()
 	{
-		TakeHits.takeHits(Damage, false);
+		takeHitsEnemy.takeHits(Damage, false);
 	}
 	protected override void StopEffect()
 	{
 		base.StopEffect();
 		//TODO remove graphic ice effect
-		TakeHits.UnSlow();
+		takeHitsEnemy.UnSlow();
 	}
 }

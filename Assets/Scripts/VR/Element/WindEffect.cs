@@ -19,10 +19,10 @@ class WindEffect : ElementEffect
 	protected override void Effect()
 	{
         //DO nothing; or increase force
-        Vector3 force = transform.position-TakeHits.transform.position;
+        Vector3 force = transform.position-takeHitsEnemy.transform.position;
         Debug.Log(force);
-        TakeHits.aiScript.parentrb.AddForce(force.normalized*WindForce, ForceMode.Impulse);
-		TakeHits.takeHits(Damage, false);
+        takeHitsEnemy.aiScript.parentrb.AddForce(force.normalized*WindForce, ForceMode.Impulse);
+		takeHitsEnemy.takeHits(Damage, false);
 	}
 
 	protected override void StopEffect()

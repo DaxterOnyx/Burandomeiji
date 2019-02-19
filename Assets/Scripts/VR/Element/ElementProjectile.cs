@@ -125,7 +125,7 @@ class ElementProjectile : ProjectileScript
 abstract class ElementEffect : MonoBehaviour
 {
 	protected float Power;
-	protected TakeHits TakeHits;
+	protected TakeHitsEnemy takeHitsEnemy;
 	public float Cooldown = 0.2f;
 	[Range(0.1f,1),Tooltip("Speed of decrement, \n" +
 		"1 is very speed (1 of power was consume by callEffect),\n" +
@@ -135,8 +135,8 @@ abstract class ElementEffect : MonoBehaviour
 
 	private void Awake()
 	{
-		TakeHits = GetComponentInParent<TakeHits>();
-		if (TakeHits == null)
+		takeHitsEnemy = GetComponentInParent<TakeHitsEnemy>();
+		if (takeHitsEnemy == null)
 		{
 			Debug.LogError("Enemy without TakeHits script");
 			Power = -1;
@@ -145,8 +145,8 @@ abstract class ElementEffect : MonoBehaviour
 
 	internal void ActiveEffect(float p_Power)
 	{
-		if (TakeHits == null)
-			TakeHits = GetComponentInParent<TakeHits>();
+		if (takeHitsEnemy == null)
+			takeHitsEnemy = GetComponentInParent<TakeHitsEnemy>();
 		if (Power != -1)
 		{
 			if (Power == 0)
@@ -164,7 +164,7 @@ abstract class ElementEffect : MonoBehaviour
 		StartEffect();
 		while (Power > 0)
 		{
-			if (TakeHits.die)
+			if (takeHitsEnemy.die)
 			{
 				Destroy(gameObject);
 				break;

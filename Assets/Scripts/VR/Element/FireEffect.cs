@@ -10,7 +10,7 @@
 	}
 	protected override void Effect()
 	{
-		TakeHits.takeHits(Damage, false);
+		takeHitsEnemy.takeHits(Damage, false);
 	}
 	protected override void StopEffect()
 	{
